@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>Lasp and the Google Summer of Code</title>
+
+
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic&subset=latin);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400);
+
+html, body {
+  padding: 1em;
+  margin: auto;
+  max-width: 45em;
+}
+
+body {
+  font: 1.5em "Vollkorn", Palatino, Times;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+  background: #FEFEFE;
+}
+
+img, video {
+  min-width: 50%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+h3 {
+  font-style: italic;
+}
+
+p {
+  margin-top: 0;
+}
+
+ul, ol {
+  padding-left: 1.2em;
+}
+
+blockquote {
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 1px solid #ddd;
+}
+
+code {
+  font-family: "Source Code Pro", "Consolas", "Menlo", "Monaco", monospace, serif;
+}
+
+a {
+  color: #2484c1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a img {
+  border: none;
+}
+
+h1 a, h1 a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+hr {
+  color : #ddd;
+  height : 1px;
+  margin: 2em 0;
+  border-top : solid 1px #ddd;
+  border-bottom : none;
+  border-left: 0;
+  border-right: 0;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  body {
+    font-size: 120%;
+    line-height: 1.4;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    text-align: left;
+  }
+  article {
+    width: auto;
+    padding: 0 10px;
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0"><a href="./index.html">Uneven Ramblings</a></h1>
+
+<h2 id="toc_1">Lasp and the Google Summer of Code</h2>
+
+<h3 id="toc_2">2016-08-16</h3>
+
+<p>Over the past few months, I&#39;ve been working in <a href="http://lasp-lang.org">Lasp</a>, a new programming model for distributed dataflow programming, as part of the 2016 <a href="https://developers.google.com/open-source/gsoc/">Google Summer of Code</a>. Here I want to share some of my experiences, as well as give an overwiev on what I worked on during that time.</p>
+
+<p>My work was mostly focused on run-time optimizations, in particular, on removing intermediate values from computations.</p>
+
+<p>When I started the summer, I had several vague ideas about how to tackle the project. However, after some research, and a fruitful meeting with one of my mentors, we arrived at a promising solution, combining graph theory and control flow analysis, called <em>dynamic path contraction</em>.</p>
+
+<p>I spent most of my time adding ways to monitor the run-time while Lasp programs execute (we even added a control flow visualization tool, that would let you see how different functions and values would interact as the program ran). I also had to modify some internal libraries that we depended on to support our optimizations.</p>
+
+<blockquote>
+<p>The list with all the changes I made to the main repository is <a href="https://github.com/lasp-lang/lasp/commits/unstable?author=ergl">here</a>, the list of changes to the supporting library, <code>gen_flow</code>, can be found <a href="https://github.com/lasp-lang/gen_flow/commits/master?author=ergl">here</a>.</p>
+</blockquote>
+
+<p>After implementing dynamic path contraction in Lasp, we ran several benchmarks and found a 25% to 37% decrease on end-to-end distribution latency for value.</p>
+
+<p>While the results are very promising, there are still some things that could improve them even more. In particular, there are certain types of intermediate values that the current implementation isn&#39;t able to remove, mainly those that involve binary functions. There are
+also some operations that aren&#39;t currently monitored, like <code>stream</code>, that introduces non-determinism into the system.</p>
+
+<p>With that said, I look forward to keep working on these issues and be able to improve Lasp.</p>
+
+<p>All in all, it&#39;s been an amazing experience. I&#39;ve received a lot of support from my mentors and teammates. Thank you.</p>
+
+
+
+
+</body>
+
+</html>
