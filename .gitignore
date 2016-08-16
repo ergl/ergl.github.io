@@ -1,3 +1,4 @@
 *.md
 *.tex
 
+.DS_Store
