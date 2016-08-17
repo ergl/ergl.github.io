@@ -319,7 +319,7 @@ end, S3).</code></pre></div>
 
 <p><code>S1 -&gt; (map inc) -&gt; S2 -&gt; (filter even) -&gt; S3</code></p>
 
-<p>In fact, we can represent all Lasp programs as directed acyclic graphs. When they represents the <em>dependencies</em> between the values, we call them acyclic dependency graphs.</p>
+<p>In fact, we can represent all Lasp programs as directed acyclic graphs. When they represent the <em>dependencies</em> between the values, we call them acyclic dependency graphs.</p>
 
 <p>In our previous example, we could easily spot <code>S2</code> as our intermediate value. However, for larger programs, we might want to find a way to automatically find these values.</p>
 
