@@ -403,7 +403,7 @@ S4 ------
 <p>We are able to do this because, when we removed <code>S2</code>, we stored the original functions &#8202; <code>map inc</code> &#8202; and &#8202; <code>filter even</code>&#8202;.</p>
 
 <p><a name="anchor2"></a>
-Can this lead to inconsistencies? What if <code>S4</code> read from <code>S2</code>, instead of writing to it? Wouldn&#39;t it read old data? Lasp sideteps this issue by implementing all its variables with special data types called Conflict-Free Replicated Data Types, or CRDTs<sup><a href="#footnote2"><code>2</code></a></sup>, for short. One of the many properties these data types guarantee is that, no matter the order of updates on a particular instance, the final state will always be the same.</p>
+Can this lead to inconsistencies? What if <code>S4</code> read from <code>S2</code>, instead of writing to it? Wouldn&#39;t it read old data? Lasp sidesteps this issue by implementing all its variables with special data types called Conflict-Free Replicated Data Types, or CRDTs<sup><a href="#footnote2"><code>2</code></a></sup>, for short. One of the many properties these data types guarantee is that, no matter the order of updates on a particular instance, the final state will always be the same.</p>
 
 <h4 id="toc_6"><a name="results"></a>Results and Future Work</h4>
 
