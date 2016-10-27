@@ -253,6 +253,16 @@ pre[class*="language-"] {
 
 <h3 id="toc_2">2016-08-16</h3>
 
+<hr>
+
+<h5 id="toc_3">Update</h5>
+
+<p>If you want to read a more formal explanation, we wrote a paper about our optimization. Grab a copy from <a href="http://arxiv.org/abs/1609.01068">arxiv</a>.</p>
+
+<p>Also, I&#39;ll be speaking at <a href="http://2016.splashcon.org/track/agere2016">AGERE!</a> later this year, colocated with <a href="http://2016.splashcon.org/home">SPLASH 2016</a>. If you&#39;re attending, please feel free to drop by and say hi!</p>
+
+<hr>
+
 <p>Over the past few months, I&#39;ve been working in <a href="http://lasp-lang.org">Lasp</a> as part of the 2016 <a href="https://developers.google.com/open-source/gsoc/">Google Summer of Code</a>. Here I want to share some of my experiences, as well as give an overview of what I worked on during that time.</p>
 
 <p>Lasp is a new programming model designed to simplify large scale, fault-tolerant, distributed programming. Lasp programs follow a dataflow, functional approach. The runtime seamlessly adapts to a dynamic network topology and replicates your data to different nodes.</p>
@@ -265,7 +275,7 @@ pre[class*="language-"] {
 <p>The list with all the changes I made to the main repository is <a href="https://github.com/lasp-lang/lasp/commits/unstable?author=ergl">here</a>, the list of changes to the supporting library, <code>gen_flow</code>, can be found <a href="https://github.com/lasp-lang/gen_flow/commits/master?author=ergl">here</a>.</p>
 </blockquote>
 
-<h4 id="toc_3"><a name="background"/></a>Some Background</h4>
+<h4 id="toc_4"><a name="background"/></a>Some Background</h4>
 
 <p>What do I mean by intermediate values? And what is deforestation? (<a href="#theory">skip ahead</a> if you are already familiar with these terms). Imagine the following piece of code:</p>
 
@@ -295,7 +305,7 @@ sum [2..11]</code></pre></div>
 
 <p>We could let the compiler take care of it. In fact, the Glasgow Haskell Compiler <a href="http://research.microsoft.com/en-us/um/people/simonpj/Papers/rules.htm">already does</a>, but you can also implement it with <a href="https://hackage.haskell.org/package/stream-fusion">certain libraries</a>. Programs without intermediate values are called <em>treeless</em> programs, hence the name deforestation; the process of transforming programs into <em>treeless</em> ones.</p>
 
-<h4 id="toc_4"><a name="theory"/></a>Graphs, Lasp and shortcuts</h4>
+<h4 id="toc_5"><a name="theory"/></a>Graphs, Lasp and shortcuts</h4>
 
 <p>Intermediate values in Lasp not only waste memory, they also waste network bandwidth, increase latency and degrade run-time performance. This means that the incentive for removing these values is even greater.</p>
 
@@ -367,7 +377,7 @@ S1 -----------------&gt; S3</code></pre></div>
 <p><a name="anchor1"></a>
 And you&#39;d be right, as the Erlang VM doesn&#39;t apply deforestation to programs<sup><a href="#footnote1"><code>1</code></a></sup>. However, the cost of these values, in Erlang, compared to to the cost of intermediate values, in Lasp, is really small.</p>
 
-<h4 id="toc_5">What about the network?</h4>
+<h4 id="toc_6">What about the network?</h4>
 
 <p>We&#39;re still not done, however. Remember, Lasp runs the same program concurrently on different machines. When you&#39;re dealing with the network, you have to assume that some machines will get disconnected.</p>
 
@@ -405,7 +415,7 @@ S4 ------
 <p><a name="anchor2"></a>
 Can this lead to inconsistencies? What if <code>S4</code> read from <code>S2</code>, instead of writing to it? Wouldn&#39;t it read old data? Lasp sidesteps this issue by implementing all its variables with special data types called Conflict-Free Replicated Data Types, or CRDTs<sup><a href="#footnote2"><code>2</code></a></sup>, for short. One of the many properties these data types guarantee is that, no matter the order of updates on a particular instance, the final state will always be the same.</p>
 
-<h4 id="toc_6"><a name="results"></a>Results and Future Work</h4>
+<h4 id="toc_7"><a name="results"></a>Results and Future Work</h4>
 
 <p>After implementing the optimizations described above (we called  <em>dynamic path contraction</em> to the combination of <em>edge contraction</em> and <em>vertex cleaving</em>), we ran several benchmarks on different application topologies. For each application, we identified the longest path in its graph representation, and measured the time it took for an update on one endpoint to reach the other. Depending on the topology, we found a 25% to 75% decrease on end-to-end distribution latency.</p>
 
