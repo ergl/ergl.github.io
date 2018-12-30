@@ -1,0 +1,8 @@
+created: 20181229013521027
+modified: 20181230005914296
+name: gsoc2016
+tags: article lasp
+title: Lasp and the Google Summer of Code
+type: text/vnd.tiddlywiki
+
+Back in 2016 I worked on [[Lasp|https://github.com/lasp-lang/lasp]] during the Google Summer of Code. You can read an overview of what I worked on [[my old blog|https://ergl.github.io/gsoc2016.html]].

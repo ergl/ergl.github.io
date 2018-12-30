@@ -1,0 +1,20 @@
+created: 20181229012307556
+modified: 20181230005914300
+tags: flair
+title: About
+type: text/vnd.tiddlywiki
+
+I'm currently a research intern at the [[IMDEA Software Institute|https://software.imdea.org]] working on cool dist-sys stuff.
+
+Here's a random collection of things I've done and collaborated in:
+
+* [[AntidoteDB|https://github.com/AntidoteDB/antidote]] - An AP transactional database using CRDTs.
+
+* [[Lasp|https://github.com/lasp-lang/lasp]] - A language and collection of Erlang libraries to build distributed systems.
+
+* [[crdt-ml|https://github.com/ergl/crdt-ml]] - A collection of CRDTs in OCaml.
+
+* [[pony-docset|https://github.com/ergl/pony-docset]] - A [[Dash|https://kapeli.com/dash]] docset for the [[Pony|https://www.ponylang.io]] programming language.
+
+
+

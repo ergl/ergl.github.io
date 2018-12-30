@@ -1,0 +1,16 @@
+created: 20181229002819801
+modified: 20181230005914290
+tags: article meta
+title: Remaking the blog with TiddlyWiki
+type: text/vnd.tiddlywiki
+
+Every blog needs a first entry that explains why it started, and I guess this is it. This is not the first time I try (and fail) to maintain a regular blog. Back in the mid 2000's I maintained a couple of sci-fi themed blogs, that I would mostly share with friends.
+
+The motivation to write back then was two-fold: a) I liked writing, and b) I //loved// to procrastinate.
+
+I guess b) is the reason I'm starting a blog again, but that wouldn't make for a good post, now wouldn't it? And even if it was, why not start a traditional blog, instead of using TiddlyWiki? The reason, is, mainly, that I'm terrible at organizing. These last two years working at the [[IMDEA Software Institute|https://software.imdea.org]] have taught me that it's important to keep an organized trail of thoughts, assumptions and results to come back to.
+
+
+To date I've used several approaches, ranging from plain-text files (scattered among several git repos and Dropbox folders and hackily linked together by bash scripts and notational velocity), to paper notebooks and esoteric command line applications for mind mapping. It wasn't until I read a [[blog post from Sean T. Allen|https://www.monkeysnatchbanana.com/2018/12/26/things-id-like-in-my-code-management-tool/]] (and the [[linked one by Joe Amstrong|https://joearms.github.io/#2018-12-26%20Fun%20with%20the%20TiddlyWiki]]) that I decided I wanted a more complete package that tied together all the notes I had. And since I value Joe's opinion, I decided to try my hand at TiddlyWiki (although I admit the name has not yet grown on me).
+
+The reason to make the wiki public is to hopefully trick me into publishing what I write more often. I have learned a lot from random blogs written by people ~~trying to boost their SEO and increasing their chances of getting hired by luxurious tech companies~~ sharing their experiences and ideas. I might as well join the club.
