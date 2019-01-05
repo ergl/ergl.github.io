@@ -1,0 +1,21 @@
+tags: tiddlywiki
+title: TiddlyKnow
+type: text/vnd.tiddlywiki
+
+Here's a collection of posts I've written about tiddlywiki itself:
+
+<div>
+<$list
+filter="[tag[tiddlywiki]!title[TiddlyKnow]!title[Draft of 'TiddlyKnow']sort[created]reverse[]]">
+<p style="text-indent:0.5em">
+<$link field=title>{{!!title}}</$link> – //{{!!description}}//
+</p>
+<!--
+This style also looks nice, but I'm not sure about the accessibility of blockquote
+<h3 style="text-indent:0.5em"><$link to={{!!title}}>{{!!title}}</$link></h3>
+<blockquote>
+{{!!description}}
+</blockquote>
+-->
+</$list>
+</div>

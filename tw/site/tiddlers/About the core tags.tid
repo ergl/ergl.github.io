@@ -1,0 +1,67 @@
+description: What lives under the `$:/tags` folder?
+tags: tiddlywiki
+title: About the core tags
+type: text/vnd.tiddlywiki
+
+What happens when you create a new tiddle with the following tags? (In alphabetical order)
+
+!!! $:/tags/AdvancedSearch
+
+Title will be aded as a new tab in the $:/AdvancedSearch, with the body as the content.
+
+!!! $:/tags/AdvancedSearch/FilterButton
+
+Add a new button to the $:/AdvancedSearch "filter" tab.
+
+!!! $:/tags/ControlPanel
+
+Title will be aded as a new tab in the $:/ControlPanel, with the body as the content.
+
+!!! $:/tags/EditorToolbar
+
+Adds a button to the Editor Toolbar, but can't figure out how to show it. //More info needed//
+
+!!! $:/tags/MoreSideBar
+
+The title will appear under as a new section under the Sidebar->More, and the body as the content of that section.
+
+!!! $:/tags/PageControls
+
+Body is used to add a new item to the main page controls. Will also be added under `Sidebar -> Tools`. Will probably need an icon and a subtitle to make it useful.
+
+!!! $:/tags/PageTemplate
+
+???
+
+
+!!! $:/tags/SideBar
+
+The title will be added as a new tab in the Sidebar, and the body as the content of that tab.
+
+!!! $:/tags/SideBarSegment
+
+The title will be used to store the tiddle. I recommend using something similar to`$:/<username>/functions/<some-text>` as the title. That will create a `<username>` namespace under the explorer, making everything to organize. The body of the tiddle will appear underneath the current Sidebar.
+
+!!! $:/tags/TiddlerInfo
+
+Title will be added as a tab to the "Info" section of a tiddle. The body will be the content.
+
+!!! $:/tags/ViewTemplate
+
+The body of the tiddle will be added to every tiddle. ViewTemplate handles how to render a specific tiddle. By using this tag, you can add style to every tiddle.
+
+!!! $:/tags/ViewToolbar
+
+The body of the tiddle will be added to the View Toolbar of every tiddle (the one on the top right corner of every tiddle).
+
+!!! $:/tags/ControlPanel/Info
+
+???
+
+!!! $:/tags/ControlPanel/ItemSidebar
+
+???
+
+!!! $:/tags/TiddlerInfo/Advanced
+
+??? (I guess adds an option to the advanced options of the info toolbar?)

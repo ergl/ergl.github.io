@@ -1,0 +1,24 @@
+caption: {{$:/core/images/import-button}} Create a new link tiddler
+description: Create a new link tiddler
+tags: $:/tags/PageControls
+title: $:/ergl/functions/NewBookmarkLink
+type: text/vnd.tiddlywiki
+
+<$button
+tooltip="Create a new Link tiddler"
+class=<<tv-config-toolbar-class>>
+>
+<$action-sendmessage $message="tm-new-tiddler" title="Link Title"
+tags="link-note"
+bookmark_link="The URL of the link"
+text="Type a few words about the link"
+/>
+<!--Show the icon if the config is set to show icons -->
+<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+{{$:/core/images/import-button}}
+</$list>
+<!-- If config set to only text, show just text -->
+<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+<span class="tc-btn-text"><$text text="new link tiddler"/></span>
+</$list>
+</$button>

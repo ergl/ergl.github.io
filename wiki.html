@@ -167,6 +167,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/unfold-all</li>
 
+<li>$:/config/PageControlButtons/Visibility/$:/ergl/functions/NewBookmarkLink</li>
+
 <li>$:/config/peek-stylesheets/mode/--994748944</li>
 
 <li>$:/config/peek-stylesheets/mode/-947092625</li>
@@ -201,6 +203,10 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/ergl/functions/NewBookmarkLink</li>
+
+<li>$:/Import!!popup-image.png</li>
+
 <li>$:/isEncrypted</li>
 
 <li>$:/language/DefaultNewTiddlerTitle</li>
@@ -212,6 +218,8 @@ Error message and password prompt
 <li>$:/SiteTitle</li>
 
 <li>$:/StoryList</li>
+
+<li>$:/tags/PageControls</li>
 
 <li>$:/tags/ViewToolbar</li>
 
@@ -227,6 +235,10 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>About the core tags</li>
+
+<li>Customizing the page toolbar</li>
+
 <li>Details Widget</li>
 
 <li>Exploring the Wiki</li>
@@ -237,9 +249,13 @@ Error message and password prompt
 
 <li>Introduction to filter notation</li>
 
+<li>Links</li>
+
 <li>Remaking the blog with TiddlyWiki</li>
 
 <li>Table of Contents Example</li>
+
+<li>TiddlyKnow</li>
 
 <li>Tiddlytips</li>
 
@@ -297,6 +313,9 @@ Error message and password prompt
 </div>
 <div created="20181229002605159" modified="20181230005914362" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/unfold-all" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>hide</pre>
+</div>
+<div title="$:/config/PageControlButtons/Visibility/$:/ergl/functions/NewBookmarkLink" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>show</pre>
 </div>
 <div title="$:/config/peek-stylesheets/mode/--994748944" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>restored</pre>
@@ -9221,6 +9240,29 @@ Error message and password prompt
 
 </pre>
 </div>
+<div caption="{{$:/core/images/import-button}} Create a new link tiddler" description="Create a new link tiddler" tags="$:/tags/PageControls" title="$:/ergl/functions/NewBookmarkLink" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;$button
+tooltip=&quot;Create a new Link tiddler&quot;
+class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
+&gt;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;Link Title&quot;
+tags=&quot;link-note&quot;
+bookmark_link=&quot;The URL of the link&quot;
+text=&quot;Type a few words about the link&quot;
+/&gt;
+&lt;!--Show the icon if the config is set to show icons --&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]&quot;&gt;
+{{$:/core/images/import-button}}
+&lt;/$list&gt;
+&lt;!-- If config set to only text, show just text --&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;new link tiddler&quot;/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;</pre>
+</div>
+<div title="$:/Import!!popup-image.png" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>no</pre>
+</div>
 <div title="$:/isEncrypted" revision="0" bag="default">
 <pre>no</pre>
 </div>
@@ -9300,6 +9342,9 @@ Error message and password prompt
 <pre>What Do I Know?</pre>
 </div>
 <div list="[[Exploring the Wiki]]" title="$:/StoryList" revision="1" bag="default">
+<pre></pre>
+</div>
+<div list="$:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/ergl/functions/NewBookmarkLink $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh $:/core/ui/Buttons/more-page-actions" title="$:/tags/PageControls" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20181229011424010" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/edit $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/fold-bar $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/close $:/core/ui/Buttons/delete" modified="20181230005914317" title="$:/tags/ViewToolbar" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -9437,6 +9482,172 @@ Error message and password prompt
 <div title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>classic</pre>
 </div>
+<div description="What lives under the `$:/tags` folder?" tags="tiddlywiki" title="About the core tags" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>What happens when you create a new tiddle with the following tags? (In alphabetical order)
+
+!!! $:/tags/AdvancedSearch
+
+Title will be aded as a new tab in the $:/AdvancedSearch, with the body as the content.
+
+!!! $:/tags/AdvancedSearch/FilterButton
+
+Add a new button to the $:/AdvancedSearch &quot;filter&quot; tab.
+
+!!! $:/tags/ControlPanel
+
+Title will be aded as a new tab in the $:/ControlPanel, with the body as the content.
+
+!!! $:/tags/EditorToolbar
+
+Adds a button to the Editor Toolbar, but can't figure out how to show it. //More info needed//
+
+!!! $:/tags/MoreSideBar
+
+The title will appear under as a new section under the Sidebar-&gt;More, and the body as the content of that section.
+
+!!! $:/tags/PageControls
+
+Body is used to add a new item to the main page controls. Will also be added under `Sidebar -&gt; Tools`. Will probably need an icon and a subtitle to make it useful.
+
+!!! $:/tags/PageTemplate
+
+???
+
+
+!!! $:/tags/SideBar
+
+The title will be added as a new tab in the Sidebar, and the body as the content of that tab.
+
+!!! $:/tags/SideBarSegment
+
+The title will be used to store the tiddle. I recommend using something similar to`$:/&lt;username&gt;/functions/&lt;some-text&gt;` as the title. That will create a `&lt;username&gt;` namespace under the explorer, making everything to organize. The body of the tiddle will appear underneath the current Sidebar.
+
+!!! $:/tags/TiddlerInfo
+
+Title will be added as a tab to the &quot;Info&quot; section of a tiddle. The body will be the content.
+
+!!! $:/tags/ViewTemplate
+
+The body of the tiddle will be added to every tiddle. ViewTemplate handles how to render a specific tiddle. By using this tag, you can add style to every tiddle.
+
+!!! $:/tags/ViewToolbar
+
+The body of the tiddle will be added to the View Toolbar of every tiddle (the one on the top right corner of every tiddle).
+
+!!! $:/tags/ControlPanel/Info
+
+???
+
+!!! $:/tags/ControlPanel/ItemSidebar
+
+???
+
+!!! $:/tags/TiddlerInfo/Advanced
+
+??? (I guess adds an option to the advanced options of the info toolbar?)
+</pre>
+</div>
+<div description="A step-by-step guide to customizing your sidebar buttons" tags="tiddlywiki" title="Customizing the page toolbar" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>One of the rites of passage when using TiddlyWiki is, I guess, customizing it. So here's what I did, and how.
+
+!! A linkblog
+
+I wanted to have a section of the wiki where I would publish a [[linkblog|Links]] (basically a list of links, annotated). This is similar to pinboard, where you can tag your bookmarks, and add a few words describing the content, and something I was doing before in a notational velocity document. That was fine for private use, but recently I wanted to share those notes with other people, so I decided to publish them here.
+
+To make it easy to add a new link/bookmark to the wiki, I wanted to have a dedicated button on the sidebar that would create a new tiddler with some pre-populated fields so I was ready to go. It wasn't as simple as I expected, since I had to learn about some internals of the tiddlywiki, so here a step-by-step guide on how to do it.
+
+!! Show me the stuff already
+
+Okay! The first thing to do is to create a tiddler that will hold our code. While the title of the tiddle is irrelevant, it's useful to create namespaces for your customizations. For example, I called mine `$:/ergl/functions/NewBookmarkLink`.
+
+To let tiddlywiki know that this tiddler should be a sidebar action, we have to tag it `$:/tags/PageControls` (you can check out [[this list|About the core tags]] so know more about the different tags under the `$:/tag` namespace). Now, on the body of the post, we will write this:
+
+```
+&lt;$button
+    tooltip=&quot;Create a new Link tiddler&quot;
+    class=&lt;&lt;tv-config-toolbar-class&gt;&gt; &gt;
+
+    &lt;$action-sendmessage
+        $message=&quot;tm-new-tiddler&quot;
+        title=&quot;Link Title&quot;
+        tags=&quot;link-note&quot;
+        bookmark_link=&quot;The URL of the link&quot;
+        text=&quot;Type a few words about the link&quot; /&gt;
+
+    &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]&quot;&gt;
+        {{$:/core/images/import-button}}
+    &lt;/$list&gt;
+
+    &lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]&quot;&gt;
+        &lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;new link tiddler&quot;/&gt;&lt;/span&gt;
+    &lt;/$list&gt;
+&lt;/$button&gt;
+```
+
+Let's dissect this bit by bit:
+
+!!! Creating the button
+
+```
+&lt;$button
+    tooltip=&quot;Create a new Link tiddler&quot;
+    class=&lt;&lt;tv-config-toolbar-class&gt;&gt; &gt;
+(snip)
+&lt;/$button&gt;
+```
+
+This part is easy, it just creates a new button with the given tooltip. The `class` attribute sets whatever style we want the button to have. The `&lt;&lt;tv-config-toolbar-class&gt;&gt;` macro resolves to the class that all toolbar buttons have (we want our button to be consistent with the rest of the system).
+
+!!! Button logic
+
+```
+&lt;$action-sendmessage
+    $message=&quot;tm-new-tiddler&quot;
+    title=&quot;Link Title&quot;
+    tags=&quot;link-note&quot;
+    bookmark_link=&quot;The URL of the link&quot;
+    text=&quot;Type a few words about the link&quot; /&gt;
+```
+
+This is the core logic. Buttons can have associated actions, that will execute when it is clicked. I won't delve into details about it, since the official documentation on [[buttons|https://tiddlywiki.com/static/ButtonWidget.html]] and [[actions|https://tiddlywiki.com/static/ActionSendMessageWidget.html]] is quite complete. Suffice to say that the `tm-new-tiddler` action tells tiddlywiki to create a new tiddler, and the rest of the arguments are the fields and values we want the new tiddler to have. The `bookmark_link` is a custom field I added to my link, and it's where the link url should go.
+
+!!! Styling the button
+
+Remember we defined the class of our button to `&lt;&lt;tv-config-toolbar-class&gt;&gt;`? We also want our button to behave as the rest of the sidebar buttons, and that means reacting when the settings of the sidebar change. In particular, we want to toggle showing the button icon, or text, depending on the settings.
+
+Tiddlywiki doesn't have a built-in logical `if` construct (we can write macros in Javascript, which would let us use a full programming language, but that's something for other post), but we can emulate them with filtered lists, like so:
+
+```
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]&quot;&gt;
+    {{$:/core/images/import-button}}
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]&quot;&gt;
+    &lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;new link tiddler&quot;/&gt;&lt;/span&gt;
+ &lt;/$list&gt;
+```
+
+The first list filter will only match if the `&lt;tv-config-toolbar-icons&gt;` setting is set to `yes`. This means that the user wants to show the images of the button, so we [[transclude|https://tiddlywiki.com/static/Transclusion%2520in%2520WikiText.html]] the icon for our button. Speaking of icons, you can use any of the core images under the `$:/core/images/` namespace, or [[import your own|Importing images]].
+
+The second filter will do the same for the`&lt;tv-config-toolbar-text&gt;` setting. This tells tiddlywiki to display the text of the button, so we embed raw html to show the text we want.
+
+!!! Adding some custom fields
+
+We already have a fully functioning button on the sidebar, but we can add two more things to make it more complete. We will add two extra [[fields|https://tiddlywiki.com/static/TiddlerFields.html]] to our tiddle: `caption` and `description`. Here's what our button will have:
+
+|!Field |!Value |
+|caption |`{{$:/core/images/import-button}} Create a new link tiddler` |
+|description|`Create a new link tiddler` |
+
+The `caption` is what tiddlywiki will display inside our button in the `Tools` tab of the sidebar. We transclude our icon again, and set a reasonable description. The `description` is a longer, more detailed explanation of what our button does. In my case, I wrote the same, but that's only because I'm a lazy ass.
+
+And that's it! With all of the above, you should have a fully-functioning button on your sidebar.
+
+!! Some more words
+
+One of the strengths of Tiddlywiki is how easy it is to modify to your tastes. However, it can also be very easy to go overboard,  and it can be helpful to force yourself to use the wiki as it is before changing anything. After all, you're using the wiki to write down your notes, and that's where your focus should be. Trying to tailor everything to your tastes can lead down to hours of lost time—time, which, you know—you could have used to just write whatever you had to write.
+</pre>
+</div>
 <div bookmark_link="http://tid.li/tw5/hacks.html#DetailsWidget" tags="tiddlytip" title="Details Widget" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
@@ -9445,7 +9656,8 @@ Error message and password prompt
 
 * [[An introduction|Remaking the blog with TiddlyWiki]]
 * [[My Linkblog|Links]]
-* [[Some Tiddlytips|Tiddlytips]]</pre>
+* [[Some Tiddlytips|Tiddlytips]]
+* [[About Tiddlywiky itself|TiddlyKnow]]</pre>
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/ExternalImages.html" tags="tiddlytip" title="External Images" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -9455,6 +9667,20 @@ Error message and password prompt
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/Introduction%2520to%2520filter%2520notation.html" tags="tiddlytip" title="Introduction to filter notation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div tags="link-note" title="Links" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Sometimes you read something on the internet that inspires you to write something down. This is a list of those things. //Note to self: just don't copy-paste parts of the original text, what's the use?//
+
+&lt;div&gt;&lt;ul&gt;
+&lt;$list filter=&quot;[tag[link-note]!title[Links]!title[Draft of 'Links']sort[created]reverse[]]&quot;&gt;
+&lt;li&gt;
+&lt;h4&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href={{!!bookmark_link}}&gt;{{!!title}}&lt;/a&gt; ^^&lt;$link to={{!!title}}&gt;[edit]&lt;/$link&gt;^^&lt;/h4&gt;
+&lt;blockquote&gt;
+{{||$:/core/ui/ViewTemplate/body}}
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;&lt;/div&gt;</pre>
 </div>
 <div created="20181229002819801" modified="20181230005914290" tags="article meta" title="Remaking the blog with TiddlyWiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Every blog needs a first entry that explains why it started, and I guess this is it. This is not the first time I try (and fail) to maintain a regular blog. Back in the mid 2000's I maintained a couple of sci-fi themed blogs, that I would mostly share with friends.
@@ -9471,6 +9697,26 @@ The reason to make the wiki public is to hopefully trick me into publishing what
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/TableOfContents.html" tags="tiddlytip" title="Table of Contents Example" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div tags="tiddlywiki" title="TiddlyKnow" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Here's a collection of posts I've written about tiddlywiki itself:
+
+&lt;div&gt;
+&lt;$list
+filter=&quot;[tag[tiddlywiki]!title[TiddlyKnow]!title[Draft of 'TiddlyKnow']sort[created]reverse[]]&quot;&gt;
+&lt;p style=&quot;text-indent:0.5em&quot;&gt;
+&lt;$link field=title&gt;{{!!title}}&lt;/$link&gt; – //{{!!description}}//
+&lt;/p&gt;
+&lt;!--
+This style also looks nice, but I'm not sure about the accessibility of blockquote
+&lt;h3 style=&quot;text-indent:0.5em&quot;&gt;&lt;$link to={{!!title}}&gt;{{!!title}}&lt;/$link&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+{{!!description}}
+&lt;/blockquote&gt;
+--&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+</pre>
 </div>
 <div tags="tiddlytip" title="Tiddlytips" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>A list of random tiddlywiki tips:
