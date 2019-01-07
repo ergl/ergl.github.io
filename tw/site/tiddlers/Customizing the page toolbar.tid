@@ -3,19 +3,21 @@ tags: tiddlywiki
 title: Customizing the page toolbar
 type: text/vnd.tiddlywiki
 
-One of the rites of passage when using TiddlyWiki is, I guess, customizing it. So here's what I did, and how.
+!! Quick guide
 
-!! A linkblog
+* Create a new tiddler, with title `$:/<username>/functions/<action-name>` (the name is mostly meaningless, but this will namespace the tiddle).
 
-I wanted to have a section of the wiki where I would publish a [[linkblog|Links]] (basically a list of links, annotated). This is similar to pinboard, where you can tag your bookmarks, and add a few words describing the content, and something I was doing before in a notational velocity document. That was fine for private use, but recently I wanted to share those notes with other people, so I decided to publish them here.
+* Tag it with `$:/tags/PageControls`. This tells tiddlywiki to add it to the Page Controls. Other useful tags can be seen in [[this list|About the core tags]].
 
-To make it easy to add a new link/bookmark to the wiki, I wanted to have a dedicated button on the sidebar that would create a new tiddler with some pre-populated fields so I was ready to go. It wasn't as simple as I expected, since I had to learn about some internals of the tiddlywiki, so here a step-by-step guide on how to do it.
+* The body of the tiddler will be whatever is rendered on the page control.
 
-!! Show me the stuff already
+!! An Example
 
-Okay! The first thing to do is to create a tiddler that will hold our code. While the title of the tiddle is irrelevant, it's useful to create namespaces for your customizations. For example, I called mine `$:/ergl/functions/NewBookmarkLink`.
+This example from  $:/ergl/functions/NewBookmarkLink will:
 
-To let tiddlywiki know that this tiddler should be a sidebar action, we have to tag it `$:/tags/PageControls` (you can check out [[this list|About the core tags]] so know more about the different tags under the `$:/tag` namespace). Now, on the body of the post, we will write this:
+# Create a button, that when clicking it will
+# Create a new tiddler with the given arguments (title, tags, text), plus a custom field `bookmark_link`.
+# Customize the button contents when the `<tv-config-toolbar-icons>` or `<tv-config-toolbar-text>` settings are set to `yes`.
 
 ```
 <$button
@@ -41,8 +43,6 @@ To let tiddlywiki know that this tiddler should be a sidebar action, we have to 
 
 Let's dissect this bit by bit:
 
-!!! Creating the button
-
 ```
 <$button
     tooltip="Create a new Link tiddler"
@@ -51,9 +51,7 @@ Let's dissect this bit by bit:
 </$button>
 ```
 
-This part is easy, it just creates a new button with the given tooltip. The `class` attribute sets whatever style we want the button to have. The `<<tv-config-toolbar-class>>` macro resolves to the class that all toolbar buttons have (we want our button to be consistent with the rest of the system).
-
-!!! Button logic
+This part creates a new button with the given tooltip. The `class` attribute sets whatever style we want the button to have. The `<<tv-config-toolbar-class>>` macro resolves to the class that all toolbar buttons have (we want our button to be consistent with the rest of the system).
 
 ```
 <$action-sendmessage
@@ -95,9 +93,3 @@ We already have a fully functioning button on the sidebar, but we can add two mo
 |description|`Create a new link tiddler` |
 
 The `caption` is what tiddlywiki will display inside our button in the `Tools` tab of the sidebar. We transclude our icon again, and set a reasonable description. The `description` is a longer, more detailed explanation of what our button does. In my case, I wrote the same, but that's only because I'm a lazy ass.
-
-And that's it! With all of the above, you should have a fully-functioning button on your sidebar.
-
-!! Some more words
-
-One of the strengths of Tiddlywiki is how easy it is to modify to your tastes. However, it can also be very easy to go overboard,  and it can be helpful to force yourself to use the wiki as it is before changing anything. After all, you're using the wiki to write down your notes, and that's where your focus should be. Trying to tailor everything to your tastes can lead down to hours of lost time—time, which, you know—you could have used to just write whatever you had to write.

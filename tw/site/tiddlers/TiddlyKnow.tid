@@ -2,6 +2,8 @@ tags: tiddlywiki
 title: TiddlyKnow
 type: text/vnd.tiddlywiki
 
+Official developer documentation: https://tiddlywiki.com/dev/
+
 Here's a collection of posts I've written about tiddlywiki itself:
 
 <div>
@@ -19,3 +21,5 @@ This style also looks nice, but I'm not sure about the accessibility of blockquo
 -->
 </$list>
 </div>
+
+
