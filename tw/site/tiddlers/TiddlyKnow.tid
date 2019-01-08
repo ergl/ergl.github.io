@@ -1,4 +1,4 @@
-tags: tiddlywiki
+tags: meta
 title: TiddlyKnow
 type: text/vnd.tiddlywiki
 
@@ -8,7 +8,7 @@ Here's a collection of posts I've written about tiddlywiki itself:
 
 <div>
 <$list
-filter="[tag[tiddlywiki]!title[TiddlyKnow]!title[Draft of 'TiddlyKnow']sort[created]reverse[]]">
+filter="[tag[tiddlywiki]!has[draft.of]sort[created]reverse[]]">
 <p style="text-indent:0.5em">
 <$link field=title>{{!!title}}</$link> – //{{!!description}}//
 </p>

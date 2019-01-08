@@ -1,0 +1,103 @@
+tags: $:/tags/Macro
+title: $:/ergl/macros/triage_of
+type: text/vnd.tiddlywiki
+
+\define triage_of(tag:"default")
+  <$button>
+    <$action-sendmessage
+      $message="tm-new-tiddler"
+      title=""
+      tags="triager/$tag$/now"
+      text="" />
+    New Now
+  </$button>
+  <$button>
+    <$action-sendmessage
+      $message="tm-new-tiddler"
+      title=""
+      tags="triager/$tag$/later"
+      text="" />
+    New Later
+  </$button>
+
+! Now
+
+<div style="background:pink">
+  <ul>
+    <$list filter="[tag[triager/$tag$/now]!has[draft.of]reverse[]]">
+    <li>
+      <$link><<currentTiddler>></$link>
+      <$fieldmangler>
+        <$button>
+          <$action-sendmessage
+            $message="tm-add-tag" $param="triager/$tag$/later" />
+          <$action-sendmessage
+            $message="tm-remove-tag" $param="triager/$tag$/now" />
+          {{$:/core/images/chevron-left}} later
+        </$button>
+        <$button>
+          <$action-sendmessage
+            $message="tm-add-tag" $param="triager/$tag$/done" />
+          <$action-sendmessage
+            $message="tm-remove-tag" $param="triager/$tag$/now" />
+          {{$:/core/images/chevron-left}}done
+        </$button>
+      </$fieldmangler>
+    </li>
+    </$list>
+  </ul>
+</div>
+
+! Later
+
+<div style="background:#e2fde2">
+  <ul>
+    <$list filter="[tag[triager/$tag$/later]!has[draft.of]reverse[]]">
+    <li>
+      <$link><<currentTiddler>></$link>
+      <$fieldmangler>
+        <$button>
+          <$action-sendmessage
+            $message="tm-add-tag" $param="triager/$tag$/now" />
+          <$action-sendmessage
+            $message="tm-remove-tag" $param="triager/$tag$/later" />
+          {{$:/core/images/chevron-left}} now
+        </$button>
+        <$button>
+          <$action-sendmessage
+            $message="tm-add-tag" $param="triager/$tag$/done" />
+          <$action-sendmessage
+            $message="tm-remove-tag" $param="triager/$tag$/later" />
+          {{$:/core/images/chevron-left}} done
+        </$button>
+      </$fieldmangler>
+    </li>
+    </$list>
+  </ul>
+</div>
+
+! Done
+
+<div style="background:#e8e8e8">
+  <ul>
+    <$list filter="[tag[triager/$tag$/done]!has[draft.of]]">
+    <li>
+      <$link><<currentTiddler>></$link>
+      <$fieldmangler>
+      <$button>
+      <$action-sendmessage $message="tm-add-tag" $param="triager/$tag$/now"/>
+      <$action-sendmessage $message="tm-remove-tag" $param="triager/$tag$/done"/>
+      {{$:/core/images/chevron-left}} now
+      </$button>
+      <$button>
+      <$action-sendmessage $message="tm-add-tag" $param="triager/$tag$/later"/>
+      <$action-sendmessage $message="tm-remove-tag" $param="triager/$tag$/done"/>
+      {{$:/core/images/chevron-left}}later
+      </$button>
+
+      </$fieldmangler>
+    </li>
+    </$list>
+  </ul>
+</div>
+\end
