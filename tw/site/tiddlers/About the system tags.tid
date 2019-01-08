@@ -1,7 +1,11 @@
 description: What lives under the `$:/tags` folder?
 tags: tiddlywiki
-title: About the core tags
+title: About the system tags
 type: text/vnd.tiddlywiki
+
+Update: I'm stupid, there's a page about this on the [[official documentation|https://tiddlywiki.com/static/SystemTags.html]]
+
+---
 
 What happens when you create a new tiddle with the following tags? (In alphabetical order)
 

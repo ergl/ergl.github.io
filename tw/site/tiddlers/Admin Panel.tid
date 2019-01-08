@@ -1,0 +1,21 @@
+tags: meta
+title: Admin Panel
+type: text/vnd.tiddlywiki
+
+<$button>
+<$action-sendmessage $message="tm-new-tiddler"
+title="New Tiddlytip"
+tags="tiddlytip"
+bookmark_link="Link to external tip"
+text="Type a few words about the tip (optional)"
+/>
+New Tiddlytip
+</$button>
+<$button>
+<$action-sendmessage $message="tm-new-tiddler" 
+tags="link-note"
+bookmark_link=""
+text="Type a few words about the link"
+/>
+New Bookmark
+</$button>

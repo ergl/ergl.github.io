@@ -2,7 +2,7 @@ tags: tiddlytip
 title: Tiddlytips
 type: text/vnd.tiddlywiki
 
-A list of random tiddlywiki tips:
+A list of random tiddlywiki tips
 
 <div><ul>
 <$list filter="[tag[tiddlytip]!title[Tiddlytips]!title[Draft of 'Tiddlytips']sort[created]reverse[]]">
