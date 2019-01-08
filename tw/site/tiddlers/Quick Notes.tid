@@ -2,4 +2,6 @@ tags: meta
 title: Quick Notes
 type: text/vnd.tiddlywiki
 
-<<list-links filter:[tag[qnote]!has[draft.of]sort[created]]>>
+Quick notes are—as their name implies—quick outlines of ideas and ramblings I have in my head at any particular point in time.
+
+<<list-links filter:"[tag[qnote]!has[draft.of]]">>
