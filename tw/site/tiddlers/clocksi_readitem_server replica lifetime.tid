@@ -1,0 +1,27 @@
+tags: imdea code_notes
+title: clocksi_readitem_server replica lifetime
+type: text/vnd.tiddlywiki
+
+---
+
+<<triage_of readitem_improv>>
+
+---
+
+! On application start
+
+<<<
+`{auto_start_read_servers, true}`
+<<<
+
+{{$:/ergl/images/readitem_gen_diagram_start.svg}}
+
+! On cluster join
+
+<<<
+Joining nodes explicitly with `join_cluster_script`
+
+Every node will go through this diagram, starting/checking only the local read replicas
+<<<
+
+{{$:/ergl/images/readitem_gen_diagram_join.svg}}
