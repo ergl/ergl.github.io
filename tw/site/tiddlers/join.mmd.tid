@@ -1,0 +1,38 @@
+tags: mermaid
+title: join.mmd
+type: text/vnd.tiddlywiki
+
+!! join.mmd
+
+```
+sequenceDiagram
+    participant join as join_cluster_script
+    participant dc_mng as inter_dc_manager
+    participant vnode as clocksi_vnode
+    participant rep as clocksi_readitem_server
+    participant rep_sup as clocksi_readitem_sup
+
+    # Auto start read servers
+    join ->>+ dc_mng: start_bg_processes/1
+
+    # Init all servers
+    Note right of dc_mng: broadcast all nodes
+    dc_mng -->>+ vnode: sync_command(node, start_read_servers)
+    vnode ->> rep: start_read_servers/2
+    loop all read servers
+        rep ->> rep_sup: start_fsm/2
+        Note left of rep_sup: Spawn server proc
+        rep_sup -->>+ rep: init/2
+        rep -->>- rep_sup: ok
+        rep_sup ->> rep: "0"
+    end
+    rep ->> vnode: ok
+    vnode ->> rep: check_partition_ready/3
+    loop all read servers
+        rep ->> rep: global:whereis_name(server) =/= undefined
+    end
+    rep ->> vnode: true
+    vnode -->>- dc_mng: ok
+
+    dc_mng ->>- join: ok
+```

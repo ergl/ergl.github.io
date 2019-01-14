@@ -335,15 +335,21 @@ Error message and password prompt
 
 <li>Introduction to filter notation</li>
 
+<li>join.mmd</li>
+
 <li>Links</li>
 
 <li>Maybe add mermaid plugin</li>
+
+<li>Migrade mmd scripts after mermaid plugin</li>
 
 <li>Musings on personal organizers</li>
 
 <li>Quick Notes</li>
 
 <li>Remaking the blog with TiddlyWiki</li>
+
+<li>system_start.mmd</li>
 
 <li>SystemTags Documentation</li>
 
@@ -10871,6 +10877,42 @@ So:
 <div bookmark_link="https://tiddlywiki.com/static/Introduction%2520to%2520filter%2520notation.html" tags="tiddlytip" title="Introduction to filter notation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div tags="mermaid" title="join.mmd" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! join.mmd
+
+```
+sequenceDiagram
+    participant join as join_cluster_script
+    participant dc_mng as inter_dc_manager
+    participant vnode as clocksi_vnode
+    participant rep as clocksi_readitem_server
+    participant rep_sup as clocksi_readitem_sup
+
+    # Auto start read servers
+    join -&gt;&gt;+ dc_mng: start_bg_processes/1
+
+    # Init all servers
+    Note right of dc_mng: broadcast all nodes
+    dc_mng --&gt;&gt;+ vnode: sync_command(node, start_read_servers)
+    vnode -&gt;&gt; rep: start_read_servers/2
+    loop all read servers
+        rep -&gt;&gt; rep_sup: start_fsm/2
+        Note left of rep_sup: Spawn server proc
+        rep_sup --&gt;&gt;+ rep: init/2
+        rep --&gt;&gt;- rep_sup: ok
+        rep_sup -&gt;&gt; rep: &quot;0&quot;
+    end
+    rep -&gt;&gt; vnode: ok
+    vnode -&gt;&gt; rep: check_partition_ready/3
+    loop all read servers
+        rep -&gt;&gt; rep: global:whereis_name(server) =/= undefined
+    end
+    rep -&gt;&gt; vnode: true
+    vnode --&gt;&gt;- dc_mng: ok
+
+    dc_mng -&gt;&gt;- join: ok
+```</pre>
+</div>
 <div tags="meta" title="Links" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Sometimes you read something on the internet that inspires you to write something down. This is a list of those things. //Note to self: just don't copy-paste parts of the original text, what's the use?//
 
@@ -10881,6 +10923,12 @@ So:
 <pre>https://github.com/gt6796c/mermaid-tw5
 
 https://gt6796c.github.io</pre>
+</div>
+<div tags="triager/meta/now" title="Migrade mmd scripts after mermaid plugin" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>{{system_start.mmd}}
+{{join.mmd}}
+
+</pre>
 </div>
 <div tags="qnote" title="Musings on personal organizers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!!! General
@@ -10960,6 +11008,53 @@ To date I've used several approaches, ranging from plain-text files (scattered a
 
 The reason to make the wiki public is to hopefully trick me into publishing what I write more often. I have learned a lot from random blogs written by people ~~trying to boost their SEO and increasing their chances of getting hired by luxurious tech companies~~ sharing their experiences and ideas. I might as well join the club.
 </pre>
+</div>
+<div tags="mermaid" title="system_start.mmd" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! system_start.mmd
+
+```
+sequenceDiagram
+    participant app as antidote_app
+    participant sup as antidote_sup
+    participant dc_mng as inter_dc_manager
+    participant vnode as clocksi_vnode
+    participant rep as clocksi_readitem_server
+    participant rep_sup as clocksi_readitem_sup
+
+    # App supervisor init
+    app -&gt;&gt;+ sup: start_link/0
+    sup -&gt;&gt;+ rep_sup: start_link/0
+    Note right of rep_sup: Configure replica&lt;br/&gt;server as transient&lt;br/&gt;simple_one_for_one&lt;br/&gt;child.
+    rep_sup -&gt;&gt; rep_sup: (simple_one_for_one)
+    rep_sup -&gt;&gt;- sup: ok
+    sup -&gt;&gt;- app: ok
+
+    Note left of app: virtual nodes get&lt;br/&gt;registered here
+
+    # Auto start read servers
+    app -&gt;&gt;+ dc_mng: start_bg_processes/1
+
+    # Init all servers
+    Note right of dc_mng: broadcast all nodes
+    dc_mng --&gt;&gt;+ vnode: sync_command(node, start_read_servers)
+    vnode -&gt;&gt; rep: start_read_servers/2
+    loop all read servers
+        rep -&gt;&gt; rep_sup: start_fsm/2
+        Note left of rep_sup: Spawn server proc
+        rep_sup --&gt;&gt;+ rep: init/2
+        rep --&gt;&gt;- rep_sup: ok
+        rep_sup -&gt;&gt; rep: &quot;0&quot;
+    end
+    rep -&gt;&gt; vnode: ok
+    vnode -&gt;&gt; rep: check_partition_ready/3
+    loop all read servers
+        rep -&gt;&gt; rep: global:whereis_name(server) =/= undefined
+    end
+    rep -&gt;&gt; vnode: true
+    vnode --&gt;&gt;- dc_mng: ok
+
+    dc_mng -&gt;&gt;- app: ok
+```</pre>
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/SystemTags.html" tags="tiddlytip" title="SystemTags Documentation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>

@@ -1,0 +1,49 @@
+tags: mermaid
+title: system_start.mmd
+type: text/vnd.tiddlywiki
+
+!! system_start.mmd
+
+```
+sequenceDiagram
+    participant app as antidote_app
+    participant sup as antidote_sup
+    participant dc_mng as inter_dc_manager
+    participant vnode as clocksi_vnode
+    participant rep as clocksi_readitem_server
+    participant rep_sup as clocksi_readitem_sup
+
+    # App supervisor init
+    app ->>+ sup: start_link/0
+    sup ->>+ rep_sup: start_link/0
+    Note right of rep_sup: Configure replica<br/>server as transient<br/>simple_one_for_one<br/>child.
+    rep_sup ->> rep_sup: (simple_one_for_one)
+    rep_sup ->>- sup: ok
+    sup ->>- app: ok
+
+    Note left of app: virtual nodes get<br/>registered here
+
+    # Auto start read servers
+    app ->>+ dc_mng: start_bg_processes/1
+
+    # Init all servers
+    Note right of dc_mng: broadcast all nodes
+    dc_mng -->>+ vnode: sync_command(node, start_read_servers)
+    vnode ->> rep: start_read_servers/2
+    loop all read servers
+        rep ->> rep_sup: start_fsm/2
+        Note left of rep_sup: Spawn server proc
+        rep_sup -->>+ rep: init/2
+        rep -->>- rep_sup: ok
+        rep_sup ->> rep: "0"
+    end
+    rep ->> vnode: ok
+    vnode ->> rep: check_partition_ready/3
+    loop all read servers
+        rep ->> rep: global:whereis_name(server) =/= undefined
+    end
+    rep ->> vnode: true
+    vnode -->>- dc_mng: ok
+
+    dc_mng ->>- app: ok
+```
