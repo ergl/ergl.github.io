@@ -1,7 +1,0 @@
-tags: triager/meta/now
-title: Migrade mmd scripts after mermaid plugin
-type: text/vnd.tiddlywiki
-
-{{system_start.mmd}}
-{{join.mmd}}
-

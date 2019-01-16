@@ -139,6 +139,8 @@ Error message and password prompt
 
 <li>&quot;Ethical&quot; social media</li>
 
+<li>$:/.tb/macros/calc</li>
+
 <li>$:/config/AnimationDuration</li>
 
 <li>$:/config/DefaultSidebarTab</li>
@@ -313,15 +315,23 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>A List of random but useful plugins</li>
+
 <li>About the system tags</li>
 
 <li>Admin Panel</li>
 
+<li>Change Links Format</li>
+
 <li>clocksi_readitem_server replica lifetime</li>
+
+<li>Counter Experiment</li>
 
 <li>Customizing the page toolbar</li>
 
 <li>Details Widget</li>
+
+<li>Dynamic Tables</li>
 
 <li>Exploring the Wiki</li>
 
@@ -333,6 +343,8 @@ Error message and password prompt
 
 <li>Improve vnode &lt;-&gt; readitem start procedure</li>
 
+<li>Improved triage in tiddlywiki</li>
+
 <li>Introduction to filter notation</li>
 
 <li>join.mmd</li>
@@ -341,7 +353,7 @@ Error message and password prompt
 
 <li>Maybe add mermaid plugin</li>
 
-<li>Migrade mmd scripts after mermaid plugin</li>
+<li>Migrate mmd scripts after mermaid plugin</li>
 
 <li>Musings on personal organizers</li>
 
@@ -384,6 +396,131 @@ What makes Mastodon more ethical than Twitter? The fact that it’s distributed?
 &lt;&lt;&lt;
 
 The tech world obsession with decentralized solutions is a bit tiring, constantly boasting as if they were the end solution to everything. Distributed applications change //nothing//. The Web is already decentralized, and it didn't help. Technology and protocol-level solutions are just a hacky patch on top of the real problem: power distribution and capital incentives.</pre>
+</div>
+<div created="20150126131341956" creator="Tobias Beer" modified="20160902165820836" modifier="Tobias Beer" module-type="macro" summary="allows simple calculations based on tiddler fields" title="$:/.tb/macros/calc" type="application/javascript" revision="0" bag="default">
+<pre>/*\
+title: $:/.tb/macros/calc
+type: application/javascript
+module-type: macro
+
+Computes a (Field) value +,-,*,/ a provided value.
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+&quot;use strict&quot;;
+
+/*
+Information about this macro
+*/
+
+exports.name = &quot;calc&quot;;
+
+exports.params = [
+	{name: &quot;value&quot;},
+	{name: &quot;operation&quot;},
+	{name: &quot;until&quot;},
+	{name: &quot;beyond&quot;},
+	{name: &quot;decimals&quot;},
+	{name: &quot;tiddler&quot;},
+	{name: &quot;by&quot;}
+];
+
+/*
+Run the macro
+*/
+exports.run = function(value, operation, until, beyond, decimals, tiddler, by) {
+	if(!value) {
+		return;
+	}
+	if(&quot;&quot; === operation){
+		operation = &quot;+&quot;;
+	}
+	var
+		curr,dec,init,initMatch,op,opGiven,r,result,val,
+		regInit = /^((?:[0-9]+)|(?:(?:[0-9]*)[\.,\,](?:[0-9]*))){1}[=][&gt;](.*)/mg,
+		ops = [&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;];
+	initMatch = regInit.exec(value);
+	if(initMatch) {
+		init = initMatch[1].replace(/[\,]/,&quot;.&quot;);
+		value = initMatch[2];
+	}
+	curr = parseFloat(
+		isNaN(parseFloat(value)) ?
+		this.wiki.getTextReference(value, init || &quot;NaN&quot;, tiddler || this.getVariable(&quot;currentTiddler&quot;)) :
+		value
+	);
+	until = parseFloat(until);
+	decimals = parseInt(decimals);
+
+	op = operation.charAt(0);
+	opGiven = ops.indexOf(op) &gt;= 0;
+	if(!opGiven) {
+		op = &quot;+&quot;;
+	}
+	initMatch = regInit.exec(by);
+	if(initMatch) {
+		init = initMatch[1].replace(/[\,]/,&quot;.&quot;);
+		by = initMatch[2];
+	}
+	val = parseFloat(
+		isNaN(parseFloat(by)) ?
+		this.wiki.getTextReference(by, init || &quot;NaN&quot;, tiddler || this.getVariable(&quot;currentTiddler&quot;)) :
+		by
+	);
+	if(by === &quot;&quot;) {
+		val = opGiven ?
+			(operation.length &lt; 2 ? 0 : parseFloat(operation.substr(1))) :
+			parseFloat(operation);
+	}
+	if(isNaN(curr)) {
+		result = &quot;NaN&quot;;
+	} else {
+		switch (op){
+			case &quot;-&quot;: result = curr - val; break;
+			case &quot;*&quot;: result = curr * val; break;
+			case &quot;/&quot;: result = curr / val; break;
+			case &quot;+&quot;:
+				/* falls through */
+			default: result = curr + val;
+		}
+		if(!isNaN(until)) {
+			if (!(
+				&quot;+&quot; == op || &quot;*&quot; == op ?
+				result &lt;= until :
+				result &gt;= until
+			)) {
+				if(&quot;true&quot; == beyond) {
+					result = true;
+				} else {
+					result = until;
+				}
+			}
+			if(beyond &amp;&amp; result !== true) {
+				result = false;
+			}
+		}
+	}
+
+	if(!isNaN(result)){
+		r = result.toString();
+		dec = r.indexOf('.');
+		if(dec &gt; -1){
+			dec = r.substr(dec).length;
+			if(
+				!isNaN(decimals) &amp;&amp; dec &gt; decimals ||
+				isNaN(decimals) &amp;&amp; dec &gt; 2
+			){
+				result = result.toFixed(isNaN(decimals) ? 2 : decimals);
+			}
+		}
+	}
+	return result.toString();
+};
+
+})();</pre>
 </div>
 <div created="20181229002100861" modified="20181230005914286" title="$:/config/AnimationDuration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>300</pre>
@@ -9457,8 +9594,8 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 &gt;
 &lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;Link Title&quot;
 tags=&quot;link-note&quot;
-bookmark_link=&quot;The URL of the link&quot;
-text=&quot;Type a few words about the link&quot;
+bookmark_link=&quot;&quot;
+text=&quot;&quot;
 /&gt;
 &lt;!--Show the icon if the config is set to show icons --&gt;
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]&quot;&gt;
@@ -10229,70 +10366,47 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
     &lt;$action-sendmessage
       $message=&quot;tm-new-tiddler&quot;
       title=&quot;&quot;
-      tags=&quot;triager/$tag$/now&quot;
+      task-$tag$-step=0
+      tags=&quot;task&quot;
       text=&quot;&quot; /&gt;
-    New Now
-  &lt;/$button&gt;
-  &lt;$button&gt;
-    &lt;$action-sendmessage
-      $message=&quot;tm-new-tiddler&quot;
-      title=&quot;&quot;
-      tags=&quot;triager/$tag$/later&quot;
-      text=&quot;&quot; /&gt;
-    New Later
+    New Task
   &lt;/$button&gt;
 
-! Now
+! Backlog
 
 &lt;div style=&quot;background:pink&quot;&gt;
   &lt;ul&gt;
-    &lt;$list filter=&quot;[tag[triager/$tag$/now]!has[draft.of]reverse[]]&quot;&gt;
+    &lt;$list filter=&quot;[field:task-$tag$-step[0]!has[draft.of]reverse[]]&quot;&gt;
     &lt;li&gt;
       &lt;$link&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;
-      &lt;$fieldmangler&gt;
-        &lt;$button&gt;
-          &lt;$action-sendmessage
-            $message=&quot;tm-add-tag&quot; $param=&quot;triager/$tag$/later&quot; /&gt;
-          &lt;$action-sendmessage
-            $message=&quot;tm-remove-tag&quot; $param=&quot;triager/$tag$/now&quot; /&gt;
-          {{$:/core/images/chevron-left}} later
-        &lt;/$button&gt;
-        &lt;$button&gt;
-          &lt;$action-sendmessage
-            $message=&quot;tm-add-tag&quot; $param=&quot;triager/$tag$/done&quot; /&gt;
-          &lt;$action-sendmessage
-            $message=&quot;tm-remove-tag&quot; $param=&quot;triager/$tag$/now&quot; /&gt;
-          {{$:/core/images/chevron-left}}done
-        &lt;/$button&gt;
-      &lt;/$fieldmangler&gt;
+      &lt;$button&gt;
+        &lt;$action-setfield $field=&quot;task-$tag$-step&quot; $value=1 /&gt;
+        {{$:/core/images/chevron-left}} Current
+      &lt;/$button&gt;
+      &lt;$button&gt;
+        &lt;$action-setfield $field=&quot;task-$tag$-step&quot; $value=2 /&gt;
+        {{$:/core/images/chevron-left}} Done
+      &lt;/$button&gt;
     &lt;/li&gt;
     &lt;/$list&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
 
-! Later
+! Current
 
 &lt;div style=&quot;background:#e2fde2&quot;&gt;
   &lt;ul&gt;
-    &lt;$list filter=&quot;[tag[triager/$tag$/later]!has[draft.of]reverse[]]&quot;&gt;
+    &lt;$list filter=&quot;[field:task-$tag$-step[1]!has[draft.of]reverse[]]&quot;&gt;
     &lt;li&gt;
       &lt;$link&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;
-      &lt;$fieldmangler&gt;
-        &lt;$button&gt;
-          &lt;$action-sendmessage
-            $message=&quot;tm-add-tag&quot; $param=&quot;triager/$tag$/now&quot; /&gt;
-          &lt;$action-sendmessage
-            $message=&quot;tm-remove-tag&quot; $param=&quot;triager/$tag$/later&quot; /&gt;
-          {{$:/core/images/chevron-left}} now
-        &lt;/$button&gt;
-        &lt;$button&gt;
-          &lt;$action-sendmessage
-            $message=&quot;tm-add-tag&quot; $param=&quot;triager/$tag$/done&quot; /&gt;
-          &lt;$action-sendmessage
-            $message=&quot;tm-remove-tag&quot; $param=&quot;triager/$tag$/later&quot; /&gt;
-          {{$:/core/images/chevron-left}} done
-        &lt;/$button&gt;
-      &lt;/$fieldmangler&gt;
+      &lt;$button&gt;
+        &lt;$action-setfield $field=&quot;task-$tag$-step&quot; $value=2 /&gt;
+        {{$:/core/images/chevron-left}} Done
+      &lt;/$button&gt;
+      &lt;$button&gt;
+        &lt;$action-setfield $field=&quot;task-$tag$-step&quot; $value=0 /&gt;
+        {{$:/core/images/chevron-left}} Backlog
+      &lt;/$button&gt;
     &lt;/li&gt;
     &lt;/$list&gt;
   &lt;/ul&gt;
@@ -10302,27 +10416,23 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 
 &lt;div style=&quot;background:#e8e8e8&quot;&gt;
   &lt;ul&gt;
-    &lt;$list filter=&quot;[tag[triager/$tag$/done]!has[draft.of]]&quot;&gt;
+    &lt;$list filter=&quot;[field:task-$tag$-step[2]!has[draft.of]reverse[]]&quot;&gt;
     &lt;li&gt;
       &lt;$link&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;
-      &lt;$fieldmangler&gt;
       &lt;$button&gt;
-      &lt;$action-sendmessage $message=&quot;tm-add-tag&quot; $param=&quot;triager/$tag$/now&quot;/&gt;
-      &lt;$action-sendmessage $message=&quot;tm-remove-tag&quot; $param=&quot;triager/$tag$/done&quot;/&gt;
-      {{$:/core/images/chevron-left}} now
+        &lt;$action-setfield $field=&quot;task-$tag$-step&quot; $value=0 /&gt;
+        {{$:/core/images/chevron-left}} Backlog
       &lt;/$button&gt;
       &lt;$button&gt;
-      &lt;$action-sendmessage $message=&quot;tm-add-tag&quot; $param=&quot;triager/$tag$/later&quot;/&gt;
-      &lt;$action-sendmessage $message=&quot;tm-remove-tag&quot; $param=&quot;triager/$tag$/done&quot;/&gt;
-      {{$:/core/images/chevron-left}}later
+        &lt;$action-setfield $field=&quot;task-$tag$-step&quot; $value=1 /&gt;
+        {{$:/core/images/chevron-left}} Current
       &lt;/$button&gt;
-
-      &lt;/$fieldmangler&gt;
     &lt;/li&gt;
     &lt;/$list&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
-\end</pre>
+\end
+</pre>
 </div>
 <div title="$:/Import!!popup-image.png" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>no</pre>
@@ -10552,6 +10662,9 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 <div title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>classic</pre>
 </div>
+<div bookmark_link="http://inmysocks.tiddlyspot.com/#My%20Plugins:%5B%5BMy%20Plugins%5D%5D%20%24%3A%2Fplugins%2Finmysocks%2FTW5Utils%20%24%3A%2Fplugins%2Finmysocks%2FCalendar%20%24%3A%2Fplugins%2Finmysocks%2FTaskList%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%2FBookmarks%2030plusgamer" tags="tiddlytip" title="A List of random but useful plugins" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Calendars, Bookmarks (this one looks especially nice)...</pre>
+</div>
 <div description="What lives under the `$:/tags` folder?" tags="tiddlywiki" title="About the system tags" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Update: I'm stupid, there's a page about this on the [[official documentation|https://tiddlywiki.com/static/SystemTags.html]]
 
@@ -10626,8 +10739,8 @@ The body of the tiddle will be added to the View Toolbar of every tiddle (the on
 &lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot;
 title=&quot;New Tiddlytip&quot;
 tags=&quot;tiddlytip&quot;
-bookmark_link=&quot;Link to external tip&quot;
-text=&quot;Type a few words about the tip (optional)&quot;
+bookmark_link=&quot;&quot;
+text=&quot;&quot;
 /&gt;
 New Tiddlytip
 &lt;/$button&gt;
@@ -10644,6 +10757,9 @@ New Bookmark
 
 [[Admin Triage|triage/meta]]
 </pre>
+</div>
+<div tags="task" task-meta-step="0" title="Change Links Format" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Instead of putting the link in a field, maybe put it in the body, inside a table (see how the  [[Bookmark plugin|http://inmysocks.tiddlyspot.com/#%24%3A%2Fplugins%2Finmysocks%2FBookmarks]] does it)</pre>
 </div>
 <div tags="imdea code_notes" title="clocksi_readitem_server replica lifetime" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>---
@@ -10669,6 +10785,23 @@ Every node will go through this diagram, starting/checking only the local read r
 &lt;&lt;&lt;
 
 {{$:/ergl/images/readitem_gen_diagram_join.svg}}
+</pre>
+</div>
+<div counter="-3" tags="experiments" title="Counter Experiment" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;$button&gt;
+&lt;$set name=&quot;incr&quot; value=&lt;&lt;calc !!counter 1&gt;&gt; emptyValue=0&gt;
+&lt;$action-setfield $field=counter $value=&lt;&lt;incr&gt;&gt; /&gt;
+&lt;/$set&gt;
+Increment (+)
+&lt;/$button&gt;
+&lt;$button&gt;
+&lt;$set name=&quot;decr&quot; value=&lt;&lt;calc !!counter -1&gt;&gt; emptyValue=0&gt;
+&lt;$action-setfield $field=counter $value=&lt;&lt;decr&gt;&gt; /&gt;
+&lt;/$set&gt;
+Decrement (-)
+&lt;/$button&gt;
+
+Current: {{!!counter}}
 </pre>
 </div>
 <div description="A step-by-step guide to customizing your sidebar buttons" tags="tiddlywiki" title="Customizing the page toolbar" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10767,6 +10900,9 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 <div bookmark_link="http://tid.li/tw5/hacks.html#DetailsWidget" tags="tiddlytip" title="Details Widget" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div bookmark_link="https://ooktech.com/jed/ExampleWikis/DynamicTables/" tags="tiddlytip" title="Dynamic Tables" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>A plugin to create editable tables. Features dynamic rows/columns based on filters</pre>
+</div>
 <div tags="meta" title="Exploring the Wiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Here's a random list of things you can find on this wiki:
 
@@ -10785,7 +10921,7 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 <div bookmark_link="https://tiddlywiki.com/static/How%2520to%2520add%2520a%2520new%2520tab%2520to%2520the%2520sidebar.html" tags="tiddlytip" title="How to add a new tab to the sidebar" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div tags="triager/readitem_improv/now" title="Improve vnode &lt;-&gt; readitem start procedure" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div tags="task" task-readitem_improv-step="0" title="Improve vnode &lt;-&gt; readitem start procedure" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>clocksi_vnode on `check_servers_read` does `loop_until_started`, which (in theory), should start all read servers, doing:
 
 ```
@@ -10874,6 +11010,16 @@ So:
 
 ---</pre>
 </div>
+<div tags="qnote" title="Improved triage in tiddlywiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* ~~Use fields, not tags~~
+** Don't pollute tag space
+* Allow `depends on ...`
+* ~~More sections (backlog, etc)~~
+** Could be changed to just have one button (new task), and rename Later to backlog
+* Add option to taskify a tiddler with a button (under the View Toolbar, for example)
+** This could be expanded to other things, like linkify, etc
+** https://tiddlywiki.com/#Page%20and%20tiddler%20layout%20customisation</pre>
+</div>
 <div bookmark_link="https://tiddlywiki.com/static/Introduction%2520to%2520filter%2520notation.html" tags="tiddlytip" title="Introduction to filter notation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
@@ -10919,12 +11065,12 @@ sequenceDiagram
 &lt;&lt;bookmark_link_list_of link-note&gt;&gt;
 </pre>
 </div>
-<div tags="triager/meta/now" title="Maybe add mermaid plugin" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div tags="task" task-meta-step="0" title="Maybe add mermaid plugin" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>https://github.com/gt6796c/mermaid-tw5
 
 https://gt6796c.github.io</pre>
 </div>
-<div tags="triager/meta/now" title="Migrade mmd scripts after mermaid plugin" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div tags="task" task-meta-step="0" title="Migrate mmd scripts after mermaid plugin" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>{{system_start.mmd}}
 {{join.mmd}}
 

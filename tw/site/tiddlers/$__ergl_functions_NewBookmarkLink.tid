@@ -10,8 +10,8 @@ class=<<tv-config-toolbar-class>>
 >
 <$action-sendmessage $message="tm-new-tiddler" title="Link Title"
 tags="link-note"
-bookmark_link="The URL of the link"
-text="Type a few words about the link"
+bookmark_link=""
+text=""
 />
 <!--Show the icon if the config is set to show icons -->
 <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">

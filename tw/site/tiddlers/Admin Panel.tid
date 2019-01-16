@@ -6,8 +6,8 @@ type: text/vnd.tiddlywiki
 <$action-sendmessage $message="tm-new-tiddler"
 title="New Tiddlytip"
 tags="tiddlytip"
-bookmark_link="Link to external tip"
-text="Type a few words about the tip (optional)"
+bookmark_link=""
+text=""
 />
 New Tiddlytip
 </$button>

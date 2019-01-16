@@ -7,70 +7,47 @@ type: text/vnd.tiddlywiki
     <$action-sendmessage
       $message="tm-new-tiddler"
       title=""
-      tags="triager/$tag$/now"
+      task-$tag$-step=0
+      tags="task"
       text="" />
-    New Now
-  </$button>
-  <$button>
-    <$action-sendmessage
-      $message="tm-new-tiddler"
-      title=""
-      tags="triager/$tag$/later"
-      text="" />
-    New Later
+    New Task
   </$button>
 
-! Now
+! Backlog
 
 <div style="background:pink">
   <ul>
-    <$list filter="[tag[triager/$tag$/now]!has[draft.of]reverse[]]">
+    <$list filter="[field:task-$tag$-step[0]!has[draft.of]reverse[]]">
     <li>
       <$link><<currentTiddler>></$link>
-      <$fieldmangler>
-        <$button>
-          <$action-sendmessage
-            $message="tm-add-tag" $param="triager/$tag$/later" />
-          <$action-sendmessage
-            $message="tm-remove-tag" $param="triager/$tag$/now" />
-          {{$:/core/images/chevron-left}} later
-        </$button>
-        <$button>
-          <$action-sendmessage
-            $message="tm-add-tag" $param="triager/$tag$/done" />
-          <$action-sendmessage
-            $message="tm-remove-tag" $param="triager/$tag$/now" />
-          {{$:/core/images/chevron-left}}done
-        </$button>
-      </$fieldmangler>
+      <$button>
+        <$action-setfield $field="task-$tag$-step" $value=1 />
+        {{$:/core/images/chevron-left}} Current
+      </$button>
+      <$button>
+        <$action-setfield $field="task-$tag$-step" $value=2 />
+        {{$:/core/images/chevron-left}} Done
+      </$button>
     </li>
     </$list>
   </ul>
 </div>
 
-! Later
+! Current
 
 <div style="background:#e2fde2">
   <ul>
-    <$list filter="[tag[triager/$tag$/later]!has[draft.of]reverse[]]">
+    <$list filter="[field:task-$tag$-step[1]!has[draft.of]reverse[]]">
     <li>
       <$link><<currentTiddler>></$link>
-      <$fieldmangler>
-        <$button>
-          <$action-sendmessage
-            $message="tm-add-tag" $param="triager/$tag$/now" />
-          <$action-sendmessage
-            $message="tm-remove-tag" $param="triager/$tag$/later" />
-          {{$:/core/images/chevron-left}} now
-        </$button>
-        <$button>
-          <$action-sendmessage
-            $message="tm-add-tag" $param="triager/$tag$/done" />
-          <$action-sendmessage
-            $message="tm-remove-tag" $param="triager/$tag$/later" />
-          {{$:/core/images/chevron-left}} done
-        </$button>
-      </$fieldmangler>
+      <$button>
+        <$action-setfield $field="task-$tag$-step" $value=2 />
+        {{$:/core/images/chevron-left}} Done
+      </$button>
+      <$button>
+        <$action-setfield $field="task-$tag$-step" $value=0 />
+        {{$:/core/images/chevron-left}} Backlog
+      </$button>
     </li>
     </$list>
   </ul>
@@ -80,22 +57,17 @@ type: text/vnd.tiddlywiki
 
 <div style="background:#e8e8e8">
   <ul>
-    <$list filter="[tag[triager/$tag$/done]!has[draft.of]]">
+    <$list filter="[field:task-$tag$-step[2]!has[draft.of]reverse[]]">
     <li>
       <$link><<currentTiddler>></$link>
-      <$fieldmangler>
       <$button>
-      <$action-sendmessage $message="tm-add-tag" $param="triager/$tag$/now"/>
-      <$action-sendmessage $message="tm-remove-tag" $param="triager/$tag$/done"/>
-      {{$:/core/images/chevron-left}} now
+        <$action-setfield $field="task-$tag$-step" $value=0 />
+        {{$:/core/images/chevron-left}} Backlog
       </$button>
       <$button>
-      <$action-sendmessage $message="tm-add-tag" $param="triager/$tag$/later"/>
-      <$action-sendmessage $message="tm-remove-tag" $param="triager/$tag$/done"/>
-      {{$:/core/images/chevron-left}}later
+        <$action-setfield $field="task-$tag$-step" $value=1 />
+        {{$:/core/images/chevron-left}} Current
       </$button>
-
-      </$fieldmangler>
     </li>
     </$list>
   </ul>
