@@ -1,9 +1,9 @@
 tags: task
-task-readitem_improv-step: 0
+task-readitem_improv-step: 2
 title: Improve vnode <-> readitem start procedure
 type: text/vnd.tiddlywiki
 
-clocksi_vnode on `check_servers_read` does `loop_until_started`, which (in theory), should start all read servers, doing:
+clocksi_vnode on `start_read_servers` does `loop_until_started`, which (in theory), should start all read servers, doing:
 
 ```
 loop_until_started(_Partition, 0) ->

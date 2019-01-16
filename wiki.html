@@ -281,12 +281,6 @@ Error message and password prompt
 
 <li>$:/ergl/macros/triage_of</li>
 
-<li>$:/Import!!popup-image.png</li>
-
-<li>$:/Import!!popup-mermaid-diagram-20190111162926.svg</li>
-
-<li>$:/Import!!popup-mermaid-diagram-20190114234803.svg</li>
-
 <li>$:/isEncrypted</li>
 
 <li>$:/language/DefaultNewTiddlerTitle</li>
@@ -10434,15 +10428,6 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 \end
 </pre>
 </div>
-<div title="$:/Import!!popup-image.png" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>no</pre>
-</div>
-<div title="$:/Import!!popup-mermaid-diagram-20190111162926.svg" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>yes</pre>
-</div>
-<div title="$:/Import!!popup-mermaid-diagram-20190114234803.svg" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>yes</pre>
-</div>
 <div title="$:/isEncrypted" revision="0" bag="default">
 <pre>no</pre>
 </div>
@@ -10921,8 +10906,8 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 <div bookmark_link="https://tiddlywiki.com/static/How%2520to%2520add%2520a%2520new%2520tab%2520to%2520the%2520sidebar.html" tags="tiddlytip" title="How to add a new tab to the sidebar" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div tags="task" task-readitem_improv-step="0" title="Improve vnode &lt;-&gt; readitem start procedure" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>clocksi_vnode on `check_servers_read` does `loop_until_started`, which (in theory), should start all read servers, doing:
+<div tags="task" task-readitem_improv-step="2" title="Improve vnode &lt;-&gt; readitem start procedure" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>clocksi_vnode on `start_read_servers` does `loop_until_started`, which (in theory), should start all read servers, doing:
 
 ```
 loop_until_started(_Partition, 0) -&gt;
