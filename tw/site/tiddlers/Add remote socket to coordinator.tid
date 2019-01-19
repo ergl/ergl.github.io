@@ -1,0 +1,8 @@
+tags: task
+task-readitem_improv-step: 2
+title: Add remote socket to coordinator
+type: text/vnd.tiddlywiki
+
+Open socket to remote nodes on `init`
+
+On remote read, send through socket `rpb_simple_driver:remote_read/3` and wait (this wait is sync)

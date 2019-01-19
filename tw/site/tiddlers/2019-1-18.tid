@@ -1,0 +1,17 @@
+tags: imdea journal
+title: 2019-1-18
+type: text/vnd.tiddlywiki
+
+!!! Skype call with Manuel
+
+* Talked about results from yesterday
+* Talk about easiest change to Antidote to introduce TCP-based remote reads, instead of going through distributed erlang
+** Make current `rubis_pb_worker` call local gen_server directly
+* Start sockets to remote nodes on Coordinator start (`init`) and use that to send remote read msg
+
+---
+
+* Added new PB message to rubis_proto
+* Changed remote read implementation (my god it's full of hacks)
+
+

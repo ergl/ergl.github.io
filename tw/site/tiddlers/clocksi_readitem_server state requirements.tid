@@ -1,0 +1,13 @@
+tags: imdea code_notes
+title: clocksi_readitem_server state requirements
+type: text/vnd.tiddlywiki
+
+| !Function | !State Needs |
+| pvc_async_read/3 | — |
+| pvc_fresh_read_internal/6 | `pvc_atomic_cache` (read MRVC) |
+| pvc_scan_and_read/6 | `pvc_atomic_cache` (find MaxVC), `mat_state` (vlog_read call) |
+| pvc_vlog_read_internal/5 | `mat_state` (materializer:pvc_read call) |
+
+---
+
+Ref commit for TCP implementation: [[https://github.com/ergl/antidote/commit/57f11ef9652725bd870985f469a3742632ae34fb]]

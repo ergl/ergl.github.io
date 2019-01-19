@@ -1,0 +1,9 @@
+tags: task
+task-done-on: 2019-01-19
+task-meta-step: 2
+title: Add "task-done-on" field to completed tasks
+type: text/vnd.tiddlywiki
+
+This way we can make a list of taks finished on a certain date
+
+Use `<<now YYYY-0MM-0DD>>` (<<now YYYY-0MM-0DD>>)

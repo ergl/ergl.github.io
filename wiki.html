@@ -309,15 +309,27 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>2019-1-17</li>
+
+<li>2019-1-18</li>
+
 <li>A List of random but useful plugins</li>
 
 <li>About the system tags</li>
+
+<li>Add &quot;task-done-on&quot; field to completed tasks</li>
+
+<li>Add remote socket to coordinator</li>
 
 <li>Admin Panel</li>
 
 <li>Change Links Format</li>
 
+<li>Clean up change mess</li>
+
 <li>clocksi_readitem_server replica lifetime</li>
+
+<li>clocksi_readitem_server state requirements</li>
 
 <li>Counter Experiment</li>
 
@@ -325,19 +337,29 @@ Error message and password prompt
 
 <li>Details Widget</li>
 
+<li>Dev Journal</li>
+
 <li>Dynamic Tables</li>
 
 <li>Exploring the Wiki</li>
 
 <li>External Images</li>
 
+<li>Figure out socket limit</li>
+
 <li>Generating Static Sites</li>
 
 <li>How to add a new tab to the sidebar</li>
 
+<li>Implement new PB message in Antidote</li>
+
 <li>Improve vnode &lt;-&gt; readitem start procedure</li>
 
 <li>Improved triage in tiddlywiki</li>
+
+<li>Integrate external images</li>
+
+<li>Integrate task-done-on with macro for finished tasks today</li>
 
 <li>Introduction to filter notation</li>
 
@@ -361,11 +383,15 @@ Error message and password prompt
 
 <li>Table of Contents Example</li>
 
+<li>Test changes on cloudlab</li>
+
 <li>TiddlyKnow</li>
 
 <li>Tiddlytips</li>
 
 <li>triage/meta</li>
+
+<li>triager/readitem_improv</li>
 
 <li>Wallace's E Unibus Pluram, annotated</li>
 
@@ -9576,9 +9602,8 @@ exports.run = function(value, operation, until, beyond, decimals, tiddler, by) {
 }</pre>
 </div>
 <div created="20181229002633052" modified="20181230005914328" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[[clocksi_readitem_server replica lifetime]]
+<pre>[[triager/readitem_improv]]
 [[Exploring the Wiki]]
-
 </pre>
 </div>
 <div caption="{{$:/core/images/import-button}} Create a new link tiddler" description="Create a new link tiddler" tags="$:/tags/PageControls" title="$:/ergl/functions/NewBookmarkLink" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -9617,43 +9642,43 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 </pre>
 </div>
 <div tags="images imdea" title="$:/ergl/images/readitem_gen_diagram_join.svg" type="image/svg+xml" revision="0" bag="default">
-<pre>&lt;svg id=&quot;mermaid-1547506069898&quot; width=&quot;100%&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; height=&quot;100%&quot; style=&quot;max-width:1050px;&quot; viewBox=&quot;-50 -10 1050 808.5625&quot;&gt;&lt;style&gt;
+<pre>&lt;svg id=&quot;mermaid-1547726301972&quot; width=&quot;100%&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; height=&quot;100%&quot; style=&quot;max-width:1050px;&quot; viewBox=&quot;-50 -10 1050 808.5625&quot;&gt;&lt;style&gt;
 
 
-#mermaid-1547506069898 .label {
+#mermaid-1547726301972 .label {
   font-family: 'trebuchet ms', verdana, arial;
   color: #333; }
 
-#mermaid-1547506069898 .node rect,
-#mermaid-1547506069898 .node circle,
-#mermaid-1547506069898 .node ellipse,
-#mermaid-1547506069898 .node polygon {
+#mermaid-1547726301972 .node rect,
+#mermaid-1547726301972 .node circle,
+#mermaid-1547726301972 .node ellipse,
+#mermaid-1547726301972 .node polygon {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1px; }
 
-#mermaid-1547506069898 .node.clickable {
+#mermaid-1547726301972 .node.clickable {
   cursor: pointer; }
 
-#mermaid-1547506069898 .arrowheadPath {
+#mermaid-1547726301972 .arrowheadPath {
   fill: #333333; }
 
-#mermaid-1547506069898 .edgePath .path {
+#mermaid-1547726301972 .edgePath .path {
   stroke: #333333;
   stroke-width: 1.5px; }
 
-#mermaid-1547506069898 .edgeLabel {
+#mermaid-1547726301972 .edgeLabel {
   background-color: #e8e8e8; }
 
-#mermaid-1547506069898 .cluster rect {
+#mermaid-1547726301972 .cluster rect {
   fill: #ffffde !important;
   stroke: #aaaa33 !important;
   stroke-width: 1px !important; }
 
-#mermaid-1547506069898 .cluster text {
+#mermaid-1547726301972 .cluster text {
   fill: #333; }
 
-#mermaid-1547506069898 div.mermaidTooltip {
+#mermaid-1547726301972 div.mermaidTooltip {
   position: absolute;
   text-align: center;
   max-width: 200px;
@@ -9666,356 +9691,356 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
   pointer-events: none;
   z-index: 100; }
 
-#mermaid-1547506069898 .actor {
+#mermaid-1547726301972 .actor {
   stroke: #CCCCFF;
   fill: #ECECFF; }
 
-#mermaid-1547506069898 text.actor {
+#mermaid-1547726301972 text.actor {
   fill: black;
   stroke: none; }
 
-#mermaid-1547506069898 .actor-line {
+#mermaid-1547726301972 .actor-line {
   stroke: grey; }
 
-#mermaid-1547506069898 .messageLine0 {
+#mermaid-1547726301972 .messageLine0 {
   stroke-width: 1.5;
   stroke-dasharray: '2 2';
   stroke: #333; }
 
-#mermaid-1547506069898 .messageLine1 {
+#mermaid-1547726301972 .messageLine1 {
   stroke-width: 1.5;
   stroke-dasharray: '2 2';
   stroke: #333; }
 
-#mermaid-1547506069898 #arrowhead {
+#mermaid-1547726301972 #arrowhead {
   fill: #333; }
 
-#mermaid-1547506069898 #crosshead path {
+#mermaid-1547726301972 #crosshead path {
   fill: #333 !important;
   stroke: #333 !important; }
 
-#mermaid-1547506069898 .messageText {
+#mermaid-1547726301972 .messageText {
   fill: #333;
   stroke: none; }
 
-#mermaid-1547506069898 .labelBox {
+#mermaid-1547726301972 .labelBox {
   stroke: #CCCCFF;
   fill: #ECECFF; }
 
-#mermaid-1547506069898 .labelText {
+#mermaid-1547726301972 .labelText {
   fill: black;
   stroke: none; }
 
-#mermaid-1547506069898 .loopText {
+#mermaid-1547726301972 .loopText {
   fill: black;
   stroke: none; }
 
-#mermaid-1547506069898 .loopLine {
+#mermaid-1547726301972 .loopLine {
   stroke-width: 2;
   stroke-dasharray: '2 2';
   stroke: #CCCCFF; }
 
-#mermaid-1547506069898 .note {
+#mermaid-1547726301972 .note {
   stroke: #aaaa33;
   fill: #fff5ad; }
 
-#mermaid-1547506069898 .noteText {
+#mermaid-1547726301972 .noteText {
   fill: black;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 14px; }
 
-#mermaid-1547506069898 .activation0 {
+#mermaid-1547726301972 .activation0 {
   fill: #f4f4f4;
   stroke: #666; }
 
-#mermaid-1547506069898 .activation1 {
+#mermaid-1547726301972 .activation1 {
   fill: #f4f4f4;
   stroke: #666; }
 
-#mermaid-1547506069898 .activation2 {
+#mermaid-1547726301972 .activation2 {
   fill: #f4f4f4;
   stroke: #666; }
 
 
-#mermaid-1547506069898 .section {
+#mermaid-1547726301972 .section {
   stroke: none;
   opacity: 0.2; }
 
-#mermaid-1547506069898 .section0 {
+#mermaid-1547726301972 .section0 {
   fill: rgba(102, 102, 255, 0.49); }
 
-#mermaid-1547506069898 .section2 {
+#mermaid-1547726301972 .section2 {
   fill: #fff400; }
 
-#mermaid-1547506069898 .section1,
-#mermaid-1547506069898 .section3 {
+#mermaid-1547726301972 .section1,
+#mermaid-1547726301972 .section3 {
   fill: white;
   opacity: 0.2; }
 
-#mermaid-1547506069898 .sectionTitle0 {
+#mermaid-1547726301972 .sectionTitle0 {
   fill: #333; }
 
-#mermaid-1547506069898 .sectionTitle1 {
+#mermaid-1547726301972 .sectionTitle1 {
   fill: #333; }
 
-#mermaid-1547506069898 .sectionTitle2 {
+#mermaid-1547726301972 .sectionTitle2 {
   fill: #333; }
 
-#mermaid-1547506069898 .sectionTitle3 {
+#mermaid-1547726301972 .sectionTitle3 {
   fill: #333; }
 
-#mermaid-1547506069898 .sectionTitle {
+#mermaid-1547726301972 .sectionTitle {
   text-anchor: start;
   font-size: 11px;
   text-height: 14px; }
 
 
-#mermaid-1547506069898 .grid .tick {
+#mermaid-1547726301972 .grid .tick {
   stroke: lightgrey;
   opacity: 0.3;
   shape-rendering: crispEdges; }
 
-#mermaid-1547506069898 .grid path {
+#mermaid-1547726301972 .grid path {
   stroke-width: 0; }
 
 
-#mermaid-1547506069898 .today {
+#mermaid-1547726301972 .today {
   fill: none;
   stroke: red;
   stroke-width: 2px; }
 
 
 
-#mermaid-1547506069898 .task {
+#mermaid-1547726301972 .task {
   stroke-width: 2; }
 
-#mermaid-1547506069898 .taskText {
+#mermaid-1547726301972 .taskText {
   text-anchor: middle;
   font-size: 11px; }
 
-#mermaid-1547506069898 .taskTextOutsideRight {
+#mermaid-1547726301972 .taskTextOutsideRight {
   fill: black;
   text-anchor: start;
   font-size: 11px; }
 
-#mermaid-1547506069898 .taskTextOutsideLeft {
+#mermaid-1547726301972 .taskTextOutsideLeft {
   fill: black;
   text-anchor: end;
   font-size: 11px; }
 
 
-#mermaid-1547506069898 .taskText0,
-#mermaid-1547506069898 .taskText1,
-#mermaid-1547506069898 .taskText2,
-#mermaid-1547506069898 .taskText3 {
+#mermaid-1547726301972 .taskText0,
+#mermaid-1547726301972 .taskText1,
+#mermaid-1547726301972 .taskText2,
+#mermaid-1547726301972 .taskText3 {
   fill: white; }
 
-#mermaid-1547506069898 .task0,
-#mermaid-1547506069898 .task1,
-#mermaid-1547506069898 .task2,
-#mermaid-1547506069898 .task3 {
+#mermaid-1547726301972 .task0,
+#mermaid-1547726301972 .task1,
+#mermaid-1547726301972 .task2,
+#mermaid-1547726301972 .task3 {
   fill: #8a90dd;
   stroke: #534fbc; }
 
-#mermaid-1547506069898 .taskTextOutside0,
-#mermaid-1547506069898 .taskTextOutside2 {
+#mermaid-1547726301972 .taskTextOutside0,
+#mermaid-1547726301972 .taskTextOutside2 {
   fill: black; }
 
-#mermaid-1547506069898 .taskTextOutside1,
-#mermaid-1547506069898 .taskTextOutside3 {
+#mermaid-1547726301972 .taskTextOutside1,
+#mermaid-1547726301972 .taskTextOutside3 {
   fill: black; }
 
 
-#mermaid-1547506069898 .active0,
-#mermaid-1547506069898 .active1,
-#mermaid-1547506069898 .active2,
-#mermaid-1547506069898 .active3 {
+#mermaid-1547726301972 .active0,
+#mermaid-1547726301972 .active1,
+#mermaid-1547726301972 .active2,
+#mermaid-1547726301972 .active3 {
   fill: #bfc7ff;
   stroke: #534fbc; }
 
-#mermaid-1547506069898 .activeText0,
-#mermaid-1547506069898 .activeText1,
-#mermaid-1547506069898 .activeText2,
-#mermaid-1547506069898 .activeText3 {
+#mermaid-1547726301972 .activeText0,
+#mermaid-1547726301972 .activeText1,
+#mermaid-1547726301972 .activeText2,
+#mermaid-1547726301972 .activeText3 {
   fill: black !important; }
 
 
-#mermaid-1547506069898 .done0,
-#mermaid-1547506069898 .done1,
-#mermaid-1547506069898 .done2,
-#mermaid-1547506069898 .done3 {
+#mermaid-1547726301972 .done0,
+#mermaid-1547726301972 .done1,
+#mermaid-1547726301972 .done2,
+#mermaid-1547726301972 .done3 {
   stroke: grey;
   fill: lightgrey;
   stroke-width: 2; }
 
-#mermaid-1547506069898 .doneText0,
-#mermaid-1547506069898 .doneText1,
-#mermaid-1547506069898 .doneText2,
-#mermaid-1547506069898 .doneText3 {
+#mermaid-1547726301972 .doneText0,
+#mermaid-1547726301972 .doneText1,
+#mermaid-1547726301972 .doneText2,
+#mermaid-1547726301972 .doneText3 {
   fill: black !important; }
 
 
-#mermaid-1547506069898 .crit0,
-#mermaid-1547506069898 .crit1,
-#mermaid-1547506069898 .crit2,
-#mermaid-1547506069898 .crit3 {
+#mermaid-1547726301972 .crit0,
+#mermaid-1547726301972 .crit1,
+#mermaid-1547726301972 .crit2,
+#mermaid-1547726301972 .crit3 {
   stroke: #ff8888;
   fill: red;
   stroke-width: 2; }
 
-#mermaid-1547506069898 .activeCrit0,
-#mermaid-1547506069898 .activeCrit1,
-#mermaid-1547506069898 .activeCrit2,
-#mermaid-1547506069898 .activeCrit3 {
+#mermaid-1547726301972 .activeCrit0,
+#mermaid-1547726301972 .activeCrit1,
+#mermaid-1547726301972 .activeCrit2,
+#mermaid-1547726301972 .activeCrit3 {
   stroke: #ff8888;
   fill: #bfc7ff;
   stroke-width: 2; }
 
-#mermaid-1547506069898 .doneCrit0,
-#mermaid-1547506069898 .doneCrit1,
-#mermaid-1547506069898 .doneCrit2,
-#mermaid-1547506069898 .doneCrit3 {
+#mermaid-1547726301972 .doneCrit0,
+#mermaid-1547726301972 .doneCrit1,
+#mermaid-1547726301972 .doneCrit2,
+#mermaid-1547726301972 .doneCrit3 {
   stroke: #ff8888;
   fill: lightgrey;
   stroke-width: 2;
   cursor: pointer;
   shape-rendering: crispEdges; }
 
-#mermaid-1547506069898 .doneCritText0,
-#mermaid-1547506069898 .doneCritText1,
-#mermaid-1547506069898 .doneCritText2,
-#mermaid-1547506069898 .doneCritText3 {
+#mermaid-1547726301972 .doneCritText0,
+#mermaid-1547726301972 .doneCritText1,
+#mermaid-1547726301972 .doneCritText2,
+#mermaid-1547726301972 .doneCritText3 {
   fill: black !important; }
 
-#mermaid-1547506069898 .activeCritText0,
-#mermaid-1547506069898 .activeCritText1,
-#mermaid-1547506069898 .activeCritText2,
-#mermaid-1547506069898 .activeCritText3 {
+#mermaid-1547726301972 .activeCritText0,
+#mermaid-1547726301972 .activeCritText1,
+#mermaid-1547726301972 .activeCritText2,
+#mermaid-1547726301972 .activeCritText3 {
   fill: black !important; }
 
-#mermaid-1547506069898 .titleText {
+#mermaid-1547726301972 .titleText {
   text-anchor: middle;
   font-size: 18px;
   fill: black; }
 
-#mermaid-1547506069898 g.classGroup text {
+#mermaid-1547726301972 g.classGroup text {
   fill: #9370DB;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 10px; }
 
-#mermaid-1547506069898 g.classGroup rect {
+#mermaid-1547726301972 g.classGroup rect {
   fill: #ECECFF;
   stroke: #9370DB; }
 
-#mermaid-1547506069898 g.classGroup line {
+#mermaid-1547726301972 g.classGroup line {
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506069898 .classLabel .box {
+#mermaid-1547726301972 .classLabel .box {
   stroke: none;
   stroke-width: 0;
   fill: #ECECFF;
   opacity: 0.5; }
 
-#mermaid-1547506069898 .classLabel .label {
+#mermaid-1547726301972 .classLabel .label {
   fill: #9370DB;
   font-size: 10px; }
 
-#mermaid-1547506069898 .relation {
+#mermaid-1547726301972 .relation {
   stroke: #9370DB;
   stroke-width: 1;
   fill: none; }
 
-#mermaid-1547506069898 #compositionStart {
+#mermaid-1547726301972 #compositionStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506069898 #compositionEnd {
+#mermaid-1547726301972 #compositionEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506069898 #aggregationStart {
+#mermaid-1547726301972 #aggregationStart {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506069898 #aggregationEnd {
+#mermaid-1547726301972 #aggregationEnd {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506069898 #dependencyStart {
+#mermaid-1547726301972 #dependencyStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506069898 #dependencyEnd {
+#mermaid-1547726301972 #dependencyEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506069898 #extensionStart {
+#mermaid-1547726301972 #extensionStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506069898 #extensionEnd {
+#mermaid-1547726301972 #extensionEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506069898 .commit-id,
-#mermaid-1547506069898 .commit-msg,
-#mermaid-1547506069898 .branch-label {
+#mermaid-1547726301972 .commit-id,
+#mermaid-1547726301972 .commit-msg,
+#mermaid-1547726301972 .branch-label {
   fill: lightgrey;
   color: lightgrey; }
-&lt;/style&gt;&lt;style&gt;#mermaid-1547506069898 {
+&lt;/style&gt;&lt;style&gt;#mermaid-1547726301972 {
     color: rgba(0, 0, 0, 0.65098);
     font: normal normal normal normal 14px/21px &quot;Chinese Quote&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;
-  }&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor18&quot; x1=&quot;75&quot; y1=&quot;5&quot; x2=&quot;75&quot; y2=&quot;797.5625&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;0&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;75&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;75&quot; dy=&quot;0&quot;&gt;join_cluster_script&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor19&quot; x1=&quot;275&quot; y1=&quot;5&quot; x2=&quot;275&quot; y2=&quot;797.5625&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;200&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;275&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;275&quot; dy=&quot;0&quot;&gt;inter_dc_manager&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor20&quot; x1=&quot;475&quot; y1=&quot;5&quot; x2=&quot;475&quot; y2=&quot;797.5625&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;400&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;475&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;475&quot; dy=&quot;0&quot;&gt;clocksi_vnode&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor21&quot; x1=&quot;675&quot; y1=&quot;5&quot; x2=&quot;675&quot; y2=&quot;797.5625&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;600&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;675&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;675&quot; dy=&quot;0&quot;&gt;clocksi_readitem_server&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor22&quot; x1=&quot;875&quot; y1=&quot;5&quot; x2=&quot;875&quot; y2=&quot;797.5625&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;800&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;875&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;875&quot; dy=&quot;0&quot;&gt;clocksi_readitem_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;defs&gt;&lt;marker id=&quot;arrowhead&quot; refX=&quot;5&quot; refY=&quot;2&quot; markerWidth=&quot;6&quot; markerHeight=&quot;4&quot; orient=&quot;auto&quot;&gt;&lt;path d=&quot;M 0,0 V 4 L6,2 Z&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&lt;defs&gt;&lt;marker id=&quot;crosshead&quot; markerWidth=&quot;15&quot; markerHeight=&quot;8&quot; orient=&quot;auto&quot; refX=&quot;16&quot; refY=&quot;4&quot;&gt;&lt;path fill=&quot;black&quot; stroke=&quot;#000000&quot; stroke-width=&quot;1px&quot; d=&quot;M 9,2 V 6 L16,4 Z&quot; style=&quot;stroke-dasharray: 0px, 0px;&quot;&gt;&lt;/path&gt;&lt;path fill=&quot;none&quot; stroke=&quot;#000000&quot; stroke-width=&quot;1px&quot; d=&quot;M 0,1 L 6,7 M 6,1 L 0,7&quot; style=&quot;stroke-dasharray: 0px, 0px;&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&lt;g&gt;&lt;text x=&quot;175&quot; y=&quot;93&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_bg_processes/1&lt;/text&gt;&lt;line x1=&quot;75&quot; y1=&quot;100&quot; x2=&quot;275&quot; y2=&quot;100&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;270&quot; y=&quot;102&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;610.5625&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;300&quot; y=&quot;110&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;36.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;296&quot; y=&quot;134&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;316&quot; fill=&quot;black&quot;&gt;broadcast all nodes&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;377.5&quot; y=&quot;174.28125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;sync_command(node, start_read_servers)&lt;/text&gt;&lt;line x1=&quot;280&quot; y1=&quot;181.28125&quot; x2=&quot;475&quot; y2=&quot;181.28125&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;470&quot; y=&quot;183.28125&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;494.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;209.28125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_read_servers/2&lt;/text&gt;&lt;line x1=&quot;480&quot; y1=&quot;216.28125&quot; x2=&quot;675&quot; y2=&quot;216.28125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;775&quot; y=&quot;269.28125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_fsm/2&lt;/text&gt;&lt;line x1=&quot;675&quot; y1=&quot;276.28125&quot; x2=&quot;875&quot; y2=&quot;276.28125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;700&quot; y=&quot;286.28125&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;36.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;696&quot; y=&quot;310.28125&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;716&quot; fill=&quot;black&quot;&gt;Spawn server proc&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;775&quot; y=&quot;350.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;init/2&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;357.5625&quot; x2=&quot;675&quot; y2=&quot;357.5625&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;670&quot; y=&quot;359.5625&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;33&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;385.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;680&quot; y1=&quot;392.5625&quot; x2=&quot;875&quot; y2=&quot;392.5625&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;775&quot; y=&quot;420.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;&quot;0&quot;&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;427.5625&quot; x2=&quot;675&quot; y2=&quot;427.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;line x1=&quot;660&quot; y1=&quot;226.28125&quot; x2=&quot;885&quot; y2=&quot;226.28125&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;885&quot; y1=&quot;226.28125&quot; x2=&quot;885&quot; y2=&quot;437.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;660&quot; y1=&quot;437.5625&quot; x2=&quot;885&quot; y2=&quot;437.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;660&quot; y1=&quot;226.28125&quot; x2=&quot;660&quot; y2=&quot;437.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;polygon points=&quot;660,226.28125 710,226.28125 710,239.28125 701.6,246.28125 660,246.28125&quot; class=&quot;labelBox&quot;&gt;&lt;/polygon&gt;&lt;text x=&quot;667.5&quot; y=&quot;241.28125&quot; fill=&quot;black&quot; class=&quot;labelText&quot;&gt;&lt;tspan x=&quot;667.5&quot; fill=&quot;black&quot;&gt;loop&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;772.5&quot; y=&quot;241.28125&quot; fill=&quot;black&quot; class=&quot;loopText&quot; style=&quot;text-anchor: middle;&quot;&gt;&lt;tspan x=&quot;772.5&quot; fill=&quot;black&quot;&gt;[ all read servers ]&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;465.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;675&quot; y1=&quot;472.5625&quot; x2=&quot;480&quot; y2=&quot;472.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;500.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;check_partition_ready/3&lt;/text&gt;&lt;line x1=&quot;480&quot; y1=&quot;507.5625&quot; x2=&quot;675&quot; y2=&quot;507.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;675&quot; y=&quot;560.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;global:whereis_name(server) =/= undefined&lt;/text&gt;&lt;path d=&quot;M 675,567.5625 C 735,557.5625 735,597.5625 675,587.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;g&gt;&lt;line x1=&quot;525.109375&quot; y1=&quot;517.5625&quot; x2=&quot;824.890625&quot; y2=&quot;517.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;824.890625&quot; y1=&quot;517.5625&quot; x2=&quot;824.890625&quot; y2=&quot;607.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;525.109375&quot; y1=&quot;607.5625&quot; x2=&quot;824.890625&quot; y2=&quot;607.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;525.109375&quot; y1=&quot;517.5625&quot; x2=&quot;525.109375&quot; y2=&quot;607.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;polygon points=&quot;525.109375,517.5625 575.109375,517.5625 575.109375,530.5625 566.709375,537.5625 525.109375,537.5625&quot; class=&quot;labelBox&quot;&gt;&lt;/polygon&gt;&lt;text x=&quot;532.609375&quot; y=&quot;532.5625&quot; fill=&quot;black&quot; class=&quot;labelText&quot;&gt;&lt;tspan x=&quot;532.609375&quot; fill=&quot;black&quot;&gt;loop&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;675&quot; y=&quot;532.5625&quot; fill=&quot;black&quot; class=&quot;loopText&quot; style=&quot;text-anchor: middle;&quot;&gt;&lt;tspan x=&quot;675&quot; fill=&quot;black&quot;&gt;[ all read servers ]&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;635.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;true&lt;/text&gt;&lt;line x1=&quot;675&quot; y1=&quot;642.5625&quot; x2=&quot;480&quot; y2=&quot;642.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;375&quot; y=&quot;670.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;470&quot; y1=&quot;677.5625&quot; x2=&quot;280&quot; y2=&quot;677.5625&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;172.5&quot; y=&quot;705.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;270&quot; y1=&quot;712.5625&quot; x2=&quot;75&quot; y2=&quot;712.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;0&quot; y=&quot;732.5625&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;75&quot; y=&quot;765.0625&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;75&quot; dy=&quot;0&quot;&gt;join_cluster_script&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;200&quot; y=&quot;732.5625&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;275&quot; y=&quot;765.0625&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;275&quot; dy=&quot;0&quot;&gt;inter_dc_manager&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;400&quot; y=&quot;732.5625&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;475&quot; y=&quot;765.0625&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;475&quot; dy=&quot;0&quot;&gt;clocksi_vnode&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;600&quot; y=&quot;732.5625&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;675&quot; y=&quot;765.0625&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;675&quot; dy=&quot;0&quot;&gt;clocksi_readitem_server&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;800&quot; y=&quot;732.5625&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;875&quot; y=&quot;765.0625&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;875&quot; dy=&quot;0&quot;&gt;clocksi_readitem_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
+  }&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor82&quot; x1=&quot;75&quot; y1=&quot;5&quot; x2=&quot;75&quot; y2=&quot;797.5625&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;0&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;75&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;75&quot; dy=&quot;0&quot;&gt;join_cluster_script&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor83&quot; x1=&quot;275&quot; y1=&quot;5&quot; x2=&quot;275&quot; y2=&quot;797.5625&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;200&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;275&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;275&quot; dy=&quot;0&quot;&gt;inter_dc_manager&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor84&quot; x1=&quot;475&quot; y1=&quot;5&quot; x2=&quot;475&quot; y2=&quot;797.5625&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;400&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;475&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;475&quot; dy=&quot;0&quot;&gt;clocksi_vnode&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor85&quot; x1=&quot;675&quot; y1=&quot;5&quot; x2=&quot;675&quot; y2=&quot;797.5625&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;600&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;675&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;675&quot; dy=&quot;0&quot;&gt;clocksi_readitem_server&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor86&quot; x1=&quot;875&quot; y1=&quot;5&quot; x2=&quot;875&quot; y2=&quot;797.5625&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;800&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;875&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;875&quot; dy=&quot;0&quot;&gt;clocksi_readitem_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;defs&gt;&lt;marker id=&quot;arrowhead&quot; refX=&quot;5&quot; refY=&quot;2&quot; markerWidth=&quot;6&quot; markerHeight=&quot;4&quot; orient=&quot;auto&quot;&gt;&lt;path d=&quot;M 0,0 V 4 L6,2 Z&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&lt;defs&gt;&lt;marker id=&quot;crosshead&quot; markerWidth=&quot;15&quot; markerHeight=&quot;8&quot; orient=&quot;auto&quot; refX=&quot;16&quot; refY=&quot;4&quot;&gt;&lt;path fill=&quot;black&quot; stroke=&quot;#000000&quot; stroke-width=&quot;1px&quot; d=&quot;M 9,2 V 6 L16,4 Z&quot; style=&quot;stroke-dasharray: 0px, 0px;&quot;&gt;&lt;/path&gt;&lt;path fill=&quot;none&quot; stroke=&quot;#000000&quot; stroke-width=&quot;1px&quot; d=&quot;M 0,1 L 6,7 M 6,1 L 0,7&quot; style=&quot;stroke-dasharray: 0px, 0px;&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&lt;g&gt;&lt;text x=&quot;175&quot; y=&quot;93&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_bg_processes/1&lt;/text&gt;&lt;line x1=&quot;75&quot; y1=&quot;100&quot; x2=&quot;275&quot; y2=&quot;100&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;270&quot; y=&quot;102&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;610.5625&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;300&quot; y=&quot;110&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;36.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;296&quot; y=&quot;134&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;316&quot; fill=&quot;black&quot;&gt;broadcast all nodes&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;377.5&quot; y=&quot;174.28125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;sync_command(node, start_read_servers)&lt;/text&gt;&lt;line x1=&quot;280&quot; y1=&quot;181.28125&quot; x2=&quot;475&quot; y2=&quot;181.28125&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;470&quot; y=&quot;183.28125&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;494.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;209.28125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_read_servers/2&lt;/text&gt;&lt;line x1=&quot;480&quot; y1=&quot;216.28125&quot; x2=&quot;675&quot; y2=&quot;216.28125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;775&quot; y=&quot;269.28125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_fsm/2&lt;/text&gt;&lt;line x1=&quot;675&quot; y1=&quot;276.28125&quot; x2=&quot;875&quot; y2=&quot;276.28125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;700&quot; y=&quot;286.28125&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;36.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;696&quot; y=&quot;310.28125&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;716&quot; fill=&quot;black&quot;&gt;Spawn server proc&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;775&quot; y=&quot;350.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;init/2&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;357.5625&quot; x2=&quot;675&quot; y2=&quot;357.5625&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;670&quot; y=&quot;359.5625&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;33&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;385.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;680&quot; y1=&quot;392.5625&quot; x2=&quot;875&quot; y2=&quot;392.5625&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;775&quot; y=&quot;420.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;427.5625&quot; x2=&quot;675&quot; y2=&quot;427.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;line x1=&quot;660&quot; y1=&quot;226.28125&quot; x2=&quot;885&quot; y2=&quot;226.28125&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;885&quot; y1=&quot;226.28125&quot; x2=&quot;885&quot; y2=&quot;437.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;660&quot; y1=&quot;437.5625&quot; x2=&quot;885&quot; y2=&quot;437.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;660&quot; y1=&quot;226.28125&quot; x2=&quot;660&quot; y2=&quot;437.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;polygon points=&quot;660,226.28125 710,226.28125 710,239.28125 701.6,246.28125 660,246.28125&quot; class=&quot;labelBox&quot;&gt;&lt;/polygon&gt;&lt;text x=&quot;667.5&quot; y=&quot;241.28125&quot; fill=&quot;black&quot; class=&quot;labelText&quot;&gt;&lt;tspan x=&quot;667.5&quot; fill=&quot;black&quot;&gt;loop&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;772.5&quot; y=&quot;241.28125&quot; fill=&quot;black&quot; class=&quot;loopText&quot; style=&quot;text-anchor: middle;&quot;&gt;&lt;tspan x=&quot;772.5&quot; fill=&quot;black&quot;&gt;[ all read servers ]&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;465.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;675&quot; y1=&quot;472.5625&quot; x2=&quot;480&quot; y2=&quot;472.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;500.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;check_partition_ready/3&lt;/text&gt;&lt;line x1=&quot;480&quot; y1=&quot;507.5625&quot; x2=&quot;675&quot; y2=&quot;507.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;675&quot; y=&quot;560.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;global:whereis_name(server) =/= undefined&lt;/text&gt;&lt;path d=&quot;M 675,567.5625 C 735,557.5625 735,597.5625 675,587.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;g&gt;&lt;line x1=&quot;525.109375&quot; y1=&quot;517.5625&quot; x2=&quot;824.890625&quot; y2=&quot;517.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;824.890625&quot; y1=&quot;517.5625&quot; x2=&quot;824.890625&quot; y2=&quot;607.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;525.109375&quot; y1=&quot;607.5625&quot; x2=&quot;824.890625&quot; y2=&quot;607.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;525.109375&quot; y1=&quot;517.5625&quot; x2=&quot;525.109375&quot; y2=&quot;607.5625&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;polygon points=&quot;525.109375,517.5625 575.109375,517.5625 575.109375,530.5625 566.709375,537.5625 525.109375,537.5625&quot; class=&quot;labelBox&quot;&gt;&lt;/polygon&gt;&lt;text x=&quot;532.609375&quot; y=&quot;532.5625&quot; fill=&quot;black&quot; class=&quot;labelText&quot;&gt;&lt;tspan x=&quot;532.609375&quot; fill=&quot;black&quot;&gt;loop&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;675&quot; y=&quot;532.5625&quot; fill=&quot;black&quot; class=&quot;loopText&quot; style=&quot;text-anchor: middle;&quot;&gt;&lt;tspan x=&quot;675&quot; fill=&quot;black&quot;&gt;[ all read servers ]&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;635.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;true&lt;/text&gt;&lt;line x1=&quot;675&quot; y1=&quot;642.5625&quot; x2=&quot;480&quot; y2=&quot;642.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;375&quot; y=&quot;670.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;470&quot; y1=&quot;677.5625&quot; x2=&quot;280&quot; y2=&quot;677.5625&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;172.5&quot; y=&quot;705.5625&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;270&quot; y1=&quot;712.5625&quot; x2=&quot;75&quot; y2=&quot;712.5625&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;0&quot; y=&quot;732.5625&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;75&quot; y=&quot;765.0625&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;75&quot; dy=&quot;0&quot;&gt;join_cluster_script&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;200&quot; y=&quot;732.5625&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;275&quot; y=&quot;765.0625&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;275&quot; dy=&quot;0&quot;&gt;inter_dc_manager&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;400&quot; y=&quot;732.5625&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;475&quot; y=&quot;765.0625&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;475&quot; dy=&quot;0&quot;&gt;clocksi_vnode&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;600&quot; y=&quot;732.5625&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;675&quot; y=&quot;765.0625&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;675&quot; dy=&quot;0&quot;&gt;clocksi_readitem_server&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;800&quot; y=&quot;732.5625&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;875&quot; y=&quot;765.0625&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;875&quot; dy=&quot;0&quot;&gt;clocksi_readitem_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
 </div>
 <div tags="imdea images" title="$:/ergl/images/readitem_gen_diagram_start.svg" type="image/svg+xml" revision="0" bag="default">
-<pre>&lt;svg id=&quot;mermaid-1547506032186&quot; width=&quot;100%&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; height=&quot;100%&quot; style=&quot;max-width:1450px;&quot; viewBox=&quot;-150 -10 1450 1171.25&quot;&gt;&lt;style&gt;
+<pre>&lt;svg id=&quot;mermaid-1547726216065&quot; width=&quot;100%&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; height=&quot;100%&quot; style=&quot;max-width:1450px;&quot; viewBox=&quot;-150 -10 1450 1171.25&quot;&gt;&lt;style&gt;
 
 
-#mermaid-1547506032186 .label {
+#mermaid-1547726216065 .label {
   font-family: 'trebuchet ms', verdana, arial;
   color: #333; }
 
-#mermaid-1547506032186 .node rect,
-#mermaid-1547506032186 .node circle,
-#mermaid-1547506032186 .node ellipse,
-#mermaid-1547506032186 .node polygon {
+#mermaid-1547726216065 .node rect,
+#mermaid-1547726216065 .node circle,
+#mermaid-1547726216065 .node ellipse,
+#mermaid-1547726216065 .node polygon {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1px; }
 
-#mermaid-1547506032186 .node.clickable {
+#mermaid-1547726216065 .node.clickable {
   cursor: pointer; }
 
-#mermaid-1547506032186 .arrowheadPath {
+#mermaid-1547726216065 .arrowheadPath {
   fill: #333333; }
 
-#mermaid-1547506032186 .edgePath .path {
+#mermaid-1547726216065 .edgePath .path {
   stroke: #333333;
   stroke-width: 1.5px; }
 
-#mermaid-1547506032186 .edgeLabel {
+#mermaid-1547726216065 .edgeLabel {
   background-color: #e8e8e8; }
 
-#mermaid-1547506032186 .cluster rect {
+#mermaid-1547726216065 .cluster rect {
   fill: #ffffde !important;
   stroke: #aaaa33 !important;
   stroke-width: 1px !important; }
 
-#mermaid-1547506032186 .cluster text {
+#mermaid-1547726216065 .cluster text {
   fill: #333; }
 
-#mermaid-1547506032186 div.mermaidTooltip {
+#mermaid-1547726216065 div.mermaidTooltip {
   position: absolute;
   text-align: center;
   max-width: 200px;
@@ -10028,317 +10053,317 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
   pointer-events: none;
   z-index: 100; }
 
-#mermaid-1547506032186 .actor {
+#mermaid-1547726216065 .actor {
   stroke: #CCCCFF;
   fill: #ECECFF; }
 
-#mermaid-1547506032186 text.actor {
+#mermaid-1547726216065 text.actor {
   fill: black;
   stroke: none; }
 
-#mermaid-1547506032186 .actor-line {
+#mermaid-1547726216065 .actor-line {
   stroke: grey; }
 
-#mermaid-1547506032186 .messageLine0 {
+#mermaid-1547726216065 .messageLine0 {
   stroke-width: 1.5;
   stroke-dasharray: '2 2';
   stroke: #333; }
 
-#mermaid-1547506032186 .messageLine1 {
+#mermaid-1547726216065 .messageLine1 {
   stroke-width: 1.5;
   stroke-dasharray: '2 2';
   stroke: #333; }
 
-#mermaid-1547506032186 #arrowhead {
+#mermaid-1547726216065 #arrowhead {
   fill: #333; }
 
-#mermaid-1547506032186 #crosshead path {
+#mermaid-1547726216065 #crosshead path {
   fill: #333 !important;
   stroke: #333 !important; }
 
-#mermaid-1547506032186 .messageText {
+#mermaid-1547726216065 .messageText {
   fill: #333;
   stroke: none; }
 
-#mermaid-1547506032186 .labelBox {
+#mermaid-1547726216065 .labelBox {
   stroke: #CCCCFF;
   fill: #ECECFF; }
 
-#mermaid-1547506032186 .labelText {
+#mermaid-1547726216065 .labelText {
   fill: black;
   stroke: none; }
 
-#mermaid-1547506032186 .loopText {
+#mermaid-1547726216065 .loopText {
   fill: black;
   stroke: none; }
 
-#mermaid-1547506032186 .loopLine {
+#mermaid-1547726216065 .loopLine {
   stroke-width: 2;
   stroke-dasharray: '2 2';
   stroke: #CCCCFF; }
 
-#mermaid-1547506032186 .note {
+#mermaid-1547726216065 .note {
   stroke: #aaaa33;
   fill: #fff5ad; }
 
-#mermaid-1547506032186 .noteText {
+#mermaid-1547726216065 .noteText {
   fill: black;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 14px; }
 
-#mermaid-1547506032186 .activation0 {
+#mermaid-1547726216065 .activation0 {
   fill: #f4f4f4;
   stroke: #666; }
 
-#mermaid-1547506032186 .activation1 {
+#mermaid-1547726216065 .activation1 {
   fill: #f4f4f4;
   stroke: #666; }
 
-#mermaid-1547506032186 .activation2 {
+#mermaid-1547726216065 .activation2 {
   fill: #f4f4f4;
   stroke: #666; }
 
 
-#mermaid-1547506032186 .section {
+#mermaid-1547726216065 .section {
   stroke: none;
   opacity: 0.2; }
 
-#mermaid-1547506032186 .section0 {
+#mermaid-1547726216065 .section0 {
   fill: rgba(102, 102, 255, 0.49); }
 
-#mermaid-1547506032186 .section2 {
+#mermaid-1547726216065 .section2 {
   fill: #fff400; }
 
-#mermaid-1547506032186 .section1,
-#mermaid-1547506032186 .section3 {
+#mermaid-1547726216065 .section1,
+#mermaid-1547726216065 .section3 {
   fill: white;
   opacity: 0.2; }
 
-#mermaid-1547506032186 .sectionTitle0 {
+#mermaid-1547726216065 .sectionTitle0 {
   fill: #333; }
 
-#mermaid-1547506032186 .sectionTitle1 {
+#mermaid-1547726216065 .sectionTitle1 {
   fill: #333; }
 
-#mermaid-1547506032186 .sectionTitle2 {
+#mermaid-1547726216065 .sectionTitle2 {
   fill: #333; }
 
-#mermaid-1547506032186 .sectionTitle3 {
+#mermaid-1547726216065 .sectionTitle3 {
   fill: #333; }
 
-#mermaid-1547506032186 .sectionTitle {
+#mermaid-1547726216065 .sectionTitle {
   text-anchor: start;
   font-size: 11px;
   text-height: 14px; }
 
 
-#mermaid-1547506032186 .grid .tick {
+#mermaid-1547726216065 .grid .tick {
   stroke: lightgrey;
   opacity: 0.3;
   shape-rendering: crispEdges; }
 
-#mermaid-1547506032186 .grid path {
+#mermaid-1547726216065 .grid path {
   stroke-width: 0; }
 
 
-#mermaid-1547506032186 .today {
+#mermaid-1547726216065 .today {
   fill: none;
   stroke: red;
   stroke-width: 2px; }
 
 
 
-#mermaid-1547506032186 .task {
+#mermaid-1547726216065 .task {
   stroke-width: 2; }
 
-#mermaid-1547506032186 .taskText {
+#mermaid-1547726216065 .taskText {
   text-anchor: middle;
   font-size: 11px; }
 
-#mermaid-1547506032186 .taskTextOutsideRight {
+#mermaid-1547726216065 .taskTextOutsideRight {
   fill: black;
   text-anchor: start;
   font-size: 11px; }
 
-#mermaid-1547506032186 .taskTextOutsideLeft {
+#mermaid-1547726216065 .taskTextOutsideLeft {
   fill: black;
   text-anchor: end;
   font-size: 11px; }
 
 
-#mermaid-1547506032186 .taskText0,
-#mermaid-1547506032186 .taskText1,
-#mermaid-1547506032186 .taskText2,
-#mermaid-1547506032186 .taskText3 {
+#mermaid-1547726216065 .taskText0,
+#mermaid-1547726216065 .taskText1,
+#mermaid-1547726216065 .taskText2,
+#mermaid-1547726216065 .taskText3 {
   fill: white; }
 
-#mermaid-1547506032186 .task0,
-#mermaid-1547506032186 .task1,
-#mermaid-1547506032186 .task2,
-#mermaid-1547506032186 .task3 {
+#mermaid-1547726216065 .task0,
+#mermaid-1547726216065 .task1,
+#mermaid-1547726216065 .task2,
+#mermaid-1547726216065 .task3 {
   fill: #8a90dd;
   stroke: #534fbc; }
 
-#mermaid-1547506032186 .taskTextOutside0,
-#mermaid-1547506032186 .taskTextOutside2 {
+#mermaid-1547726216065 .taskTextOutside0,
+#mermaid-1547726216065 .taskTextOutside2 {
   fill: black; }
 
-#mermaid-1547506032186 .taskTextOutside1,
-#mermaid-1547506032186 .taskTextOutside3 {
+#mermaid-1547726216065 .taskTextOutside1,
+#mermaid-1547726216065 .taskTextOutside3 {
   fill: black; }
 
 
-#mermaid-1547506032186 .active0,
-#mermaid-1547506032186 .active1,
-#mermaid-1547506032186 .active2,
-#mermaid-1547506032186 .active3 {
+#mermaid-1547726216065 .active0,
+#mermaid-1547726216065 .active1,
+#mermaid-1547726216065 .active2,
+#mermaid-1547726216065 .active3 {
   fill: #bfc7ff;
   stroke: #534fbc; }
 
-#mermaid-1547506032186 .activeText0,
-#mermaid-1547506032186 .activeText1,
-#mermaid-1547506032186 .activeText2,
-#mermaid-1547506032186 .activeText3 {
+#mermaid-1547726216065 .activeText0,
+#mermaid-1547726216065 .activeText1,
+#mermaid-1547726216065 .activeText2,
+#mermaid-1547726216065 .activeText3 {
   fill: black !important; }
 
 
-#mermaid-1547506032186 .done0,
-#mermaid-1547506032186 .done1,
-#mermaid-1547506032186 .done2,
-#mermaid-1547506032186 .done3 {
+#mermaid-1547726216065 .done0,
+#mermaid-1547726216065 .done1,
+#mermaid-1547726216065 .done2,
+#mermaid-1547726216065 .done3 {
   stroke: grey;
   fill: lightgrey;
   stroke-width: 2; }
 
-#mermaid-1547506032186 .doneText0,
-#mermaid-1547506032186 .doneText1,
-#mermaid-1547506032186 .doneText2,
-#mermaid-1547506032186 .doneText3 {
+#mermaid-1547726216065 .doneText0,
+#mermaid-1547726216065 .doneText1,
+#mermaid-1547726216065 .doneText2,
+#mermaid-1547726216065 .doneText3 {
   fill: black !important; }
 
 
-#mermaid-1547506032186 .crit0,
-#mermaid-1547506032186 .crit1,
-#mermaid-1547506032186 .crit2,
-#mermaid-1547506032186 .crit3 {
+#mermaid-1547726216065 .crit0,
+#mermaid-1547726216065 .crit1,
+#mermaid-1547726216065 .crit2,
+#mermaid-1547726216065 .crit3 {
   stroke: #ff8888;
   fill: red;
   stroke-width: 2; }
 
-#mermaid-1547506032186 .activeCrit0,
-#mermaid-1547506032186 .activeCrit1,
-#mermaid-1547506032186 .activeCrit2,
-#mermaid-1547506032186 .activeCrit3 {
+#mermaid-1547726216065 .activeCrit0,
+#mermaid-1547726216065 .activeCrit1,
+#mermaid-1547726216065 .activeCrit2,
+#mermaid-1547726216065 .activeCrit3 {
   stroke: #ff8888;
   fill: #bfc7ff;
   stroke-width: 2; }
 
-#mermaid-1547506032186 .doneCrit0,
-#mermaid-1547506032186 .doneCrit1,
-#mermaid-1547506032186 .doneCrit2,
-#mermaid-1547506032186 .doneCrit3 {
+#mermaid-1547726216065 .doneCrit0,
+#mermaid-1547726216065 .doneCrit1,
+#mermaid-1547726216065 .doneCrit2,
+#mermaid-1547726216065 .doneCrit3 {
   stroke: #ff8888;
   fill: lightgrey;
   stroke-width: 2;
   cursor: pointer;
   shape-rendering: crispEdges; }
 
-#mermaid-1547506032186 .doneCritText0,
-#mermaid-1547506032186 .doneCritText1,
-#mermaid-1547506032186 .doneCritText2,
-#mermaid-1547506032186 .doneCritText3 {
+#mermaid-1547726216065 .doneCritText0,
+#mermaid-1547726216065 .doneCritText1,
+#mermaid-1547726216065 .doneCritText2,
+#mermaid-1547726216065 .doneCritText3 {
   fill: black !important; }
 
-#mermaid-1547506032186 .activeCritText0,
-#mermaid-1547506032186 .activeCritText1,
-#mermaid-1547506032186 .activeCritText2,
-#mermaid-1547506032186 .activeCritText3 {
+#mermaid-1547726216065 .activeCritText0,
+#mermaid-1547726216065 .activeCritText1,
+#mermaid-1547726216065 .activeCritText2,
+#mermaid-1547726216065 .activeCritText3 {
   fill: black !important; }
 
-#mermaid-1547506032186 .titleText {
+#mermaid-1547726216065 .titleText {
   text-anchor: middle;
   font-size: 18px;
   fill: black; }
 
-#mermaid-1547506032186 g.classGroup text {
+#mermaid-1547726216065 g.classGroup text {
   fill: #9370DB;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 10px; }
 
-#mermaid-1547506032186 g.classGroup rect {
+#mermaid-1547726216065 g.classGroup rect {
   fill: #ECECFF;
   stroke: #9370DB; }
 
-#mermaid-1547506032186 g.classGroup line {
+#mermaid-1547726216065 g.classGroup line {
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506032186 .classLabel .box {
+#mermaid-1547726216065 .classLabel .box {
   stroke: none;
   stroke-width: 0;
   fill: #ECECFF;
   opacity: 0.5; }
 
-#mermaid-1547506032186 .classLabel .label {
+#mermaid-1547726216065 .classLabel .label {
   fill: #9370DB;
   font-size: 10px; }
 
-#mermaid-1547506032186 .relation {
+#mermaid-1547726216065 .relation {
   stroke: #9370DB;
   stroke-width: 1;
   fill: none; }
 
-#mermaid-1547506032186 #compositionStart {
+#mermaid-1547726216065 #compositionStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506032186 #compositionEnd {
+#mermaid-1547726216065 #compositionEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506032186 #aggregationStart {
+#mermaid-1547726216065 #aggregationStart {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506032186 #aggregationEnd {
+#mermaid-1547726216065 #aggregationEnd {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506032186 #dependencyStart {
+#mermaid-1547726216065 #dependencyStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506032186 #dependencyEnd {
+#mermaid-1547726216065 #dependencyEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506032186 #extensionStart {
+#mermaid-1547726216065 #extensionStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506032186 #extensionEnd {
+#mermaid-1547726216065 #extensionEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1547506032186 .commit-id,
-#mermaid-1547506032186 .commit-msg,
-#mermaid-1547506032186 .branch-label {
+#mermaid-1547726216065 .commit-id,
+#mermaid-1547726216065 .commit-msg,
+#mermaid-1547726216065 .branch-label {
   fill: lightgrey;
   color: lightgrey; }
-&lt;/style&gt;&lt;style&gt;#mermaid-1547506032186 {
+&lt;/style&gt;&lt;style&gt;#mermaid-1547726216065 {
     color: rgba(0, 0, 0, 0.65098);
     font: normal normal normal normal 14px/21px &quot;Chinese Quote&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;
-  }&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor12&quot; x1=&quot;75&quot; y1=&quot;5&quot; x2=&quot;75&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;0&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;75&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;75&quot; dy=&quot;0&quot;&gt;antidote_app&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor13&quot; x1=&quot;275&quot; y1=&quot;5&quot; x2=&quot;275&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;200&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;275&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;275&quot; dy=&quot;0&quot;&gt;antidote_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor14&quot; x1=&quot;475&quot; y1=&quot;5&quot; x2=&quot;475&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;400&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;475&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;475&quot; dy=&quot;0&quot;&gt;inter_dc_manager&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor15&quot; x1=&quot;675&quot; y1=&quot;5&quot; x2=&quot;675&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;600&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;675&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;675&quot; dy=&quot;0&quot;&gt;clocksi_vnode&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor16&quot; x1=&quot;875&quot; y1=&quot;5&quot; x2=&quot;875&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;800&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;875&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;875&quot; dy=&quot;0&quot;&gt;clocksi_readitem_server&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor17&quot; x1=&quot;1075&quot; y1=&quot;5&quot; x2=&quot;1075&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;1000&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;1075&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;1075&quot; dy=&quot;0&quot;&gt;clocksi_readitem_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;defs&gt;&lt;marker id=&quot;arrowhead&quot; refX=&quot;5&quot; refY=&quot;2&quot; markerWidth=&quot;6&quot; markerHeight=&quot;4&quot; orient=&quot;auto&quot;&gt;&lt;path d=&quot;M 0,0 V 4 L6,2 Z&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&lt;defs&gt;&lt;marker id=&quot;crosshead&quot; markerWidth=&quot;15&quot; markerHeight=&quot;8&quot; orient=&quot;auto&quot; refX=&quot;16&quot; refY=&quot;4&quot;&gt;&lt;path fill=&quot;black&quot; stroke=&quot;#000000&quot; stroke-width=&quot;1px&quot; d=&quot;M 9,2 V 6 L16,4 Z&quot; style=&quot;stroke-dasharray: 0px, 0px;&quot;&gt;&lt;/path&gt;&lt;path fill=&quot;none&quot; stroke=&quot;#000000&quot; stroke-width=&quot;1px&quot; d=&quot;M 0,1 L 6,7 M 6,1 L 0,7&quot; style=&quot;stroke-dasharray: 0px, 0px;&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&lt;g&gt;&lt;text x=&quot;175&quot; y=&quot;93&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_link/0&lt;/text&gt;&lt;line x1=&quot;75&quot; y1=&quot;100&quot; x2=&quot;275&quot; y2=&quot;100&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;270&quot; y=&quot;102&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;263.125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;677.5&quot; y=&quot;128&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_link/0&lt;/text&gt;&lt;line x1=&quot;280&quot; y1=&quot;135&quot; x2=&quot;1075&quot; y2=&quot;135&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;1070&quot; y=&quot;137&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;193.125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;1100&quot; y=&quot;145&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;85.125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;1096&quot; y=&quot;169&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;Configure replica&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;1096&quot; y=&quot;185.28125&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;server as transient&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;1096&quot; y=&quot;201.5625&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;simple_one_for_one&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;1096&quot; y=&quot;217.84375&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;child.&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;1080&quot; y=&quot;258.125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;(simple_one_for_one)&lt;/text&gt;&lt;path d=&quot;M 1080,265.125 C 1140,255.125 1140,295.125 1080,285.125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;675&quot; y=&quot;323.125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;1070&quot; y1=&quot;330.125&quot; x2=&quot;280&quot; y2=&quot;330.125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;172.5&quot; y=&quot;358.125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;270&quot; y1=&quot;365.125&quot; x2=&quot;75&quot; y2=&quot;365.125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;-100&quot; y=&quot;375.125&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;52.5625&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;-104&quot; y=&quot;399.125&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;-84&quot; fill=&quot;black&quot;&gt;virtual nodes get&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;-104&quot; y=&quot;415.40625&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;-84&quot; fill=&quot;black&quot;&gt;registered here&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;275&quot; y=&quot;455.6875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_bg_processes/1&lt;/text&gt;&lt;line x1=&quot;75&quot; y1=&quot;462.6875&quot; x2=&quot;475&quot; y2=&quot;462.6875&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;470&quot; y=&quot;464.6875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;610.5625&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;500&quot; y=&quot;472.6875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;36.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;496&quot; y=&quot;496.6875&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;516&quot; fill=&quot;black&quot;&gt;broadcast all nodes&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;536.96875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;sync_command(node, start_read_servers)&lt;/text&gt;&lt;line x1=&quot;480&quot; y1=&quot;543.96875&quot; x2=&quot;675&quot; y2=&quot;543.96875&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;670&quot; y=&quot;545.96875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;494.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;571.96875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_read_servers/2&lt;/text&gt;&lt;line x1=&quot;680&quot; y1=&quot;578.96875&quot; x2=&quot;875&quot; y2=&quot;578.96875&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;975&quot; y=&quot;631.96875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_fsm/2&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;638.96875&quot; x2=&quot;1075&quot; y2=&quot;638.96875&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;900&quot; y=&quot;648.96875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;36.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;896&quot; y=&quot;672.96875&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;916&quot; fill=&quot;black&quot;&gt;Spawn server proc&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;975&quot; y=&quot;713.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;init/2&lt;/text&gt;&lt;line x1=&quot;1075&quot; y1=&quot;720.25&quot; x2=&quot;875&quot; y2=&quot;720.25&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;870&quot; y=&quot;722.25&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;33&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;977.5&quot; y=&quot;748.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;880&quot; y1=&quot;755.25&quot; x2=&quot;1075&quot; y2=&quot;755.25&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;975&quot; y=&quot;783.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;&quot;0&quot;&lt;/text&gt;&lt;line x1=&quot;1075&quot; y1=&quot;790.25&quot; x2=&quot;875&quot; y2=&quot;790.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;line x1=&quot;860&quot; y1=&quot;588.96875&quot; x2=&quot;1085&quot; y2=&quot;588.96875&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;1085&quot; y1=&quot;588.96875&quot; x2=&quot;1085&quot; y2=&quot;800.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;860&quot; y1=&quot;800.25&quot; x2=&quot;1085&quot; y2=&quot;800.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;860&quot; y1=&quot;588.96875&quot; x2=&quot;860&quot; y2=&quot;800.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;polygon points=&quot;860,588.96875 910,588.96875 910,601.96875 901.6,608.96875 860,608.96875&quot; class=&quot;labelBox&quot;&gt;&lt;/polygon&gt;&lt;text x=&quot;867.5&quot; y=&quot;603.96875&quot; fill=&quot;black&quot; class=&quot;labelText&quot;&gt;&lt;tspan x=&quot;867.5&quot; fill=&quot;black&quot;&gt;loop&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;972.5&quot; y=&quot;603.96875&quot; fill=&quot;black&quot; class=&quot;loopText&quot; style=&quot;text-anchor: middle;&quot;&gt;&lt;tspan x=&quot;972.5&quot; fill=&quot;black&quot;&gt;[ all read servers ]&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;828.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;835.25&quot; x2=&quot;680&quot; y2=&quot;835.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;863.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;check_partition_ready/3&lt;/text&gt;&lt;line x1=&quot;680&quot; y1=&quot;870.25&quot; x2=&quot;875&quot; y2=&quot;870.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;875&quot; y=&quot;923.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;global:whereis_name(server) =/= undefined&lt;/text&gt;&lt;path d=&quot;M 875,930.25 C 935,920.25 935,960.25 875,950.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;g&gt;&lt;line x1=&quot;725.109375&quot; y1=&quot;880.25&quot; x2=&quot;1024.890625&quot; y2=&quot;880.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;1024.890625&quot; y1=&quot;880.25&quot; x2=&quot;1024.890625&quot; y2=&quot;970.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;725.109375&quot; y1=&quot;970.25&quot; x2=&quot;1024.890625&quot; y2=&quot;970.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;725.109375&quot; y1=&quot;880.25&quot; x2=&quot;725.109375&quot; y2=&quot;970.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;polygon points=&quot;725.109375,880.25 775.109375,880.25 775.109375,893.25 766.709375,900.25 725.109375,900.25&quot; class=&quot;labelBox&quot;&gt;&lt;/polygon&gt;&lt;text x=&quot;732.609375&quot; y=&quot;895.25&quot; fill=&quot;black&quot; class=&quot;labelText&quot;&gt;&lt;tspan x=&quot;732.609375&quot; fill=&quot;black&quot;&gt;loop&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;875&quot; y=&quot;895.25&quot; fill=&quot;black&quot; class=&quot;loopText&quot; style=&quot;text-anchor: middle;&quot;&gt;&lt;tspan x=&quot;875&quot; fill=&quot;black&quot;&gt;[ all read servers ]&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;998.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;true&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;1005.25&quot; x2=&quot;680&quot; y2=&quot;1005.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;575&quot; y=&quot;1033.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;670&quot; y1=&quot;1040.25&quot; x2=&quot;480&quot; y2=&quot;1040.25&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;272.5&quot; y=&quot;1068.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;470&quot; y1=&quot;1075.25&quot; x2=&quot;75&quot; y2=&quot;1075.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;0&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;75&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;75&quot; dy=&quot;0&quot;&gt;antidote_app&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;200&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;275&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;275&quot; dy=&quot;0&quot;&gt;antidote_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;400&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;475&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;475&quot; dy=&quot;0&quot;&gt;inter_dc_manager&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;600&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;675&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;675&quot; dy=&quot;0&quot;&gt;clocksi_vnode&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;800&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;875&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;875&quot; dy=&quot;0&quot;&gt;clocksi_readitem_server&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;1000&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;1075&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;1075&quot; dy=&quot;0&quot;&gt;clocksi_readitem_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
+  }&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor6&quot; x1=&quot;75&quot; y1=&quot;5&quot; x2=&quot;75&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;0&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;75&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;75&quot; dy=&quot;0&quot;&gt;antidote_app&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor7&quot; x1=&quot;275&quot; y1=&quot;5&quot; x2=&quot;275&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;200&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;275&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;275&quot; dy=&quot;0&quot;&gt;antidote_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor8&quot; x1=&quot;475&quot; y1=&quot;5&quot; x2=&quot;475&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;400&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;475&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;475&quot; dy=&quot;0&quot;&gt;inter_dc_manager&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor9&quot; x1=&quot;675&quot; y1=&quot;5&quot; x2=&quot;675&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;600&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;675&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;675&quot; dy=&quot;0&quot;&gt;clocksi_vnode&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor10&quot; x1=&quot;875&quot; y1=&quot;5&quot; x2=&quot;875&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;800&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;875&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;875&quot; dy=&quot;0&quot;&gt;clocksi_readitem_server&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor11&quot; x1=&quot;1075&quot; y1=&quot;5&quot; x2=&quot;1075&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;1000&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;1075&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;1075&quot; dy=&quot;0&quot;&gt;clocksi_readitem_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;defs&gt;&lt;marker id=&quot;arrowhead&quot; refX=&quot;5&quot; refY=&quot;2&quot; markerWidth=&quot;6&quot; markerHeight=&quot;4&quot; orient=&quot;auto&quot;&gt;&lt;path d=&quot;M 0,0 V 4 L6,2 Z&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&lt;defs&gt;&lt;marker id=&quot;crosshead&quot; markerWidth=&quot;15&quot; markerHeight=&quot;8&quot; orient=&quot;auto&quot; refX=&quot;16&quot; refY=&quot;4&quot;&gt;&lt;path fill=&quot;black&quot; stroke=&quot;#000000&quot; stroke-width=&quot;1px&quot; d=&quot;M 9,2 V 6 L16,4 Z&quot; style=&quot;stroke-dasharray: 0px, 0px;&quot;&gt;&lt;/path&gt;&lt;path fill=&quot;none&quot; stroke=&quot;#000000&quot; stroke-width=&quot;1px&quot; d=&quot;M 0,1 L 6,7 M 6,1 L 0,7&quot; style=&quot;stroke-dasharray: 0px, 0px;&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&lt;g&gt;&lt;text x=&quot;175&quot; y=&quot;93&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_link/0&lt;/text&gt;&lt;line x1=&quot;75&quot; y1=&quot;100&quot; x2=&quot;275&quot; y2=&quot;100&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;270&quot; y=&quot;102&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;263.125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;677.5&quot; y=&quot;128&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_link/0&lt;/text&gt;&lt;line x1=&quot;280&quot; y1=&quot;135&quot; x2=&quot;1075&quot; y2=&quot;135&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;1070&quot; y=&quot;137&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;193.125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;1100&quot; y=&quot;145&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;85.125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;1096&quot; y=&quot;169&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;Configure replica&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;1096&quot; y=&quot;185.28125&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;server as transient&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;1096&quot; y=&quot;201.5625&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;simple_one_for_one&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;1096&quot; y=&quot;217.84375&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;child.&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;1080&quot; y=&quot;258.125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;(simple_one_for_one)&lt;/text&gt;&lt;path d=&quot;M 1080,265.125 C 1140,255.125 1140,295.125 1080,285.125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;675&quot; y=&quot;323.125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;1070&quot; y1=&quot;330.125&quot; x2=&quot;280&quot; y2=&quot;330.125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;172.5&quot; y=&quot;358.125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;270&quot; y1=&quot;365.125&quot; x2=&quot;75&quot; y2=&quot;365.125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;-100&quot; y=&quot;375.125&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;52.5625&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;-104&quot; y=&quot;399.125&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;-84&quot; fill=&quot;black&quot;&gt;virtual nodes get&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;-104&quot; y=&quot;415.40625&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;-84&quot; fill=&quot;black&quot;&gt;registered here&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;275&quot; y=&quot;455.6875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_bg_processes/1&lt;/text&gt;&lt;line x1=&quot;75&quot; y1=&quot;462.6875&quot; x2=&quot;475&quot; y2=&quot;462.6875&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;470&quot; y=&quot;464.6875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;610.5625&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;500&quot; y=&quot;472.6875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;36.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;496&quot; y=&quot;496.6875&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;516&quot; fill=&quot;black&quot;&gt;broadcast all nodes&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;536.96875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;sync_command(node, start_read_servers)&lt;/text&gt;&lt;line x1=&quot;480&quot; y1=&quot;543.96875&quot; x2=&quot;675&quot; y2=&quot;543.96875&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;670&quot; y=&quot;545.96875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;494.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;571.96875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_read_servers/2&lt;/text&gt;&lt;line x1=&quot;680&quot; y1=&quot;578.96875&quot; x2=&quot;875&quot; y2=&quot;578.96875&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;975&quot; y=&quot;631.96875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_fsm/2&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;638.96875&quot; x2=&quot;1075&quot; y2=&quot;638.96875&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;900&quot; y=&quot;648.96875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;36.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;896&quot; y=&quot;672.96875&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;916&quot; fill=&quot;black&quot;&gt;Spawn server proc&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;975&quot; y=&quot;713.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;init/2&lt;/text&gt;&lt;line x1=&quot;1075&quot; y1=&quot;720.25&quot; x2=&quot;875&quot; y2=&quot;720.25&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;870&quot; y=&quot;722.25&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;33&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;977.5&quot; y=&quot;748.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;880&quot; y1=&quot;755.25&quot; x2=&quot;1075&quot; y2=&quot;755.25&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;975&quot; y=&quot;783.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;1075&quot; y1=&quot;790.25&quot; x2=&quot;875&quot; y2=&quot;790.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;line x1=&quot;860&quot; y1=&quot;588.96875&quot; x2=&quot;1085&quot; y2=&quot;588.96875&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;1085&quot; y1=&quot;588.96875&quot; x2=&quot;1085&quot; y2=&quot;800.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;860&quot; y1=&quot;800.25&quot; x2=&quot;1085&quot; y2=&quot;800.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;860&quot; y1=&quot;588.96875&quot; x2=&quot;860&quot; y2=&quot;800.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;polygon points=&quot;860,588.96875 910,588.96875 910,601.96875 901.6,608.96875 860,608.96875&quot; class=&quot;labelBox&quot;&gt;&lt;/polygon&gt;&lt;text x=&quot;867.5&quot; y=&quot;603.96875&quot; fill=&quot;black&quot; class=&quot;labelText&quot;&gt;&lt;tspan x=&quot;867.5&quot; fill=&quot;black&quot;&gt;loop&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;972.5&quot; y=&quot;603.96875&quot; fill=&quot;black&quot; class=&quot;loopText&quot; style=&quot;text-anchor: middle;&quot;&gt;&lt;tspan x=&quot;972.5&quot; fill=&quot;black&quot;&gt;[ all read servers ]&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;828.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;835.25&quot; x2=&quot;680&quot; y2=&quot;835.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;863.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;check_partition_ready/3&lt;/text&gt;&lt;line x1=&quot;680&quot; y1=&quot;870.25&quot; x2=&quot;875&quot; y2=&quot;870.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;875&quot; y=&quot;923.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;global:whereis_name(server) =/= undefined&lt;/text&gt;&lt;path d=&quot;M 875,930.25 C 935,920.25 935,960.25 875,950.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;g&gt;&lt;line x1=&quot;725.109375&quot; y1=&quot;880.25&quot; x2=&quot;1024.890625&quot; y2=&quot;880.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;1024.890625&quot; y1=&quot;880.25&quot; x2=&quot;1024.890625&quot; y2=&quot;970.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;725.109375&quot; y1=&quot;970.25&quot; x2=&quot;1024.890625&quot; y2=&quot;970.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;725.109375&quot; y1=&quot;880.25&quot; x2=&quot;725.109375&quot; y2=&quot;970.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;polygon points=&quot;725.109375,880.25 775.109375,880.25 775.109375,893.25 766.709375,900.25 725.109375,900.25&quot; class=&quot;labelBox&quot;&gt;&lt;/polygon&gt;&lt;text x=&quot;732.609375&quot; y=&quot;895.25&quot; fill=&quot;black&quot; class=&quot;labelText&quot;&gt;&lt;tspan x=&quot;732.609375&quot; fill=&quot;black&quot;&gt;loop&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;875&quot; y=&quot;895.25&quot; fill=&quot;black&quot; class=&quot;loopText&quot; style=&quot;text-anchor: middle;&quot;&gt;&lt;tspan x=&quot;875&quot; fill=&quot;black&quot;&gt;[ all read servers ]&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;998.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;true&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;1005.25&quot; x2=&quot;680&quot; y2=&quot;1005.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;575&quot; y=&quot;1033.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;670&quot; y1=&quot;1040.25&quot; x2=&quot;480&quot; y2=&quot;1040.25&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;272.5&quot; y=&quot;1068.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;470&quot; y1=&quot;1075.25&quot; x2=&quot;75&quot; y2=&quot;1075.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;0&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;75&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;75&quot; dy=&quot;0&quot;&gt;antidote_app&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;200&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;275&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;275&quot; dy=&quot;0&quot;&gt;antidote_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;400&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;475&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;475&quot; dy=&quot;0&quot;&gt;inter_dc_manager&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;600&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;675&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;675&quot; dy=&quot;0&quot;&gt;clocksi_vnode&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;800&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;875&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;875&quot; dy=&quot;0&quot;&gt;clocksi_readitem_server&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;1000&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;1075&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;1075&quot; dy=&quot;0&quot;&gt;clocksi_readitem_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
 </div>
 <div tags="$:/tags/Macro" title="$:/ergl/macros/bookmark_link_list_of" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define bookmark_link_list_of(tag)
@@ -10378,7 +10403,7 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
         {{$:/core/images/chevron-left}} Current
       &lt;/$button&gt;
       &lt;$button&gt;
-        &lt;$action-setfield $field=&quot;task-$tag$-step&quot; $value=2 /&gt;
+        &lt;$action-setfield task-$tag$-step=2 task-done-on=&lt;&lt;now YYYY-0MM-0DD&gt;&gt; /&gt;  
         {{$:/core/images/chevron-left}} Done
       &lt;/$button&gt;
     &lt;/li&gt;
@@ -10394,7 +10419,7 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
     &lt;li&gt;
       &lt;$link&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;
       &lt;$button&gt;
-        &lt;$action-setfield $field=&quot;task-$tag$-step&quot; $value=2 /&gt;
+        &lt;$action-setfield task-$tag$-step=2 task-done-on=&lt;&lt;now YYYY-0MM-0DD&gt;&gt; /&gt;  
         {{$:/core/images/chevron-left}} Done
       &lt;/$button&gt;
       &lt;$button&gt;
@@ -10414,11 +10439,13 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
     &lt;li&gt;
       &lt;$link&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/$link&gt;
       &lt;$button&gt;
-        &lt;$action-setfield $field=&quot;task-$tag$-step&quot; $value=0 /&gt;
+        &lt;$action-setfield task-$tag$-step=0 /&gt;
+        &lt;$action-deletefield task-done-on /&gt;
         {{$:/core/images/chevron-left}} Backlog
       &lt;/$button&gt;
       &lt;$button&gt;
-        &lt;$action-setfield $field=&quot;task-$tag$-step&quot; $value=1 /&gt;
+        &lt;$action-setfield task-$tag$-step=1 /&gt;
+        &lt;$action-deletefield task-done-on /&gt;
         {{$:/core/images/chevron-left}} Current
       &lt;/$button&gt;
     &lt;/li&gt;
@@ -10506,7 +10533,7 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 <div created="20181229001800601" modified="20181230005914321" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>What Do I Know?</pre>
 </div>
-<div list="[[clocksi_readitem_server replica lifetime]] [[Exploring the Wiki]]" title="$:/StoryList" revision="1" bag="default">
+<div list="triager/readitem_improv [[Exploring the Wiki]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div list="$:/core/ui/Buttons/home $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all [[Draft of '$:/ergl/functions/NewBookmarkLink']] $:/core/ui/Buttons/permaview $:/ergl/functions/NewBookmarkLink $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh $:/ergl/functions/ShowAdmin $:/core/ui/Buttons/more-page-actions" title="$:/tags/PageControls" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10647,6 +10674,38 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 <div title="$:/view" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>classic</pre>
 </div>
+<div tags="imdea journal" title="2019-1-17" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Reworked the [[clocksi_readitem_server start logic|clocksi_readitem_server replica lifetime]]
+* Paved the way to switch to local registry for servers
+* Verified no regressions on microbenchmarks
+* Monitored queues for server PIDs, no pressure is shown 
+
+--- 
+
+Previously, migrated from void
+
+* At two-site scale, we were hitting a bottleneck with the coord pool impl
+** Changed it to use poolboy, bottleneck gone
+* Client partitioning now works as good as single-site scenario
+* With remote reads, we're still slow
+** Probably something to do with the readitem gen_server thread getting stuck</pre>
+</div>
+<div tags="imdea journal" title="2019-1-18" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!!! Skype call with Manuel
+
+* Talked about results from yesterday
+* Talk about easiest change to Antidote to introduce TCP-based remote reads, instead of going through distributed erlang
+** Make current `rubis_pb_worker` call local gen_server directly
+* Start sockets to remote nodes on Coordinator start (`init`) and use that to send remote read msg
+
+---
+
+* Added new PB message to rubis_proto
+* Changed remote read implementation (my god it's full of hacks)
+
+
+</pre>
+</div>
 <div bookmark_link="http://inmysocks.tiddlyspot.com/#My%20Plugins:%5B%5BMy%20Plugins%5D%5D%20%24%3A%2Fplugins%2Finmysocks%2FTW5Utils%20%24%3A%2Fplugins%2Finmysocks%2FCalendar%20%24%3A%2Fplugins%2Finmysocks%2FTaskList%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%2FBookmarks%2030plusgamer" tags="tiddlytip" title="A List of random but useful plugins" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Calendars, Bookmarks (this one looks especially nice)...</pre>
 </div>
@@ -10719,6 +10778,16 @@ The body of the tiddle will be added to the View Toolbar of every tiddle (the on
 ??? (I guess adds an option to the advanced options of the info toolbar?)
 </pre>
 </div>
+<div tags="task" task-done-on="2019-01-19" task-meta-step="2" title="Add &quot;task-done-on&quot; field to completed tasks" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>This way we can make a list of taks finished on a certain date
+
+Use `&lt;&lt;now YYYY-0MM-0DD&gt;&gt;` (&lt;&lt;now YYYY-0MM-0DD&gt;&gt;)</pre>
+</div>
+<div tags="task" task-readitem_improv-step="2" title="Add remote socket to coordinator" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Open socket to remote nodes on `init`
+
+On remote read, send through socket `rpb_simple_driver:remote_read/3` and wait (this wait is sync)</pre>
+</div>
 <div tags="meta" title="Admin Panel" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$button&gt;
 &lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot;
@@ -10738,22 +10807,21 @@ text=&quot;Type a few words about the link&quot;
 New Bookmark
 &lt;/$button&gt;
 
-!! Other links
+---
 
-[[Admin Triage|triage/meta]]
+! Admin Triage
+
+{{triage/meta}}
 </pre>
 </div>
 <div tags="task" task-meta-step="0" title="Change Links Format" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Instead of putting the link in a field, maybe put it in the body, inside a table (see how the  [[Bookmark plugin|http://inmysocks.tiddlyspot.com/#%24%3A%2Fplugins%2Finmysocks%2FBookmarks]] does it)</pre>
 </div>
+<div tags="task" task-readitem_improv-step="0" title="Clean up change mess" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div tags="imdea code_notes" title="clocksi_readitem_server replica lifetime" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>---
-
-&lt;&lt;triage_of readitem_improv&gt;&gt;
-
----
-
-! On application start
+<pre>! On application start
 
 &lt;&lt;&lt;
 `{auto_start_read_servers, true}`
@@ -10771,6 +10839,17 @@ Every node will go through this diagram, starting/checking only the local read r
 
 {{$:/ergl/images/readitem_gen_diagram_join.svg}}
 </pre>
+</div>
+<div tags="imdea code_notes" title="clocksi_readitem_server state requirements" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>| !Function | !State Needs |
+| pvc_async_read/3 | — |
+| pvc_fresh_read_internal/6 | `pvc_atomic_cache` (read MRVC) |
+| pvc_scan_and_read/6 | `pvc_atomic_cache` (find MaxVC), `mat_state` (vlog_read call) |
+| pvc_vlog_read_internal/5 | `mat_state` (materializer:pvc_read call) |
+
+---
+
+Ref commit for TCP implementation: [[https://github.com/ergl/antidote/commit/57f11ef9652725bd870985f469a3742632ae34fb]]</pre>
 </div>
 <div counter="-3" tags="experiments" title="Counter Experiment" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$button&gt;
@@ -10885,6 +10964,9 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 <div bookmark_link="http://tid.li/tw5/hacks.html#DetailsWidget" tags="tiddlytip" title="Details Widget" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div tags="imdea" title="Dev Journal" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;&lt;list-links filter:&quot;[tag[imdea]tag[journal]!has[draft.of]]&quot;&gt;&gt;</pre>
+</div>
 <div bookmark_link="https://ooktech.com/jed/ExampleWikis/DynamicTables/" tags="tiddlytip" title="Dynamic Tables" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>A plugin to create editable tables. Features dynamic rows/columns based on filters</pre>
 </div>
@@ -10895,16 +10977,30 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 * [[Quick Notes]]
 * [[My Linkblog|Links]]
 * [[Some Tiddlytips|Tiddlytips]]
+* [[Dev Journal]]
 * [[About Tiddlywiky itself|TiddlyKnow]]</pre>
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/ExternalImages.html" tags="tiddlytip" title="External Images" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div tags="task" task-readitem_improv-step="1" title="Figure out socket limit" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Having the coordinator processes open the sockets results in going above the system limit. Either
+
+* raise the system limit
+* //have a different set of processes perform the remote reading (like the current gen_servers)// ''best option''
+* lower the number of coordinators
+** figure out how low can we go without affecting throughput
+** This is the worst option, as we will need to keep playing with this number if we increase the number of nodes in the cluster
+</pre>
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/Generating%2520Static%2520Sites%2520with%2520TiddlyWiki.html" tags="tiddlytip" title="Generating Static Sites" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/How%2520to%2520add%2520a%2520new%2520tab%2520to%2520the%2520sidebar.html" tags="tiddlytip" title="How to add a new tab to the sidebar" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div tags="task" task-readitem_improv-step="2" title="Implement new PB message in Antidote" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>PB process should call `clocksi_readitem_server` directly</pre>
 </div>
 <div tags="task" task-readitem_improv-step="2" title="Improve vnode &lt;-&gt; readitem start procedure" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>clocksi_vnode on `start_read_servers` does `loop_until_started`, which (in theory), should start all read servers, doing:
@@ -11005,6 +11101,12 @@ So:
 ** This could be expanded to other things, like linkify, etc
 ** https://tiddlywiki.com/#Page%20and%20tiddler%20layout%20customisation</pre>
 </div>
+<div tags="task" task-meta-step="0" title="Integrate external images" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>{{External Images!!bookmark_link}}</pre>
+</div>
+<div tags="task" task-meta-step="0" title="Integrate task-done-on with macro for finished tasks today" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div bookmark_link="https://tiddlywiki.com/static/Introduction%2520to%2520filter%2520notation.html" tags="tiddlytip" title="Introduction to filter notation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
@@ -11031,7 +11133,7 @@ sequenceDiagram
         Note left of rep_sup: Spawn server proc
         rep_sup --&gt;&gt;+ rep: init/2
         rep --&gt;&gt;- rep_sup: ok
-        rep_sup -&gt;&gt; rep: &quot;0&quot;
+        rep_sup -&gt;&gt; rep: ok
     end
     rep -&gt;&gt; vnode: ok
     vnode -&gt;&gt; rep: check_partition_ready/3
@@ -11055,7 +11157,7 @@ sequenceDiagram
 
 https://gt6796c.github.io</pre>
 </div>
-<div tags="task" task-meta-step="0" title="Migrate mmd scripts after mermaid plugin" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div tags="task" task-done-on="" task-meta-step="0" title="Migrate mmd scripts after mermaid plugin" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>{{system_start.mmd}}
 {{join.mmd}}
 
@@ -11174,7 +11276,7 @@ sequenceDiagram
         Note left of rep_sup: Spawn server proc
         rep_sup --&gt;&gt;+ rep: init/2
         rep --&gt;&gt;- rep_sup: ok
-        rep_sup -&gt;&gt; rep: &quot;0&quot;
+        rep_sup -&gt;&gt; rep: ok
     end
     rep -&gt;&gt; vnode: ok
     vnode -&gt;&gt; rep: check_partition_ready/3
@@ -11191,6 +11293,9 @@ sequenceDiagram
 <pre></pre>
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/TableOfContents.html" tags="tiddlytip" title="Table of Contents Example" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
+<div tags="task" task-readitem_improv-step="0" title="Test changes on cloudlab" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div tags="meta" title="TiddlyKnow" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11225,6 +11330,9 @@ This style also looks nice, but I'm not sure about the accessibility of blockquo
 </div>
 <div tags="meta" title="triage/meta" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of meta&gt;&gt;</pre>
+</div>
+<div tags="imdea" title="triager/readitem_improv" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;&lt;triage_of readitem_improv&gt;&gt;</pre>
 </div>
 <div tags="qnote" title="Wallace's E Unibus Pluram, annotated" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;&lt;

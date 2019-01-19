@@ -2,12 +2,6 @@ tags: imdea code_notes
 title: clocksi_readitem_server replica lifetime
 type: text/vnd.tiddlywiki
 
----
-
-<<triage_of readitem_improv>>
-
----
-
 ! On application start
 
 <<<

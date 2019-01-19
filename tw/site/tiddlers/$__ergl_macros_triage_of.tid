@@ -25,7 +25,7 @@ type: text/vnd.tiddlywiki
         {{$:/core/images/chevron-left}} Current
       </$button>
       <$button>
-        <$action-setfield $field="task-$tag$-step" $value=2 />
+        <$action-setfield task-$tag$-step=2 task-done-on=<<now YYYY-0MM-0DD>> />  
         {{$:/core/images/chevron-left}} Done
       </$button>
     </li>
@@ -41,7 +41,7 @@ type: text/vnd.tiddlywiki
     <li>
       <$link><<currentTiddler>></$link>
       <$button>
-        <$action-setfield $field="task-$tag$-step" $value=2 />
+        <$action-setfield task-$tag$-step=2 task-done-on=<<now YYYY-0MM-0DD>> />  
         {{$:/core/images/chevron-left}} Done
       </$button>
       <$button>
@@ -61,11 +61,13 @@ type: text/vnd.tiddlywiki
     <li>
       <$link><<currentTiddler>></$link>
       <$button>
-        <$action-setfield $field="task-$tag$-step" $value=0 />
+        <$action-setfield task-$tag$-step=0 />
+        <$action-deletefield task-done-on />
         {{$:/core/images/chevron-left}} Backlog
       </$button>
       <$button>
-        <$action-setfield $field="task-$tag$-step" $value=1 />
+        <$action-setfield task-$tag$-step=1 />
+        <$action-deletefield task-done-on />
         {{$:/core/images/chevron-left}} Current
       </$button>
     </li>

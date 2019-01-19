@@ -24,7 +24,7 @@ sequenceDiagram
         Note left of rep_sup: Spawn server proc
         rep_sup -->>+ rep: init/2
         rep -->>- rep_sup: ok
-        rep_sup ->> rep: "0"
+        rep_sup ->> rep: ok
     end
     rep ->> vnode: ok
     vnode ->> rep: check_partition_ready/3

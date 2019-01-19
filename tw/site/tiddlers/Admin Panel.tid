@@ -20,6 +20,8 @@ text="Type a few words about the link"
 New Bookmark
 </$button>
 
-!! Other links
+---
 
-[[Admin Triage|triage/meta]]
+! Admin Triage
+
+{{triage/meta}}
