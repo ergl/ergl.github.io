@@ -6,6 +6,7 @@ type: text/vnd.tiddlywiki
 * Paved the way to switch to local registry for servers
 * Verified no regressions on microbenchmarks
 * Monitored queues for server PIDs, no pressure is shown 
+* Added remote sockets to pvc_coordinator for remote reads
 
 --- 
 

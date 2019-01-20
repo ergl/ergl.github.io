@@ -1,5 +1,6 @@
 tags: task
-task-readitem_improv-step: 1
+task-done-on: 2019-01-20
+task-readitem_improv-step: 2
 title: Figure out socket limit
 type: text/vnd.tiddlywiki
 
@@ -10,3 +11,10 @@ Having the coordinator processes open the sockets results in going above the sys
 * lower the number of coordinators
 ** figure out how low can we go without affecting throughput
 ** This is the worst option, as we will need to keep playing with this number if we increase the number of nodes in the cluster
+
+---
+
+!! have a different set of processes perform the remote reading (like the current gen_servers)
+
+* ~~Add option to start them~~
+* ~~Wire them together with `pvc_coord_pool_worker`~~

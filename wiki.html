@@ -313,6 +313,8 @@ Error message and password prompt
 
 <li>2019-1-18</li>
 
+<li>2019-1-20</li>
+
 <li>A List of random but useful plugins</li>
 
 <li>About the system tags</li>
@@ -324,8 +326,6 @@ Error message and password prompt
 <li>Admin Panel</li>
 
 <li>Change Links Format</li>
-
-<li>Clean up change mess</li>
 
 <li>clocksi_readitem_server replica lifetime</li>
 
@@ -373,6 +373,8 @@ Error message and password prompt
 
 <li>Musings on personal organizers</li>
 
+<li>Play with remote reader process number</li>
+
 <li>Quick Notes</li>
 
 <li>Remaking the blog with TiddlyWiki</li>
@@ -392,6 +394,8 @@ Error message and password prompt
 <li>triage/meta</li>
 
 <li>triager/readitem_improv</li>
+
+<li>Verify that old numbers still hold up</li>
 
 <li>Wallace's E Unibus Pluram, annotated</li>
 
@@ -9602,7 +9606,8 @@ exports.run = function(value, operation, until, beyond, decimals, tiddler, by) {
 }</pre>
 </div>
 <div created="20181229002633052" modified="20181230005914328" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[[triager/readitem_improv]]
+<pre>[[2019-1-20]]
+[[triager/readitem_improv]]
 [[Exploring the Wiki]]
 </pre>
 </div>
@@ -10533,7 +10538,7 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 <div created="20181229001800601" modified="20181230005914321" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>What Do I Know?</pre>
 </div>
-<div list="triager/readitem_improv [[Exploring the Wiki]]" title="$:/StoryList" revision="1" bag="default">
+<div list="2019-1-20 triager/readitem_improv [[Exploring the Wiki]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div list="$:/core/ui/Buttons/home $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all [[Draft of '$:/ergl/functions/NewBookmarkLink']] $:/core/ui/Buttons/permaview $:/ergl/functions/NewBookmarkLink $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh $:/ergl/functions/ShowAdmin $:/core/ui/Buttons/more-page-actions" title="$:/tags/PageControls" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10679,6 +10684,7 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 * Paved the way to switch to local registry for servers
 * Verified no regressions on microbenchmarks
 * Monitored queues for server PIDs, no pressure is shown 
+* Added remote sockets to pvc_coordinator for remote reads
 
 --- 
 
@@ -10705,6 +10711,18 @@ Previously, migrated from void
 
 
 </pre>
+</div>
+<div tags="imdea journal" title="2019-1-20" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Completed triage tasks:
+
+&lt;&lt;list-links [field:task-done-on[2019-01-20]]&gt;&gt;
+
+---
+
+* Reimplemented remote reads using TCP + separate processes (instead of putting the sockets in the coordinator)
+** Sockets in coordinator cause overload (too many open sockets)
+* Tested slightly on cloudlab, but it was too slow (//no op for//... error).
+** Have to test again, with maybe more remote reader processes (100 right now)</pre>
 </div>
 <div bookmark_link="http://inmysocks.tiddlyspot.com/#My%20Plugins:%5B%5BMy%20Plugins%5D%5D%20%24%3A%2Fplugins%2Finmysocks%2FTW5Utils%20%24%3A%2Fplugins%2Finmysocks%2FCalendar%20%24%3A%2Fplugins%2Finmysocks%2FTaskList%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%2FBookmarks%2030plusgamer" tags="tiddlytip" title="A List of random but useful plugins" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Calendars, Bookmarks (this one looks especially nice)...</pre>
@@ -10816,9 +10834,6 @@ New Bookmark
 </div>
 <div tags="task" task-meta-step="0" title="Change Links Format" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Instead of putting the link in a field, maybe put it in the body, inside a table (see how the  [[Bookmark plugin|http://inmysocks.tiddlyspot.com/#%24%3A%2Fplugins%2Finmysocks%2FBookmarks]] does it)</pre>
-</div>
-<div tags="task" task-readitem_improv-step="0" title="Clean up change mess" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre></pre>
 </div>
 <div tags="imdea code_notes" title="clocksi_readitem_server replica lifetime" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>! On application start
@@ -10965,7 +10980,7 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 <pre></pre>
 </div>
 <div tags="imdea" title="Dev Journal" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&lt;&lt;list-links filter:&quot;[tag[imdea]tag[journal]!has[draft.of]]&quot;&gt;&gt;</pre>
+<pre>&lt;&lt;list-links filter:&quot;[tag[imdea]tag[journal]!has[draft.of]!sort[]]&quot;&gt;&gt;</pre>
 </div>
 <div bookmark_link="https://ooktech.com/jed/ExampleWikis/DynamicTables/" tags="tiddlytip" title="Dynamic Tables" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>A plugin to create editable tables. Features dynamic rows/columns based on filters</pre>
@@ -10983,7 +10998,7 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 <div bookmark_link="https://tiddlywiki.com/static/ExternalImages.html" tags="tiddlytip" title="External Images" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div tags="task" task-readitem_improv-step="1" title="Figure out socket limit" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div tags="task" task-done-on="2019-01-20" task-readitem_improv-step="2" title="Figure out socket limit" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Having the coordinator processes open the sockets results in going above the system limit. Either
 
 * raise the system limit
@@ -10991,7 +11006,13 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 * lower the number of coordinators
 ** figure out how low can we go without affecting throughput
 ** This is the worst option, as we will need to keep playing with this number if we increase the number of nodes in the cluster
-</pre>
+
+---
+
+!! have a different set of processes perform the remote reading (like the current gen_servers)
+
+* ~~Add option to start them~~
+* ~~Wire them together with `pvc_coord_pool_worker`~~</pre>
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/Generating%2520Static%2520Sites%2520with%2520TiddlyWiki.html" tags="tiddlytip" title="Generating Static Sites" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -11223,6 +11244,9 @@ Basic conflict between:
 ** (-) Web-based
 </pre>
 </div>
+<div tags="task" task-readitem_improv-step="0" title="Play with remote reader process number" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div tags="meta" title="Quick Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Quick notes are—as their name implies—quick outlines of ideas and ramblings I have in my head at any particular point in time.
 
@@ -11295,7 +11319,7 @@ sequenceDiagram
 <div bookmark_link="https://tiddlywiki.com/static/TableOfContents.html" tags="tiddlytip" title="Table of Contents Example" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div tags="task" task-readitem_improv-step="0" title="Test changes on cloudlab" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div tags="task" task-readitem_improv-step="1" title="Test changes on cloudlab" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div tags="meta" title="TiddlyKnow" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11333,6 +11357,9 @@ This style also looks nice, but I'm not sure about the accessibility of blockquo
 </div>
 <div tags="imdea" title="triager/readitem_improv" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of readitem_improv&gt;&gt;</pre>
+</div>
+<div tags="task" task-readitem_improv-step="0" title="Verify that old numbers still hold up" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
 </div>
 <div tags="qnote" title="Wallace's E Unibus Pluram, annotated" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;&lt;

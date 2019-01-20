@@ -2,4 +2,4 @@ tags: imdea
 title: Dev Journal
 type: text/vnd.tiddlywiki
 
-<<list-links filter:"[tag[imdea]tag[journal]!has[draft.of]]">>
+<<list-links filter:"[tag[imdea]tag[journal]!has[draft.of]!sort[]]">>
