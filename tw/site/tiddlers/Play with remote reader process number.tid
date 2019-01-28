@@ -1,5 +1,9 @@
 tags: task
-task-readitem_improv-step: 0
+task-done-on: 2019-01-24
+task-readitem_improv-step: 2
 title: Play with remote reader process number
 type: text/vnd.tiddlywiki
 
+| !N | !D |
+| 100 | Too slow (queues) |
+| 500 | Seems ok |

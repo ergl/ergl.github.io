@@ -1,0 +1,18 @@
+tags: task
+task-pvc-step: 0
+title: Read fast-psi main.pdf for readonly abort example
+type: text/vnd.tiddlywiki
+
+!! Description with Manuel
+
+{{$:/ergl/images/fastpsi.png}}
+
+Outlined sections on Y are the temporal parts from where T is available to read.
+
+By reading from Z, at Z,,7,,, T is forced to read at Y from Y,,4,, onwards. 
+
+Meanwhile, by reading from X at X,,2,,, it is forced at Y to read from Y,,3,, backwards, which is impossible.
+
+Therefore, T will have to abort.
+
+But this doesn't appear to happen, and it rests on Z being able to non-monotically advance X's clock entry. Will probably need to re-read the pseudo-code and think about this example more. See Figure 3 on fast-psi paper.

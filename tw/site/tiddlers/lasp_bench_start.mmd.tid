@@ -1,0 +1,31 @@
+tags: mermaid
+title: lasp_bench_start.mmd
+type: text/vnd.tiddlywiki
+
+!!lasp_bench_start.mmd
+
+```
+sequenceDiagram
+    participant worker as lasp_bench_worker
+    participant driver as blotter_bench
+    participant stats as lasp_bench_stats
+    participant csv as stats_writer_csv
+
+
+    loop Forever
+        worker ->>+ driver: run/4
+        driver ->>- worker: {ok, State}
+        worker ->> worker: hack_preprocess_driver_state/2
+        Note right of worker: Perform timing diffs
+        worker -->> stats: op_complete/3
+        Note right of worker: Send timing info
+        Note right of stats: Update folsom hist.
+    end
+
+    loop Forever
+        stats ->> stats: process_stats/3
+        stats ->> stats: report_latency/4
+        stats -->> csv: report_latency/7
+        Note right of csv: reports to csv files
+    end
+```

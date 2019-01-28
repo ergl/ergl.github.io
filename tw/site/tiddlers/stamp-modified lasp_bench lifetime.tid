@@ -1,0 +1,31 @@
+tags: imdea code_notes
+title: stamp-modified lasp_bench lifetime
+type: text/vnd.tiddlywiki
+
+!! On init
+
+| !Module | !Function | !Description |
+| lasp_bench_stats | build_folsom_tables/1 |Creates folsom ETS histograms, etc |
+| lasp_bench_stats_writer_csv | new/1 |`[erlang:put({csv_file, Op}, op_csv_file(Op)) || Op <- Ops]` |
+| lasp_bench_stats_writer_csv | op_csv_file/1 |Opens files for operation (or files) |
+
+!! When running
+
+| !Module | !Function | !Description |
+| lasp_bench_worker | worker_next_op/1 |Asks the driver to execute an operation, which returns a result and the next state. This state will be returned modified with extra measurement information. |
+| lasp_bench_worker | hack_preprocess_driver_state/2 |Receives executed op and state as returned from the driver |
+
+{{$:/ergl/images/lasp_bench_loop.csv}}
+
+!! To add new measurements
+
+In lasp_bench, operations are tagged (`{Op, Tag}`), we will use this tag to know what operations return extra measurements from the driver.
+
+* On lasp_bench_stats:build_folsom_tables/1
+** Create new counter/histogram to hold data (under desired operation)
+* On lasp_bench_stats_writer_csv:op_csv_file/1
+** Create new function head matching on desired operation
+** Return  a list of `{Type, Fd}`, where `Type` is the file type (default for normal ops, or a tag that identifies the measurement), and `Fd` is a file descriptor for the csv file.
+* On lasp_bench-stats:report_latency/4
+** Perform `get_histogram_statistics` on desired info
+** Send to stats writer with `send_report/7`
