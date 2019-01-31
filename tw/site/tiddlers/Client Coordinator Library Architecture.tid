@@ -1,0 +1,229 @@
+tags: code_notes imdea
+title: Client Coordinator Library Architecture
+type: text/vnd.tiddlywiki
+
+!! Useful Docs
+
+* [[Sharing UDP sockets|http://erlang.org/pipermail/erlang-questions/2018-June/095741.html]]
+<<<
+A gen_server can handle ~80k msgs/sec before overloading (apparently), so you can have a controlling process handling the socket and other messages going through there to deliver messages.
+<<<
+* http://erlang.org/pipermail/erlang-questions/2016-August/089998.html
+<<<
+Client sockets (sockets on an active connection) can also be shared and passed around, but since a client
+socket can only be read by the client socket's owning process, this is of
+limited utility.
+<<<
+* http://santtu.iki.fi/2014/03/06/network-and-parallelism-in-erlang
+<<<
+Not really related, but still useful.
+Using `gen_tcp:controlling_process/2` can cause a race condition where tcp messages are delivered to the old process and cause messages to get lost
+<<<
+* https://learnyousomeerlang.com/buckets-of-sockets
+<<<
+Always useful
+<<<
+
+---
+
+!! Usage
+
+!!! Types
+
+* Connection `pvc:connection()`. Represents an active connection to the database. Internally keeps a socket open for each physical node, as well as a partition -> node mapping.
+<!---->
+* Transaction `pvc:transaction()`. Represents an active transaction. Trying to use it after it has committed or aborted is undefined. Wraps an unique id (using client IP, client Id, and auto-incremented counter). Internally keeps write set, updated partitions, read partitions (`hasRead`), and both `VCdep` and `VCaggr`.
+<!---->
+* Abort reason `pvc:abort_reason() = bad_read | ww_conflict | stale_tx`
+<!---->
+* Both keys and values will be serialized as erlang terms on the wire. If one uses `binary` or `bitstring`, they will be left alone.
+<!---->
+* Transaction ids have to be comparable to each other. Therefore it is recommended that all ids have the same type.
+
+!!! Open database connection
+
+```
+pvc:connect(Address, Port) -> {ok, Connection} | {error, Reason}
+
+Address = inet:hostname()
+Port = inet::port_number()
+Connection = pvc:connection()
+Reason = inet:posix()
+```
+
+Connects to a database server on at `Addresss:Port`. After talking to the initial node, it will request the partitioning information, get all the nodes in the cluster, and open a socket to all of them.
+
+!!! Start transaction
+
+```
+pvc:start_transaction(Id :: term()) -> {ok, Tx :: pvc:transaction()}
+```
+
+Spawns a fresh transaction. `Id` should be an unique identifier (unique-ish among all the concurrent active transactions, other than that it is safe to re-use ids). UUIDs are fine, but overkill. For our use-case, a tuple `{client_ip, worker_id, counter}` works fine, where `worker_id` is the process id (integer) of the lasp_bench worker.
+
+!!! Read Key(s)
+
+```
+pvc:read_key(Connection, Tx1, Key | [Key]) -> {ok, Value | [Value], Tx2} | {error, Reason}
+
+Connection = pvc:connection()
+Tx1 = pvc:transaction()
+Key = term()
+Value = term()
+Tx2 = pvc:transaction()
+Reason = pvc:abort_reason()
+```
+
+Reads a key (or batch of keys) from the database. A new transaction state, `Tx2` is returned (note that, if the keys requested were updated previously, `Tx2` will be the same as `Tx1`). Internally, for each key, pvc will compute the appropriate node to perform the remote read.
+
+!!! Update Key(s)
+
+```
+pvc:update(Tx1 :: pvc:transaction(), Key :: term(), Value :: term()) -> {ok, Tx2 :: pvc:transaction()}
+
+pvc:update(Tx1 :: pvc:transaction, Updates :: [{Key :: term(), Value :: term()}]) -> {ok, Tx2 :: pvc:transaction()}
+```
+
+Perform updates, either on a single key (`pvc:update/3`), or a batch of keys (`pvc:update/2`).
+
+!!! Commit Transaction
+
+```
+pvc:commit(Conn :: pvc:connection(), Tx :: pvc:transaction()) -> ok | {error, Reason :: pvc:abort_reason()}
+```
+
+Commits `Tx`, using 2pc.
+
+!!! Close database connection
+
+```
+pvc:close(Conn :: pvc:connection()) -> ok
+```
+
+---
+
+!! Random notes
+
+!!! State
+
+We need to keep the following state active through the entire lifetime of the application:
+
+* Connection, wraps
+** Connection socket: Send/receive commands (multiple sockets, one per physical node in cluster)
+** Partition layout — Clients need to send read requests to appropriate partitions.
+<!---->
+* Transaction, wraps
+** Writeset
+*** Needs fast read, update
+*** Able to send subset of to partition on demand
+** VCdep
+** VCaggr
+** hasRead
+** indices? -> wait until microbenchmarks are done to migrate this
+
+!!! Commit
+
+When the coordinator was on the database side, the messages from the partitions arrived on the process queue. On the client we have to be explicit with regards to sockets and TCP. We can't bail out of the decide phase if we get an early negative vote, since we need to flush the TCP buffers off the sockets.
+
+The prepare phase (and vote collection) can be implemented following a map-reduce(ish) approach (see after current listing). The decide phase can be a normal `foreach`, since it won't block.
+
+```
+prepare(#state{p = Partitions}) ->
+    Sockets = get_sockets(Partitions),
+    %% ... denotes extra state
+    Result = collect_votes(fun({Partition, Socket}) ->
+        wait_prepare(Socket, ...)
+    end, Sockets, {ok, CommitVC}),
+    %% contains any {false, Reason}?
+    Outcome = get_outcome(Result),
+    send_decide(Sockets, Outcome, ...).
+
+wait_prepate(Socket, ...) ->
+    gen_tcp:send(Socket, vote())
+    case gen_tcp:recv(Socket) of
+        {ok, Reply} ->
+            decode_vote(Reply)
+        {error, Reason} ->
+            %% some error
+            vote_error()
+    end.
+
+send_decide(Sockets, Outcome) ->
+    lists:foreach(fun(Sock) -> gen_tcp:send(Sock, encode_decide(Outcome)) end, Sockets).
+```
+
+We implement `collect_votes` like follows using map-reduce. The map part just spawns a new process that will execute `wait_prepare` (a blocking call). The reduce part just iterates over the results: if the outcome if false, ignore the rest of the processes (but still pop them off the queue). If the outcome is true, modify the CommitVC with the sequence number of the vote.
+
+```
+collect_votes(Fun, List, Acc) ->
+    Parent = self(),
+    N = length(List),
+    ok = lists:foreach(fun(Elt) ->
+        spawn_link(fun() ->
+            Parent ! {pmap, Fun(Elt)}
+        end)
+    end, List),
+    collect(N, Acc).
+
+collect(0, Acc) ->
+    Acc.
+
+collect(N, Outcome = {false, reason}) ->
+  receive
+    {pmap, _Res} ->
+      collect(N - 1, Outcome)
+  end;
+
+collect(N, Outcome = {ok, CommitVC}) ->
+    receive
+        {pmap, Res} ->
+            case Res of
+                {ok, Partition, Seq} ->
+                    collect(N - 1, set_time(Partition, Seq, CommitVC));
+                False={false, Reason} ->
+                    collect(N - 1, False)
+            end
+    end.
+```
+
+!!! Reads
+
+Reads can be implemented similarly to the Commit, above. Remember, that reads ''must'' be performed sequentially, even if reading more than one key (Transaction state needs to be updated between reads).
+
+!!! Messages
+
+```
+ReadRequest {
+    Partition
+    Key
+    VCaggr // needs [i] and [w] \forall w . updated
+    hasRead // needs [i] and [w] \forall w . true
+}
+
+ReadReturn {
+    abort | {
+        Value
+        VersionVC
+        MaxVC
+    }
+}
+
+Prepare {
+    Partition
+    TransactionId // for id of entry in CommitQueue
+    PartitionWriteSet // for write-write conflict check
+    VCdep[Partition] // just integer, for stale check
+}
+
+Vote {
+    Partition // sending Partition
+    {false, Reason} | {true, SeqNumber}
+}
+
+Decide {
+    Partition
+    TransactionId // for CommitQueue update/removal
+    false | {true, commitVC} // whole VC needed
+}
+```
+

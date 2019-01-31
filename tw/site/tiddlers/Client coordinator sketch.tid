@@ -1,23 +1,7 @@
 tags: imdea task
-task-client_coord-step: 1
+task-client_coord-step: 2
+task-done-on: 2019-01-31
 title: Client coordinator sketch
 type: text/vnd.tiddlywiki
 
-* Get (socket) handle, supply IP and some id
-** Tx Id at this handle will be created with `<IP, handle_id, counter>`
-** How to share socket between concurrent handle transactions?
-* Coordinator as library
-** Module-based, when creating handle, return state wrapping socket and coordinator state
-*** Each call will modify this handle.
-*** To create tx, just return id, and use this id + handle state to do operations on id
-*** Each tx is a process, and sharing socket by tagging messages with tx id?
-*** On receive, dispatch to appropriate tx process
-** Other option, have parent process handle socket, other go through that, and this parent process serializes messages (still, one parent process per client id)
-
----
-
-URLs to read later
-
-* [[Sharing UDP sockets|http://erlang.org/pipermail/erlang-questions/2018-June/095741.html]]
-* http://erlang.org/pipermail/erlang-questions/2016-August/089998.html
-* http://santtu.iki.fi/2014/03/06/network-and-parallelism-in-erlang
+See [[Client Coordinator Library Architecture]]

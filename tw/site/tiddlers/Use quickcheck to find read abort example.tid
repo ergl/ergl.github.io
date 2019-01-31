@@ -1,0 +1,20 @@
+tags: task
+task-pvc-step: 0
+title: Use quickcheck to find read abort example
+type: text/vnd.tiddlywiki
+
+Create simplified model of the system using erlang
+
+* Partitions are simple processes communicating w/ message passing
+* We have a set of operations / messages we can apply
+** Start Transaction
+** Read Key
+** Update Key
+** Prepare Transaction
+** Decide Transaction
+* Not arbitrary order, always start -> prepare, prepare -> decide
+* Create quickcheck model that goes and spawns arbitrary transactions
+* Assert that read ''never'' aborts
+** Quickcheck should find counter example
+** Shrinking phase is very important here, think about it
+*** Shrink by number of partitions involved?
