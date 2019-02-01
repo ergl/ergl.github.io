@@ -18,3 +18,11 @@ Create simplified model of the system using erlang
 ** Quickcheck should find counter example
 ** Shrinking phase is very important here, think about it
 *** Shrink by number of partitions involved?
+
+---
+
+Links:
+
+* https://proper-testing.github.io (quickcheck library)
+* http://propertesting.com (Fred's book)
+** [[Buy the book|https://pragprog.com/book/fhproper/property-based-testing-with-proper-erlang-and-elixir]]? 

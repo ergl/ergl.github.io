@@ -1,0 +1,9 @@
+tags: imdea journal
+title: 2019-02-01
+type: text/vnd.tiddlywiki
+
+* Started to figure out changes needed for the server side. Wrote a bunch of documentation on current state of the system.
+** [[pvc branches]] — Documentation on antidote branches
+** [[Noproxy changes]] — Me trying to understand the changes introduced by the noproxy branch
+** [[start_transaction slowdown rundown]] — Noting the start transaction problem for posterity
+* Cherry-picked useful pvc-noproxy and pvc-tcp-remote changes into pvc

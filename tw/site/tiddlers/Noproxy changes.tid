@@ -1,0 +1,72 @@
+tags: qnote imdea
+title: Noproxy changes
+type: text/vnd.tiddlywiki
+
+\define alink(hash) [[[$hash$|https://github.com/ergl/antidote/commit/$hash$]]]
+\define llink(hash)  [[[$hash$|https://github.com/ergl/lasp-bench/commit/$hash$]]]
+
+!! Reasoning
+
+Benchmarks were experiencing a slowdown when moving from single-site to multi-site deployments. Adding latency between the Antidote nodes was causing performance problems. Our maximum throughput was basically halving when using two clusters. This branch was used as an on-going investigation into the causes.
+
+!! Notation
+
+On the architecture of Antidote at the time, a client would request a given node to //coordinate// a transaction for them. After that, that node would hold state for that transaction, and perform operations on them on behalf of the clients. These command include reading keys, updating keys, and performing the 2pc protocol. Both the //read// and //commit// commands involve communication with other nodes (read of keys owned by other nodes—remote reads—, or performing a vote phase with partitions living in other nodes). We say that a node is a ''//proxy//'' if it is a coordinator, and it performs a command that involves communicating with other nodes. In this branch, we only concern ourselves with //remote reads//.
+
+!! Problem
+
+Our main issue was that remote reads were taking longer than expected. Even for a roundtrip time of 10ms between nodes, remote reads were taking a lot longer than that. We focused our approaches on understanding the causes.
+
+!! Changes
+
+Most changes happened on the client side (see lasp-bench changes), but these are important too
+
+!!! ~~Misc changes (cherry-pick to pvc?)~~
+
+Done
+
+!!! Reply client with `request_to`
+
+On the server, check if the requested key is local. If it is, perform a normal read. If it is not, find the owning node, and reply to the client with an IP and ask them to re-submit their request there.
+
+Problems: we're still checking our local node; extra requests, extra round trips.
+
+Changeset: <<alink 560d0c7174ed20b9c792d724876990462ee5fd85>> 
+
+!!! Client-side partitioning
+
+Make clients aware of the distribution of the keys. Involves adding a new pb message to get the ring information from a node, and changing the client to get a key partition before issuing a transaction.
+
+Better, we're not talking to nodes that are not involved in the transaction.
+
+Changeset: <<alink 56dbcdbb3b158e7089c28f11abbb15774935cf77>> -> <<alink 7161ac128dfee90532c59dd8b7d67b3e347e647e>>
+
+
+!!! Read path intrumentation
+
+Instrument the read path with timing information
+
+* Add base `Ping` command as a noop command
+* Modify pb messages to add timing information (stamps)
+
+Changeset:
+
+* <<alink 716f74c1195971eb02d30a750c619686397f367c>> -> <<alink 9b456e3cc4dd98f86f54568502a77f101607cf87>> (add new messages)
+* <<alink 28c9723abc15ffe725ca02073b40e421a4c87d6e>>
+* <<alink 0c37dee89c5cc3c066efb17d8460e9d619de8414>>
+
+!!! Poolboy-managed coordinators
+
+Use poolboy to manage coordinators (see [[start transaction issue|start_transaction slowdown rundown]])
+
+Changeset:
+
+* <<alink 6b247b424379052c2b23199e92f0b931262ab4b5>> -> <<alink 8b23c14408363f74e02d0d65411f0be91a2c1664>> (first implementation)
+* <<alink 154454417db2f00a08f7c57e3c9c5894380bdb17>> (pool size tuning)
+* <<alink 19d59df9167fc33854eb7a074ccca54c717cd27d>> (tune implementation, use or own coord state)
+* <<alink 6976b20cdef1c0744bc587477ff3e67a0f672e4f>> (function rename)
+
+!!! Modify pvc API
+* <<alink 4fcf76efb418cfbb317a6899b49815f13171117f>> (new coordinator pool design, breaks pvc API compatibility)
+* <<alink 2b4d254a843f000014aa798c992163a33b56af33>> (adapt indices to new API)
+* Note: add dialyzer check to Makefile, otherwise we won't spot this errors

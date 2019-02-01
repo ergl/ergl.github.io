@@ -4,4 +4,4 @@ type: text/vnd.tiddlywiki
 
 Quick notes are—as their name implies—quick outlines of ideas and ramblings I have in my head at any particular point in time.
 
-<<list-links filter:"[tag[qnote]!has[draft.of]]">>
+<<list-links filter:"[tag[qnote]!tag[imdea]!has[draft.of]]">>
