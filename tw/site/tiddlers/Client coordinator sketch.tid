@@ -4,4 +4,4 @@ task-done-on: 2019-01-31
 title: Client coordinator sketch
 type: text/vnd.tiddlywiki
 
-See [[Client Coordinator Library Architecture]]
+<<transclude_edit "Client Coordinator Library Architecture">>

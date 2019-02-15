@@ -1,0 +1,75 @@
+tags: pvc_client_coordinator imdea
+title: Client Coordinator API
+type: text/vnd.tiddlywiki
+
+!!! Types
+
+* Connection `pvc:connection()`. Represents an active connection to the database. Internally keeps a socket open for each physical node, as well as a partition -> node mapping.
+<!---->
+* Transaction `pvc:transaction()`. Represents an active transaction. Trying to use it after it has committed or aborted is undefined. Wraps an unique id (using client IP, client Id, and auto-incremented counter). Internally keeps write set, updated partitions, read partitions (`hasRead`), and both `VCdep` and `VCaggr`.
+<!---->
+* Abort reason `pvc:abort_reason() = bad_read | ww_conflict | stale_tx`
+<!---->
+* Both keys and values will be serialized as erlang terms on the wire. If one uses `binary` or `bitstring`, they will be left alone.
+<!---->
+* Transaction ids have to be comparable to each other. Therefore it is recommended that all ids have the same type.
+
+!!! Open database connection
+
+```
+pvc:connect(Address, Port) -> {ok, Connection} | {error, Reason}
+
+Address = inet:hostname()
+Port = inet::port_number()
+Connection = pvc:connection()
+Reason = inet:posix()
+```
+
+Connects to a database server on at `Addresss:Port`. After talking to the initial node, it will request the partitioning information, get all the nodes in the cluster, and open a socket to all of them.
+
+!!! Start transaction
+
+```
+pvc:start_transaction(Conn :: pvc:connection(), Id :: term()) -> {ok, Tx :: pvc:transaction()}
+```
+
+Spawns a fresh transaction. `Id` should be an unique identifier (unique-ish among all the concurrent active transactions, other than that it is safe to re-use ids). UUIDs are fine, but overkill. For our use-case, a tuple `{client_ip, worker_id, counter}` works fine, where `worker_id` is the process id (integer) of the lasp_bench worker. The connection is used to get the current client IP address.
+
+!!! Read Key(s)
+
+```
+pvc:read_key(Connection, Tx1, Key | [Key]) -> {ok, Value | [Value], Tx2} | {error, Reason}
+
+Connection = pvc:connection()
+Tx1 = pvc:transaction()
+Key = term()
+Value = term()
+Tx2 = pvc:transaction()
+Reason = pvc:abort_reason()
+```
+
+Reads a key (or batch of keys) from the database. A new transaction state, `Tx2` is returned (note that, if the keys requested were updated previously, `Tx2` will be the same as `Tx1`). Internally, for each key, pvc will compute the appropriate node to perform the remote read.
+
+!!! Update Key(s)
+
+```
+pvc:update(Conn :: pvc:connection(), Tx1 :: pvc:transaction(), Key :: term(), Value :: term()) -> {ok, Tx2 :: pvc:transaction()}
+
+pvc:update(Conn :: pvc:connection(), Tx1 :: pvc:transaction, Updates :: [{Key :: term(), Value :: term()}]) -> {ok, Tx2 :: pvc:transaction()}
+```
+
+Perform updates, either on a single key (`pvc:update/3`), or a batch of keys (`pvc:update/2`). Connection is used to determine the partition bucket of `Key`.
+
+!!! Commit Transaction
+
+```
+pvc:commit(Conn :: pvc:connection(), Tx :: pvc:transaction()) -> ok | {error, Reason :: pvc:abort_reason()}
+```
+
+Commits `Tx`, using 2pc.
+
+!!! Close database connection
+
+```
+pvc:close(Conn :: pvc:connection()) -> ok
+```

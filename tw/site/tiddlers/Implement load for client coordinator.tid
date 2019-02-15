@@ -1,0 +1,8 @@
+tags: task
+task-client_coord-step: 1
+title: Implement load for client coordinator
+type: text/vnd.tiddlywiki
+
+Write set too big to send over protocol buffers, have to hack something inside Antidote
+
+<<transclude_edit "Client Coordinator Load Notes">>

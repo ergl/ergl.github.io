@@ -1,3 +1,5 @@
+description: Creates a task board with Backlog, Current and Done lists. Create tasks, reorder them, etc
+exports: triage_of [tag]
 tags: $:/tags/Macro
 title: $:/ergl/macros/triage_of
 type: text/vnd.tiddlywiki

@@ -1,0 +1,15 @@
+tags: imdea journal
+title: 2019-02-04
+type: text/vnd.tiddlywiki
+
+Between yesterday and today:
+
+* Extracted [[pvc_vclock|https://github.com/ergl/pvc_vclock]] into an external library (will need to share it between client and server side)
+* Renamed rubis_proto to pvc_proto and updated with new protocol-level messages
+** See [[Client Coordinator Notes]] "Messages" section
+* Created first pass at the client coordinator library ([[repo|https://github.com/ergl/pvc]])
+** Interface, types and more are defined in the [[API document|Client Coordinator API]]
+
+---
+
+Still need to refine message types (connection, mainly), and to see what changes we will need to make to the antidote side

@@ -1,0 +1,8 @@
+tags: imdea journal
+title: 2019-02-05
+type: text/vnd.tiddlywiki
+
+* Wrote [[Constant Partition Access]]
+** Figured out the shape of `#connection{}` on [[Client Coordinator Notes]]
+* Finished work on pvc_proto driver implementation
+* Continued working on library implementation

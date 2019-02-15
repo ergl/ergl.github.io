@@ -1,0 +1,10 @@
+tags: task
+task-client_coord-step: 0
+title: Migrate clocksi_vnode to pvc_storage_vnode?
+type: text/vnd.tiddlywiki
+
+clocksi_vnode is responsible for the prepare/decide logic of the protocol, while owning the cache of `VLog.last`, the Commit Queue and the Partition State (MostRecentVC and LastPrep counter).
+
+materializer_vnode owns the ETS table containing the actual keys and mapping to VLogs.
+
+We could create two new vnodes, one for storage (superceding materializer_vnode), one for the protocol logic (superceding clocksi_vnode), and another one containing the Commit Log (currently being done by logging_vnode).

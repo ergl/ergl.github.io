@@ -283,6 +283,10 @@ Error message and password prompt
 
 <li>$:/ergl/macros/bookmark_link_list_of</li>
 
+<li>$:/ergl/macros/highlight</li>
+
+<li>$:/ergl/macros/transclude_edit</li>
+
 <li>$:/ergl/macros/triage_of</li>
 
 <li>$:/isEncrypted</li>
@@ -331,6 +335,18 @@ Error message and password prompt
 
 <li>2019-02-01</li>
 
+<li>2019-02-04</li>
+
+<li>2019-02-05</li>
+
+<li>2019-02-06</li>
+
+<li>2019-02-08</li>
+
+<li>2019-02-14</li>
+
+<li>2019-02-15</li>
+
 <li>A List of random but useful plugins</li>
 
 <li>About the system tags</li>
@@ -343,11 +359,25 @@ Error message and password prompt
 
 <li>Admin Panel</li>
 
+<li>Bench new client coord and compare</li>
+
 <li>Change Links Format</li>
 
-<li>Changes needed to database side</li>
+<li>Clean up Antidote deprecated functions</li>
+
+<li>Client Coordinator API</li>
+
+<li>Client Coordinator Database Changes</li>
+
+<li>Client coordinator library</li>
 
 <li>Client Coordinator Library Architecture</li>
+
+<li>Client Coordinator Links</li>
+
+<li>Client Coordinator Load Notes</li>
+
+<li>Client Coordinator Notes</li>
 
 <li>Client coordinator sketch</li>
 
@@ -355,7 +385,11 @@ Error message and password prompt
 
 <li>clocksi_readitem_server state requirements</li>
 
+<li>Constant Partition Access</li>
+
 <li>Counter Experiment</li>
+
+<li>Create macro for highlight notes</li>
 
 <li>Customizing the page toolbar</li>
 
@@ -381,6 +415,8 @@ Error message and password prompt
 
 <li>Imdea General</li>
 
+<li>Implement load for client coordinator</li>
+
 <li>Implement new PB message in Antidote</li>
 
 <li>Improve vnode &lt;-&gt; readitem start procedure</li>
@@ -403,6 +439,8 @@ Error message and password prompt
 
 <li>Measure baseline performance</li>
 
+<li>Migrate clocksi_vnode to pvc_storage_vnode?</li>
+
 <li>Migrate mmd scripts after mermaid plugin</li>
 
 <li>Musings on personal organizers</li>
@@ -417,7 +455,11 @@ Error message and password prompt
 
 <li>Read fast-psi main.pdf for readonly abort example</li>
 
+<li>Reconcile data types between client and server</li>
+
 <li>Remaking the blog with TiddlyWiki</li>
+
+<li>Spec changes needed to database side</li>
 
 <li>Stamp-modified lasp_bench</li>
 
@@ -427,6 +469,8 @@ Error message and password prompt
 
 <li>start_transaction slowdown rundown</li>
 
+<li>Swallow socket errors on client coord? Make errors stable</li>
+
 <li>system_start.mmd</li>
 
 <li>SystemTags Documentation</li>
@@ -434,6 +478,8 @@ Error message and password prompt
 <li>Table of Contents Example</li>
 
 <li>Test changes on cloudlab</li>
+
+<li>Test client coord</li>
 
 <li>TiddlyKnow</li>
 
@@ -448,6 +494,8 @@ Error message and password prompt
 <li>triager/readitem_improv</li>
 
 <li>Use quickcheck to find read abort example</li>
+
+<li>User-defined macros</li>
 
 <li>Wallace's E Unibus Pluram, annotated</li>
 
@@ -9658,7 +9706,8 @@ exports.run = function(value, operation, until, beyond, decimals, tiddler, by) {
 }</pre>
 </div>
 <div created="20181229002633052" modified="20181230005914328" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[[Imdea General]]
+<pre>[[triager/client_coord]]
+[[Imdea General]]
 [[Exploring the Wiki]]
 </pre>
 </div>
@@ -10786,7 +10835,7 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
     font: normal normal normal normal 14px/21px &quot;Chinese Quote&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;
   }&lt;/style&gt;&lt;g&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor6&quot; x1=&quot;75&quot; y1=&quot;5&quot; x2=&quot;75&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;0&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;75&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;75&quot; dy=&quot;0&quot;&gt;antidote_app&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor7&quot; x1=&quot;275&quot; y1=&quot;5&quot; x2=&quot;275&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;200&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;275&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;275&quot; dy=&quot;0&quot;&gt;antidote_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor8&quot; x1=&quot;475&quot; y1=&quot;5&quot; x2=&quot;475&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;400&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;475&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;475&quot; dy=&quot;0&quot;&gt;inter_dc_manager&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor9&quot; x1=&quot;675&quot; y1=&quot;5&quot; x2=&quot;675&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;600&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;675&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;675&quot; dy=&quot;0&quot;&gt;clocksi_vnode&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor10&quot; x1=&quot;875&quot; y1=&quot;5&quot; x2=&quot;875&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;800&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;875&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;875&quot; dy=&quot;0&quot;&gt;clocksi_readitem_server&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;line id=&quot;actor11&quot; x1=&quot;1075&quot; y1=&quot;5&quot; x2=&quot;1075&quot; y2=&quot;1160.25&quot; class=&quot;actor-line&quot; stroke-width=&quot;0.5px&quot; stroke=&quot;#999&quot;&gt;&lt;/line&gt;&lt;rect x=&quot;1000&quot; y=&quot;0&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;1075&quot; y=&quot;32.5&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;1075&quot; dy=&quot;0&quot;&gt;clocksi_readitem_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;defs&gt;&lt;marker id=&quot;arrowhead&quot; refX=&quot;5&quot; refY=&quot;2&quot; markerWidth=&quot;6&quot; markerHeight=&quot;4&quot; orient=&quot;auto&quot;&gt;&lt;path d=&quot;M 0,0 V 4 L6,2 Z&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&lt;defs&gt;&lt;marker id=&quot;crosshead&quot; markerWidth=&quot;15&quot; markerHeight=&quot;8&quot; orient=&quot;auto&quot; refX=&quot;16&quot; refY=&quot;4&quot;&gt;&lt;path fill=&quot;black&quot; stroke=&quot;#000000&quot; stroke-width=&quot;1px&quot; d=&quot;M 9,2 V 6 L16,4 Z&quot; style=&quot;stroke-dasharray: 0px, 0px;&quot;&gt;&lt;/path&gt;&lt;path fill=&quot;none&quot; stroke=&quot;#000000&quot; stroke-width=&quot;1px&quot; d=&quot;M 0,1 L 6,7 M 6,1 L 0,7&quot; style=&quot;stroke-dasharray: 0px, 0px;&quot;&gt;&lt;/path&gt;&lt;/marker&gt;&lt;/defs&gt;&lt;g&gt;&lt;text x=&quot;175&quot; y=&quot;93&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_link/0&lt;/text&gt;&lt;line x1=&quot;75&quot; y1=&quot;100&quot; x2=&quot;275&quot; y2=&quot;100&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;270&quot; y=&quot;102&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;263.125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;677.5&quot; y=&quot;128&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_link/0&lt;/text&gt;&lt;line x1=&quot;280&quot; y1=&quot;135&quot; x2=&quot;1075&quot; y2=&quot;135&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;1070&quot; y=&quot;137&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;193.125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;1100&quot; y=&quot;145&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;85.125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;1096&quot; y=&quot;169&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;Configure replica&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;1096&quot; y=&quot;185.28125&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;server as transient&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;1096&quot; y=&quot;201.5625&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;simple_one_for_one&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;1096&quot; y=&quot;217.84375&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;1116&quot; fill=&quot;black&quot;&gt;child.&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;1080&quot; y=&quot;258.125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;(simple_one_for_one)&lt;/text&gt;&lt;path d=&quot;M 1080,265.125 C 1140,255.125 1140,295.125 1080,285.125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;675&quot; y=&quot;323.125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;1070&quot; y1=&quot;330.125&quot; x2=&quot;280&quot; y2=&quot;330.125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;172.5&quot; y=&quot;358.125&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;270&quot; y1=&quot;365.125&quot; x2=&quot;75&quot; y2=&quot;365.125&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;-100&quot; y=&quot;375.125&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;52.5625&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;-104&quot; y=&quot;399.125&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;-84&quot; fill=&quot;black&quot;&gt;virtual nodes get&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;-104&quot; y=&quot;415.40625&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;-84&quot; fill=&quot;black&quot;&gt;registered here&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;275&quot; y=&quot;455.6875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_bg_processes/1&lt;/text&gt;&lt;line x1=&quot;75&quot; y1=&quot;462.6875&quot; x2=&quot;475&quot; y2=&quot;462.6875&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;470&quot; y=&quot;464.6875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;610.5625&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;500&quot; y=&quot;472.6875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;36.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;496&quot; y=&quot;496.6875&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;516&quot; fill=&quot;black&quot;&gt;broadcast all nodes&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;577.5&quot; y=&quot;536.96875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;sync_command(node, start_read_servers)&lt;/text&gt;&lt;line x1=&quot;480&quot; y1=&quot;543.96875&quot; x2=&quot;675&quot; y2=&quot;543.96875&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;670&quot; y=&quot;545.96875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;494.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;571.96875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_read_servers/2&lt;/text&gt;&lt;line x1=&quot;680&quot; y1=&quot;578.96875&quot; x2=&quot;875&quot; y2=&quot;578.96875&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;975&quot; y=&quot;631.96875&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;start_fsm/2&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;638.96875&quot; x2=&quot;1075&quot; y2=&quot;638.96875&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;900&quot; y=&quot;648.96875&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;36.28125&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;note&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;896&quot; y=&quot;672.96875&quot; fill=&quot;black&quot; class=&quot;noteText&quot;&gt;&lt;tspan x=&quot;916&quot; fill=&quot;black&quot;&gt;Spawn server proc&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;975&quot; y=&quot;713.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;init/2&lt;/text&gt;&lt;line x1=&quot;1075&quot; y1=&quot;720.25&quot; x2=&quot;875&quot; y2=&quot;720.25&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;870&quot; y=&quot;722.25&quot; fill=&quot;#EDF2AE&quot; stroke=&quot;#666&quot; width=&quot;10&quot; height=&quot;33&quot; rx=&quot;0&quot; ry=&quot;0&quot; class=&quot;activation0&quot;&gt;&lt;/rect&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;977.5&quot; y=&quot;748.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;880&quot; y1=&quot;755.25&quot; x2=&quot;1075&quot; y2=&quot;755.25&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;975&quot; y=&quot;783.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;1075&quot; y1=&quot;790.25&quot; x2=&quot;875&quot; y2=&quot;790.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;line x1=&quot;860&quot; y1=&quot;588.96875&quot; x2=&quot;1085&quot; y2=&quot;588.96875&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;1085&quot; y1=&quot;588.96875&quot; x2=&quot;1085&quot; y2=&quot;800.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;860&quot; y1=&quot;800.25&quot; x2=&quot;1085&quot; y2=&quot;800.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;860&quot; y1=&quot;588.96875&quot; x2=&quot;860&quot; y2=&quot;800.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;polygon points=&quot;860,588.96875 910,588.96875 910,601.96875 901.6,608.96875 860,608.96875&quot; class=&quot;labelBox&quot;&gt;&lt;/polygon&gt;&lt;text x=&quot;867.5&quot; y=&quot;603.96875&quot; fill=&quot;black&quot; class=&quot;labelText&quot;&gt;&lt;tspan x=&quot;867.5&quot; fill=&quot;black&quot;&gt;loop&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;972.5&quot; y=&quot;603.96875&quot; fill=&quot;black&quot; class=&quot;loopText&quot; style=&quot;text-anchor: middle;&quot;&gt;&lt;tspan x=&quot;972.5&quot; fill=&quot;black&quot;&gt;[ all read servers ]&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;828.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;835.25&quot; x2=&quot;680&quot; y2=&quot;835.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;863.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;check_partition_ready/3&lt;/text&gt;&lt;line x1=&quot;680&quot; y1=&quot;870.25&quot; x2=&quot;875&quot; y2=&quot;870.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;875&quot; y=&quot;923.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;global:whereis_name(server) =/= undefined&lt;/text&gt;&lt;path d=&quot;M 875,930.25 C 935,920.25 935,960.25 875,950.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;g&gt;&lt;line x1=&quot;725.109375&quot; y1=&quot;880.25&quot; x2=&quot;1024.890625&quot; y2=&quot;880.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;1024.890625&quot; y1=&quot;880.25&quot; x2=&quot;1024.890625&quot; y2=&quot;970.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;725.109375&quot; y1=&quot;970.25&quot; x2=&quot;1024.890625&quot; y2=&quot;970.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;line x1=&quot;725.109375&quot; y1=&quot;880.25&quot; x2=&quot;725.109375&quot; y2=&quot;970.25&quot; class=&quot;loopLine&quot;&gt;&lt;/line&gt;&lt;polygon points=&quot;725.109375,880.25 775.109375,880.25 775.109375,893.25 766.709375,900.25 725.109375,900.25&quot; class=&quot;labelBox&quot;&gt;&lt;/polygon&gt;&lt;text x=&quot;732.609375&quot; y=&quot;895.25&quot; fill=&quot;black&quot; class=&quot;labelText&quot;&gt;&lt;tspan x=&quot;732.609375&quot; fill=&quot;black&quot;&gt;loop&lt;/tspan&gt;&lt;/text&gt;&lt;text x=&quot;875&quot; y=&quot;895.25&quot; fill=&quot;black&quot; class=&quot;loopText&quot; style=&quot;text-anchor: middle;&quot;&gt;&lt;tspan x=&quot;875&quot; fill=&quot;black&quot;&gt;[ all read servers ]&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;777.5&quot; y=&quot;998.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;true&lt;/text&gt;&lt;line x1=&quot;875&quot; y1=&quot;1005.25&quot; x2=&quot;680&quot; y2=&quot;1005.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;575&quot; y=&quot;1033.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;670&quot; y1=&quot;1040.25&quot; x2=&quot;480&quot; y2=&quot;1040.25&quot; class=&quot;messageLine1&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;stroke-dasharray: 3px, 3px; fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;text x=&quot;272.5&quot; y=&quot;1068.25&quot; class=&quot;messageText&quot; style=&quot;text-anchor: middle;&quot;&gt;ok&lt;/text&gt;&lt;line x1=&quot;470&quot; y1=&quot;1075.25&quot; x2=&quot;75&quot; y2=&quot;1075.25&quot; class=&quot;messageLine0&quot; stroke-width=&quot;2&quot; stroke=&quot;black&quot; marker-end=&quot;url(#arrowhead)&quot; style=&quot;fill: none;&quot;&gt;&lt;/line&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;0&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;75&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;75&quot; dy=&quot;0&quot;&gt;antidote_app&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;200&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;275&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;275&quot; dy=&quot;0&quot;&gt;antidote_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;400&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;475&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;475&quot; dy=&quot;0&quot;&gt;inter_dc_manager&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;600&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;675&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;675&quot; dy=&quot;0&quot;&gt;clocksi_vnode&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;800&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;875&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;875&quot; dy=&quot;0&quot;&gt;clocksi_readitem_server&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect x=&quot;1000&quot; y=&quot;1095.25&quot; fill=&quot;#eaeaea&quot; stroke=&quot;#666&quot; width=&quot;150&quot; height=&quot;65&quot; rx=&quot;3&quot; ry=&quot;3&quot; class=&quot;actor&quot;&gt;&lt;/rect&gt;&lt;text x=&quot;1075&quot; y=&quot;1127.75&quot; dominant-baseline=&quot;central&quot; alignment-baseline=&quot;central&quot; class=&quot;actor&quot; style=&quot;text-anchor: middle; font-size: 14px; font-family: Open-Sans, sans-serif;&quot;&gt;&lt;tspan x=&quot;1075&quot; dy=&quot;0&quot;&gt;clocksi_readitem_sup&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;</pre>
 </div>
-<div tags="$:/tags/Macro" title="$:/ergl/macros/bookmark_link_list_of" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div description="Create a list out of a tag of tiddlers with a `bookmark_link` field representing an external URL and an optional body representing a comment on said URL" exports="bookmark_link_list_of [tag]" tags="$:/tags/Macro" title="$:/ergl/macros/bookmark_link_list_of" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define bookmark_link_list_of(tag)
 &lt;div&gt;&lt;ul&gt;
 &lt;$list filter=&quot;[tag[$tag$]!has[draft.of]sort[created]reverse[]]&quot;&gt;
@@ -10798,9 +10847,28 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 &lt;/li&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;&lt;/div&gt;
+\end
+</pre>
+</div>
+<div description="Highlights a word or sentence (use &quot;sentence&quot; for that)" exports="hl [word or &quot;sentence&quot;]" tags="$:/tags/Macro" title="$:/ergl/macros/highlight" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>\define hl(text)
+&lt;span style=&quot;padding:0.1em;background: #FFF7D7&quot;&gt;$text$&lt;/span&gt;
 \end</pre>
 </div>
-<div tags="$:/tags/Macro" title="$:/ergl/macros/triage_of" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div description="Make a transclusion obvious surrounding it with color, plus add an [edit] button that takes you to it." exports="transclude_edit [tiddler name]" tags="$:/tags/Macro" title="$:/ergl/macros/transclude_edit" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>\define transclude_edit(name)
+
+[[[edit section|$name$]]]
+
+&lt;div style=&quot;background: #FFF7D7; border: solid 1px black; padding:0.5em&quot;&gt;
+
+{{$name$}}
+
+&lt;/div&gt;
+\end
+</pre>
+</div>
+<div description="Creates a task board with Backlog, Current and Done lists. Create tasks, reorder them, etc" exports="triage_of [tag]" tags="$:/tags/Macro" title="$:/ergl/macros/triage_of" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define triage_of(tag:&quot;default&quot;)
   &lt;$button&gt;
     &lt;$action-sendmessage
@@ -10954,7 +11022,7 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;
 <div created="20181229001800601" modified="20181230005914321" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>What Do I Know?</pre>
 </div>
-<div list="[[Imdea General]] [[Exploring the Wiki]]" title="$:/StoryList" revision="1" bag="default">
+<div list="triager/client_coord [[Imdea General]] [[Exploring the Wiki]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div list="$:/core/ui/Buttons/home $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all [[Draft of '$:/ergl/functions/NewBookmarkLink']] $:/core/ui/Buttons/permaview $:/ergl/functions/NewBookmarkLink $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh $:/ergl/functions/ShowAdmin $:/core/ui/Buttons/more-page-actions" title="$:/tags/PageControls" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11206,6 +11274,46 @@ Completed triage tasks:
 ** [[start_transaction slowdown rundown]] — Noting the start transaction problem for posterity
 * Cherry-picked useful pvc-noproxy and pvc-tcp-remote changes into pvc</pre>
 </div>
+<div tags="imdea journal" title="2019-02-04" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Between yesterday and today:
+
+* Extracted [[pvc_vclock|https://github.com/ergl/pvc_vclock]] into an external library (will need to share it between client and server side)
+* Renamed rubis_proto to pvc_proto and updated with new protocol-level messages
+** See [[Client Coordinator Notes]] &quot;Messages&quot; section
+* Created first pass at the client coordinator library ([[repo|https://github.com/ergl/pvc]])
+** Interface, types and more are defined in the [[API document|Client Coordinator API]]
+
+---
+
+Still need to refine message types (connection, mainly), and to see what changes we will need to make to the antidote side</pre>
+</div>
+<div tags="imdea journal" title="2019-02-05" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Wrote [[Constant Partition Access]]
+** Figured out the shape of `#connection{}` on [[Client Coordinator Notes]]
+* Finished work on pvc_proto driver implementation
+* Continued working on library implementation</pre>
+</div>
+<div tags="imdea journal" title="2019-02-06" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Started changes to Antidote side (see progress in the [[pvc-ccoord|https://github.com/ergl/antidote/tree/pvc-ccoord]] branch
+** Mainly cleanup, renaming modules, etc
+* Implemented `connect` for client coordinator and Antidote</pre>
+</div>
+<div tags="imdea journal" title="2019-02-08" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Implement `start_transaction`, `update`
+* Implemented first pass at `read`
+** Needs fixes (see [[Client Coordinator Database Changes]])</pre>
+</div>
+<div tags="imdea journal" title="2019-02-14" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Past few days were spent modifying Antidote to fit the new client coordinator design
+
+* Finished client coordinator library
+
+</pre>
+</div>
+<div tags="imdea journal" title="2019-02-15" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Finish touches on prepare/decide process
+* Think about how to implement the [[load process|Client Coordinator Load Notes]]</pre>
+</div>
 <div bookmark_link="http://inmysocks.tiddlyspot.com/#My%20Plugins:%5B%5BMy%20Plugins%5D%5D%20%24%3A%2Fplugins%2Finmysocks%2FTW5Utils%20%24%3A%2Fplugins%2Finmysocks%2FCalendar%20%24%3A%2Fplugins%2Finmysocks%2FTaskList%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%2FBookmarks%2030plusgamer" tags="tiddlytip" title="A List of random but useful plugins" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Calendars, Bookmarks (this one looks especially nice)...</pre>
 </div>
@@ -11317,40 +11425,17 @@ New Bookmark
 {{triage/meta}}
 </pre>
 </div>
+<div tags="task" task-client_coord-step="0" title="Bench new client coord and compare" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div tags="task" task-meta-step="0" title="Change Links Format" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Instead of putting the link in a field, maybe put it in the body, inside a table (see how the  [[Bookmark plugin|http://inmysocks.tiddlyspot.com/#%24%3A%2Fplugins%2Finmysocks%2FBookmarks]] does it)</pre>
 </div>
-<div tags="task" task-client_coord-step="1" title="Changes needed to database side" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div tags="task" task-client_coord-step="0" title="Clean up Antidote deprecated functions" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div tags="code_notes imdea" title="Client Coordinator Library Architecture" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>!! Useful Docs
-
-* [[Sharing UDP sockets|http://erlang.org/pipermail/erlang-questions/2018-June/095741.html]]
-&lt;&lt;&lt;
-A gen_server can handle ~80k msgs/sec before overloading (apparently), so you can have a controlling process handling the socket and other messages going through there to deliver messages.
-&lt;&lt;&lt;
-* http://erlang.org/pipermail/erlang-questions/2016-August/089998.html
-&lt;&lt;&lt;
-Client sockets (sockets on an active connection) can also be shared and passed around, but since a client
-socket can only be read by the client socket's owning process, this is of
-limited utility.
-&lt;&lt;&lt;
-* http://santtu.iki.fi/2014/03/06/network-and-parallelism-in-erlang
-&lt;&lt;&lt;
-Not really related, but still useful.
-Using `gen_tcp:controlling_process/2` can cause a race condition where tcp messages are delivered to the old process and cause messages to get lost
-&lt;&lt;&lt;
-* https://learnyousomeerlang.com/buckets-of-sockets
-&lt;&lt;&lt;
-Always useful
-&lt;&lt;&lt;
-
----
-
-!! Usage
-
-!!! Types
+<div tags="pvc_client_coordinator imdea" title="Client Coordinator API" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!!! Types
 
 * Connection `pvc:connection()`. Represents an active connection to the database. Internally keeps a socket open for each physical node, as well as a partition -&gt; node mapping.
 &lt;!----&gt;
@@ -11378,10 +11463,10 @@ Connects to a database server on at `Addresss:Port`. After talking to the initia
 !!! Start transaction
 
 ```
-pvc:start_transaction(Id :: term()) -&gt; {ok, Tx :: pvc:transaction()}
+pvc:start_transaction(Conn :: pvc:connection(), Id :: term()) -&gt; {ok, Tx :: pvc:transaction()}
 ```
 
-Spawns a fresh transaction. `Id` should be an unique identifier (unique-ish among all the concurrent active transactions, other than that it is safe to re-use ids). UUIDs are fine, but overkill. For our use-case, a tuple `{client_ip, worker_id, counter}` works fine, where `worker_id` is the process id (integer) of the lasp_bench worker.
+Spawns a fresh transaction. `Id` should be an unique identifier (unique-ish among all the concurrent active transactions, other than that it is safe to re-use ids). UUIDs are fine, but overkill. For our use-case, a tuple `{client_ip, worker_id, counter}` works fine, where `worker_id` is the process id (integer) of the lasp_bench worker. The connection is used to get the current client IP address.
 
 !!! Read Key(s)
 
@@ -11401,12 +11486,12 @@ Reads a key (or batch of keys) from the database. A new transaction state, `Tx2`
 !!! Update Key(s)
 
 ```
-pvc:update(Tx1 :: pvc:transaction(), Key :: term(), Value :: term()) -&gt; {ok, Tx2 :: pvc:transaction()}
+pvc:update(Conn :: pvc:connection(), Tx1 :: pvc:transaction(), Key :: term(), Value :: term()) -&gt; {ok, Tx2 :: pvc:transaction()}
 
-pvc:update(Tx1 :: pvc:transaction, Updates :: [{Key :: term(), Value :: term()}]) -&gt; {ok, Tx2 :: pvc:transaction()}
+pvc:update(Conn :: pvc:connection(), Tx1 :: pvc:transaction, Updates :: [{Key :: term(), Value :: term()}]) -&gt; {ok, Tx2 :: pvc:transaction()}
 ```
 
-Perform updates, either on a single key (`pvc:update/3`), or a batch of keys (`pvc:update/2`).
+Perform updates, either on a single key (`pvc:update/3`), or a batch of keys (`pvc:update/2`). Connection is used to determine the partition bucket of `Key`.
 
 !!! Commit Transaction
 
@@ -11420,11 +11505,101 @@ Commits `Tx`, using 2pc.
 
 ```
 pvc:close(Conn :: pvc:connection()) -&gt; ok
-```
+```</pre>
+</div>
+<div tags="imdea pvc_client_coordinator" title="Client Coordinator Database Changes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!!! Tasks ([[triager/client_coord]])
+
+* Reconcile types
+* Simplify read servers
+** Don't do global, only used for local reads
+** Return error on partition moved? (check `Self = node(), {_, Self} = IndexNode`, somehow)
+** See [[a9ec7f3e2f5883f87f4e77995dab2ca61926c580|https://github.com/ergl/antidote/commit/a9ec7f3e2f5883f87f4e77995dab2ca61926c580]] and the [[pvc-newfsm|https://github.com/ergl/antidote/tree/pvc-newfsm]] branch in general to get some idea on how to do it (ignore `pvc_storage_vnode` for now).
 
 ---
 
+!!! Can be done now
+
+* Expose read / decide / commit directly to TCP server
+
+* Rip out pvc module
+** Indices included, though think about migration
+
+* Make external library containing common types? (has_read, vectorclock, write sets, etc)
+
+---
+
+!!! Future plans / cleanup
+
+* Remove read servers
+** Materializer state can be moved to TCP handler processes (will need to start only ''after'' partitions are distributed among nodes.
+
+* Rip out whole fsm for coordinators
+** And supervisors
+</pre>
+</div>
+<div tags="task" task-client_coord-step="2" task-done-on="2019-02-14" title="Client coordinator library" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;&lt;transclude_edit &quot;Client Coordinator Library Architecture&quot;&gt;&gt;</pre>
+</div>
+<div tags="pvc_client_coordinator imdea" title="Client Coordinator Library Architecture" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! Useful Docs
+
+&lt;&lt;transclude_edit &quot;Client Coordinator Links&quot;&gt;&gt;
+
+!! Usage
+
+&lt;&lt;transclude_edit &quot;Client Coordinator API&quot;&gt;&gt;
+
 !! Random notes
+
+&lt;&lt;transclude_edit &quot;Client Coordinator Notes&quot;&gt;&gt;
+</pre>
+</div>
+<div tags="pvc_client_coordinator imdea" title="Client Coordinator Links" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* [[Sharing UDP sockets|http://erlang.org/pipermail/erlang-questions/2018-June/095741.html]]
+&lt;&lt;&lt;
+A gen_server can handle ~80k msgs/sec before overloading (apparently), so you can have a controlling process handling the socket and other messages going through there to deliver messages.
+&lt;&lt;&lt;
+* http://erlang.org/pipermail/erlang-questions/2016-August/089998.html
+&lt;&lt;&lt;
+Client sockets (sockets on an active connection) can also be shared and passed around, but since a client
+socket can only be read by the client socket's owning process, this is of
+limited utility.
+&lt;&lt;&lt;
+* http://santtu.iki.fi/2014/03/06/network-and-parallelism-in-erlang
+&lt;&lt;&lt;
+Not really related, but still useful.
+Using `gen_tcp:controlling_process/2` can cause a race condition where tcp messages are delivered to the old process and cause messages to get lost
+&lt;&lt;&lt;
+* https://learnyousomeerlang.com/buckets-of-sockets
+&lt;&lt;&lt;
+Always useful
+&lt;&lt;&lt;</pre>
+</div>
+<div tags="pvc_client_coordinator imdea" title="Client Coordinator Load Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table)
+** `MRVC` will be \forall P \in Partitions . {P, 1}
+** `LastPrep` will be `1`
+* Append this `MRVC` to the CLog (`logging_vnode`)
+* Tell all read replicas (`pvc_read_replica` / `clocksi_readitem_server`) to generate a default bottom value on key lookup miss. Default can be `vlog:new()`, but another one would be `vlog:append(Key, RandomData, MRVC)`</pre>
+</div>
+<div tags="pvc_client_coordinator imdea" title="Client Coordinator Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;div style=&quot;padding:0.5em;background: #FFF7D7;color:#000000&quot;&gt;
+''Important''&lt;br&gt;&lt;br&gt;
+
+`has_read` must be of partition_id(), not {partition_id(), node_ip()}.&lt;br&gt;&lt;br&gt;
+
+All version clocks (`vc_dep` and `vc_aggr`) have to be of partition_id(), not {partition_id(), node_ip()}
+&lt;/div&gt;
+
+
+!!! Misc
+
+&lt;div style=&quot;padding:0.5em;background: #FFF7D7;color:#000000&quot;&gt;
+We can delay assigning a transaction id until we perform an update, or commit, since read-only transactions won't touch partitions during 2pc. We don't need a transaction id for them. 
+
+Think about this.
+&lt;/div&gt;
 
 !!! State
 
@@ -11433,7 +11608,33 @@ We need to keep the following state active through the entire lifetime of the ap
 * Connection, wraps
 ** Connection socket: Send/receive commands (multiple sockets, one per physical node in cluster)
 ** Partition layout — Clients need to send read requests to appropriate partitions.
-&lt;!----&gt;
+
+An idea about Connection. For partition layout, wee need to know a) The owning //node//, and b) the owning //partition//. We might need to put this in an external library too, but it might not be crucial. From the code, we have
+
+```
+{Partition, Node} = log_utilities:get_key_partition(Key).
+```
+
+We might, then, do, for connection, have this structure
+
+```
+-record(connection, {
+    %% Same as Antidote-side code (I think)
+    %% {partition_id(), node()} _is_ index_node()
+    ring :: list({partition_id(), node()}),
+    %% Sockets to all cluster nodes
+    sockets :: orddict:orddict(node(), inet:socket())
+}).
+```
+
+Then, we do
+
+```
+{Partition, Node} = log_utilities:get_key_partition(Key),
+Sock = orddict:fetch(Node, Connection#connection.sockets),
+%% Send message here, using Partition
+```
+
 * Transaction, wraps
 ** Writeset
 *** Needs fast read, update
@@ -11442,10 +11643,59 @@ We need to keep the following state active through the entire lifetime of the ap
 ** VCaggr
 ** hasRead
 ** indices? -&gt; wait until microbenchmarks are done to migrate this
+** updated partitions (for commit phase)
+*** might be a mapping `node() -&gt; [partition_id()]`
 
 !!! Commit
 
-When the coordinator was on the database side, the messages from the partitions arrived on the process queue. On the client we have to be explicit with regards to sockets and TCP. We can't bail out of the decide phase if we get an early negative vote, since we need to flush the TCP buffers off the sockets.
+When the coordinator was on the database side, the messages from the partitions arrived on the process queue. On the client we have to be explicit with regards to sockets and TCP. We can't bail out of the decide phase if we get an early negative vote, since we need to flush the TCP buffers off the sockets. The original design was a map-reduce, but it got complicated fast because each node holds more than one partition, we can't split the work equally.
+
+```
+%% Partitions might be a mapping node() -&gt; [partition_id()]
+%% get_sockets is a fetch_keys-ish operation over Sockets
+prepare(#connection{sockets=Socks}, #transaction{p=Partitions}) -&gt;
+    %% PartitionList might be a mapping inet:socket() -&gt; [partition_id()]
+    PartitionList = get_sockets(Socks, Partitions),
+    ok = send_prepare(PartitionList),
+    Outcome = collect_votes(PartitionList, CommitVC),
+    ok = send_decide(PartitionList, Outcome),
+    Outcome.
+
+-spec send_prepare(_) -&gt; ok.
+send_prepare(PartitionList) -&gt;
+    lists:foreach(fun({Socket, Partitions}) -&gt;
+        lists:foreach(fun(P) -&gt; gen_tcp:send(Socket, prepare(P) end, Partitions)
+    end, PartitionList).
+
+-spec collect_votes(_, vc()) -&gt; vc() | {error, atom()}.
+collect_votes(PartitionList, CommitVC) -&gt;
+    lists:foldl(fun({Socket, Partitions}, Acc) -&gt;
+        %% Votes might not come in same order, but we need to do N acks anyway
+        %% Can't leave packets in the TCP queue
+        lists:foldl(fun(_, Acc2) -&gt;
+            {ok, Reply} = gen_tcp:recv(Socket, 0),
+            update_vote_acc(decode_vote(Reply, Acc2)
+        end, Acc, Partitions)
+    end, {ok, CommitVC}, PartitionList).
+
+update_vote_acc(_, {false, Reason}) -&gt;
+    {false, Reason};
+
+update_vote_acc({false, Reason}, {ok, _}) -&gt;
+    {false, Reason};
+
+update_vote_acc({ok, Partition, Seq}, {ok, CommitVC}) -&gt;
+   {ok, pvc_vclock:set_time(Partition, Seq, CommitVC)}.
+
+send_decide(PartitionList, Outcome) -&gt;
+    lists:foreach(fun({Socket, Partitions}) -&gt;
+        lists:foreach(fun(P) -&gt; gen_tcp:send(Socket, decide(P, Outcome) end, Partitions)
+    end, PartitionList).
+```
+
+---
+
+''NOTE'': This whole section is incorrect, as it assumes a 1:1 mapping from sockets to partitions. In practice, each node in the cluster holds more than one partition (//vnode id//), so we need to rethink this part. We can always send in parallel across nodes, but for the same node, we need to be sequential. It is left here for reference purposes.
 
 The prepare phase (and vote collection) can be implemented following a map-reduce(ish) approach (see after current listing). The decide phase can be a normal `foreach`, since it won't block.
 
@@ -11515,6 +11765,12 @@ Reads can be implemented similarly to the Commit, above. Remember, that reads ''
 !!! Messages
 
 ```
+Connect {}
+
+Connected {
+    ...
+}
+
 ReadRequest {
     Partition
     Key
@@ -11548,11 +11804,10 @@ Decide {
     false | {true, commitVC} // whole VC needed
 }
 ```
-
 </pre>
 </div>
 <div tags="imdea task" task-client_coord-step="2" task-done-on="2019-01-31" title="Client coordinator sketch" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>See [[Client Coordinator Library Architecture]]
+<pre>&lt;&lt;transclude_edit &quot;Client Coordinator Library Architecture&quot;&gt;&gt;
 </pre>
 </div>
 <div tags="imdea code_notes" title="clocksi_readitem_server replica lifetime" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11586,6 +11841,34 @@ Every node will go through this diagram, starting/checking only the local read r
 
 Ref commit for TCP implementation: [[https://github.com/ergl/antidote/commit/57f11ef9652725bd870985f469a3742632ae34fb]]</pre>
 </div>
+<div tags="pvc_client_coordinator imdea" title="Constant Partition Access" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>We're going to calculate the partition of a key multiple times, in multiple parts of the code. It is important that this operation is fast enough.
+
+By default, the Ring representation from riak core is `{Size :: non_neg_integer(), List :: list({partition_id(), node()})`. To get the key index node, we do `N = Hash(Key) mod Size` and then `lists:nth(N, List)`. `lists:nth` is a linear search iteration through `List` since it is implemented as a linked list.
+
+Since this structure is not going to change through the lifetime of the code (we don't contemplate vnode rebalancing right now), we can convert this ring representation to a constant-access one. Erlang offers tuples as a primitive data type, offering index-based access with no overhead. However, writes will make a copy of the entire tuple. This is not a problem for us, since we're never updating this code. (see http://erlang.org/doc/efficiency_guide/commoncaveats.html#setelement-3)
+
+To convert it, we do
+
+```
+{ok, Ring} = riak_core_ring_manager:get_my_ring(),
+%% Chash is {
+%% NumPartitions :: non_neg_integer(),
+%% Partitions :: [{partition_id(), node()}]
+%% }
+{Num, Layout} = CHash = riak_core_ring:chash(Ring),
+
+%% erlang:make_tuple/3 requires
+%% 1. Size of the final tuple (we have Num)
+%% 2. A default value for the tuple (we can ignore this)
+%% 3. A proplist of {Position, Element}, to denote the contents
+%% We don't have (3), but we can construct it like so
+Contents = lists:zip(lists:seq(1, Num), Nodes),
+%% To avoid creating a list, we could use recursion too
+
+Output = erlang:make_tuple(Num, ignore, Contents).
+```</pre>
+</div>
 <div counter="0" tags="experiments" title="Counter Experiment" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$button&gt;
 &lt;$set name=&quot;incr&quot; value=&lt;&lt;calc !!counter 1&gt;&gt; emptyValue=0&gt;
@@ -11602,6 +11885,9 @@ Decrement (-)
 
 Current: {{!!counter}}
 </pre>
+</div>
+<div tags="task" task-meta-step="0" title="Create macro for highlight notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Something with a div and `background: #FFF7D7;` can help</pre>
 </div>
 <div description="A step-by-step guide to customizing your sidebar buttons" tags="tiddlywiki" title="Customizing the page toolbar" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Quick guide
@@ -11771,6 +12057,11 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 
 &lt;&lt;list-links filter:[tag[imdea]tag[triage]tag[triage-finished]sort[created]reverse[]]&gt;&gt;
 </pre>
+</div>
+<div tags="task" task-client_coord-step="1" title="Implement load for client coordinator" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Write set too big to send over protocol buffers, have to hack something inside Antidote
+
+&lt;&lt;transclude_edit &quot;Client Coordinator Load Notes&quot;&gt;&gt;</pre>
 </div>
 <div tags="task" task-readitem_improv-step="2" title="Implement new PB message in Antidote" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>PB process should call `clocksi_readitem_server` directly</pre>
@@ -11962,6 +12253,13 @@ https://gt6796c.github.io</pre>
 <div tags="task" task-client_coord-step="0" title="Measure baseline performance" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Repeat single-site, two sites, note metrics to compare against client coordinator once done</pre>
 </div>
+<div tags="task" task-client_coord-step="0" title="Migrate clocksi_vnode to pvc_storage_vnode?" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>clocksi_vnode is responsible for the prepare/decide logic of the protocol, while owning the cache of `VLog.last`, the Commit Queue and the Partition State (MostRecentVC and LastPrep counter).
+
+materializer_vnode owns the ETS table containing the actual keys and mapping to VLogs.
+
+We could create two new vnodes, one for storage (superceding materializer_vnode), one for the protocol logic (superceding clocksi_vnode), and another one containing the Commit Log (currently being done by logging_vnode).</pre>
+</div>
 <div tags="task" task-done-on="" task-meta-step="0" title="Migrate mmd scripts after mermaid plugin" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>{{system_start.mmd}}
 {{join.mmd}}
@@ -11996,7 +12294,7 @@ Basic conflict between:
 *** Makes me tweak the system instead of just getting things done
 ** Can (almost) reimplement everything here (todos, trackers, etc)
 *** But with it I can spend a lot of time instead of just doing things
-** No editing from phone (could always just pay for [[Quine|https://itunes.apple.com/us/app/quine/id1228682923]]
+** No editing from phone (could always just pay for [[Quine|https://itunes.apple.com/us/app/quine/id1228682923]])
 
 !!! Void, but with files
 * Similar to void, but all entries are fs files
@@ -12142,6 +12440,9 @@ Therefore, T will have to abort.
 
 But this doesn't appear to happen, and it rests on Z being able to non-monotically advance X's clock entry. Will probably need to re-read the pseudo-code and think about this example more. See Figure 3 on fast-psi paper.</pre>
 </div>
+<div tags="task" task-client_coord-step="2" task-done-on="2019-02-14" title="Reconcile data types between client and server" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div created="20181229002819801" modified="20181230005914290" tags="article" title="Remaking the blog with TiddlyWiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Every blog needs a first entry that explains why it started, and I guess this is it. This is not the first time I try (and fail) to maintain a regular blog. Back in the mid 2000's I maintained a couple of sci-fi themed blogs, that I would mostly share with friends.
 
@@ -12153,6 +12454,10 @@ I guess b) is the reason I'm starting a blog again, but that wouldn't make for a
 To date I've used several approaches, ranging from plain-text files (scattered among several git repos and Dropbox folders and hackily linked together by bash scripts and notational velocity), to paper notebooks and esoteric command line applications for mind mapping. It wasn't until I read a [[blog post from Sean T. Allen|https://www.monkeysnatchbanana.com/2018/12/26/things-id-like-in-my-code-management-tool/]] (and the [[linked one by Joe Amstrong|https://joearms.github.io/#2018-12-26%20Fun%20with%20the%20TiddlyWiki]]) that I decided I wanted a more complete package that tied together all the notes I had. And since I value Joe's opinion, I decided to try my hand at TiddlyWiki (although I admit the name has not yet grown on me).
 
 The reason to make the wiki public is to hopefully trick me into publishing what I write more often. I have learned a lot from random blogs written by people ~~trying to boost their SEO and increasing their chances of getting hired by luxurious tech companies~~ sharing their experiences and ideas. I might as well join the club.
+</pre>
+</div>
+<div tags="task" task-client_coord-step="2" task-done-on="2019-02-08" title="Spec changes needed to database side" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;&lt;transclude_edit &quot;Client Coordinator Database Changes&quot;&gt;&gt;
 </pre>
 </div>
 <div tags="imdea code_notes" title="Stamp-modified lasp_bench" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12256,6 +12561,9 @@ I was curious to see if you’ve ever experienced this issue. I didn’t try to 
 Maybe it has to do with the number of concurrent clients? What’s the maximum amount of clients you’ve experimented with? (I already talked with Gonçalo Tomas, who was benchmarking antidote with FMKe, but he told me he never had this problem before).
 &lt;&lt;&lt;</pre>
 </div>
+<div tags="task" task-client_coord-step="0" title="Swallow socket errors on client coord? Make errors stable" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div tags="mermaid" title="system_start.mmd" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! system_start.mmd
 
@@ -12312,6 +12620,9 @@ sequenceDiagram
 <div tags="task" task-done-on="2019-01-24" task-readitem_improv-step="2" title="Test changes on cloudlab" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div tags="task" task-client_coord-step="0" title="Test client coord" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div tags="meta" title="TiddlyKnow" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Official developer documentation: https://tiddlywiki.com/dev/
 
@@ -12333,6 +12644,12 @@ This style also looks nice, but I'm not sure about the accessibility of blockquo
 &lt;/$list&gt;
 &lt;/div&gt;
 
+---
+
+Here's a list of macros I've made.^^[[[edit|User-defined macros]]]^^
+
+{{User-defined macros}}
+
 
 </pre>
 </div>
@@ -12346,7 +12663,13 @@ This style also looks nice, but I'm not sure about the accessibility of blockquo
 <pre>&lt;&lt;triage_of meta&gt;&gt;</pre>
 </div>
 <div tags="triage imdea" title="triager/client_coord" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&lt;&lt;triage_of client_coord&gt;&gt;</pre>
+<pre>&lt;&lt;triage_of client_coord&gt;&gt;
+
+---
+
+!! Related Documents
+
+&lt;&lt;list-links filter:[tag[imdea]tag[pvc_client_coordinator]]&gt;&gt;</pre>
 </div>
 <div tags="triage imdea" title="triager/pvc" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of pvc&gt;&gt;</pre>
@@ -12378,6 +12701,19 @@ Links:
 * https://proper-testing.github.io (quickcheck library)
 * http://propertesting.com (Fred's book)
 ** [[Buy the book|https://pragprog.com/book/fhproper/property-based-testing-with-proper-erlang-and-elixir]]? </pre>
+</div>
+<div tags="meta" title="User-defined macros" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;ul&gt;
+&lt;$list filter=&quot;[tag[$:/tags/Macro]!has[draft.of]]&quot;&gt;
+&lt;li&gt;
+&lt;&lt;currentTiddler&gt;&gt;
+&lt;ul&gt;
+&lt;li&gt;Name: ''{{!!exports}}''&lt;/li&gt;
+&lt;li&gt;Descr: //{{!!description}}//&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;</pre>
 </div>
 <div tags="qnote" title="Wallace's E Unibus Pluram, annotated" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;&lt;

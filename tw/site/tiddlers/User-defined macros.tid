@@ -1,0 +1,15 @@
+tags: meta
+title: User-defined macros
+type: text/vnd.tiddlywiki
+
+<ul>
+<$list filter="[tag[$:/tags/Macro]!has[draft.of]]">
+<li>
+<<currentTiddler>>
+<ul>
+<li>Name: ''{{!!exports}}''</li>
+<li>Descr: //{{!!description}}//</li>
+</ul>
+</li>
+</$list>
+</ul>

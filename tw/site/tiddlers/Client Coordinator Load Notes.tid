@@ -1,0 +1,9 @@
+tags: pvc_client_coordinator imdea
+title: Client Coordinator Load Notes
+type: text/vnd.tiddlywiki
+
+* Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table)
+** `MRVC` will be \forall P \in Partitions . {P, 1}
+** `LastPrep` will be `1`
+* Append this `MRVC` to the CLog (`logging_vnode`)
+* Tell all read replicas (`pvc_read_replica` / `clocksi_readitem_server`) to generate a default bottom value on key lookup miss. Default can be `vlog:new()`, but another one would be `vlog:append(Key, RandomData, MRVC)`

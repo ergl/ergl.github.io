@@ -1,3 +1,5 @@
+description: Create a list out of a tag of tiddlers with a `bookmark_link` field representing an external URL and an optional body representing a comment on said URL
+exports: bookmark_link_list_of [tag]
 tags: $:/tags/Macro
 title: $:/ergl/macros/bookmark_link_list_of
 type: text/vnd.tiddlywiki

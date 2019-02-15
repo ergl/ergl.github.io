@@ -1,0 +1,23 @@
+tags: pvc_client_coordinator imdea
+title: Client Coordinator Links
+type: text/vnd.tiddlywiki
+
+* [[Sharing UDP sockets|http://erlang.org/pipermail/erlang-questions/2018-June/095741.html]]
+<<<
+A gen_server can handle ~80k msgs/sec before overloading (apparently), so you can have a controlling process handling the socket and other messages going through there to deliver messages.
+<<<
+* http://erlang.org/pipermail/erlang-questions/2016-August/089998.html
+<<<
+Client sockets (sockets on an active connection) can also be shared and passed around, but since a client
+socket can only be read by the client socket's owning process, this is of
+limited utility.
+<<<
+* http://santtu.iki.fi/2014/03/06/network-and-parallelism-in-erlang
+<<<
+Not really related, but still useful.
+Using `gen_tcp:controlling_process/2` can cause a race condition where tcp messages are delivered to the old process and cause messages to get lost
+<<<
+* https://learnyousomeerlang.com/buckets-of-sockets
+<<<
+Always useful
+<<<

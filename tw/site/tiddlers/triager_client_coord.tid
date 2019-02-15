@@ -3,3 +3,9 @@ title: triager/client_coord
 type: text/vnd.tiddlywiki
 
 <<triage_of client_coord>>
+
+---
+
+!! Related Documents
+
+<<list-links filter:[tag[imdea]tag[pvc_client_coordinator]]>>

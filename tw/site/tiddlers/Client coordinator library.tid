@@ -1,0 +1,7 @@
+tags: task
+task-client_coord-step: 2
+task-done-on: 2019-02-14
+title: Client coordinator library
+type: text/vnd.tiddlywiki
+
+<<transclude_edit "Client Coordinator Library Architecture">>
