@@ -24,8 +24,8 @@ This style also looks nice, but I'm not sure about the accessibility of blockquo
 
 ---
 
-Here's a list of macros I've made.^^[[[edit|User-defined macros]]]^^
+Here's a list of macros I've made.
 
-{{User-defined macros}}
+<<transclude_edit "User-defined macros">>
 
 

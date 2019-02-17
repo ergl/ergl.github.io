@@ -1,5 +1,7 @@
 caption: {{$:/core/images/import-button}} Create a new link tiddler
+created: 20190217182820519
 description: Create a new link tiddler
+modified: 20190217182821623
 tags: $:/tags/PageControls
 title: $:/ergl/functions/NewBookmarkLink
 type: text/vnd.tiddlywiki

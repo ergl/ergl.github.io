@@ -1,6 +1,6 @@
 created: 20181229014410131
-modified: 20181230010307892
+modified: 20190217170831301
 title: $:/config/TimestampDisable
 type: text/vnd.tiddlywiki
 
-yes
+no

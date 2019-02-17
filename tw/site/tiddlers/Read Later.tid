@@ -1,0 +1,19 @@
+created: 20190217175650529
+modified: 20190217182321902
+tags: meta
+title: Read Later
+type: text/vnd.tiddlywiki
+
+I know I already have this built-in in Safari. But why not?
+
+<$button>
+    <$action-sendmessage
+      $message="tm-new-tiddler"
+      title=""
+      bookmark_link=""
+      tags="read-later"
+      text="" />
+    New Entry
+  </$button>
+
+<<bookmark_link_list_of read-later>>
