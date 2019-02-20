@@ -38,7 +38,7 @@ Spawns a fresh transaction. `Id` should be an unique identifier (unique-ish amon
 !!! Read Key(s)
 
 ```
-pvc:read_key(Connection, Tx1, Key | [Key]) -> {ok, Value | [Value], Tx2} | {error, Reason}
+pvc:read(Connection, Tx1, Key | [Key]) -> {ok, Value | [Value], Tx2} | {error, Reason}
 
 Connection = pvc:connection()
 Tx1 = pvc:transaction()

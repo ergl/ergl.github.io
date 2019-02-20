@@ -1,6 +1,11 @@
+created: 20190219120918430
+modified: 20190220003057658
 tags: task
-task-client_coord-step: 0
+task-client_coord-step: 1
 title: Measure baseline performance
 type: text/vnd.tiddlywiki
 
 Repeat single-site, two sites, note metrics to compare against client coordinator once done
+
+* ~~Single Site~~
+* Two Sites

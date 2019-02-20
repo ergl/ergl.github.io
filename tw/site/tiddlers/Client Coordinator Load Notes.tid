@@ -2,8 +2,37 @@ tags: pvc_client_coordinator imdea
 title: Client Coordinator Load Notes
 type: text/vnd.tiddlywiki
 
-* Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table)
-** `MRVC` will be \forall P \in Partitions . {P, 1}
-** `LastPrep` will be `1`
-* Append this `MRVC` to the CLog (`logging_vnode`)
-* Tell all read replicas (`pvc_read_replica` / `clocksi_readitem_server`) to generate a default bottom value on key lookup miss. Default can be `vlog:new()`, but another one would be `vlog:append(Key, RandomData, MRVC)`
+\define checked(string) <$checkbox> $string$</$checkbox>
+
+<<checked "Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table). (`MRVC` will be \forall P \in Partitions . {P, 1} and `LastPrep` will be `1`)">>
+
+<<checked "Append this `MRVC` to the CLog (`logging_vnode`)">>
+
+<<checked "Tell all read replicas (`pvc_read_replica` / `clocksi_readitem_server`) to generate a default bottom value on key lookup miss. Default can be `vlog:new()`, but another one would be `vlog:append(Key, RandomData, MRVC)`">>
+
+---
+
+!! Procedure on pvc
+
+!!! Set a new default value, and refresh the read replicas
+
+A default value has to be a tuple `{Value, Clock}`, where //Value// is the default value of the keys, and //Clock// is whatever Vector Clock we want to associate with that value. For loads, we will want the clock to contain all partitions in the system, all set to the same value `Seq` (for example, 1).
+
+```erlang
+dc_utilities:bcast_my_vnode_sync(materializer_vnode_master, {pvc_set_default, {NewBottomValue, NewBottomClock}),
+dc_utilities:bcast_vnode_sync(clocksi_vnode_master, pvc_refresh_replicas),
+```
+
+!!! Force-set the partition state
+
+Now we have to advance all the partitions to a state compatible with the default key value we set before. This mean overwriting the //LastPrep// and //MostRecentVC// fields in each partition, as well as appending this new //MostRecentVC// to the //CLog// of the partition.
+
+```erlang
+dc_utilities:bcast_vnode_sync(clocksi_vnode_master, {pvc_unsafe_set_clock, Seq, NewBottomClock})
+```
+
+During the //prepare// part of the protocol, we check, for each key in the transaction writeset, against //VLog.last(key).vid[p]//, (the latest version that we have committed). To avoid an extra round-trip to the storage, we cache this version in the partition state. In order to advance the state of the partition, we need to also update the default value of this cache. This is also done with the previous code snippet.
+
+!! Procedure on pvc-ccoord
+
+<<hl TODO>>

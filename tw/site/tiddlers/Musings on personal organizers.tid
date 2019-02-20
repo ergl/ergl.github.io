@@ -1,3 +1,5 @@
+created: 20190220002938329
+modified: 20190220002940792
 tags: qnote
 title: Musings on personal organizers
 type: text/vnd.tiddlywiki
@@ -11,7 +13,7 @@ Basic conflict between:
 * Personal planer (todos, triage, outlining, mind map)
 ** Good support with [[void|https://github.com/ergl/void]], but:
 *** Bad support for long text (have to remind myself to migrate to journal)
-*** Image suppor is nonexistant (can be, and I have, hacked it together)
+*** Image support is nonexistant (can be, and I have, hacked it together)
 *** Would like to share it publicly, see it from my phone, add content (here comes [[checkvist|https://checkvist.com]])
 
 ---

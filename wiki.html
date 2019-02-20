@@ -11420,7 +11420,7 @@ Use `&lt;&lt;now YYYY-0MM-0DD&gt;&gt;` (&lt;&lt;now YYYY-0MM-0DD&gt;&gt;)</pre>
 
 On remote read, send through socket `rpb_simple_driver:remote_read/3` and wait (this wait is sync)</pre>
 </div>
-<div tags="task" task-client_coord-step="0" title="Bench new client coord and compare" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190219120924008" modified="20190219120925054" tags="task" task-client_coord-step="1" title="Bench new client coord and compare" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div bookmark_link="https://medium.com/@copyconstruct/best-of-2018-in-tech-talks-2970eb3097af" created="20190217180129089" modified="20190217180136109" tags="bookmark" title="Best of 2018 in Tech Talks" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11487,7 +11487,7 @@ Spawns a fresh transaction. `Id` should be an unique identifier (unique-ish amon
 !!! Read Key(s)
 
 ```
-pvc:read_key(Connection, Tx1, Key | [Key]) -&gt; {ok, Value | [Value], Tx2} | {error, Reason}
+pvc:read(Connection, Tx1, Key | [Key]) -&gt; {ok, Value | [Value], Tx2} | {error, Reason}
 
 Connection = pvc:connection()
 Tx1 = pvc:transaction()
@@ -11593,11 +11593,41 @@ Always useful
 &lt;&lt;&lt;</pre>
 </div>
 <div tags="pvc_client_coordinator imdea" title="Client Coordinator Load Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>* Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table)
-** `MRVC` will be \forall P \in Partitions . {P, 1}
-** `LastPrep` will be `1`
-* Append this `MRVC` to the CLog (`logging_vnode`)
-* Tell all read replicas (`pvc_read_replica` / `clocksi_readitem_server`) to generate a default bottom value on key lookup miss. Default can be `vlog:new()`, but another one would be `vlog:append(Key, RandomData, MRVC)`</pre>
+<pre>\define checked(string) &lt;$checkbox&gt; $string$&lt;/$checkbox&gt;
+
+&lt;&lt;checked &quot;Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table). (`MRVC` will be \forall P \in Partitions . {P, 1} and `LastPrep` will be `1`)&quot;&gt;&gt;
+
+&lt;&lt;checked &quot;Append this `MRVC` to the CLog (`logging_vnode`)&quot;&gt;&gt;
+
+&lt;&lt;checked &quot;Tell all read replicas (`pvc_read_replica` / `clocksi_readitem_server`) to generate a default bottom value on key lookup miss. Default can be `vlog:new()`, but another one would be `vlog:append(Key, RandomData, MRVC)`&quot;&gt;&gt;
+
+---
+
+!! Procedure on pvc
+
+!!! Set a new default value, and refresh the read replicas
+
+A default value has to be a tuple `{Value, Clock}`, where //Value// is the default value of the keys, and //Clock// is whatever Vector Clock we want to associate with that value. For loads, we will want the clock to contain all partitions in the system, all set to the same value `Seq` (for example, 1).
+
+```erlang
+dc_utilities:bcast_my_vnode_sync(materializer_vnode_master, {pvc_set_default, {NewBottomValue, NewBottomClock}),
+dc_utilities:bcast_vnode_sync(clocksi_vnode_master, pvc_refresh_replicas),
+```
+
+!!! Force-set the partition state
+
+Now we have to advance all the partitions to a state compatible with the default key value we set before. This mean overwriting the //LastPrep// and //MostRecentVC// fields in each partition, as well as appending this new //MostRecentVC// to the //CLog// of the partition.
+
+```erlang
+dc_utilities:bcast_vnode_sync(clocksi_vnode_master, {pvc_unsafe_set_clock, Seq, NewBottomClock})
+```
+
+During the //prepare// part of the protocol, we check, for each key in the transaction writeset, against //VLog.last(key).vid[p]//, (the latest version that we have committed). To avoid an extra round-trip to the storage, we cache this version in the partition state. In order to advance the state of the partition, we need to also update the default value of this cache. This is also done with the previous code snippet.
+
+!! Procedure on pvc-ccoord
+
+&lt;&lt;hl TODO&gt;&gt;
+</pre>
 </div>
 <div tags="pvc_client_coordinator imdea" title="Client Coordinator Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;div style=&quot;padding:0.5em;background: #FFF7D7;color:#000000&quot;&gt;
@@ -12106,8 +12136,14 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 &lt;&lt;list-links filter:[tag[imdea]tag[triage]tag[triage-finished]sort[created]reverse[]]&gt;&gt;
 </pre>
 </div>
-<div tags="task" task-client_coord-step="1" title="Implement load for client coordinator" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190218133625026" modified="20190219120912964" status-base-pvc="open" status-rebase-pvc="open" status-refine-pvc-ccoord-load="open" tags="task" task-client_coord-step="2" task-done-on="2019-02-19" title="Implement load for client coordinator" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Write set too big to send over protocol buffers, have to hack something inside Antidote
+
+&lt;$checkbox field=&quot;status-base-pvc&quot; checked=&quot;open&quot; unchecked=&quot;closed&quot; default=&quot;closed&quot;&gt; Implement on base pvc&lt;/$checkbox&gt;
+
+&lt;$checkbox field=&quot;status-rebase-pvc&quot; checked=&quot;open&quot; unchecked=&quot;closed&quot; default=&quot;closed&quot;&gt; Rebase pvc-ccoord on top of pvc&lt;/$checkbox&gt;
+
+&lt;$checkbox field=&quot;status-refine-pvc-ccoord-load&quot; checked=&quot;open&quot; unchecked=&quot;closed&quot; default=&quot;closed&quot;&gt; Refine load implementation for pvc-ccoord&lt;/$checkbox&gt;
 
 &lt;&lt;transclude_edit &quot;Client Coordinator Load Notes&quot;&gt;&gt;</pre>
 </div>
@@ -12311,8 +12347,11 @@ Sometimes you read something on the internet that inspires you to write somethin
 
 https://gt6796c.github.io</pre>
 </div>
-<div tags="task" task-client_coord-step="0" title="Measure baseline performance" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Repeat single-site, two sites, note metrics to compare against client coordinator once done</pre>
+<div created="20190219120918430" modified="20190220003057658" tags="task" task-client_coord-step="1" title="Measure baseline performance" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Repeat single-site, two sites, note metrics to compare against client coordinator once done
+
+* ~~Single Site~~
+* Two Sites</pre>
 </div>
 <div bookmark_link="https://arxiv.org/abs/1902.04738" created="20190217180253898" modified="20190217180305201" tags="read-later" title="Mesh: Compacting Memory Management for C/C++ Applications" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -12336,7 +12375,7 @@ We could create two new vnodes, one for storage (superceding materializer_vnode)
 <div bookmark_link="https://blog.gtank.cc/modern-alternatives-to-pgp/" created="20190217180400266" modified="20190217180424088" tags="read-later" title="Modern Alternatives to PGP" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Also check out HN's discussion [[here|https://news.ycombinator.com/item?id=19173326]]</pre>
 </div>
-<div tags="qnote" title="Musings on personal organizers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190220002938329" modified="20190220002940792" tags="qnote" title="Musings on personal organizers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!!! General
 
 Basic conflict between:
@@ -12346,7 +12385,7 @@ Basic conflict between:
 * Personal planer (todos, triage, outlining, mind map)
 ** Good support with [[void|https://github.com/ergl/void]], but:
 *** Bad support for long text (have to remind myself to migrate to journal)
-*** Image suppor is nonexistant (can be, and I have, hacked it together)
+*** Image support is nonexistant (can be, and I have, hacked it together)
 *** Would like to share it publicly, see it from my phone, add content (here comes [[checkvist|https://checkvist.com]])
 
 ---
@@ -12705,14 +12744,14 @@ sequenceDiagram
 <div bookmark_link="https://tiddlywiki.com/static/SystemTags.html" tags="tiddlytip" title="SystemTags Documentation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bookmark_link="https://tiddlywiki.com/static/TableOfContents.html" tags="tiddlytip" title="Table of Contents Example" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bookmark_link="https://tiddlywiki.com/static/TableOfContents.html" created="20190219225023688" modified="20190219225024751" tags="tiddlytip" title="Table of Contents Example" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div tags="task" task-done-on="2019-01-24" task-readitem_improv-step="2" title="Test changes on cloudlab" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div tags="task" task-client_coord-step="0" title="Test client coord" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre></pre>
+<div created="20190219120921922" modified="20190220003026276" tags="task" task-client_coord-step="1" title="Test client coord" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Doesn't crash for `readonly-1`</pre>
 </div>
 <div bookmark_link="https://www.theringer.com/tech/2019/2/6/18212421/stanford-students-tech-backlash-silicon-valley-next-generation?fbclid=IwAR27ARQHIHvpvFnbvQNnJPnZ340px38Y-4ugMHgZhorhXZCCgnlQDnScTsI" created="20190217175818330" modified="20190217175842149" tags="read-later" title="The Ethical Dilemma Facing Silicon Valley’s Next Generation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Stanford has established itself as the epicenter of computer science and a farm system for the tech giants. Following major scandals at Facebook, Google, and others, how is the university coming to grips with a world in which many of its students’ dream jobs are now vilified?</pre>
