@@ -1,0 +1,68 @@
+created: 20190220195513532
+modified: 20190224233956547
+tags: imdea
+title: Code Snippets
+type: text/vnd.tiddlywiki
+
+Download from Cloudlab, Emulab
+
+```bash
+for i in *; do
+    emget $i ./$i &
+done
+
+for i in *; do
+    cloudget $i ./$i &
+done
+```
+
+---
+
+
+
+```erlang
+%% Check VLog size of given key
+
+CheckVersions = fun(Key) ->
+    {Partition,_} = log_utilities:get_key_partition(Key),
+    PVC_VLog = materializer_vnode:get_cache_name(Partition, pvc_snapshot_cache),
+    [{_, VLog}] = ets:lookup(PVC_VLog, Key),
+    {vlog, _, _, Dict} = VLog,
+    Size = dict:size(Dict),
+    ByteSize = erlang:byte_size(term_to_binary(Dict)),
+    io:format("Versions: ~p~nBytes: ~p~n", [Size, ByteSize])
+end.
+
+%% Choose a MostRecentVC at random from the system
+RandVC = fun() ->
+    Partition = (fun() ->
+        {ok, ChashBin} = riak_core_ring_manager:get_chash_bin(),
+        PartitionList = chashbin:to_list(ChashBin),
+        Lenght = length(PartitionList),
+        element(1,lists:nth(rand:uniform(Lenght), PartitionList))
+    end)(),
+    Cache = clocksi_vnode:get_cache_name(Partition, pvc_state_table),
+    ets:lookup_element(Cache, mrvc, 2)
+end.
+
+%% Get internal state of a random Vnode given process
+VNS = fun(Vnode) ->
+    {ok, Pid} = riak_core_vnode_manager:get_vnode_pid(0, Vnode),
+    sys:get_state(Pid)
+end.
+
+%% Get the PIDs for the read servers
+MyServerPids = fun() ->
+    Node = node(),
+    Parts = dc_utilities:get_my_partitions(),
+    lists:flatmap(fun(P) ->
+        lists:map(fun(N) ->
+            BinId = integer_to_binary(N),
+            BinPart = integer_to_binary(P),
+            BinNode = atom_to_binary(Node, latin1),
+            Name = binary_to_existing_atom(<<BinId/binary, <<"-">>/binary, BinPart/binary, <<"-">>/binary, BinNode/binary>>, latin1),
+            {global:whereis_name(Name), Name}
+        end, lists:seq(1, 20))
+    end, Parts)
+end.
+```

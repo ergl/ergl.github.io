@@ -1,0 +1,22 @@
+created: 20190224225610412
+modified: 20190224230229254
+tags: qnote imdea
+title: How Using Async Correctly Increased Throughput by 4X
+type: text/vnd.tiddlywiki
+
+[[This article|https://mahdytech.com/2019/02/22/async-throughput-4x/]] almost applies perfectly to our issue with Antidote:
+
+<<<
+It was easy to add, and we didn’t have to change a lot of code. Great! it also totally does not work, perf-wise. With those added 3 lines of code, we now go from 40k QPS all the way down to 8k QPS!
+
+Let’s take a second and reason about this. We have added an extra IO operation, which is a remote call to another machine. Hence, the majority of the added work is not done locally, but on another machine and (more importantly) in transport. Why did we lose so much throughput then?
+<<<
+
+Ideas:
+
+* For the original pvc implementation (server side coordinator): Add overflow settings to poolboy, maybe this helps?
+
+* On the new implementation, for reads, instead of doing a blocking receive, pass a callback/promise to the read method so it can just return directly.
+** Can we do this all the way? (i.e. sending through the socket from inside the callback)
+** Pass also pvc_proto context so it can do everything from the callback.
+** Is this actually the problem here?
