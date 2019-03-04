@@ -1,5 +1,5 @@
 created: 20190220002938329
-modified: 20190220002940792
+modified: 20190304134103677
 tags: qnote
 title: Musings on personal organizers
 type: text/vnd.tiddlywiki
@@ -61,3 +61,9 @@ Basic conflict between:
 ** (+) Hierarchical notes, subtrees, hoisting
 ** (-) Paid montly plans
 ** (-) Web-based
+
+---
+
+!!! Others
+
+https://github.com/NorthernPath/north/wiki/Design-Document

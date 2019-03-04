@@ -1,0 +1,9 @@
+created: 20190225115205105
+modified: 20190226140549653
+tags: task
+task-client_coord-step: 2
+task-done-on: 2019-02-26
+title: Dissect latency on client coord
+type: text/vnd.tiddlywiki
+
+Problem comes from transering the 256k back from a remote read

@@ -1,3 +1,5 @@
+created: 20190225122424106
+modified: 20190225124023837
 tags: imdea code_notes
 title: stamp-modified lasp_bench lifetime
 type: text/vnd.tiddlywiki
@@ -6,14 +8,16 @@ type: text/vnd.tiddlywiki
 
 | !Module | !Function | !Description |
 | lasp_bench_stats | build_folsom_tables/1 |Creates folsom ETS histograms, etc |
-| lasp_bench_stats_writer_csv | new/1 |`[erlang:put({csv_file, Op}, op_csv_file(Op)) || Op <- Ops]` |
 | lasp_bench_stats_writer_csv | op_csv_file/1 |Opens files for operation (or files) |
+| lasp_bench_stats_writer_csv | terminate/1 |Close extra files if created|
+| lasp_bench_stats_writer_csv | process_summary/5 |Write to file for new payload|
 
 !! When running
 
 | !Module | !Function | !Description |
 | lasp_bench_worker | worker_next_op/1 |Asks the driver to execute an operation, which returns a result and the next state. This state will be returned modified with extra measurement information. |
 | lasp_bench_worker | hack_preprocess_driver_state/2 |Receives executed op and state as returned from the driver |
+| lasp_bench_stats | op_complete/3 | Notify folsom histogram on `{TableTag, Us}` |
 
 {{$:/ergl/images/lasp_bench_loop.csv}}
 

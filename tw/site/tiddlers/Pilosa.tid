@@ -1,0 +1,8 @@
+bookmark_link: https://github.com/pilosa/pilosa
+created: 20190304134014693
+modified: 20190304134036352
+tags: read-later
+title: Pilosa
+type: text/vnd.tiddlywiki
+
+Pilosa is an open source, distributed bitmap index that dramatically accelerates queries across multiple, massive data sets. See also https://www.pilosa.com/docs/latest/data-model/

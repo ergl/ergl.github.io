@@ -1,0 +1,8 @@
+created: 20190225115232151
+modified: 20190227153058771
+tags: task
+task-client_coord-step: 1
+title: Figure out client coord slowdown
+type: text/vnd.tiddlywiki
+
+<<transclude_edit "Client Coordinator Slowdown Notes">>

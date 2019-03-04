@@ -1,0 +1,7 @@
+created: 20190227153127692
+modified: 20190301122447654
+tags: task
+task-client_coord_slowdown-step: 1
+title: Figure out max concurrent connections on both scenarios
+type: text/vnd.tiddlywiki
+

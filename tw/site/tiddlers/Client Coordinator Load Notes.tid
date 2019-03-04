@@ -1,14 +1,16 @@
+created: 20190228191206084
+modified: 20190228191231742
 tags: pvc_client_coordinator imdea
 title: Client Coordinator Load Notes
 type: text/vnd.tiddlywiki
 
-\define checked(string) <$checkbox> $string$</$checkbox>
 
-<<checked "Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table). (`MRVC` will be \forall P \in Partitions . {P, 1} and `LastPrep` will be `1`)">>
 
-<<checked "Append this `MRVC` to the CLog (`logging_vnode`)">>
+* ~~Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table). (`MRVC` will be \forall P \in Partitions . {P, 1} and `LastPrep` will be `1`)~~
 
-<<checked "Tell all read replicas (`pvc_read_replica` / `clocksi_readitem_server`) to generate a default bottom value on key lookup miss. Default can be `vlog:new()`, but another one would be `vlog:append(Key, RandomData, MRVC)`">>
+* ~~Append this `MRVC` to the CLog (`logging_vnode`)~~
+
+* ~~Tell all read replicas (`pvc_read_replica` / `clocksi_readitem_server`) to generate a default bottom value on key lookup miss. Default can be `vlog:new()`, but another one would be `vlog:append(Key, RandomData, MRVC)`~~
 
 ---
 

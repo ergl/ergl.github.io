@@ -357,6 +357,8 @@ Error message and password prompt
 
 <li>Add remote socket to coordinator</li>
 
+<li>Aether: Voting And Elections</li>
+
 <li>Bench new client coord and compare</li>
 
 <li>Best of 2018 in Tech Talks</li>
@@ -364,6 +366,8 @@ Error message and password prompt
 <li>Bookmarks</li>
 
 <li>Change Links Format</li>
+
+<li>Check NIC bandwidth</li>
 
 <li>Chinese company leaves Muslim-tracking facial recognition database exposed online</li>
 
@@ -385,11 +389,15 @@ Error message and password prompt
 
 <li>Client coordinator sketch</li>
 
+<li>Client Coordinator Slowdown Notes</li>
+
 <li>clocksi_readitem_server replica lifetime</li>
 
 <li>clocksi_readitem_server state requirements</li>
 
 <li>Code Snippets</li>
+
+<li>Collection of git tips</li>
 
 <li>Concuerror</li>
 
@@ -409,6 +417,8 @@ Error message and password prompt
 
 <li>Dev Journal</li>
 
+<li>Dissect latency on client coord</li>
+
 <li>Document lasp_bench timestamps and changes</li>
 
 <li>Dynamic Tables</li>
@@ -421,11 +431,19 @@ Error message and password prompt
 
 <li>Facebook monitors and tracks the locations of users it deems a threat</li>
 
+<li>Figure out client coord slowdown</li>
+
+<li>Figure out max concurrent connections on both scenarios</li>
+
 <li>Figure out socket limit</li>
 
 <li>Figuring out a gen_tcp:recv limitation</li>
 
+<li>Generate patches</li>
+
 <li>Generating Static Sites</li>
+
+<li>GNUnet</li>
 
 <li>How to add a new tab to the sidebar</li>
 
@@ -438,6 +456,8 @@ Error message and password prompt
 <li>Implement load for client coordinator</li>
 
 <li>Implement new PB message in Antidote</li>
+
+<li>Implement read path instrumentation</li>
 
 <li>Improve vnode &lt;-&gt; readitem start procedure</li>
 
@@ -454,6 +474,8 @@ Error message and password prompt
 <li>lasp_bench_start.mmd</li>
 
 <li>Links</li>
+
+<li>Look into system limits</li>
 
 <li>Maybe add mermaid plugin</li>
 
@@ -481,6 +503,8 @@ Error message and password prompt
 
 <li>Personal Wiki examples</li>
 
+<li>Pilosa</li>
+
 <li>Play with remote reader process number</li>
 
 <li>pvc branches</li>
@@ -491,9 +515,13 @@ Error message and password prompt
 
 <li>Read Later</li>
 
+<li>Read through doc links</li>
+
 <li>Reconcile data types between client and server</li>
 
 <li>Remaking the blog with TiddlyWiki</li>
+
+<li>Run Ping Ccoord Bench on Single and Two Sites</li>
 
 <li>Spec changes needed to database side</li>
 
@@ -534,6 +562,8 @@ Error message and password prompt
 <li>triage/meta</li>
 
 <li>triager/client_coord</li>
+
+<li>triager/client_coord_slowdown</li>
 
 <li>triager/pvc</li>
 
@@ -11481,7 +11511,10 @@ Use `&lt;&lt;now YYYY-0MM-0DD&gt;&gt;` (&lt;&lt;now YYYY-0MM-0DD&gt;&gt;)</pre>
 
 On remote read, send through socket `rpb_simple_driver:remote_read/3` and wait (this wait is sync)</pre>
 </div>
-<div created="20190219120924008" modified="20190219120925054" tags="task" task-client_coord-step="1" title="Bench new client coord and compare" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bookmark_link="https://getaether.net/docs/faq/voting_and_elections/" created="20190304133911814" modified="20190304133925117" tags="read-later" title="Aether: Voting And Elections" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
+<div created="20190219120924008" modified="20190225115130889" tags="task" task-client_coord-step="2" task-done-on="2019-02-25" title="Bench new client coord and compare" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div bookmark_link="https://medium.com/@copyconstruct/best-of-2018-in-tech-talks-2970eb3097af" created="20190217180129089" modified="20190217180136109" tags="bookmark" title="Best of 2018 in Tech Talks" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11502,6 +11535,31 @@ On remote read, send through socket `rpb_simple_driver:remote_read/3` and wait (
 </div>
 <div tags="task" task-meta-step="0" title="Change Links Format" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Instead of putting the link in a field, maybe put it in the body, inside a table (see how the  [[Bookmark plugin|http://inmysocks.tiddlyspot.com/#%24%3A%2Fplugins%2Finmysocks%2FBookmarks]] does it)</pre>
+</div>
+<div created="20190226142230039" modified="20190226143009920" tags="linux networking" title="Check NIC bandwidth" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>After finding out which interface you're using with `ifconfig`, run
+
+```bash
+$ sudo lshw -class network # list hardware of class network.
+...
+  *-network:0
+       description: Ethernet interface
+       product: I350 Gigabit Network Connection
+       vendor: Intel Corporation
+       physical id: 0
+       bus info: pci@0000:04:00.0
+       logical name: enp4s0f0
+       version: 01
+       serial: a0:36:9f:6b:fd:92
+       size: 1Gbit/s
+       capacity: 1Gbit/s # This is what you're insterested in
+       width: 32 bits
+       clock: 33MHz
+       capabilities: pm msi msix pciexpress # ...
+       configuration: autonegotiation=on broadcast=yes # ...
+       resources: irq:89 memory:96d00000-96dfffff # ...
+...
+```</pre>
 </div>
 <div bookmark_link="https://www.zdnet.com/article/chinese-company-leaves-muslim-tracking-facial-recognition-database-exposed-online/" created="20190217175859853" modified="20190217181941183" tags="read-later" title="Chinese company leaves Muslim-tracking facial recognition database exposed online" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Researcher finds one of the databases used to track Uyghur Muslim population in Xinjiang.
@@ -11653,14 +11711,14 @@ Using `gen_tcp:controlling_process/2` can cause a race condition where tcp messa
 Always useful
 &lt;&lt;&lt;</pre>
 </div>
-<div tags="pvc_client_coordinator imdea" title="Client Coordinator Load Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>\define checked(string) &lt;$checkbox&gt; $string$&lt;/$checkbox&gt;
+<div created="20190228191206084" modified="20190228191231742" tags="pvc_client_coordinator imdea" title="Client Coordinator Load Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>
 
-&lt;&lt;checked &quot;Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table). (`MRVC` will be \forall P \in Partitions . {P, 1} and `LastPrep` will be `1`)&quot;&gt;&gt;
+* ~~Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table). (`MRVC` will be \forall P \in Partitions . {P, 1} and `LastPrep` will be `1`)~~
 
-&lt;&lt;checked &quot;Append this `MRVC` to the CLog (`logging_vnode`)&quot;&gt;&gt;
+* ~~Append this `MRVC` to the CLog (`logging_vnode`)~~
 
-&lt;&lt;checked &quot;Tell all read replicas (`pvc_read_replica` / `clocksi_readitem_server`) to generate a default bottom value on key lookup miss. Default can be `vlog:new()`, but another one would be `vlog:append(Key, RandomData, MRVC)`&quot;&gt;&gt;
+* ~~Tell all read replicas (`pvc_read_replica` / `clocksi_readitem_server`) to generate a default bottom value on key lookup miss. Default can be `vlog:new()`, but another one would be `vlog:append(Key, RandomData, MRVC)`~~
 
 ---
 
@@ -11917,6 +11975,59 @@ Decide {
 <pre>&lt;&lt;transclude_edit &quot;Client Coordinator Library Architecture&quot;&gt;&gt;
 </pre>
 </div>
+<div created="20190226140606002" modified="20190228234039150" tags="pvc_client_coordinator imdea" title="Client Coordinator Slowdown Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Running into the problem of slow performance between single site and multi site performance.
+
+---
+
+''The maximum number of concurrent clients for Single Site is around 1,200''
+
+''The maximum number of concurrent clients for Two Sites is around 2,400''
+
+Saturation points (''ping'')
+
+| !Clusters (Delay ms) | !Case | !Clients (Total) | !Th | !Lat (ms) |
+| 1 (0) | pvc-ccoord | 300 (1,200) | ~760K | ~1.7 |
+| 2 (10) | pvc-ccoord | 600 (2,400) | ~341K | ~7.11 |
+
+---
+
+Saturation points (''readonly'')
+
+| !Clusters (Delay ms) | !Case | !Clients (Total) | !Th | !Lat (ms) |
+| 1 (0) | pvc-ccoord | 300 (1,200) | ~607.2K | ~2.1 |
+| 2 (10) | pvc-ccoord | 400 (1,600) | ~230.4k | ~7.15 |
+
+Could it be that we're hitting a limit in the number of concurrent connections? The number of concurrent clients is about the same (1,200 vs 1,600). It's normal that with higher base latency, we would need more concurrent clients to reach the same throughput. If we need 1.2k for 600k on 0ms, how many would we need for the same on 10ms?
+
+To test:
+
+* Determine ''maximum concurrent connections on single site'', using a ping message (or reuse read and return empty).
+** The overhead of reading from ETS shouldn't be too much, since on our experiments, that path only takes 0.125 ms, or about 2% of the execution time.
+** So the number of concurrent clients should be about the same (~1.2k).
+** ''Make sure the client is still spawning / committing empty transactions''
+*** We don't want to change the client, should do the same allocation pattern.
+
+* Determine ''maximum concurrent connections on two sites'' (ping again).
+** If the number of concurrent clients is the same (~1.6k), then we know our limit is the number of concurrent connections, ''but only if we get a number in the same ballpark as the single site scenario''.
+
+---
+
+Misc
+
+* Is it an abort issue?
+* Dissect latencies
+* Add more client machines
+** Figure out who's getting overloaded
+* Increase read replicas?
+** Shut off readitem_server (old replicas)
+** Shut off things we don't need (coordinator pool, etc)
+
+---
+
+The difference comes from the fact that Antidote is returning the entire value of the key. In our case, that's 256KB, quite a lot of data. This explains the difference we had between the client coordinator approach and the client noproxy setting (at 600 clients we had 332,796.3 / 7.483251 (noproxy) vs 230,680.2 / 10.60521 (ccoord)
+</pre>
+</div>
 <div tags="imdea code_notes" title="clocksi_readitem_server replica lifetime" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>! On application start
 
@@ -12010,6 +12121,22 @@ MyServerPids = fun() -&gt;
         end, lists:seq(1, 20))
     end, Parts)
 end.
+```</pre>
+</div>
+<div created="20190228195613854" modified="20190304105941594" tags="git" title="Collection of git tips" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! Reset local repo to remote state
+
+```bash
+git fetch &lt;remote&gt;
+git reset --hard &lt;remote&gt;/&lt;branch&gt;
+```
+
+!! Generate diff for files outside of repo
+
+Any (or both) files can be outside of the repo
+
+```bash
+git diff --no-index &lt;file_a&gt; &lt;file_b&gt;
 ```</pre>
 </div>
 <div bookmark_link="https://concuerror.com" created="20190217174728824" modified="20190217174813019" tags="bookmark" title="Concuerror" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12168,6 +12295,9 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 <div tags="imdea" title="Dev Journal" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;list-links filter:&quot;[tag[imdea]tag[journal]!has[draft.of]!sort[]]&quot;&gt;&gt;</pre>
 </div>
+<div created="20190225115205105" modified="20190226140549653" tags="task" task-client_coord-step="2" task-done-on="2019-02-26" title="Dissect latency on client coord" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Problem comes from transering the 256k back from a remote read</pre>
+</div>
 <div tags="task" task-done-on="2019-01-21" task-readitem_improv-step="2" title="Document lasp_bench timestamps and changes" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>See [[Stamp-modified lasp_bench]]</pre>
 </div>
@@ -12203,6 +12333,12 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 <div bookmark_link="https://www.theverge.com/2019/2/14/18225373/facebook-threat-users-tracking-monitors-employees" created="20190217175918265" modified="20190217175930515" tags="read-later" title="Facebook monitors and tracks the locations of users it deems a threat" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div created="20190225115232151" modified="20190227153058771" tags="task" task-client_coord-step="1" title="Figure out client coord slowdown" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;&lt;transclude_edit &quot;Client Coordinator Slowdown Notes&quot;&gt;&gt;</pre>
+</div>
+<div created="20190227153127692" modified="20190301122447654" tags="task" task-client_coord_slowdown-step="1" title="Figure out max concurrent connections on both scenarios" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div tags="task" task-done-on="2019-01-20" task-readitem_improv-step="2" title="Figure out socket limit" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Having the coordinator processes open the sockets results in going above the system limit. Either
 
@@ -12224,8 +12360,39 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 
 http://pzel.github.io/2019/02/18/Figuring-out-a-gen_tcp-recv_limitation.html</pre>
 </div>
+<div created="20190304105945431" modified="20190304110228929" tags="linux" title="Generate patches" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! Create patch for two files
+
+```
+$ diff -Naru &lt;original&gt; &lt;updated&gt; &gt; patch
+
+-N treats absent files as empty
+-a treats all files as text
+-r recursive compare any subdirs
+-u output NUM (default 3) lines of unified context
+```
+
+!! Create patch for two folders
+
+```bash
+diff -crB &lt;original_dir&gt; &lt;updated_dir&gt; &gt; patch
+
+-c output NUM (default 3) lines of copied context
+-r same as above
+-B ignore changes in blank lines
+```
+
+!! Apply patch
+
+```
+patch -p1 --dry-run &lt; patch
+```</pre>
+</div>
 <div bookmark_link="https://tiddlywiki.com/static/Generating%2520Static%2520Sites%2520with%2520TiddlyWiki.html" tags="tiddlytip" title="Generating Static Sites" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div bookmark_link="https://gnunet.org/en/" created="20190304133951009" modified="20190304134007190" tags="read-later" title="GNUnet" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>GNUnet is a new network protocol stack for building secure, distributed, and privacy-preserving applications. With strong roots in academic research, our goal is to replace the old insecure Internet protocol stack. </pre>
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/How%2520to%2520add%2520a%2520new%2520tab%2520to%2520the%2520sidebar.html" tags="tiddlytip" title="How to add a new tab to the sidebar" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -12259,7 +12426,7 @@ Ideas:
 * Semi-ephemeral
 * Scorekeeping</pre>
 </div>
-<div created="20190224225833178" modified="20190224225834258" tags="imdea" title="Imdea General" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190224225833178" modified="20190227153316489" tags="imdea" title="Imdea General" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Entry point for imdea-related documents
 
 !! Triage Boards
@@ -12298,6 +12465,9 @@ Ideas:
 </div>
 <div tags="task" task-readitem_improv-step="2" title="Implement new PB message in Antidote" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>PB process should call `clocksi_readitem_server` directly</pre>
+</div>
+<div created="20190225131458218" modified="20190225131514585" tags="task" task-client_coord-step="2" task-done-on="2019-02-25" title="Implement read path instrumentation" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
 </div>
 <div tags="task" task-readitem_improv-step="2" title="Improve vnode &lt;-&gt; readitem start procedure" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>clocksi_vnode on `start_read_servers` does `loop_until_started`, which (in theory), should start all read servers, doing:
@@ -12491,16 +12661,29 @@ Sometimes you read something on the internet that inspires you to write somethin
 &lt;&lt;bookmark_link_list_of link-note&gt;&gt;
 </pre>
 </div>
+<div created="20190301122246210" modified="20190301122437059" tags="task" task-client_coord_slowdown-step="1" title="Look into system limits" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* Number of concurrent connections
+** Each client worker thread keeps 4 sockets open (one per cluster node)
+** So what's the real number?
+
+* Max Erlang processes (one process per client, maybe we're going overboard).
+
+* Look into ranch concurrent connections
+
+* Kernel limits?
+
+* Erlang TCP options? (backlog, buffer size, etc)</pre>
+</div>
 <div tags="task" task-meta-step="0" title="Maybe add mermaid plugin" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>https://github.com/gt6796c/mermaid-tw5
 
 https://gt6796c.github.io</pre>
 </div>
-<div created="20190219120918430" modified="20190220003057658" tags="task" task-client_coord-step="1" title="Measure baseline performance" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190219120918430" modified="20190225115141196" tags="task" task-client_coord-step="2" task-done-on="2019-02-25" title="Measure baseline performance" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Repeat single-site, two sites, note metrics to compare against client coordinator once done
 
 * ~~Single Site~~
-* Two Sites</pre>
+* ~~Two Sites~~</pre>
 </div>
 <div bookmark_link="https://arxiv.org/abs/1902.04738" created="20190217180253898" modified="20190217180305201" tags="read-later" title="Mesh: Compacting Memory Management for C/C++ Applications" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -12524,7 +12707,7 @@ We could create two new vnodes, one for storage (superceding materializer_vnode)
 <div bookmark_link="https://blog.gtank.cc/modern-alternatives-to-pgp/" created="20190217180400266" modified="20190217180424088" tags="read-later" title="Modern Alternatives to PGP" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Also check out HN's discussion [[here|https://news.ycombinator.com/item?id=19173326]]</pre>
 </div>
-<div created="20190220002938329" modified="20190220002940792" tags="qnote" title="Musings on personal organizers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190220002938329" modified="20190304134103677" tags="qnote" title="Musings on personal organizers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!!! General
 
 Basic conflict between:
@@ -12582,6 +12765,12 @@ Basic conflict between:
 ** (+) Hierarchical notes, subtrees, hoisting
 ** (-) Paid montly plans
 ** (-) Web-based
+
+---
+
+!!! Others
+
+https://github.com/NorthernPath/north/wiki/Design-Document
 </pre>
 </div>
 <div tags="qnote imdea" title="Noproxy changes" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12654,7 +12843,7 @@ Changeset:
 * &lt;&lt;alink 2b4d254a843f000014aa798c992163a33b56af33&gt;&gt; (adapt indices to new API)
 * Note: add dialyzer check to Makefile, otherwise we won't spot this errors</pre>
 </div>
-<div created="20190224191711456" modified="20190224223755916" tags="qnote" title="On Secure Scuttlebutt" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190224191711456" modified="20190304133909162" tags="qnote" title="On Secure Scuttlebutt" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!!! Deprioritizing first world problems
 
 Source `ssb://%u0fnmwUQTBcL9S8HP3uYCdBgnssu4GIyWSuo5XLYvPs=.sha256`
@@ -12685,7 +12874,8 @@ A lot of problems with &quot;trolling&quot; / &quot;harassing&quot;. Architectur
 
 Relies on the goodwill of the community. Technical and architectural decisions make it even harder. Technical solutions abound in the thread (although someone pins the problem on &quot;just human things&quot;).
 
-Seems like going down the Twitter path: &quot;transitive&quot; blocks, and shared block lists.</pre>
+Seems like going down the Twitter path: &quot;transitive&quot; blocks, and shared block lists.
+</pre>
 </div>
 <div bookmark_link="https://https.www.google.com.tedunangst.com/flak/post/patience-diffing-algorithm" created="20190217181128353" modified="20190217181137797" tags="read-later" title="patience diffing algorithm" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -12698,6 +12888,10 @@ Seems like going down the Twitter path: &quot;transitive&quot; blocks, and share
 ** https://letke.men uses the same template
 * https://wiki.xxiivv.com/#home
 * https://idea.junglecoder.com (simple list of links)</pre>
+</div>
+<div bookmark_link="https://github.com/pilosa/pilosa" created="20190304134014693" modified="20190304134036352" tags="read-later" title="Pilosa" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Pilosa is an open source, distributed bitmap index that dramatically accelerates queries across multiple, massive data sets. See also https://www.pilosa.com/docs/latest/data-model/
+</pre>
 </div>
 <div tags="task" task-done-on="2019-01-24" task-readitem_improv-step="2" title="Play with remote reader process number" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>| !N | !D |
@@ -12758,6 +12952,18 @@ But this doesn't appear to happen, and it rests on Z being able to non-monotical
 
 &lt;&lt;bookmark_link_list_of read-later&gt;&gt;</pre>
 </div>
+<div created="20190303200420259" modified="20190303200651847" tags="task" task-client_coord_slowdown-step="0" title="Read through doc links" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>* [[Erlang Memory Limits|http://erlang.org/documentation/doc-5.8.4/doc/efficiency_guide/advanced.html]]
+
+* [[gen_tcp docs|http://erlang.org/documentation/doc-8.3/lib/kernel-5.2/doc/html/gen_tcp.html]]
+
+* About TCP_NODELAY
+** https://www.extrahop.com/company/blog/2016/tcp-nodelay-nagle-quickack-best-practices/
+** https://stackoverflow.com/questions/3761276/when-should-i-use-tcp-nodelay-and-when-tcp-cork
+** [[The Caveats of TCP_NODELAY|https://eklitzke.org/the-caveats-of-tcp-nodelay]]
+
+* https://blog.erratasec.com/2019/02/a-basic-question-about-tcp.html#.XHwyly2ZOEK</pre>
+</div>
 <div tags="task" task-client_coord-step="2" task-done-on="2019-02-14" title="Reconcile data types between client and server" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
@@ -12774,11 +12980,14 @@ To date I've used several approaches, ranging from plain-text files (scattered a
 The reason to make the wiki public is to hopefully trick me into publishing what I write more often. I have learned a lot from random blogs written by people ~~trying to boost their SEO and increasing their chances of getting hired by luxurious tech companies~~ sharing their experiences and ideas. I might as well join the club.
 </pre>
 </div>
+<div created="20190226140728832" modified="20190301122444969" tags="task" task-client_coord_slowdown-step="2" task-done-on="2019-03-01" title="Run Ping Ccoord Bench on Single and Two Sites" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div tags="task" task-client_coord-step="2" task-done-on="2019-02-08" title="Spec changes needed to database side" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;transclude_edit &quot;Client Coordinator Database Changes&quot;&gt;&gt;
 </pre>
 </div>
-<div tags="imdea code_notes" title="Stamp-modified lasp_bench" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190225122412655" modified="20190225122414054" tags="imdea code_notes" title="Stamp-modified lasp_bench" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>! Lifetime^^[[ [edit]|stamp-modified lasp_bench lifetime]]^^
 
 {{stamp-modified lasp_bench lifetime}}
@@ -12800,19 +13009,21 @@ The reason to make the wiki public is to hopefully trick me into publishing what
 | remote_read_server | os:timestamp/0 and timer:now_diff/2 | Time taken to get inside of remote reader server |
 | remote_read_socket | os:timestamp/0 and timer:now_diff/2 | Time blocked on remote read socket op |</pre>
 </div>
-<div tags="imdea code_notes" title="stamp-modified lasp_bench lifetime" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190225122424106" modified="20190225124023837" tags="imdea code_notes" title="stamp-modified lasp_bench lifetime" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! On init
 
 | !Module | !Function | !Description |
 | lasp_bench_stats | build_folsom_tables/1 |Creates folsom ETS histograms, etc |
-| lasp_bench_stats_writer_csv | new/1 |`[erlang:put({csv_file, Op}, op_csv_file(Op)) || Op &lt;- Ops]` |
 | lasp_bench_stats_writer_csv | op_csv_file/1 |Opens files for operation (or files) |
+| lasp_bench_stats_writer_csv | terminate/1 |Close extra files if created|
+| lasp_bench_stats_writer_csv | process_summary/5 |Write to file for new payload|
 
 !! When running
 
 | !Module | !Function | !Description |
 | lasp_bench_worker | worker_next_op/1 |Asks the driver to execute an operation, which returns a result and the next state. This state will be returned modified with extra measurement information. |
 | lasp_bench_worker | hack_preprocess_driver_state/2 |Receives executed op and state as returned from the driver |
+| lasp_bench_stats | op_complete/3 | Notify folsom histogram on `{TableTag, Us}` |
 
 {{$:/ergl/images/lasp_bench_loop.csv}}
 
@@ -12938,8 +13149,8 @@ sequenceDiagram
 <div tags="task" task-done-on="2019-01-24" task-readitem_improv-step="2" title="Test changes on cloudlab" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20190219120921922" modified="20190220003026276" tags="task" task-client_coord-step="1" title="Test client coord" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Doesn't crash for `readonly-1`</pre>
+<div created="20190219120921922" modified="20190225115157178" tags="task" task-client_coord-step="1" title="Test client coord" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Need to test update</pre>
 </div>
 <div bookmark_link="https://www.theringer.com/tech/2019/2/6/18212421/stanford-students-tech-backlash-silicon-valley-next-generation?fbclid=IwAR27ARQHIHvpvFnbvQNnJPnZ340px38Y-4ugMHgZhorhXZCCgnlQDnScTsI" created="20190217175818330" modified="20190217175842149" tags="read-later" title="The Ethical Dilemma Facing Silicon Valley’s Next Generation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Stanford has established itself as the epicenter of computer science and a farm system for the tech giants. Following major scandals at Facebook, Google, and others, how is the university coming to grips with a world in which many of its students’ dream jobs are now vilified?</pre>
@@ -12995,7 +13206,7 @@ Here's a list of macros I've made.
 <div tags="meta" title="triage/meta" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of meta&gt;&gt;</pre>
 </div>
-<div tags="triage imdea" title="triager/client_coord" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190227152701923" modified="20190227152710049" tags="triage imdea" title="triager/client_coord" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of client_coord&gt;&gt;
 
 ---
@@ -13003,6 +13214,9 @@ Here's a list of macros I've made.
 !! Related Documents
 
 &lt;&lt;list-links filter:[tag[imdea]tag[pvc_client_coordinator]]&gt;&gt;</pre>
+</div>
+<div created="20190227152710624" modified="20190227153342678" tags="imdea triage" title="triager/client_coord_slowdown" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;&lt;triage_of client_coord_slowdown&gt;&gt;</pre>
 </div>
 <div tags="triage imdea" title="triager/pvc" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of pvc&gt;&gt;</pre>

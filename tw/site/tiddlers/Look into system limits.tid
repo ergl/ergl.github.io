@@ -1,0 +1,18 @@
+created: 20190301122246210
+modified: 20190301122437059
+tags: task
+task-client_coord_slowdown-step: 1
+title: Look into system limits
+type: text/vnd.tiddlywiki
+
+* Number of concurrent connections
+** Each client worker thread keeps 4 sockets open (one per cluster node)
+** So what's the real number?
+
+* Max Erlang processes (one process per client, maybe we're going overboard).
+
+* Look into ranch concurrent connections
+
+* Kernel limits?
+
+* Erlang TCP options? (backlog, buffer size, etc)
