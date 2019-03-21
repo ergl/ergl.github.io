@@ -1,8 +1,30 @@
 created: 20190226140606002
-modified: 20190228234039150
-tags: pvc_client_coordinator imdea
+modified: 20190319105723635
+tags: note pvc_client_coordinator imdea
 title: Client Coordinator Slowdown Notes
 type: text/vnd.tiddlywiki
+
+Observing the node on an overloaded state show no abnormal message queues or memory consumption.
+
+However, we get a high number of ports used: "4025/4096". This seems normal, given that we're connecting to 4k clients concurrently. Probably should bump the max number of ports in the system.
+
+~45% of the memory used is taken up by the processes in the system.
+
+Only ~10-12 cores are being used, and only to the ~50%.
+Do we have any leeway then? Why is Erlang using only ~half of the available schedulers?
+See the docs on the [[+sbt|http://erlang.org/doc/man/erl.html#+sbt]] option. For our use-case, we use `tnnps`, wich says
+
+<<<
+Schedulers are spread over hardware threads across NUMA nodes, but schedulers are only spread over processors internally in one NUMA node at a time.
+<<<
+
+Running `numactl -H` on our machines reports 2 NUMA nodes, with a memory interleave policy. This means that each node is getting half the CPU cores. This explains why our schedulers across ~half the cores.
+
+Reducing the size of the ranch acceptor pool to 32 (number of physical cores in the target machine): no effect, but can probably reduce anyway, no need to keep more processes waiting.
+
+Changing the number of max ports (`ERL_MAX_PORTS`) allows more clients to connect concurrently, but does not help to alleviate our problem. Antidote is //really// overloaded. Adding more client machines doesn't help with the latency.
+
+---
 
 Running into the problem of slow performance between single site and multi site performance.
 

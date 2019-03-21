@@ -1,5 +1,5 @@
 created: 20190224225833178
-modified: 20190227153316489
+modified: 20190308103306896
 tags: imdea
 title: Imdea General
 type: text/vnd.tiddlywiki
@@ -15,6 +15,12 @@ Entry point for imdea-related documents
 <<list-links filter:[tag[imdea]tag[qnote]!has[draft.of]sort[]]>>
 
 !! Longer notes
+
+<<list-links filter:[tag[imdea]tag[note]!has[draft.of]sort[]]>>
+
+!! Code notes
+
+Usually for code-related rundowns.
 
 <<list-links filter:[tag[imdea]tag[code_notes]!has[draft.of]sort[]]>>
 

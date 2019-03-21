@@ -1,0 +1,8 @@
+created: 20190314100000509
+encrypted: {"iv":"qbod2A9vQP2E8MYyCBx21w==","v":1,"iter":10000,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","salt":"/KPEqlOa4aA=","ct":"bOb16SeAkuA9R04HTixxKgo0lVpXPaOAPLvnv68RdK9V81ArsWpMu8GN3cBwe+F33LiQjWhdxG/glEUQe46mSG7/geCsZTIZk0dcWIT1bLOPOQ79K4wNINvpH1vX92KhzAVD+sMYbwtwJe8bs/jV6zk3T5cY1UI+Ky46d/w9zyxWs6K5uPDYdFFx/QKlxQcyNSkx4bgbGg2cJdn6eLszFqP8wpVt/Fb5h/9yvyvYDpsYPnzrN9cqMMw7jrNHAbWbd7dQ06WHn01xOex9hJSQMH/iH8K+YwqTaK5Ob5+CSUbUpTaEUgbMuKCfoYz3h1l/qtWjon84ooFjZ4Tevy6Wh0JVGvz7Xje7B3nXcBDl9HF2temXI1rKFEyUryNboOVcWlLKMiyDqLbz3Pp/rU6rQND96nbWcjte7w9j2PFhZoJXZpKeSgv6UkOECbXduHTmIqf9sUWgD+S9VMwtHlqjcqr5GT251GRWgOHzpm8/vSruD5XC3zLiRwpofXvYwV05tlzmXEdW8g4ZypfA6pn3Z8n6F9VYCJVSRjX7v4Va9NmpiDS51FAigMa4BCEFrWEkAudkUW9o4LNiysRPpJa3pynVJuTn0cCSquwwMA/A0Js0nNrishweWdB40SNNWVxFcHSX2ngIodBbZ3lZJwTilwOfLm6ynsjbmX5Hc5Cq8WkRcgocXvpBA7Ln2aH07X1GIr502Im6TVOjguCCBdGkmodfJlvXcw9TxEKDnFG6RYggjp5o/Jvz6I1T0EGBoTCJe0OmoVzueUxKa1LvMNU3iHzVJlSn"}
+modified: 20190322080433482
+tags: imdea-talks
+title: Strong Consistency at Scale
+type: text/vnd.tiddlywiki
+
+!This is an encrypted Tiddler

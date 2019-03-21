@@ -1,0 +1,40 @@
+created: 20190321233210610
+modified: 20190321235306112
+tags: benchmarking definition
+title: Coordinated Omission
+type: text/vnd.tiddlywiki
+
+From [[Gil Tene's post in mechanical-sympathy|https://groups.google.com/d/msg/mechanical-sympathy/icNZJejUHfE/BfDekfBEs_sJ]].
+
+When benchmarking a system in a //closed-loop// fashion, you do:
+
+* t,,0,, <- timestamp()
+* perform_sync_request()
+* t,,1,, <- timestamp()
+* Latency is t,,1,, - t,,0,,
+* Repeat ad infinitum
+
+In basho_bench, for example, you can specify the //rate// of requests/ops per second. I normally have this set to //max//, but you can change it to, for example, 100 per second.
+
+In the above case, of 100 ops per second, each operation can take //at most// 10ms, or otherwise it won't fit in our 100 ops/sec schedule.
+
+If one operation takes 100ms, at the end of the interval we will only count 1 operation, when in that time, under usual conditions, we would've reported 10 requests. Those other 10 requests will be executed afterwards, with a normal latency. But, those 10 operations //waited// for 100ms before completing: the first one will execute in 110ms, the other in 100ms, other in 90ms, etc. The benchmark has not measured the time those operations waited in the queue before being able to execute.
+
+This problem is called //coordinated omission// because our benchmark tool is coordinating with whatever system we're testing, by automatically backing off when the system was overloaded (the one operation taking 100ms).
+
+<<<
+Long operations only get measured once, and delays outside the timing window don’t get measured at all.
+<<< https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/
+
+Solutions:
+
+* Perform requests at a fixed rate, and if any operations lag behind, count that wait against the subsequent requests.
+* If you use [[HdrHistogram|https://github.com/HdrHistogram]], it can compensate for values that lag behind (if you know your expected time interval between requests).
+
+---
+
+Sources:
+
+* https://bravenewgeek.com/benchmarking-message-queue-latency/
+* https://groups.google.com/d/msg/mechanical-sympathy/icNZJejUHfE/BfDekfBEs_sJ
+* https://www.azul.com/files/HowNotToMeasureLatency_LLSummit_NYC_12Nov2013.pdf

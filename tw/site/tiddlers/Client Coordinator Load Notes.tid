@@ -1,9 +1,8 @@
 created: 20190228191206084
-modified: 20190228191231742
-tags: pvc_client_coordinator imdea
+modified: 20190308103418057
+tags: qnote pvc_client_coordinator imdea
 title: Client Coordinator Load Notes
 type: text/vnd.tiddlywiki
-
 
 
 * ~~Increment `LastPrep` and set a new `MRVC` on `clocksi_vnode` (atomic state ETS table). (`MRVC` will be \forall P \in Partitions . {P, 1} and `LastPrep` will be `1`)~~
@@ -37,4 +36,4 @@ During the //prepare// part of the protocol, we check, for each key in the trans
 
 !! Procedure on pvc-ccoord
 
-<<hl TODO>>
+~Same

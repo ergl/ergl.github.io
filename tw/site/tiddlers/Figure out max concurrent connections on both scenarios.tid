@@ -1,7 +1,9 @@
 created: 20190227153127692
-modified: 20190301122447654
+modified: 20190312115858214
 tags: task
-task-client_coord_slowdown-step: 1
+task-client_coord_slowdown-step: 2
+task-done-on: 2019-03-12
 title: Figure out max concurrent connections on both scenarios
 type: text/vnd.tiddlywiki
 
+Depends much more greatly on the max number of ports (`ERL_MAX_PORTS`), that limits the number of open ports that the VM can have (each socket is a port). Linux could also be the limit, if we add more client machines. Test how to change that.

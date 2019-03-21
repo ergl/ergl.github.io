@@ -1,0 +1,13 @@
+created: 20190312065222086
+modified: 20190312103301702
+tags: task
+task-client_coord_slowdown-step: 2
+task-done-on: 2019-03-12
+title: Test single cluster with delay
+type: text/vnd.tiddlywiki
+
+Test single cluster with added delay. Does the slowdown still happen? If so, test with more client machines. Maybe the reported CPU usage is false. There are still lots of erlang cores that are not being used. Maybe the saturation comes from the client macines.
+
+---
+
+No change
