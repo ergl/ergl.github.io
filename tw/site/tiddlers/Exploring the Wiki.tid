@@ -1,5 +1,5 @@
 created: 20190217174128942
-modified: 20190224233550519
+modified: 20190328094100313
 tags: meta
 title: Exploring the Wiki
 type: text/vnd.tiddlywiki
@@ -11,6 +11,7 @@ type: text/vnd.tiddlywiki
 * [[About Tiddlywiky itself|TiddlyKnow]]
 * [[Meta Tickets|triage/meta]]
 * [[List of Wikis|Personal Wiki examples]]
+* <<hl "[[Articles in need of tags|To organize]]">>
 
 !! Personal
 
@@ -18,6 +19,7 @@ type: text/vnd.tiddlywiki
 * [[My bookmarks|Bookmarks]]
 * [[My Linkblog|Links]]
 * [[Read it Later List|Read Later]]
+* [[Never-ending stack of books]]
 
 !! Work
 

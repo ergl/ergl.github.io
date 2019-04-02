@@ -1,7 +1,8 @@
 created: 20190312121509609
-modified: 20190312121519737
+modified: 20190402111558216
 tags: task
-task-client_coord_slowdown-step: 0
+task-client_coord_slowdown-step: 2
+task-done-on: 2019-04-02
 title: Send email to Erlang mailing list
 type: text/vnd.tiddlywiki
 

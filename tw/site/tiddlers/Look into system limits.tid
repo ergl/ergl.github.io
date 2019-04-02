@@ -1,7 +1,8 @@
 created: 20190301122246210
-modified: 20190312120016285
+modified: 20190402111642267
 tags: task
-task-client_coord_slowdown-step: 1
+task-client_coord_slowdown-step: 2
+task-done-on: 2019-04-02
 title: Look into system limits
 type: text/vnd.tiddlywiki
 
@@ -17,3 +18,5 @@ type: text/vnd.tiddlywiki
 * Kernel limits?
 
 * Erlang TCP options? (backlog, buffer size, etc)
+
+<<hl "Related to stop & wait">>

@@ -1,0 +1,9 @@
+created: 20190324201302099
+modified: 20190331195459626
+tags: meta
+title: To organize
+type: text/vnd.tiddlywiki
+
+See [[Figure out content structure]]
+
+<$list filter="[!is[system]!has[tags]]">

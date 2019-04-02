@@ -1,75 +1,47 @@
 created: 20190319105723541
-modified: 20190319123104792
+modified: 20190329104139709
 tags: note imdea
 title: Slowdown experiment
 type: text/vnd.tiddlywiki
 
-! Technical setup
+!! The Problem
 
-All machines ([[Dell Poweredge R430|http://i.dell.com/sites/doccontent/shared-content/data-sheets/en/Documents/Dell-PowerEdge-R430-Spec-Sheet.pdf]]) running Ubuntu 16.04.1 LTS and `Erlang/OTP 19 [erts-8.3.5] [source] [64-bit] [smp:32:32]`, with:
+<<<
+We distinguish two scenarios: one with no latency added between sites (0.25 ms rtt), and another with an extra 10ms added (10ms rtt). Several 5-minute runs are performed, each with an increasing number of concurrent connections (from 50 up to 1000, so each server is holding 200 to 4000 concurrent connections).
 
-* Two 2.4 GHz 64-bit 8-Core Xeon E5-2630v3 processors, 8.0 GT/s, 20 MB cache
-* 64 GB 2133 MT/s DDR4 RAM (8 x 8GB modules)
-* 2-4 Intel i350 GbE NICs for experimental use (in use)
-* 2-4 Intel X710 10 GbE NICs for experimental use
+The results are [..]:
 
-! Experiment setup
+|! Scenario |! Max Th | !Median Latency |
+| No latency | 627,434.9 | 7.39232 |
+| 10ms rtt | 340,299.5 | 12.05045 |
+<<< [[Slowdown experiment details]]
 
-Servers and clients are partitioned in sites. Inside a single site, all servers and client machines are linked to a single LAN. To connect between sites, a single physical machine is used as a switch between all the LANs on the different sites. Artificial latency is added on this switch node using `tc`.
+!! Explanation
 
-The servers don't know about each other, and only implement a simple TCP echo server using ranch as an acceptor pool. Each client node (using basho_bench) will create several worker processes to execute a simple ping-pong benchmark. At the beginning of the benchmark, a worker process will open TCP connections to each of the servers, and re-use them for requests throughout the entire benchmark.
+Most information here is sourced from a  [[great email by Jesper|http://erlang.org/pipermail/erlang-questions/2019-March/097496.html]] on the Erlang mailing list.
 
-For each request, it will choose a server at random (in an uniform fashion), send a random payload of 1KB, and wait synchronously for the same payload to be sent back.
+Under a general case, an increase in latency doesn't necessarily lead to a decrease in maximum throughput. Under the same circumstances, only the base latency increases, but the saturation point of the system is the same. So why this doesn't hold in our case?
 
-Code is available on github for the [[server|https://github.com/ergl/ranch_test]], the [[client|https://github.com/ergl/lasp-bench/blob/coord/src/ranch_test_bench.erl]] and the [[benchmark settings|https://github.com/ergl/lasp-bench/blob/coord/examples/ranch_test.config]].
+The problem resides in how we do our benchmark: a client sends a request, and waits until it receives a reply to proceed to the next operation. In the context of a single transaction, this makes sense, because we need to know the results of a previous operation in order to issue the next one. Under such a system (known as "[[Stop & Wait]] protocol"), there is at most a single packet on the wire per connection, and so the maximum number of packets per second per connection is directly tied to the latency of the medium.
 
-! Tuning Options
+<<<
+Some napkin math: Suppose you have 1 connection. You have a lower RTT of 10ms. At most, this is 100 req/s on that connection. Suppose we have 500 of those connections. Then the maximal req/s is 500*100 = 50,000. 
+<<<
 
-Several socket options:
+And so, 
 
-* Ranch acceptor pool options `[{num_acceptors, erlang:system_info(schedulers_online)}, {max_connections, infinity}]`
-* Server socket options `[{active, once}, {packet, 2}]`
-* Client socket options `[binary, {active, false}, {packet, 2}, {nodelay, true}]`
+$$
+Th_{max} =  \frac{1000 \times \mathit{connections}}{\mathit{Latency\ (ms)}}
+$$
 
-Erlang options on the server nodes (some of these options are chosen to replicate a production service where the same problem is present):
+For our case, with a 10ms RTT and 4k connections, the max throughput is 400,000 reqs/sec, which is what we observe in the benchmarks.
 
-```
-+K true
-+A 5
--env ERL_MAX_PORTS 4096
--env ERL_FULLSWEEP_AFTER 10
--env ERL_MAX_ETS_TABLES 50000
-+zdbbl 32768
-+C no_time_warp
-+hmax 12500000
-+hmaxk false
-+stbt tnnps
-```
+Another, unrelated problem, is the one [[Coordinated Omission]]; but this is more the fault of `basho_bench`, so there's less we can do about it.
 
-! The Problem
+!! Solutions
 
-For this experiment, we have two sites, with two server and two client machines each.
+Move away from a stop & wait protocol (which is something we didn't even intend to do in the first place). There are two approaches here:
 
-We distinguish two scenarios: one with no latency added between sites (0.25 ms rtt), and another with an extra 10ms added (10ms rtt). Several 5-minute runs are performed, each with an increasing number of concurrent connections (from 50 up to 1000, so each server is holding 200 to 4000 concurrent connections). The results are in the following tables:
+* Batching. Collect multiple requests and send them all off at the same time. This gets around the delay constant by having several requests on the wire. It can also let the server process multiple connections at the same time (if possible). To do this: when the first request arrives, set a [[cork|TCP Cork in Erlang]] of 5ms. Upon having read either X reqs or the timer triggering, process whatever you have in the batch. Used by Kafka and TensorFlow.
 
-Scenario A, no latency added
-
-| Clients | Total Clients | Max Throughput (reqs/sec) | Mean Latency (ms) |
-| :-----: | :-----------: | :-----------------------: | :---------------: |
-|   50    |      200      |         457,279.5         |     0.4397939     |
-|   100   |      400      |         514,436.5         |     0.7933541     |
-|   500   |     2,000     |         594,367.7         |     3.524144      |
-|   750   |     3,000     |         613,786.7         |     5.600492      |
-|  1,000  |     4,000     |         627,434.9         |      7.39232      |
-
-Scenario B, 10ms rtt
-
-| Clients | Total Clients | Max Throughput (reqs/sec) | Mean Latency (ms) |
-| :-----: | :-----------: | :-----------------------: | :---------------: |
-|   50    |      200      |         38,660.02         |     5.182687      |
-|   100   |      400      |         77,619.95         |     5.167778      |
-|   500   |     2,000     |         348,516.5         |     5.901048      |
-|   750   |     3,000     |         344,605.3         |     8.961493      |
-|  1,000  |     4,000     |         340,299.5         |     12.05045      |
-
-I expected a small drop in throughput, but not this much. 
+* Pipelining. Send multiple requests back to back, so they are all in the network. This requires more changes on the client side, as we need to interleave our receive loop with new requests being sent, so we can keep the work going. To do this, we need to tag messages with unique identifiers so they can be told apart (allowing out-of-order processing). See the [[9P|https://en.wikipedia.org/wiki/9P_(protocol)]] protocol from Plan 9, RabbitMQ/AMQP's correlation IDs, or HTTP/2. Quick implementation: Cowboy/Gun combo works wonders.

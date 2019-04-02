@@ -1,3 +1,5 @@
+created: 20190328091742916
+modified: 20190328092047452
 tags: imdea qnote
 title: pvc branches
 type: text/vnd.tiddlywiki
@@ -5,15 +7,15 @@ type: text/vnd.tiddlywiki
 !! Current branches
 
 | !Branch | !Desc | !Status |
-| pvc |PVC version of Antidote. See [[notes on the protocol|PVC protocol]]. | Active |
-| pvc-noproxy |Rebase of pvc. See [[reasoning and notes on the changes|Noproxy changes]]. | Active |
-| pvc-tcp-remote |Rebase of pvc-noproxy. Further read path instrumentation, some clean u||
-| pvc-newfsm |A new implementation of the base PVC protocol, with a different FSM, and decoupling of the PVC structures from Antidote code. Uses its own ETS tables, virtual nodes, etc. Suffers slowdowns in write-heavy workloads — I suspect it has to do with the fact that we're bundling all the state inside the `pvc_storage` virtual node. Maybe split the state | Research |
+| pvc |PVC version of Antidote, using a [[client-side coordinator|Client Coordinator Notes]]. See [[notes on the protocol|PVC protocol]]. | Active |
+| pvc-newfsm |A new implementation of the base PVC protocol, with a different FSM, and decoupling of the PVC structures from Antidote code. Uses its own ETS tables, virtual nodes, etc. Suffers slowdowns in write-heavy workloads — I suspect it has to do with the fact that we're bundling all the state inside the `pvc_storage` virtual node. Maybe split the state. | Research |
 | pvc-newfsm-pool |A rebase of `pvc-newfsm`, reimplementing the coordinator pool using poolboy (see [[start transaction issue|start_transaction slowdown rundown]]) | Research |
 
-!! Old, unused branches
+!! Old/unused branches
 
 | !Branch | !Desc | !Status |
+| pvc-noproxy |Rebase of pvc. See [[reasoning and notes on the changes|Noproxy changes]]. | Abandoned |
+| pvc-tcp-remote |Rebase of pvc-noproxy. Further read path instrumentation, some clean up. | Abandoned  |
 | ergl/refactor-log |Old branch refactoring the replay log | Abandoned |
 | master |Tracking `upstream/master`. Not interesting, except for critical bugs | Tracking Upstream |
 | master-blotter |Rebase of `upstream/master` adapted to run the blotter benchmark. This means: adding a TCP server, our protobuf library and the built-in driver to handle the messages. Added blotter benchmark as part of the database. Also added benchmark tweaks (CPU pinning, disable key batching, disable `sync_log`) | Stale, used for old comparative benchmarks |

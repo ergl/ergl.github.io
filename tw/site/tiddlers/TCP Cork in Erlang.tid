@@ -1,0 +1,19 @@
+created: 20190328095603276
+modified: 20190329100304017
+tags: 
+title: TCP Cork in Erlang
+type: text/vnd.tiddlywiki
+
+Since Erlang/OTP 21.2 (see [[changelog|http://erlang.org/download/otp_src_21.2.readme]]), you can do the same by specifying the `{nopush, true}` option in `inet:setopts/2`.
+
+If you're on older distributions, you can do it yourself by using raw sockets:
+
+<<<
+```erlang
+cork(TcpSocket) ->
+    inet:setopts(TcpSocket,[{raw,6,3,<<1:32/native>>}]).
+
+uncork(TcpSocket) ->
+    inet:setopts(TcpSocket,[{raw,6,3,<<0:32/native>>}])
+```
+<<< https://groups.google.com/d/msg/erlang-programming/GTE2iZgACDY/6TG-lgW_VEEJ

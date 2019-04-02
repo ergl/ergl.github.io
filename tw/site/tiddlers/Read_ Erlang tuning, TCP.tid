@@ -1,7 +1,7 @@
 created: 20190303200420259
-modified: 20190312121443676
+modified: 20190402111610844
 tags: task
-task-client_coord_slowdown-step: 0
+task-client_coord_slowdown-step: 1
 title: Read: Erlang tuning, TCP
 type: text/vnd.tiddlywiki
 
@@ -46,17 +46,9 @@ any real property of the socket. Needless to say it is an implementation
 specific option. Default is false.
 <<< https://groups.google.com/d/msg/erlang-programming/GTE2iZgACDY/JUXnlNt-U1MJ
 
-!!! TCP_CORK in Erlang
 
-```erlang
-cork(TcpSocket) ->
-    inet:setopts(TcpSocket,[{raw,6,3,<<1:32/native>>}]).
-
-uncork(TcpSocket) ->
-    inet:setopts(TcpSocket,[{raw,6,3,<<0:32/native>>}])
-```
-
-From https://groups.google.com/d/msg/erlang-programming/GTE2iZgACDY/6TG-lgW_VEEJ
+!!! TCP Cork in Erlang
+<<transclude_edit "TCP Cork in Erlang">>
 
 ---
 
