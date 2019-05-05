@@ -1,7 +1,0 @@
-tags: imdea task
-task-client_coord-step: 2
-task-done-on: 2019-01-31
-title: Client coordinator sketch
-type: text/vnd.tiddlywiki
-
-<<transclude_edit "Client Coordinator Library Architecture">>

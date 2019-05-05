@@ -1,7 +1,0 @@
-tags: imdea journal
-title: 2019-02-08
-type: text/vnd.tiddlywiki
-
-* Implement `start_transaction`, `update`
-* Implemented first pass at `read`
-** Needs fixes (see [[Client Coordinator Database Changes]])

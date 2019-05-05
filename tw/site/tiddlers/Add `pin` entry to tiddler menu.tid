@@ -1,6 +1,0 @@
-tags: task
-task-meta-step: 0
-title: Add `pin` entry to tiddler menu
-type: text/vnd.tiddlywiki
-
-When clicked, will modify the $:/DefaultTiddlers body to add a the given tiddler

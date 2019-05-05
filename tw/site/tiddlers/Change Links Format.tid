@@ -1,6 +1,0 @@
-tags: task
-task-meta-step: 0
-title: Change Links Format
-type: text/vnd.tiddlywiki
-
-Instead of putting the link in a field, maybe put it in the body, inside a table (see how the  [[Bookmark plugin|http://inmysocks.tiddlyspot.com/#%24%3A%2Fplugins%2Finmysocks%2FBookmarks]] does it)

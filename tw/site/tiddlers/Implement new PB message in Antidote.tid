@@ -1,6 +1,0 @@
-tags: task
-task-readitem_improv-step: 2
-title: Implement new PB message in Antidote
-type: text/vnd.tiddlywiki
-
-PB process should call `clocksi_readitem_server` directly

@@ -1,7 +1,0 @@
-tags: imdea journal
-title: 2019-02-06
-type: text/vnd.tiddlywiki
-
-* Started changes to Antidote side (see progress in the [[pvc-ccoord|https://github.com/ergl/antidote/tree/pvc-ccoord]] branch
-** Mainly cleanup, renaming modules, etc
-* Implemented `connect` for client coordinator and Antidote

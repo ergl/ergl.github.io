@@ -1,5 +1,0 @@
-tags: task
-task-client_coord-step: 0
-title: Swallow socket errors on client coord? Make errors stable
-type: text/vnd.tiddlywiki
-

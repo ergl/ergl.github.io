@@ -1,9 +1,0 @@
-description: Highlights a word or sentence (use "sentence" for that)
-exports: hl [word or "sentence"]
-tags: $:/tags/Macro
-title: $:/ergl/macros/highlight
-type: text/vnd.tiddlywiki
-
-\define hl(text)
-<span style="padding:0.1em;background: #FFF7D7">$text$</span>
-\end

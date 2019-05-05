@@ -1,7 +1,0 @@
-created: 20190402111341803
-modified: 20190402111435493
-tags: journal imdea
-title: 2019-04-01
-type: text/vnd.tiddlywiki
-
-Wrote [[Improved TCP connection design]] and finished its implementation, named [[pipesock|https://github.com/ergl/pipesock]]
