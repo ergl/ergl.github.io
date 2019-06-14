@@ -363,6 +363,8 @@ Error message and password prompt
 
 <li>A List of random but useful plugins</li>
 
+<li>A personal site</li>
+
 <li>About the system tags</li>
 
 <li>Add &quot;task-done-on&quot; field to completed tasks</li>
@@ -425,6 +427,8 @@ Error message and password prompt
 
 <li>Collection of git tips</li>
 
+<li>Color Schemes</li>
+
 <li>Concuerror</li>
 
 <li>Constant Partition Access</li>
@@ -456,6 +460,8 @@ Error message and password prompt
 <li>Email Alexey read abort example</li>
 
 <li>Emulab Notes</li>
+
+<li>Erlang list comprehension hacks</li>
 
 <li>Erlang tuning and TCP</li>
 
@@ -490,6 +496,8 @@ Error message and password prompt
 <li>Hierarchical Timing Wheels</li>
 
 <li>How to add a new tab to the sidebar</li>
+
+<li>How to do Nothing (2019)</li>
 
 <li>How Using Async Correctly Increased Throughput by 4X</li>
 
@@ -558,6 +566,8 @@ Error message and password prompt
 <li>Never-ending stack of books</li>
 
 <li>Noproxy changes</li>
+
+<li>On base64 en/decoding</li>
 
 <li>On Personal Knowledge</li>
 
@@ -653,6 +663,8 @@ Error message and password prompt
 
 <li>To organize</li>
 
+<li>Transcluding files in Pollen</li>
+
 <li>triage/meta</li>
 
 <li>triager/client_coord</li>
@@ -663,9 +675,13 @@ Error message and password prompt
 
 <li>triager/readitem_improv</li>
 
+<li>Understanding Pollen</li>
+
 <li>Use quickcheck to find read abort example</li>
 
 <li>User-defined macros</li>
+
+<li>Using imdea apollo servers</li>
 
 <li>Wallace's E Unibus Pluram, annotated</li>
 
@@ -9935,8 +9951,9 @@ exports.run = function(value, operation, until, beyond, decimals, tiddler, by) {
     }
 }</pre>
 </div>
-<div created="20181229002633052" modified="20181230005914328" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[[Exploring the Wiki]]
+<div created="20181229002633052" modified="20190509151743544" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[[To organize]]
+[[Exploring the Wiki]]
 </pre>
 </div>
 <div caption="{{$:/core/images/import-button}} Create a new link tiddler" created="20190217182820519" description="Create a new link tiddler" modified="20190217182821623" tags="$:/tags/PageControls" title="$:/ergl/functions/NewBookmarkLink" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10450,7 +10467,7 @@ Change the `./images/` part to a different base URI. The URI can be relative or 
 <div created="20181229001800601" modified="20181230005914321" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>What Do I Know?</pre>
 </div>
-<div list="[[Exploring the Wiki]]" title="$:/StoryList" revision="1" bag="default">
+<div list="[[To organize]] [[Exploring the Wiki]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div list="$:/core/ui/Buttons/home $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all [[Draft of '$:/ergl/functions/NewBookmarkLink']] $:/core/ui/Buttons/permaview $:/ergl/functions/NewBookmarkLink $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh $:/ergl/functions/ShowAdmin $:/core/ui/Buttons/more-page-actions" title="$:/tags/PageControls" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10764,6 +10781,22 @@ With 3 connections pipesock presents ~17% lower throughput with and a 16% increa
 </div>
 <div bookmark_link="http://inmysocks.tiddlyspot.com/#My%20Plugins:%5B%5BMy%20Plugins%5D%5D%20%24%3A%2Fplugins%2Finmysocks%2FTW5Utils%20%24%3A%2Fplugins%2Finmysocks%2FCalendar%20%24%3A%2Fplugins%2Finmysocks%2FTaskList%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%2FBookmarks%2030plusgamer" tags="tiddlytip" title="A List of random but useful plugins" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Calendars, Bookmarks (this one looks especially nice)...</pre>
+</div>
+<div created="20190522193719169" modified="20190522213212014" tags="draft" title="A personal site" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>What's the appropriate mix of personal site / wiki? Which things should go where? Am I trying to shoehorn this wiki into something it is not?
+
+---
+
+To start, I should probably organize the content in this wiki in a better way. Should I mix imdea things with personal stuff? I used to think so, but now I'm not so sure. Imdea things that I used to put here should probably go either on a) notion (for integrated task management outside of the chandler hack I've done here), or b) another tiddlywiki.
+
+Notion feels enticing, if only for the pleasant out of the box experience. And if I'm already typing in a browser, is there any downside to doing that on notion, instead of here? I should probably think more about this.
+
+---
+
+For personal use, I should distinguish between //content// and //knowledge//. Is this wiki a good place to put random thoughts, or is it better to have an organized space? If I ever want this wiki to be useful to myself, I should probably clean it up and give it some proper structure. Going back to what I wrote [[previously|On Personal Knowledge]], it is important to be selective in what content I keep and choose to save for later. Some pieces can be read and discarded without giving it much thought, some others are kept as reference material, only making sense in a bigger context.
+
+If a wiki is good at writing articles, and doing relations between them, what's a good way to keep unstructured notes, and reference material for future writing? Is it okay to keep a single article about that, to just have a bunch of links to other sites? I should also archive that content, for future reference.
+</pre>
 </div>
 <div description="What lives under the `$:/tags` folder?" tags="tiddlywiki" title="About the system tags" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Update: I'm stupid, there's a page about this on the [[official documentation|https://tiddlywiki.com/static/SystemTags.html]]
@@ -11523,6 +11556,38 @@ Any (or both) files can be outside of the repo
 git diff --no-index &lt;file_a&gt; &lt;file_b&gt;
 ```</pre>
 </div>
+<div created="20190606204736072" modified="20190613234757094" title="Color Schemes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! Background colors
+
+* `#FFFEFC`=&gt; @@background-color:#FFFEFC; Romance (Notion) @@
+* `#FCF8F3`=&gt; @@background-color:#FCF8F3; Bianca (Notion secondary) @@
+* `#F5F4F2` =&gt; @@color:#241E13;background-color:#F5F4F2; Wild sand (Patreon secondary) @@
+** `#241E13` =&gt; Oil
+
+!! Details
+
+* `#EA5A5B` =&gt; @@color:white;background-color:#EA5A5B; Mandy (Notion) @@
+* `#E65442` =&gt; @@color:white;background-color:#E65442; Carmine Pink (Patreon) @@
+* `#DB5D6B` =&gt; @@color:white;background-color:#DB5D6B; Roman @@
+* `#E8AB6C` =&gt; @@color:white;background-color:#E8AB6C; Porsche @@
+** `##FABBA4` (accent) =&gt; @@background-color:#FABBA4; Wax Flower @@
+* `#5B627E` =&gt; @@color:white;background-color:#5B627E;Comet @@
+* `#F5EBE2` =&gt; @@background-color:#F5EBE2; Sauvignon @@
+* `#023456` =&gt; @@color:white;background-color:#023456; Prussian Blue @@
+* `#FBF0EE` =&gt; @@background-color:#FBF0EE;Fantasy@@
+* `#F86B5A` =&gt; @@color:white;background-color:#F86B5A;Bittersweet@@
+* `#FFDD56` =&gt; @@background-color:#FFDD56;''Mustard''@@
+* `#FCC4BC` =&gt; @@background-color:#FCC4BC; Yourpink @@
+* `#A1C543` =&gt; @@background-color:#A1C543; Android Green @@
+* `#FDCFA0` =&gt; @@background-color:#FDCFA0;Corvette @@
+
+---
+
+!! Old
+
+Link is `#2484c1`, @@color:#2484c1;this is a link@@
+Hover title link is `#818181`, @@color:#818181; test @@</pre>
+</div>
 <div bookmark_link="https://concuerror.com" created="20190217174728824" modified="20190217174813019" tags="bookmark" title="Concuerror" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>//Concuerror is a model checking tool for debugging, testing and verifying concurrent Erlang programs.//</pre>
 </div>
@@ -11751,6 +11816,48 @@ Solution to getting the 1G links instead of the 10G ones: simply ask for more ba
 
 </pre>
 </div>
+<div created="20190508115910342" modified="20190509111810071" title="Erlang list comprehension hacks" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! Invoke functions inside list comprehensions
+
+''maxvel'' [1:08 PM]: hello, in LC [List Comprehensions] can I make a filter using the result value? like `[fun(X) || X &lt;- List, fun(X) /= undefined]` but not invoking `fun` two times? (edited) 
+
+''Brujo Benavides'' [1:13 PM]: ''@maxvel'' yes… but it’s a bit //hacky//…
+
+```
+5&gt; F = fun(X) -&gt; io:format(&quot;x: ~p~n&quot;, [X]), {X, k} end.
+#Fun&lt;erl_eval.6.99386804&gt;
+6&gt; [F(X) || X &lt;- [10, 9, 8, 7], F(X) &gt; {7, k}].
+x: 10
+x: 10
+x: 9
+x: 9
+x: 8
+x: 8
+x: 7
+[{10,k},{9,k},{8,k}]
+7&gt; [G || X &lt;- [10, 9, 8, 7], begin G = F(X), G &gt; {7, k} end].
+x: 10
+x: 9
+x: 8
+x: 7
+[{10,k},{9,k},{8,k}]
+```
+''Antonio Nikishaev'' [1:21 PM] `[R || X &lt;- [10, 9, 8, 7], R &lt;- [F(X)], R &gt; {7,k}].`
+
+---
+
+!! LC as quick in-line if-else
+
+`[elem || cond]` evaluates to` [elem]` if `cond` true, and to `[]` otherwise:
+
+&gt; Level = 3.
+&gt; [{out,&quot;zzz&quot;}] ++ [ {report_foo, foo} || Level&gt;=2 ].
+[{out, &quot;zzz&quot;}, {report_foo, foo}]
+&gt; f(Level), Level = 1.
+&gt; [{out,&quot;zzz&quot;}] ++ [ {report_foo, foo} || Level&gt;=2 ].
+[{out, &quot;zzz&quot;}]
+</pre>
+</div>
 <div created="20190411091052942" modified="20190411091119761" title="Erlang tuning and TCP" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* [[Erlang Memory Limits|http://erlang.org/documentation/doc-5.8.4/doc/efficiency_guide/advanced.html]]
 
@@ -11959,6 +12066,9 @@ Implementations:
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/How%2520to%2520add%2520a%2520new%2520tab%2520to%2520the%2520sidebar.html" tags="tiddlytip" title="How to add a new tab to the sidebar" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div bookmark_link="https://www.penguinrandomhouse.com/books/600671/how-to-do-nothing-by-jenny-odell/9781612197494/" created="20190522192708012" modified="20190522192818246" tags="book-list" title="How to do Nothing (2019)" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Far from the simple anti-technology screed, or the back-to-nature meditation we read so often, How to do Nothing is an action plan for thinking outside of capitalist narratives of efficiency and techno-determinism.</pre>
 </div>
 <div created="20190224225610412" modified="20190224230229254" tags="qnote imdea" title="How Using Async Correctly Increased Throughput by 4X" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[[This article|https://mahdytech.com/2019/02/22/async-throughput-4x/]] almost applies perfectly to our issue with Antidote:
@@ -12618,18 +12728,25 @@ Changeset:
 * &lt;&lt;alink 2b4d254a843f000014aa798c992163a33b56af33&gt;&gt; (adapt indices to new API)
 * Note: add dialyzer check to Makefile, otherwise we won't spot this errors</pre>
 </div>
-<div created="20190504171121032" modified="20190504181745146" tags="note draft" title="On Personal Knowledge" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190509095913264" modified="20190509100841964" title="On base64 en/decoding" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>`base64url` omits some padding
+
+https://en.wikipedia.org/wiki/Base64#Variants_summary_table</pre>
+</div>
+<div created="20190504171121032" modified="20190522212102108" tags="note draft" title="On Personal Knowledge" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Information is diverse. It can be notes about an article, pictures of something I liked, a set of locations I enjoyed.
 ** There's probably no single application that can do everything I want.
 * Need to ''archive'' information. See https://webrecorder.io
 ** Archive webpages for later
-* Need a remote server for true multi-device support.
+* Need a remote server for true multi-device support.^^[1]^^
 ** Maps and places
 ** Calendars (webdav, for example)
 ** Tasks (trello-like)
 ** Journaling
 ** Wiki
 ** etc
+
+[1]: Is it really so important? Phones/tablets are not good for editing, but they are good about consuming new content. I could live with minimal editing, and a recording feature to add new &quot;to-sort&quot; content via a phone (sending an email or an instant message, for example)
 
 ---
 
@@ -12708,7 +12825,7 @@ Relies on the goodwill of the community. Technical and architectural decisions m
 Seems like going down the Twitter path: &quot;transitive&quot; blocks, and shared block lists.
 </pre>
 </div>
-<div created="20190503083146291" modified="20190503083732984" tags="task" task-client_coord-step="0" title="Parallel prepare w/ pipesock" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190503083146291" modified="20190524130734186" tags="task" task-client_coord-step="2" task-done-on="2019-05-24" title="Parallel prepare w/ pipesock" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Problem: pipesock requires per-connection, per-message unique identifiers in order to reply to the sender when it receives a reply. This causes problems during the 2pc phase. Ideally, we would like to send a message to every partition at once, and only collect the messages at the end. Since pipesock connections are per-node, it might be the case that two partitions are in the same node. When sending multiple messages at once, we can override the callbacks inside pipesock, since we use the same identifier for all messages.
 
 Solution: If we aggregate prepare messages per-node, instead of per-partition (see [[Aggregate read messages]]), we can send all prepares at once, since connections are to a single node. This also reduces latency to a single rtt per machine, instead of waiting like we do now.</pre>
@@ -13235,11 +13352,23 @@ Here's a list of macros I've made.
 <div bookmark_link="https://www.nytimes.com/2019/02/16/opinion/sunday/fear-panic-climate-change-warming.html" created="20190217180038150" modified="20190217180106145" tags="read-later" title="Time to Panic - NYT Opinion" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>The planet is getting warmer in catastrophic ways. And fear may be the only thing that saves us.</pre>
 </div>
-<div created="20190324201302099" modified="20190410110550793" tags="meta" title="To organize" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190324201302099" modified="20190613172657404" tags="meta" title="To organize" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>See [[Figure out content structure]]
 
-&lt;$list filter=&quot;[!is[system]!has[tags]]&quot;&gt;
+&lt;$list filter=&quot;[!is[system]!has[tags]sort[created]reverse[]]&quot;&gt;
 </pre>
+</div>
+<div created="20190514223709103" modified="20190514223944579" title="Transcluding files in Pollen" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Not really transclusion, but you can include other Pollen file by simply requiring it:
+
+```
+#lang pollen
+◊(require (prefix-in other: &quot;other.html.pm&quot;))
+◊(other:doc) ; Is the file structure, in s-expression format
+◊(other:metas) ; The meta for the other file
+```
+
+For more, see https://groups.google.com/forum/#!topic/pollenpub/3SnpcXXSowk</pre>
 </div>
 <div tags="meta" title="triage/meta" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of meta&gt;&gt;</pre>
@@ -13262,6 +13391,65 @@ Here's a list of macros I've made.
 <div tags="triage-finished triage imdea" title="triager/readitem_improv" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of readitem_improv&gt;&gt;</pre>
 </div>
+<div created="20190509102505375" modified="20190509151730365" title="Understanding Pollen" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! Pollen File Types
+
+There are two (?) kinds of pollen files:
+
+!!! Preprocessor Mode
+
+Preprocessor files are of the type `file.foo.pp`, where `foo` is the extension of the target file type (`md` for Markdown, `html` for HTML, `txt` for text files...). In this mode, pollen will read the file, evaluate any pollen expressions (those starting with `◊`), and output a bare `file.foo` file.
+
+!!! Authoring Mode
+
+In this mode, files are of the type `file.foo.pmd`, or `file.foo.pm`:
+
+* The `pmd` extension stands for the Markdown authoring mode. In this mode, files are written in Markdown, plus any pollen expressions. The resulting file will be compiled to X-expressions, and then to the `foo` file type. The resulting file is `file.foo`.
+
+* The `pm` extensions stands for Pollen markup. In this mode, files are written in Pollen markup. Again, the resulting file will be of the type `file.foo`. However, it's important that we define a way to translate pollen markup to the the target file markup. For HTML, something like:
+
+!!! Null Extension
+
+A file named `file.foo.p` is considered a file with a null extension:
+
+&lt;&lt;&lt;
+The &quot;p&quot; extension is Pollen’s null extension, which does what you might guess — nothing. The template would still work if it were called &quot;template.html&quot;. But using the null extension is a virtuous habit, because it keeps your templates distinct from output files (both for your sake, and your operating system, which may get flummoxed by things like &quot;template.pdf&quot;, which would be a text-based file with a binary extension.
+&lt;&lt;&lt; https://docs.racket-lang.org/pollen/second-tutorial.html
+
+```
+#lang racket/base
+(require pollen/tag)
+(provide (all-defined-out))
+(define headline (default-tag-function 'h2))
+(define items (default-tag-function 'ul))
+(define item (default-tag-function 'li 'p))
+(define (link url text) `(a ((href ,url)) ,text))
+```
+
+is needed.
+
+!! Templates
+
+Files written in authoring mode can be passed through //templates// to change their final appearance. For a pollen file `file.&lt;extension&gt;.pm`, the default template is `template.&lt;extension&gt;`. For `essay.html.pm`, the template is `template.html`. To specify a different template, put `◊(define-meta template &quot;my-template-name.htm&quot;)` into your source file. If the template file name is not found, it will fall back to the default template name (either template.html, or failing that, the default pollen template).
+
+A template file is a regular text file containing valid markup or content for the target extension (for HTML targets, it contains valid HTML markup). It also contains valid ◊ pollen commands, like:
+
+* `◊here`: Refers to the name of the current source file (the file this template is being applied to).
+* `◊doc`: Contains the content of the current source file (the file this template is being applied to. This can be used like `◊(-&gt;html ◊doc)`, to translate the source to HTML markup.
+
+---
+
+Aside, the `-&gt;html` function is exported from the `pollen/template` module. This module is automatically imported into every template.
+
+---
+
+Templates can either:
+
+# Contain valid target markup, with embedded pollen commands, or
+# Just pollen commands, that compile down to X-expressions.
+
+For 1, the file can be just `template.html`. For 2, the file can be `template.html.p`..</pre>
+</div>
 <div created="20190425115606481" modified="20190503084123971" tags="task" task-done-on="2019-05-03" task-pvc-step="2" title="Use quickcheck to find read abort example" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;transclude_edit &quot;Model checking read aborts&quot;&gt;&gt;</pre>
 </div>
@@ -13277,6 +13465,9 @@ Here's a list of macros I've made.
 &lt;/li&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;</pre>
+</div>
+<div created="20190509095811538" modified="20190509095912234" title="Using imdea apollo servers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Using the vpn, shh into `apollo{1,2}-{1,12}.imdea`</pre>
 </div>
 <div tags="qnote" title="Wallace's E Unibus Pluram, annotated" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;&lt;
