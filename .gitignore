@@ -1,3 +1,6 @@
-wiki/tw/
-pollen/
+*.ltx
+template.pdf
+template.ltx
+template.html
+drafts/
 

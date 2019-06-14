@@ -1,15 +1,45 @@
+@supports (-webkit-initial-letter: 3) or (initial-letter: 3) {
+  .dropcap-wrap::first-letter {
+    -webkit-initial-letter: 3;
+    initial-letter: 3;
+    color: #EA5A5B;
+  }
+}
+
+@supports (not (-webkit-initial-letter: 3)) and (not (initial-letter: 3)) {
+  .dropcap {
+    font-size: 6rem;
+    line-height: 1rem;
+    color: #EA5A5B;
+  }
+
+  .dropcap-wrap {
+    padding-top: 2rem;
+  }
+}
+
+
 html, body {
   padding: 0.5em;
   margin: auto;
   max-width: 45em;
 }
 
+
+
+
+
 body {
-  font: 1.2em Palatino, sans-serif;
   color: #333;
+  background: #FFFEFC;
+  font: 1.2em Palatino, sans-serif;
   line-height: 1.6;
   text-align: justify;
-  background: #FEFEFE;
+
+}
+
+header {
+  padding-top: 0.5em;
 }
 
 img, video {
@@ -35,22 +65,101 @@ ul, ol {
   padding-left: 1.2em;
 }
 
+.main-menu {
+  margin: 0 auto;
+  text-align: left;
+  list-style: none;
+  padding-left: 0em;
+}
+
+.main-menu li {
+  display: inline-block;
+  margin-right: 0.6em;
+}
+
+.main-menu a {
+  color: #5B627E;
+}
+
+#nav-home a {
+  color: RGBA(219, 93, 107, 1.00);
+}
+
+#nav-home a:hover {
+  color: RGBA(185, 79, 91, 1.00);
+}
+
+.main-menu a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a.footnote-backlink {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+a.footnote-forwardlink {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+ul.no-bullet {
+  list-style-type: none;
+  marging-left: 0;
+  padding-left: 0;
+}
+
+p.post-entry-link, p.post-entry-descr {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom:0;
+}
+
+p.post-entry-descr {
+  font-size: 0.9em;
+  background-color: #FCF8F3
+}
+
+p.post-entry-descr:before {
+  content: "";
+  margin-left: 2em;
+}
+
+em.post-entry-date {
+  font-size: 0.8em;
+  color: #9C9C9C;
+}
+
 blockquote {
   margin-left: 1em;
   padding-left: 1em;
   border-left: 1px solid #ddd;
 }
 
+blockquote footer {
+  font-style: italic;
+}
+
 code {
   font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
 }
 
+pre {
+  background-color: #FCF8F3;
+}
+
 a {
-  color: #2484c1;
+  color: RGBA(219, 93, 107, 1.00);
   text-decoration: none;
 }
 
+a.external:hover {
+  cursor: alias;
+}
+
 a:hover {
+  color: RGBA(185, 79, 91, 1.00);
   text-decoration: underline;
 }
 
@@ -79,14 +188,21 @@ h6 a:hover {
 }
 
 hr {
-  color : #ddd;
-  height : 1px;
+  color: #ddd;
+  height: 2px;
   margin: 2em 0;
-  border-top : solid 1px #ddd;
-  border-bottom : none;
+  border-top: dotted 0.3em #ddd;
+  border-bottom: none;
   border-left: 0;
   border-right: 0;
 }
+
+
+
+
+
+
+
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   html, body {
@@ -98,6 +214,7 @@ hr {
   body {
     text-align: left;
   }
+
   article {
     width: auto;
     padding: 0 10px;
