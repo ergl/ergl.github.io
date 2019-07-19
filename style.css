@@ -1,8 +1,12 @@
 @supports (-webkit-initial-letter: 3) or (initial-letter: 3) {
-  .dropcap-wrap::first-letter {
+  .dropcap-wrap:first-letter {
     -webkit-initial-letter: 3;
     initial-letter: 3;
     color: #EA5A5B;
+  }
+
+  .dropcap {
+    margin-right: 0.15em;
   }
 }
 
@@ -11,6 +15,14 @@
     font-size: 6rem;
     line-height: 1rem;
     color: #EA5A5B;
+  }
+
+  .dropcap:before {
+    margin-bottom: -0.175em;
+  }
+
+  .dropcap:after {
+    margin-top: -0.05em;
   }
 
   .dropcap-wrap {
@@ -110,7 +122,7 @@ a.footnote-forwardlink {
 
 ul.no-bullet {
   list-style-type: none;
-  marging-left: 0;
+  margin-left: 0;
   padding-left: 0;
 }
 

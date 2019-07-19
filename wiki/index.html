@@ -361,6 +361,8 @@ Error message and password prompt
 
 <li>2019-04-02</li>
 
+<li>2019-07-15</li>
+
 <li>A List of random but useful plugins</li>
 
 <li>A personal site</li>
@@ -378,6 +380,8 @@ Error message and password prompt
 <li>Aggregate read messages</li>
 
 <li>ANSI Sequences</li>
+
+<li>Archiving websites for personal usage</li>
 
 <li>Automate experiment</li>
 
@@ -493,6 +497,8 @@ Error message and password prompt
 
 <li>GNUnet</li>
 
+<li>Gopher Protocol Notes</li>
+
 <li>Hierarchical Timing Wheels</li>
 
 <li>How to add a new tab to the sidebar</li>
@@ -563,6 +569,10 @@ Error message and password prompt
 
 <li>Neoliberalism has conned us into fighting climate change as individuals</li>
 
+<li>netem</li>
+
+<li>netem: delay packets to specific IP addresses</li>
+
 <li>Never-ending stack of books</li>
 
 <li>Noproxy changes</li>
@@ -606,6 +616,10 @@ Error message and password prompt
 <li>Run Ping Ccoord Bench on Single and Two Sites</li>
 
 <li>Send email to Erlang mailing list</li>
+
+<li>Shell: append in pipes</li>
+
+<li>Shell: search using arrows by prefix (C-r)</li>
 
 <li>Slowdown experiment</li>
 
@@ -665,13 +679,13 @@ Error message and password prompt
 
 <li>Transcluding files in Pollen</li>
 
+<li>triage/Client Coordinator</li>
+
 <li>triage/meta</li>
 
-<li>triager/client_coord</li>
+<li>triage/PVC client coordinator</li>
 
 <li>triager/client_coord_slowdown</li>
-
-<li>triager/pvc</li>
 
 <li>triager/readitem_improv</li>
 
@@ -680,8 +694,6 @@ Error message and password prompt
 <li>Use quickcheck to find read abort example</li>
 
 <li>User-defined macros</li>
-
-<li>Using imdea apollo servers</li>
 
 <li>Wallace's E Unibus Pluram, annotated</li>
 
@@ -892,7 +904,7 @@ exports.run = function(value, operation, until, beyond, decimals, tiddler, by) {
 <div created="20181229002100861" modified="20181230005914286" title="$:/config/AnimationDuration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>300</pre>
 </div>
-<div created="20190218113805107" modified="20190218113806185" title="$:/config/DefaultSidebarTab" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190218113805107" modified="20190716131254436" title="$:/config/DefaultSidebarTab" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/config/EditorToolbarButtons/Visibility/$:/core/ui/EditorToolbar/bold" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10779,6 +10791,19 @@ With 3 connections pipesock presents ~17% lower throughput with and a 16% increa
 
 </pre>
 </div>
+<div created="20190715131648862" modified="20190715131907534" tags="imdea journal" title="2019-07-15" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>First day after vacation, catching up. Talked to Alexey about work hours. Need to set up everything in the Apollo servers.
+
+* Talked to Zsolt about sharing the servers
+** He won't need it anytime soon, we can use it freely.
+** He'll write if he needs it
+** Played with Notion as a shared calendar to schedule experiments with the rest of the team.
+
+* Talked to Manuel about how we were.
+** Set up everything on apollo.
+** Need to remember how we deployed, and write it down somewhere.
+</pre>
+</div>
 <div bookmark_link="http://inmysocks.tiddlyspot.com/#My%20Plugins:%5B%5BMy%20Plugins%5D%5D%20%24%3A%2Fplugins%2Finmysocks%2FTW5Utils%20%24%3A%2Fplugins%2Finmysocks%2FCalendar%20%24%3A%2Fplugins%2Finmysocks%2FTaskList%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%20%24%3A%2Fplugins%2Finmysocks%2FBookmarks%2FBookmarks%2030plusgamer" tags="tiddlytip" title="A List of random but useful plugins" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Calendars, Bookmarks (this one looks especially nice)...</pre>
 </div>
@@ -10890,6 +10915,13 @@ To solve: before performing remote reads, aggregate all the keys per-node, and t
 </div>
 <div created="20190409083033766" modified="20190409083045379" title="ANSI Sequences" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>https://sympa.inria.fr/sympa/arc/caml-list/2019-03/msg00065.html</pre>
+</div>
+<div created="20190715181057793" modified="20190715181350088" title="Archiving websites for personal usage" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Through [[Ink &amp; Switch capstone blog|https://www.inkandswitch.com/capstone-manuscript-appendices.html#c-web-page-archiving]], I found [[freeze-dry|https://www.npmjs.com/package/freeze-dry]]
+
+```javascript
+const html = await freezeDry(document, options)
+```</pre>
 </div>
 <div created="20190503083822898" modified="20190503132951004" tags="task" task-pvc-step="1" title="Automate experiment" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>At least make different steps (like building, compiling and joining antidote, or the same with bench nodes) automatic, so we don't have to SSH into all nodes and do it manually.</pre>
@@ -11655,7 +11687,7 @@ Sources:
 * https://groups.google.com/d/msg/mechanical-sympathy/icNZJejUHfE/BfDekfBEs_sJ
 * https://www.azul.com/files/HowNotToMeasureLatency_LLSummit_NYC_12Nov2013.pdf</pre>
 </div>
-<div counter="0" tags="experiments" title="Counter Experiment" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div counter="1" created="20190709135325322" modified="20190709135328880" tags="experiments" title="Counter Experiment" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$button&gt;
 &lt;$set name=&quot;incr&quot; value=&lt;&lt;calc !!counter 1&gt;&gt; emptyValue=0&gt;
 &lt;$action-setfield $field=counter $value=&lt;&lt;incr&gt;&gt; /&gt;
@@ -11672,8 +11704,32 @@ Decrement (-)
 Current: {{!!counter}}
 </pre>
 </div>
-<div tags="task" task-meta-step="0" title="Create macro for highlight notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Something with a div and `background: #FFF7D7;` can help</pre>
+<div created="20190719105435595" modified="20190719110113508" tags="task" task-meta-step="0" title="Create macro for highlight notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Something with a div and `background: #FFF7D7;` can help
+
+Similar to Notion's `callout` function. In other nodes, I've done the following
+
+```
+&lt;div style=&quot;padding:0.5em; background:#FFF7D7; color:#000000&quot;&gt;
+...
+Your content here
+...
+&lt;/div&gt;
+```
+
+resulting in
+
+&lt;details&gt;
+&lt;summary&gt;See example&lt;/summary&gt;
+&lt;br&gt;
+&lt;div style=&quot;padding:0.5em;background: #FFF7D7;color:#000000&quot;&gt;
+💡 ''Important''&lt;br&gt;&lt;br&gt;
+
+It's important to know that auto-paragraphs on new lines don't work inside this macro. You'll have to use the `br` tag to do that.&lt;br&gt;&lt;br&gt;
+
+Another thing that doesn't work are code blocks (the triple quote kind). You'll need to wrap your code in `pre` tags, and escape any `&lt;` and `&gt;` in your code.
+&lt;/div&gt;
+&lt;/details&gt;</pre>
 </div>
 <div description="A step-by-step guide to customizing your sidebar buttons" tags="tiddlywiki" title="Customizing the page toolbar" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Quick guide
@@ -11792,7 +11848,7 @@ The `caption` is what tiddlywiki will display inside our button in the `Tools` t
 <div tags="task" task-client_coord-step="2" task-done-on="2019-01-28" title="Email Alexey re: client coordinator" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Go ahead</pre>
 </div>
-<div created="20190503133125034" modified="20190503133136945" tags="task" task-pvc-step="1" title="Email Alexey read abort example" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190503133125034" modified="20190715091058242" tags="task" task-done-on="2019-07-15" task-pvc-step="2" title="Email Alexey read abort example" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20190308092552460" modified="20190308092905169" tags="qnote imdea" title="Emulab Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11858,7 +11914,7 @@ x: 7
 [{out, &quot;zzz&quot;}]
 </pre>
 </div>
-<div created="20190411091052942" modified="20190411091119761" title="Erlang tuning and TCP" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190411091052942" modified="20190718142423905" title="Erlang tuning and TCP" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* [[Erlang Memory Limits|http://erlang.org/documentation/doc-5.8.4/doc/efficiency_guide/advanced.html]]
 
 * [[gen_tcp docs|http://erlang.org/documentation/doc-8.3/lib/kernel-5.2/doc/html/gen_tcp.html]]
@@ -11900,11 +11956,8 @@ any real property of the socket. Needless to say it is an implementation
 specific option. Default is false.
 &lt;&lt;&lt; https://groups.google.com/d/msg/erlang-programming/GTE2iZgACDY/JUXnlNt-U1MJ
 
-
 !!! TCP Cork in Erlang
 &lt;&lt;transclude_edit &quot;TCP Cork in Erlang&quot;&gt;&gt;
-
----
 
 !! Erlang Mailing List, &quot;why is gen_tcp:send slow&quot;
 
@@ -11920,7 +11973,7 @@ Something something 300k limit https://groups.google.com/d/msg/erlang-programmin
 <div created="20190503082944425" modified="20190503083007024" tags="task" task-client_coord-step="0" title="Errors: swallow socket errors?" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Make errors stable</pre>
 </div>
-<div created="20190217174128942" modified="20190328094100313" tags="meta" title="Exploring the Wiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190217174128942" modified="20190716131118379" tags="meta" title="Exploring the Wiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Meta
 
 * [[An introduction|Remaking the blog with TiddlyWiki]]
@@ -11940,7 +11993,7 @@ Something something 300k limit https://groups.google.com/d/msg/erlang-programmin
 
 !! Work
 
-* [[Imdea General]]</pre>
+* [[Imdea General|]]</pre>
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/ExternalImages.html" tags="tiddlytip" title="External Images" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -11953,12 +12006,20 @@ Something something 300k limit https://groups.google.com/d/msg/erlang-programmin
 
 &lt;&lt;transclude_edit &quot;Client Coordinator Slowdown Notes&quot;&gt;&gt;</pre>
 </div>
-<div created="20190324211228408" modified="20190324212241875" tags="task" task-meta-step="1" title="Figure out content structure" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190324211228408" modified="20190716131503148" tags="task" task-meta-step="1" title="Figure out content structure" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Right now this wiki is a bit of a mess. I've looked at the [[Table of Content|https://tiddlywiki.com/#Table-of-Contents%20Macros%20(Examples)]] examples, but I'm not very convinced. Problems I see:
 
 * Needs a hierarchical tag schema. This is a problem if I want to tag all the children with the same tag (for example, imdea, or networking, etc).
 ** One solution to this is to use non-overlapping tags, ones for the table of contents, another for real tagging.
-** Problem with tags: it's use is orthogonal with hierarchy. Ideally, I'd want two views: hierarchical, and by tags, sorta like finder in macOS</pre>
+** Problem with tags: it's use is orthogonal with hierarchy. Ideally, I'd want two views: hierarchical, and by tags, sorta like finder in macOS
+
+---
+
+The worst part about Tiddlywiki is how it assumes tiddler titles are globally unique, and how hierarchical tags don't really work with all the macros, as they expect just [A-Za-z0-9].
+
+I'm starting to get frustrated with tiddlywiki, to the point where I'm considering writing my own wiki engine using Pollen, or something similar. Write documents using normal files, serve a static version to HTML using Pollen, and that's it.
+
+</pre>
 </div>
 <div created="20190227153127692" modified="20190312115858214" tags="task" task-client_coord_slowdown-step="2" task-done-on="2019-03-12" title="Figure out max concurrent connections on both scenarios" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Depends much more greatly on the max number of ports (`ERL_MAX_PORTS`), that limits the number of open ports that the VM can have (each socket is a port). Linux could also be the limit, if we add more client machines. Test how to change that.</pre>
@@ -12049,6 +12110,86 @@ The ''environment'' factors are:
 <div bookmark_link="https://gnunet.org/en/" created="20190304133951009" modified="20190304134007190" tags="read-later" title="GNUnet" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>GNUnet is a new network protocol stack for building secure, distributed, and privacy-preserving applications. With strong roots in academic research, our goal is to replace the old insecure Internet protocol stack. </pre>
 </div>
+<div created="20190715183314705" modified="20190719104357732" tags="gopher" title="Gopher Protocol Notes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[[A quick gopher document reader in under 90 lines of Erlang|https://gist.github.com/ergl/e8fc42f7e11a03355d55e113546c420e]]
+
+---
+
+Notes on reading [[RFC 1436|https://tools.ietf.org/html/rfc1436]]
+
+* Client/server protocol over TCP
+* Servers run on port 70
+* Clients send the server a selector (line of text, &lt;&lt;hl &quot;may be empty&quot;&gt;&gt;)
+* Server responds with a block of text, terminated with a period on its own line, and then closes the connection.
+** No state is retained by the server.
+
+Items returned by the server can be ''files'' or ''directories'' (list of documents). The abstraction is similar to a file system. Directories are sometimes called //gophermaps//.
+
+Each document on a directory is identified by its type, user visible name, a selector string (''path''), a host name (hosting the file), IP port number (should be 70). Users are only shown the name.
+
+Users can &quot;search&quot; for items by sending the server a selector string, followed by a list of words to be matched. The server returns a virtual ''directory'' that contain matching items.
+
+The server, on returning a directory, will send a collection of lines like: `&lt;Type&gt;&lt;Text&gt;[TAB]&lt;SelectorString&gt;[TAB]&lt;Domain&gt;[TAB]&lt;Port&gt;[CR LF]`. If there any other tab-separated items, the client should ignore them. The server ends the payload with a single line containing a dot.
+
+| !Type | !Text | !SelectorString | !Domain &amp; Port |
+| Type of the line being shown | User-visible content | Selector (path) of the linked content | Target domain:port of the selector |
+
+To retrieve the linked resource, the client must send `SelectorString` to `Domain:Port`.
+
+A document, as returned by the server, is a collection of lines followed by a dot on its own line.
+
+A client, sending an empty line (`&lt;CR&gt;&lt;LF&gt;`), means &quot;list what you have&quot;.
+
+It is recommended that server admins have a document like &quot;About X Gopher server&quot;, as the first item in the top level directory. This document should contain contact information.
+
+!! Gopher Types
+
+Any types not shown here might be dropped by the client, and not even showed to the user.
+
+|!Type number | !Meaning |
+| 0 | File |
+| 1 | Directory |
+| 2 | CCSO phone-book server |
+| 3 | Error |
+| 4 | BinHexed Macintosh file |
+| 5 | DOS binary, client must read until TCP connection closes |
+| 6 | UNIX uuencoded file |
+| 7 | Search |
+| 8 | Item points to a text-based telnet session |
+| 9 | Binary file, client must read until TCP connection closes |
+| + | Item is redundant server |
+| T | text-based tx3270 session |
+| g | GIF file |
+| I | &quot;Item some kind of image file. Client decides how to display&quot; |
+| h | HTML file (non-canonical) |
+| i | Informational message (non-canonical) |
+| s | Sound file (usually WAV) (non-canonical) |
+
+For files, and images, client might rely on the file extension to decide how to show the file. Types 0-Z are reserved.
+
+!!! URL links
+
+A link to a non-gopher document, the `h` document type is used, and the selector is `URL:http://...`. The domain and port are the ones of the original Gopher server.
+
+!! User display strings
+
+* It is recommended that a line is kept under 70 characters in length. Clients may truncate to a length convenient to them.
+
+* Servers might send text containing tabs and &quot;funny&quot; characters. Be prepared to ignore those lines.
+
+* The RFC denotes this text should be encoded as ISO Latin1.
+
+* Lines starting with a period ''must'' be prepended with an extra period to ensure that the transmission is not terminated early. Clients should strip extra periods at the beginning of the line.
+
+!! Selector
+
+Should not be longer than 255 characters.
+
+---
+
+Servers might send //comment lines// inside //gophermaps//. These lines contain no tab characters, and are used for description purposes. The client might display them alongside menu items.
+</pre>
+</div>
 <div created="20190325095042689" modified="20190325095946016" title="Hierarchical Timing Wheels" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>I got intrigued about this after reading Whatsapp's contributions to Erlang. Apparently they redesigned the timing wheel inside the BEAM. Some resources:
 
@@ -12099,7 +12240,7 @@ Ideas:
 * Semi-ephemeral
 * Scorekeeping</pre>
 </div>
-<div created="20190224225833178" modified="20190411091247950" tags="imdea" title="Imdea General" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190224225833178" list="" modified="20190716131111641" tags="imdea" title="Imdea General" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Entry point for imdea-related documents
 
 !! Triage Boards
@@ -12237,7 +12378,7 @@ So:
 
 ---</pre>
 </div>
-<div created="20190329104449368" modified="20190331195227529" tags="note pvc_client_coordinator imdea" title="Improved TCP connection design" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190329104449368" modified="20190709135347231" tags="note pvc_client_coordinator imdea" title="Improved TCP connection design" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Because of the problems outlined in [[Slowdown experiment]], we need to rethink the way we connect to the server from the client coordinator library (see the [[design notes|Client Coordinator Notes]]).
 
 Solutions proposed: a) batching, and b) pipelining. The following design combines the two approaches, as well as doing connection multiplexing.
@@ -12610,6 +12751,163 @@ https://github.com/NorthernPath/north/wiki/Design-Document
 <div bookmark_link="https://www.theguardian.com/environment/true-north/2017/jul/17/neoliberalism-has-conned-us-into-fighting-climate-change-as-individuals" created="20190322115531661" modified="20190322115544802" tags="read-later" title="Neoliberalism has conned us into fighting climate change as individuals" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div created="20190718142610019" modified="20190719110037469" title="netem" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;div style=&quot;padding:0.5em;background: #FFF7D7;color:#000000&quot;&gt;
+💡 ''Important''&lt;br&gt;&lt;br&gt;
+
+If you have changed something in your qdisc configuration, and want to revert to a sane default, simply do
+
+&lt;pre&gt;$ tc qdisc del dev &amp;lt;interface&amp;gt; root &lt;/pre&gt;
+&lt;/div&gt;
+
+[[netem|https://wiki.linuxfoundation.org/networking/netem]] (short for network emulation) is a set of tools that allow you to emulate different network properties. It is part of the [[iproute2|https://wiki.linuxfoundation.org/networking/iproute2]] package, and is controlled by the //tc// command line tool.
+
+As far as I'm aware, `tc` only allows you to shape or alter ''outgoing'' traffic. Also, the way TCP works (see TCP slow start), you need to be the //slowest// part of the network for your emulation to take any effect.
+
+Traffic shaping happens using //queing disciplines//, or `qdisc` for short. There are two kinds, //classless// and //classful//. The difference between them is explained later, //classless// qdiscs shape the traffic of an entire interface, without subdivisions.
+
+!! Classless qdisc
+
+There are a few kinds of classless qdisc. The most widely used is `pfifo_fast`, as it is the default when no other qdisc is active.
+
+!!! pfifo_fast
+
+This qdisc treats data in FIFO order, which means that no special treatment is applied. This qdisc has 3 so called &quot;bands&quot;. Within each band, data is treated in FIFO order. As long as there are packets waiting in band 0, band 1 won't be processed. Same goes for band 1 and 2. The &quot;p&quot; in the name, short for //packets//, means this filter operates at the packet level. Other filters might work at the byte level. It is similar to the PRIO classfull qdisc (see below).
+
+```
+$ tc qdisc ls
+...
+qdisc pfifo_fast 0: dev enp1s0 parent :1 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+...
+```
+
+Let's dissect the output above, by focusing on the `priomap`. The priority map determines how packet priorities, assigned by the kernel, map to bands. It does this based on the [[TOS byte of the IPv4 packet|https://en.wikipedia.org/wiki/Type_of_service]].
+
+Let's at the output of `tcpdump -v`:
+
+```
+TOS     Bits  Means                    Linux Priority    Band
+------------------------------------------------------------
+0x0     0     Normal Service           0 Best Effort     1
+0x2     1     Minimize Monetary Cost   1 Filler          2
+0x4     2     Maximize Reliability     0 Best Effort     1
+0x6     3     mmc+mr                   0 Best Effort     1
+0x8     4     Maximize Throughput      2 Bulk            2
+0xa     5     mmc+mt                   2 Bulk            2
+0xc     6     mr+mt                    2 Bulk            2
+0xe     7     mmc+mr+mt                2 Bulk            2
+0x10    8     Minimize Delay           6 Interactive     0
+0x12    9     mmc+md                   6 Interactive     0
+0x14    10    mr+md                    6 Interactive     0
+0x16    11    mmc+mr+md                6 Interactive     0
+0x18    12    mt+md                    4 Int. Bulk       1
+0x1a    13    mmc+mt+md                4 Int. Bulk       1
+0x1c    14    mr+mt+md                 4 Int. Bulk       1
+0x1e    15    mmc+mr+mt+md             4 Int. Bulk       1
+```
+
+We can see different 16 values of our priomap, depending on the values of the TOS byte. The priomap, as displayed by tc, shows the band mapping starting from `0x0` all the way up to `0x1e`. The queue length of each band can be configured with the `txqueuelen` parameter.
+
+!!! Token Bucket Filter (TBF)
+
+This qdisc allows to rate-limit incoming traffic, while allowing short bursts in excess. The implementation consists of a buffer (token bucket) getting filled constantly (token rate) with tokens. Incoming packets need to grab a token from the bucket in order to proceed. Both the //token rate// and the //packet rate// interact together and result in the following scenarios:
+
+* If the packets and the tokens have the same rate, incoming traffic is not delayed and flows normally.
+* If the packet rate is faster, the bucket will empty, and packets will throttle and eventually get dropped.
+* If the packet rate is slower, the bucket will fill in excess, allowing future packets to empty the bucket at a faster rate than the tokens flow into the bucket. This allows short bursts of traffic.
+
+TBF has several tuning parameters, which can be checked on the [[man page|http://man7.org/linux/man-pages/man8/tc-tbf.8.html#PARAMETERS]]
+
+!! Stochastic Fairness Queueing (SFQ)
+
+Employs a hash-based approach to bucket packets into different queues, which are then processed in a round robin fashion. The hash algorithm is picked so that packets in the same TCP session or UDP stream fall into the same queue. To prevent hash collisions, the algorithm is changed from time to time (seconds), and can be tuned.
+
+This qdisc is only useful if your outgoing interface is mostly full. If you don't have an outgoing queue, SFQ will not help much.
+
+!! Classful qdisc
+
+The main feature of classful qdiscs is that they can have subclasses. A class might have either a qdisc of different classes associated to it. Therefore, a class can have a qdisc or another class as parent. When a new class is created, the `pfifo_fast` qdisc is associated to it. If a class is associated to another class, the qdisc of the latter class is removed. In this way, classful qdiscs form a hierarchical tree.
+
+Each class has a //handle//, consisting of a major and minor number: `&lt;major&gt;:&lt;minor&gt;`. The root qdisc is `1:`, which is equal to `1:0`. The minor number of a qdisc is always 0. Classes must have the same major number as their parent. This major number must be unique within an interface, and the minor number must be unique in the context of its parent qdisc or class.
+
+!!! Multiqueue dummy scheduler (mq)
+
+Since ~2009, `mq` is the default qdisc for NICs that support multiple hardware queues. See the official linux [[documentation|https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/networking/scaling.rst?h=v5.2&amp;id=0ecfebd2b52404ae0c54a878c872bb93363ada36]]. The main feature is that it exposes the different TX queues as classes, allowing to attach different qdiscs to each of them, independently.
+
+For example, this is what my current setup shows:
+
+```
+$ tc qdisc ls
+...
+qdisc mq 0: dev enp1s0 root
+qdisc pfifo_fast 0: dev enp1s0 parent :c bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :b bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :a bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :9 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :8 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :7 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :6 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :5 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :4 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :3 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :2 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+qdisc pfifo_fast 0: dev enp1s0 parent :1 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
+...
+```
+
+Here, we can see that each of the 12 TX queues (one per CPU thread) has its own `pfifo_fast` qdisc, the default one for single-queue NICs.
+
+---
+
+References
+
+* [[Chapter 9 of Linux Advanced Routing &amp; Traffic Control|https://lartc.org/howto/lartc.qdisc.html]]
+* [[Arch Wiki: Advanced Traffic Control|https://wiki.archlinux.org/index.php/Advanced_traffic_control]]
+</pre>
+</div>
+<div created="20190719114515290" modified="20190719122122885" title="netem: delay packets to specific IP addresses" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Look at [[my wiki page on netem|netem]] if you're confused.
+
+---
+
+Let's say your interface is called `enp1s0`, and you want to delay all packets to `1.2.3.4` by 50 ms.
+
+```
+$ tc qdisc del dev enp1s0 root
+$ tc qdisc add dev enp1s0 root handle 1: prio
+$ tc qdisc add dev enp1s0 parent 1:1 handle 10: netem delay 50ms
+$ tc filter add dev enp1s0 parent 1:0 protocol ip prio 1 u32 match ip dst 1.2.3.4/32 flowid 10:1
+```
+
+The first line removes whatever qdisc is active on the interface (usually the default values).
+
+The second line adds a classfull qdisc (`prio`), that operates in a similar way to the default `pfifo_fast`. The difference is that it subdivides traffic in classes instead of bands. The three classes created are `1:1`, `1:2` and `1:3`.
+
+The third line attaches a sub qdisc from the previous one (`1:1`), with a handle of `10:0`. The last part specifies how much delay we want on this qdisc.
+
+Lastly, we attach a filter to the main qdisc (`1:0`), where we match on the destination IP. If it matches, we send the packet to the handle `10:1`, our qdisc with extra delay.
+
+---
+
+In the general case, the above will work correctly. However, it might be the case that some //other// traffic will get delayed too, depending on its TOS flag. See [[this Server Fault post|https://serverfault.com/a/841865]] for more details. The following is adapted from the previous link.
+
+One thing to note is that the `prio` qdisc will create three bands (same as `pfifo_fast`), and dispatch traffic to them according to the TOS flag of the incoming IP packet. This can be checked by looking at the priomap. 
+
+In the above, we're attaching our netem command to `1:1`, which maps to band 0, meaning the highest priority traffic. 
+
+Without adding the filter, it should be the case that //all// traffic gets delayed, but it might be that some doesn't. This depends on our traffic: `scp`, for example, will fall on band 2 as it sets the &quot;bulk&quot; mode in its TOS.
+
+After adding the filter, we're in the same case. Some of our traffic might still be redirected to the slow lane if it falls on band 0 by mistake.
+
+To fix this, we might change the default priomap at the root, so that all our traffic goes to band 2 (`1:3`), like so:
+
+```
+$ tc qdisc add dev enp1s0 root handle 1: prio priomap 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+```
+
+Afterwards, when we add our filter, //only// traffic going to the specified IP will fall on band 0, and therefore, be delayed, like we wanted.
+</pre>
+</div>
 <div created="20190322093414514" modified="20190322114614580" tags="meta" title="Never-ending stack of books" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>A list of all those books I want to read, or sound interesting
 
@@ -12791,8 +13089,12 @@ Different kinds of knowledge exist in different shapes: images, photo albums, gr
 Most knowledge is useless without some context. Annotations live in the margin of books, a graph references some data, a book represents a collection of notes condensed into a tree structure. We need to view information in different shapes.
 </pre>
 </div>
-<div created="20190224191711456" modified="20190616205540354" tags="qnote" title="On Secure Scuttlebutt" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>!!! Deprioritizing first world problems
+<div created="20190224191711456" modified="20190703120010651" tags="qnote" title="On Secure Scuttlebutt" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>`ssb://%ubZZR+KusjZIcGkSUrUP70iT17E50nnSe0vspDOsLt4=.sha256`
+
+---
+
+!!! Deprioritizing first world problems
 
 Source `ssb://%u0fnmwUQTBcL9S8HP3uYCdBgnssu4GIyWSuo5XLYvPs=.sha256`
 
@@ -12979,6 +13281,22 @@ The reason to make the wiki public is to hopefully trick me into publishing what
 </div>
 <div created="20190312121509609" modified="20190402111558216" tags="task" task-client_coord_slowdown-step="2" task-done-on="2019-04-02" title="Send email to Erlang mailing list" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div created="20190716093822956" modified="20190716093911046" title="Shell: append in pipes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>```
+$ echo foo | sed 's/$/ bar/'
+foo bar
+```</pre>
+</div>
+<div created="20190715130546749" modified="20190715130716311" title="Shell: search using arrows by prefix (C-r)" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Add to `~/.inputrc`:
+
+```
+&quot;\e[A&quot;: history-search-backward
+&quot;\e[B&quot;: history-search-forward
+```
+
+Source: https://unix.stackexchange.com/a/402398</pre>
 </div>
 <div created="20190319105723541" modified="20190329104139709" tags="note imdea" title="Slowdown experiment" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! The Problem
@@ -13370,10 +13688,7 @@ Here's a list of macros I've made.
 
 For more, see https://groups.google.com/forum/#!topic/pollenpub/3SnpcXXSowk</pre>
 </div>
-<div tags="meta" title="triage/meta" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&lt;&lt;triage_of meta&gt;&gt;</pre>
-</div>
-<div created="20190227152701923" modified="20190227152710049" tags="triage imdea" title="triager/client_coord" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190227152701923" list="" modified="20190716131207864" tags="triage imdea" title="triage/Client Coordinator" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of client_coord&gt;&gt;
 
 ---
@@ -13382,11 +13697,14 @@ For more, see https://groups.google.com/forum/#!topic/pollenpub/3SnpcXXSowk</pre
 
 &lt;&lt;list-links filter:[tag[imdea]tag[pvc_client_coordinator]]&gt;&gt;</pre>
 </div>
+<div tags="meta" title="triage/meta" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;&lt;triage_of meta&gt;&gt;</pre>
+</div>
+<div created="20190716125818881" list="" modified="20190716131232196" tags="imdea triage" title="triage/PVC client coordinator" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;&lt;triage_of pvc&gt;&gt;</pre>
+</div>
 <div created="20190227152710624" modified="20190411091209491" tags="triage triage-finished imdea" title="triager/client_coord_slowdown" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of client_coord_slowdown&gt;&gt;</pre>
-</div>
-<div tags="triage imdea" title="triager/pvc" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&lt;&lt;triage_of pvc&gt;&gt;</pre>
 </div>
 <div tags="triage-finished triage imdea" title="triager/readitem_improv" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;triage_of readitem_improv&gt;&gt;</pre>
@@ -13465,9 +13783,6 @@ For 1, the file can be just `template.html`. For 2, the file can be `template.ht
 &lt;/li&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;</pre>
-</div>
-<div created="20190509095811538" modified="20190509095912234" title="Using imdea apollo servers" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Using the vpn, shh into `apollo{1,2}-{1,12}.imdea`</pre>
 </div>
 <div tags="qnote" title="Wallace's E Unibus Pluram, annotated" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;&lt;
