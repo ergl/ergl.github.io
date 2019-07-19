@@ -12751,7 +12751,7 @@ https://github.com/NorthernPath/north/wiki/Design-Document
 <div bookmark_link="https://www.theguardian.com/environment/true-north/2017/jul/17/neoliberalism-has-conned-us-into-fighting-climate-change-as-individuals" created="20190322115531661" modified="20190322115544802" tags="read-later" title="Neoliberalism has conned us into fighting climate change as individuals" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20190718142610019" modified="20190719110037469" title="netem" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190718142610019" modified="20190719123553437" title="netem" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;div style=&quot;padding:0.5em;background: #FFF7D7;color:#000000&quot;&gt;
 💡 ''Important''&lt;br&gt;&lt;br&gt;
 
@@ -12783,7 +12783,7 @@ qdisc pfifo_fast 0: dev enp1s0 parent :1 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 
 
 Let's dissect the output above, by focusing on the `priomap`. The priority map determines how packet priorities, assigned by the kernel, map to bands. It does this based on the [[TOS byte of the IPv4 packet|https://en.wikipedia.org/wiki/Type_of_service]].
 
-Let's at the output of `tcpdump -v`:
+Let's look at the output of `tcpdump -v`:
 
 ```
 TOS     Bits  Means                    Linux Priority    Band
