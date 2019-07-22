@@ -469,6 +469,8 @@ Error message and password prompt
 
 <li>Erlang tuning and TCP</li>
 
+<li>Erlang: show entire output on shell</li>
+
 <li>Errors: swallow socket errors?</li>
 
 <li>Exploring the Wiki</li>
@@ -571,7 +573,7 @@ Error message and password prompt
 
 <li>netem</li>
 
-<li>netem: delay packets to specific IP addresses</li>
+<li>netem: filtering examples</li>
 
 <li>Never-ending stack of books</li>
 
@@ -11872,7 +11874,7 @@ Solution to getting the 1G links instead of the 10G ones: simply ask for more ba
 
 </pre>
 </div>
-<div created="20190508115910342" modified="20190509111810071" title="Erlang list comprehension hacks" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190508115910342" modified="20190722100651515" title="Erlang list comprehension hacks" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Invoke functions inside list comprehensions
 
 ''maxvel'' [1:08 PM]: hello, in LC [List Comprehensions] can I make a filter using the result value? like `[fun(X) || X &lt;- List, fun(X) /= undefined]` but not invoking `fun` two times? (edited) 
@@ -11906,12 +11908,14 @@ x: 7
 
 `[elem || cond]` evaluates to` [elem]` if `cond` true, and to `[]` otherwise:
 
-&gt; Level = 3.
-&gt; [{out,&quot;zzz&quot;}] ++ [ {report_foo, foo} || Level&gt;=2 ].
+```
+1&gt; Level = 3.
+2&gt; [{out,&quot;zzz&quot;}] ++ [ {report_foo, foo} || Level&gt;=2 ].
 [{out, &quot;zzz&quot;}, {report_foo, foo}]
-&gt; f(Level), Level = 1.
-&gt; [{out,&quot;zzz&quot;}] ++ [ {report_foo, foo} || Level&gt;=2 ].
+3&gt; f(Level), Level = 1.
+4&gt; [{out,&quot;zzz&quot;}] ++ [ {report_foo, foo} || Level&gt;=2 ].
 [{out, &quot;zzz&quot;}]
+```
 </pre>
 </div>
 <div created="20190411091052942" modified="20190718142423905" title="Erlang tuning and TCP" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11969,6 +11973,19 @@ driver does not use the async thread pool).
 
 Something something 300k limit https://groups.google.com/d/msg/erlang-programming/9H2qhcpF7XE/bc-zC8q5iHAJ
 </pre>
+</div>
+<div created="20190722101854250" modified="20190722102040940" title="Erlang: show entire output on shell" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Use the shell built-in function `rp/1`, like so:
+
+```
+14&gt; lists:seq(1,30).
+[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,
+ 23,24,25,26,27,28,29|...]
+15&gt; rp(lists:seq(1,30)).
+[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,
+ 23,24,25,26,27,28,29,30]
+ok
+```</pre>
 </div>
 <div created="20190503082944425" modified="20190503083007024" tags="task" task-client_coord-step="0" title="Errors: swallow socket errors?" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Make errors stable</pre>
@@ -12865,18 +12882,20 @@ References
 * [[Arch Wiki: Advanced Traffic Control|https://wiki.archlinux.org/index.php/Advanced_traffic_control]]
 </pre>
 </div>
-<div created="20190719114515290" modified="20190719122122885" title="netem: delay packets to specific IP addresses" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190719114515290" modified="20190722134213049" title="netem: filtering examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Look at [[my wiki page on netem|netem]] if you're confused.
 
 ---
 
-Let's say your interface is called `enp1s0`, and you want to delay all packets to `1.2.3.4` by 50 ms.
+! Simple (and wrong) way
+
+Let's say your interface is called `enp1s0`, and you want to delay all packets to `1.2.3.4` by 10 ms.
 
 ```
 $ tc qdisc del dev enp1s0 root
 $ tc qdisc add dev enp1s0 root handle 1: prio
-$ tc qdisc add dev enp1s0 parent 1:1 handle 10: netem delay 50ms
-$ tc filter add dev enp1s0 parent 1:0 protocol ip prio 1 u32 match ip dst 1.2.3.4/32 flowid 10:1
+$ tc qdisc add dev enp1s0 parent 1:1 handle 10: netem delay 10ms
+$ tc filter add dev enp1s0 parent 1:0 protocol ip prio 1 u32 match ip dst 1.2.3.4/32 flowid 1:1
 ```
 
 The first line removes whatever qdisc is active on the interface (usually the default values).
@@ -12887,7 +12906,7 @@ The third line attaches a sub qdisc from the previous one (`1:1`), with a handle
 
 Lastly, we attach a filter to the main qdisc (`1:0`), where we match on the destination IP. If it matches, we send the packet to the handle `10:1`, our qdisc with extra delay.
 
----
+! Less simple, but correct way
 
 In the general case, the above will work correctly. However, it might be the case that some //other// traffic will get delayed too, depending on its TOS flag. See [[this Server Fault post|https://serverfault.com/a/841865]] for more details. The following is adapted from the previous link.
 
@@ -12905,7 +12924,75 @@ To fix this, we might change the default priomap at the root, so that all our tr
 $ tc qdisc add dev enp1s0 root handle 1: prio priomap 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
 ```
 
-Afterwards, when we add our filter, //only// traffic going to the specified IP will fall on band 0, and therefore, be delayed, like we wanted.
+Afterwards, when we add our filter, //only// traffic going to the specified IP will fall on band 0, and therefore, be delayed, like we wanted. Anything that doesn't match our filter will be fall on band 2.
+
+!! Example
+
+Now, we also want to delay other IP by a different amount, lets say 50ms. Now, all packets to `1.2.3.4` will be delayed by 10ms, and the ones going to `1.10.11.12` will be delayed by 50ms.
+
+```
+$ tc qdisc del dev enp1s0 root
+$ tc qdisc add dev enp1s0 root handle 1: prio priomap 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+$ tc qdisc add dev enp1s0 parent 1:1 handle 10: netem delay 10ms
+$ tc qdisc add dev enp1s0 parent 1:2 handle 20: netem delay 50ms
+$ tc filter add dev enp1s0 parent 1:0 protocol ip prio 1 u32 match ip dst 1.2.3.4/32 flowid 1:1
+$ tc filter add dev enp1s0 parent 1:0 protocol ip prio 1 u32 match ip dst 1.10.11.12/32 flowid 1:2
+```
+
+!! Adding more IP buckets
+
+In the previous section, we modified our priority map so that all traffic is redirected to the band 2. This way, only the traffic that matches our filters will go to bands 1 and 2, where the traffic shaping takes place. With three bands, we can only have 3 groups: two groups where we shape data, and the last one, specified in the priority map, where the rest of the traffic will go. This means that, if we want to classify traffic into //N// buckets, we need //N+1// bands:
+
+```
+$ tc qdisc del dev enp1s0 root
+$ tc qdisc add dev enp1s0 root handle 1: prio bands 4 priomap 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+$ tc qdisc add dev enp1s0 parent 1:1 handle 10: netem delay 10ms
+$ tc qdisc add dev enp1s0 parent 1:2 handle 20: netem delay 30ms
+$ tc qdisc add dev enp1s0 parent 1:3 handle 30: netem delay 50ms
+$ tc filter add dev enp1s0 parent 1:0 protocol ip prio 1 u32 match ip dst 10.10.5.32/32 flowid 1:1
+$ tc filter add dev enp1s0 parent 1:0 protocol ip prio 1 u32 match ip dst 10.10.5.33/32 flowid 1:2
+$ tc filter add dev enp1s0 parent 1:0 protocol ip prio 1 u32 match ip dst 10.10.5.34/32 flowid 1:3
+```
+
+And now, we can check that it works:
+
+```bash
+$ ping -c 1 10.10.5.32
+...
+64 bytes from 10.10.5.32: icmp_seq=1 ttl=64 time=10.2 ms
+...
+$ ping -c 1 10.10.5.33
+...
+64 bytes from 10.10.5.33: icmp_seq=1 ttl=64 time=30.2 ms
+...
+$ ping -c 1 10.10.5.34
+...
+64 bytes from 10.10.5.34: icmp_seq=1 ttl=64 time=50.2 ms
+...
+$ ping -c 1 10.10.5.40 # This IP will not match any filters
+...
+64 bytes from 10.10.5.40: icmp_seq=1 ttl=64 time=0.225 ms
+...
+```
+
+!! Combining filters
+
+If you have different requirements for your filtering, you can combine them by concatenating them in the same filter. However, if what you want to is to match on multiple IPs in the same filter, this won't work:
+
+```
+$ tc filter add dev enp1s0 parent 1:0 protocol ip prio 1 u32 \
+    match ip dst 10.10.5.32/32 \
+    match ip dst 10.10.5.33/32 \
+    flowid 1:1
+```
+
+If you want to do this, you can either:
+
+* Use CIDR notation. The previous example would be `10.10.5.32/31`, or
+* Simply use two filters. This would be my preferred solution, since you will not always have IPs neatly fitting into their subnets.
+
+
+The above works for //and//-ing match statements. To //or// them, just add more filters: they'll be matched in their `prio` order. Remember that the `prio` order is ''per-protocol'', which means that different protocols have different priority queues.
 </pre>
 </div>
 <div created="20190322093414514" modified="20190322114614580" tags="meta" title="Never-ending stack of books" type="text/vnd.tiddlywiki" revision="0" bag="default">
