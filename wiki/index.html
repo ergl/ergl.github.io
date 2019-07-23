@@ -906,8 +906,8 @@ exports.run = function(value, operation, until, beyond, decimals, tiddler, by) {
 <div created="20181229002100861" modified="20181230005914286" title="$:/config/AnimationDuration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>300</pre>
 </div>
-<div created="20190218113805107" modified="20190716131254436" title="$:/config/DefaultSidebarTab" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20190218113805107" modified="20190722140930906" title="$:/config/DefaultSidebarTab" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/config/EditorToolbarButtons/Visibility/$:/core/ui/EditorToolbar/bold" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>hide</pre>
@@ -9965,9 +9965,9 @@ exports.run = function(value, operation, until, beyond, decimals, tiddler, by) {
     }
 }</pre>
 </div>
-<div created="20181229002633052" modified="20190509151743544" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[[To organize]]
-[[Exploring the Wiki]]
+<div created="20181229002633052" modified="20190722141006804" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[[Exploring the Wiki]]
+[[To organize]]
 </pre>
 </div>
 <div caption="{{$:/core/images/import-button}} Create a new link tiddler" created="20190217182820519" description="Create a new link tiddler" modified="20190217182821623" tags="$:/tags/PageControls" title="$:/ergl/functions/NewBookmarkLink" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10481,7 +10481,7 @@ Change the `./images/` part to a different base URI. The URI can be relative or 
 <div created="20181229001800601" modified="20181230005914321" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>What Do I Know?</pre>
 </div>
-<div list="[[To organize]] [[Exploring the Wiki]]" title="$:/StoryList" revision="1" bag="default">
+<div list="[[Exploring the Wiki]] [[To organize]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div list="$:/core/ui/Buttons/home $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all [[Draft of '$:/ergl/functions/NewBookmarkLink']] $:/core/ui/Buttons/permaview $:/ergl/functions/NewBookmarkLink $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh $:/ergl/functions/ShowAdmin $:/core/ui/Buttons/more-page-actions" title="$:/tags/PageControls" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10963,7 +10963,7 @@ While it's true that writing driver interfaces is easy, learning from examples a
 <div tags="task" task-meta-step="0" title="Change Links Format" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Instead of putting the link in a field, maybe put it in the body, inside a table (see how the  [[Bookmark plugin|http://inmysocks.tiddlyspot.com/#%24%3A%2Fplugins%2Finmysocks%2FBookmarks]] does it)</pre>
 </div>
-<div created="20190226142230039" modified="20190324201712770" title="Check NIC bandwidth" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190226142230039" modified="20190722140643740" tags="networking" title="Check NIC bandwidth" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>After finding out which interface you're using with `ifconfig`, run
 
 ```bash
@@ -11874,7 +11874,7 @@ Solution to getting the 1G links instead of the 10G ones: simply ask for more ba
 
 </pre>
 </div>
-<div created="20190508115910342" modified="20190722100651515" title="Erlang list comprehension hacks" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190508115910342" modified="20190722140456062" tags="erlang" title="Erlang list comprehension hacks" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Invoke functions inside list comprehensions
 
 ''maxvel'' [1:08 PM]: hello, in LC [List Comprehensions] can I make a filter using the result value? like `[fun(X) || X &lt;- List, fun(X) /= undefined]` but not invoking `fun` two times? (edited) 
@@ -11918,7 +11918,7 @@ x: 7
 ```
 </pre>
 </div>
-<div created="20190411091052942" modified="20190718142423905" title="Erlang tuning and TCP" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190411091052942" modified="20190722140544206" tags="tcp erlang" title="Erlang tuning and TCP" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* [[Erlang Memory Limits|http://erlang.org/documentation/doc-5.8.4/doc/efficiency_guide/advanced.html]]
 
 * [[gen_tcp docs|http://erlang.org/documentation/doc-8.3/lib/kernel-5.2/doc/html/gen_tcp.html]]
@@ -11974,7 +11974,7 @@ driver does not use the async thread pool).
 Something something 300k limit https://groups.google.com/d/msg/erlang-programming/9H2qhcpF7XE/bc-zC8q5iHAJ
 </pre>
 </div>
-<div created="20190722101854250" modified="20190722102040940" title="Erlang: show entire output on shell" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190722101854250" modified="20190722140516324" tags="erlang" title="Erlang: show entire output on shell" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Use the shell built-in function `rp/1`, like so:
 
 ```
@@ -12062,7 +12062,7 @@ I'm starting to get frustrated with tiddlywiki, to the point where I'm consideri
 
 http://pzel.github.io/2019/02/18/Figuring-out-a-gen_tcp-recv_limitation.html</pre>
 </div>
-<div created="20190410110641062" modified="20190410110934881" title="gen_tcp:unrecv" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190410110641062" modified="20190722140629601" tags="erlang" title="gen_tcp:unrecv" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;&lt;
 Something to consider is first reading a few bytes via [[gen_tcp:recv/2,3|http://erlang.org/doc/man/gen_tcp.html#recv-2]], examine the data to decide which protocol you're dealing with, and then using the [[undocumented gen_tcp:unrecv/2 function|https://github.com/erlang/otp/blob/fa337c32e54c98a9330b574d9dbb6c7d7d77b117/lib/kernel/src/gen_tcp.erl#L326]] to push the received data back into the socket. Something like this:
 
@@ -12768,7 +12768,7 @@ https://github.com/NorthernPath/north/wiki/Design-Document
 <div bookmark_link="https://www.theguardian.com/environment/true-north/2017/jul/17/neoliberalism-has-conned-us-into-fighting-climate-change-as-individuals" created="20190322115531661" modified="20190322115544802" tags="read-later" title="Neoliberalism has conned us into fighting climate change as individuals" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20190718142610019" modified="20190719123553437" title="netem" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190718142610019" modified="20190722140420176" tags="networking" title="netem" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;div style=&quot;padding:0.5em;background: #FFF7D7;color:#000000&quot;&gt;
 💡 ''Important''&lt;br&gt;&lt;br&gt;
 
@@ -12880,9 +12880,10 @@ References
 
 * [[Chapter 9 of Linux Advanced Routing &amp; Traffic Control|https://lartc.org/howto/lartc.qdisc.html]]
 * [[Arch Wiki: Advanced Traffic Control|https://wiki.archlinux.org/index.php/Advanced_traffic_control]]
+* [[Mellanox Wiki: Queue Management|https://github.com/Mellanox/mlxsw/wiki/Queues-Management]]
 </pre>
 </div>
-<div created="20190719114515290" modified="20190722134213049" title="netem: filtering examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190719114515290" modified="20190722140438238" tags="networking" title="netem: filtering examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Look at [[my wiki page on netem|netem]] if you're confused.
 
 ---
@@ -13118,7 +13119,7 @@ Changeset:
 
 https://en.wikipedia.org/wiki/Base64#Variants_summary_table</pre>
 </div>
-<div created="20190504171121032" modified="20190522212102108" tags="note draft" title="On Personal Knowledge" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190504171121032" modified="20190722140733417" tags="draft" title="On Personal Knowledge" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* Information is diverse. It can be notes about an article, pictures of something I liked, a set of locations I enjoyed.
 ** There's probably no single application that can do everything I want.
 * Need to ''archive'' information. See https://webrecorder.io
@@ -13666,7 +13667,7 @@ sequenceDiagram
 <div bookmark_link="https://tiddlywiki.com/static/TableOfContents.html" created="20190219225023688" modified="20190219225024751" tags="tiddlytip" title="Table of Contents Example" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20190328095603276" modified="20190410110538528" title="TCP Cork in Erlang" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190328095603276" modified="20190722140548887" tags="erlang tcp" title="TCP Cork in Erlang" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Since Erlang/OTP 21.2 (see [[changelog|http://erlang.org/download/otp_src_21.2.readme]]), you can do the same by specifying the `{nopush, true}` option in `inet:setopts/2`.
 
 If you're on older distributions, you can do it yourself by using raw sockets:
