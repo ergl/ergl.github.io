@@ -385,6 +385,10 @@ Error message and password prompt
 
 <li>Automate experiment</li>
 
+<li>Bash: Handle brace expansion in args</li>
+
+<li>Bash: Iterate through arguments</li>
+
 <li>Basho Bench Configuration</li>
 
 <li>Bench new client coord and compare</li>
@@ -10928,6 +10932,38 @@ const html = await freezeDry(document, options)
 <div created="20190503083822898" modified="20190503132951004" tags="task" task-pvc-step="1" title="Automate experiment" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>At least make different steps (like building, compiling and joining antidote, or the same with bench nodes) automatic, so we don't have to SSH into all nodes and do it manually.</pre>
 </div>
+<div created="20190726102237688" modified="20190726102804233" tags="" title="Bash: Handle brace expansion in args" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Sometimes you want your script to handle a lot of arguments, and it can be tedious to type. Using brace expansion can help:
+
+```
+$ echo foo{a,b,c,d}-{a,b,c,d}
+fooa-a fooa-b fooa-c fooa-d foob-a foob-b foob-c foob-d fooc-a fooc-b fooc-c fooc-d food-a food-b food-c food-d
+```
+
+First, you have to handle this argument with care, as it's not obvious at what step does brace expansion happen. As long as the variable is quoted, it won't expand. Unquote it when you want to expand it.
+</pre>
+</div>
+<div created="20190726102803934" modified="20190726103048062" tags="" title="Bash: Iterate through arguments" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Use `&quot;${@}`. If you want to skip some arguments, either use `skip`, or slice syntax, like `${@:n}`, where `n` is the position you want to start at.
+
+```bash
+for i in &quot;${@}&quot;; do
+...
+done
+
+# with slice, skip the first
+
+for i in &quot;${@:2}&quot;; do
+...
+done
+
+# or simply (use shift before, if you need it)
+
+for i; do
+...
+done
+```</pre>
+</div>
 <div created="20190401191229920" modified="20190401203832250" title="Basho Bench Configuration" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;&lt;&lt;
 Basho Bench is a benchmarking tool created to conduct accurate and repeatable performance tests and stress tests, and to produce performance graphs.
@@ -12246,7 +12282,7 @@ Ideas:
 ** Pass also pvc_proto context so it can do everything from the callback.
 ** Is this actually the problem here?</pre>
 </div>
-<div bookmark_link="https://jasonlefkowitz.net/2013/02/i-kind-of-hate-twitter/" created="20190217180744610" modified="20190217180940594" tags="link-note" title="I kind of hate Twitter" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bookmark_link="https://jasonlefkowitz.net/2013/02/i-kind-of-hate-twitter/" created="20190217180744610" modified="20190727070004492" tags="link-note" title="I kind of hate Twitter" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>A McLuhan-ish analysis of Twitter. Things that shape discourse on the site:
 
 * Short messages
