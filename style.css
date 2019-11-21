@@ -234,6 +234,13 @@ hr {
   border-left: 1px solid #ddd;
 }
 
+#table-of-contents {
+  margin-left: 1em;
+  padding-left: 1rem;
+}
+
+.toc-s { margin: 0.5em; }
+
 
 
 
