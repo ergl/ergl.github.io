@@ -467,6 +467,8 @@ Error message and password prompt
 
 <li>I kind of hate Twitter</li>
 
+<li>Ignoring mass reformatting commits with git blame</li>
+
 <li>Imdea General</li>
 
 <li>Implement load for client coordinator</li>
@@ -502,6 +504,8 @@ Error message and password prompt
 <li>Links about music</li>
 
 <li>Look into system limits</li>
+
+<li>macOS dotfiles</li>
 
 <li>Make a list of benchmarks to perform</li>
 
@@ -566,6 +570,8 @@ Error message and password prompt
 <li>Reconcile data types between client and server</li>
 
 <li>Remaking the blog with TiddlyWiki</li>
+
+<li>Replay TCP traffic</li>
 
 <li>Revert to Youtube's old interface</li>
 
@@ -658,6 +664,8 @@ Error message and password prompt
 <li>Wallace's E Unibus Pluram, annotated</li>
 
 <li>When Elon Musk Tried to Destroy a Tesla Whistleblower</li>
+
+<li>Who's listening on that port?</li>
 
 <li>Why Google Needed a Graph Serving System</li>
 
@@ -11965,6 +11973,9 @@ Ideas:
 * Semi-ephemeral
 * Scorekeeping</pre>
 </div>
+<div bookmark_link="https://akrabat.com/ignoring-revisions-with-git-blame/" created="20200821083739749" modified="20200821083750904" tags="bookmark" title="Ignoring mass reformatting commits with git blame" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div created="20190224225833178" list="" modified="20191105142834367" tags="imdea" title="Imdea General" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Entry point for imdea-related documents
 
@@ -12334,6 +12345,9 @@ Sometimes you read something on the internet that inspires you to write somethin
 * Erlang TCP options? (backlog, buffer size, etc)
 
 &lt;&lt;hl &quot;Related to stop &amp; wait&quot;&gt;&gt;</pre>
+</div>
+<div created="20200812104729538" modified="20200812104747386" title="macOS dotfiles" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>https://github.com/mathiasbynens/dotfiles/blob/main/.macos</pre>
 </div>
 <div created="20190503083812132" modified="20190503133025993" tags="task" task-done-on="2019-05-03" task-pvc-step="2" title="Make a list of benchmarks to perform" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>See [[antidote-evaluation|https://github.com/ergl/antidote-evaluation/projects/4]]</pre>
@@ -13060,6 +13074,14 @@ To date I've used several approaches, ranging from plain-text files (scattered a
 The reason to make the wiki public is to hopefully trick me into publishing what I write more often. I have learned a lot from random blogs written by people ~~trying to boost their SEO and increasing their chances of getting hired by luxurious tech companies~~ sharing their experiences and ideas. I might as well join the club.
 </pre>
 </div>
+<div created="20200812101453983" modified="20200812101547778" tags="networking" title="Replay TCP traffic" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>```
+tcdump -i eth0 -w -'..... | tcpreplay -i eth1 - ....
+```
+
+— https://erlang.org/pipermail/erlang-questions/2020-August/099884.html
+</pre>
+</div>
 <div created="20190411185639213" modified="20190411185724337" title="Revert to Youtube's old interface" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Paste `document.cookie = &quot;PREF=al=en&amp;f5=30030&amp;f6=8&quot;` into the web inspector</pre>
 </div>
@@ -13716,6 +13738,9 @@ Entirely possible that my plangent cries about the impossibility of rebelling ag
 </div>
 <div bookmark_link="https://www.bloomberg.com/news/features/2019-03-13/when-elon-musk-tried-to-destroy-tesla-whistleblower-martin-tripp" created="20190322095503491" modified="20190322095521863" tags="read-later" title="When Elon Musk Tried to Destroy a Tesla Whistleblower" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div created="20200716112801079" modified="20200716112841430" title="Who's listening on that port?" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>With `lsof -nP -iTCP:XXXX`, check who's listening on port `XXXX`</pre>
 </div>
 <div bookmark_link="https://blog.dgraph.io/post/why-google-needed-graph-serving-system/" created="20190217180457382" modified="20190217180506278" tags="read-later" title="Why Google Needed a Graph Serving System" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
