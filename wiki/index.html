@@ -141,6 +141,8 @@ Error message and password prompt
 
 <li>&quot;Sharenting&quot; and Knausgård</li>
 
+<li>(Erlang Mailing List) Exploring Performance Drops</li>
+
 <li>$:/.tb/macros/calc</li>
 
 <li>$:/config/AnimationDuration</li>
@@ -271,6 +273,8 @@ Error message and password prompt
 
 <li>$:/core</li>
 
+<li>$:/core/ui/ViewTemplate/subtitle</li>
+
 <li>$:/DefaultTiddlers</li>
 
 <li>$:/ergl/functions/NewBookmarkLink</li>
@@ -292,6 +296,8 @@ Error message and password prompt
 <li>$:/ergl/macros/transclude_edit</li>
 
 <li>$:/ergl/macros/triage_of</li>
+
+<li>$:/ergl/templates/custom-date</li>
 
 <li>$:/ergl/templates/external-image</li>
 
@@ -743,6 +749,9 @@ Health forums and support groups depend on participant self-disclosure for their
 A[n] experiment (N = 218) showed that cues implying greater crowd size and connectivity lead to more self-disclosure of sensitive information, and higher intentions to revisit the community. Further, user belief in the community-building heuristic positively predicts self-disclosure and intentions, while also moderating the effect of the connectivity cue in a direction which implies that the cue encourages disclosure by triggering the community-building heuristic. Implications for the design of online groups are discussed.
 &lt;&lt;&lt;
 </pre>
+</div>
+<div bookmark_link="https://erlang.org/pipermail/erlang-questions/2020-August/099919.html" created="20200827083244517" modified="20200827083310406" tags="bookmark" title="(Erlang Mailing List) Exploring Performance Drops" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
 </div>
 <div created="20150126131341956" creator="Tobias Beer" modified="20160902165820836" modifier="Tobias Beer" module-type="macro" summary="allows simple calculations based on tiddler fields" title="$:/.tb/macros/calc" type="application/javascript" revision="0" bag="default">
 <pre>/*\
@@ -9931,6 +9940,16 @@ exports.run = function(value, operation, until, beyond, decimals, tiddler, by) {
     }
 }</pre>
 </div>
+<div created="20200914105400820" modified="20200914110110218" tags="$:/tags/ViewTemplate" title="$:/core/ui/ViewTemplate/subtitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;$reveal type=&quot;nomatch&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; tag=&quot;div&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
+&lt;div class=&quot;tc-subtitle&quot;&gt;
+&lt;$link to={{!!modifier}}&gt;
+&lt;$view field=&quot;modifier&quot;/&gt;
+&lt;/$link&gt; Created &lt;$view field=&quot;created&quot; format=&quot;date&quot; template={{$:/ergl/templates/custom-date}}/&gt;, modified &lt;$view field=&quot;modified&quot; format=&quot;date&quot; template={{$:/ergl/templates/custom-date}}/&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+</pre>
+</div>
 <div created="20181229002633052" modified="20190722141006804" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[[Exploring the Wiki]]
 [[To organize]]
@@ -10079,6 +10098,9 @@ text=&quot;&quot;
 &lt;/div&gt;
 \end
 </pre>
+</div>
+<div created="20200914105920005" modified="20200914110024384" tags="" title="$:/ergl/templates/custom-date" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>DDth MMM YYYY</pre>
 </div>
 <div created="20190505183002655" modified="20190505183042546" tags="" title="$:/ergl/templates/external-image" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;!--
@@ -13061,7 +13083,7 @@ At a super high level the End to End principle applies - huge fabrics, large com
 <div tags="task" task-client_coord-step="2" task-done-on="2019-02-14" title="Reconcile data types between client and server" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20181229002819801" modified="20181230005914290" tags="article" title="Remaking the blog with TiddlyWiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20181229002819801" modified="20200914104638369" tags="article" title="Remaking the blog with TiddlyWiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Every blog needs a first entry that explains why it started, and I guess this is it. This is not the first time I try (and fail) to maintain a regular blog. Back in the mid 2000's I maintained a couple of sci-fi themed blogs, that I would mostly share with friends.
 
 The motivation to write back then was two-fold: a) I liked writing, and b) I //loved// to procrastinate.
@@ -13071,7 +13093,7 @@ I guess b) is the reason I'm starting a blog again, but that wouldn't make for a
 
 To date I've used several approaches, ranging from plain-text files (scattered among several git repos and Dropbox folders and hackily linked together by bash scripts and notational velocity), to paper notebooks and esoteric command line applications for mind mapping. It wasn't until I read a [[blog post from Sean T. Allen|https://www.monkeysnatchbanana.com/2018/12/26/things-id-like-in-my-code-management-tool/]] (and the [[linked one by Joe Amstrong|https://joearms.github.io/#2018-12-26%20Fun%20with%20the%20TiddlyWiki]]) that I decided I wanted a more complete package that tied together all the notes I had. And since I value Joe's opinion, I decided to try my hand at TiddlyWiki (although I admit the name has not yet grown on me).
 
-The reason to make the wiki public is to hopefully trick me into publishing what I write more often. I have learned a lot from random blogs written by people ~~trying to boost their SEO and increasing their chances of getting hired by luxurious tech companies~~ sharing their experiences and ideas. I might as well join the club.
+The reason to make the wiki public is to hopefully trick me into publishing what I write more often. I have learned a lot from random blogs written by people ~~trying to boost their SEO to increase their chances of getting hired by luxurious tech companies~~ sharing their experiences and ideas. I might as well join the club.
 </pre>
 </div>
 <div created="20200812101453983" modified="20200812101547778" tags="networking" title="Replay TCP traffic" type="text/vnd.tiddlywiki" revision="0" bag="default">
