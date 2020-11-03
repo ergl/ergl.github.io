@@ -511,6 +511,8 @@ Error message and password prompt
 
 <li>Links about music</li>
 
+<li>lists:shuffle/1</li>
+
 <li>Look into system limits</li>
 
 <li>macOS dotfiles</li>
@@ -12359,6 +12361,31 @@ Sometimes you read something on the internet that inspires you to write somethin
 <pre>* https://news.ycombinator.com/item?id=19492493
 
 * https://news.ycombinator.com/item?id=19491366</pre>
+</div>
+<div created="20201014153024551" modified="20201014153136019" title="lists:shuffle/1" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>From https://erlang.org/pipermail/erlang-questions/2006-August/022198.html (adapted to OTP 23+)
+
+```erlang
+shuffle([]) -&gt; [];
+shuffle(List) -&gt;
+    %% Determine the log n portion then randomize the list.
+    randomize(round(math:log(length(List)) + 0.5), List).
+
+randomize(1, List) -&gt;
+    randomize(List);
+randomize(T, List) -&gt;
+    lists:foldl(fun(_E, Acc) -&gt;
+			randomize(Acc)
+		end, randomize(List), lists:seq(1, (T - 1))).
+
+randomize(List) -&gt;
+    D = lists:map(fun(A) -&gt; 
+			  {rand:uniform_real() A}
+		  end, List),
+
+    {_, D1} = lists:unzip(lists:keysort(1, D)),
+    D1.
+```</pre>
 </div>
 <div created="20190301122246210" modified="20190402111642267" tags="task" task-client_coord_slowdown-step="2" task-done-on="2019-04-02" title="Look into system limits" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>* ~~Number of concurrent connections~~
