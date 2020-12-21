@@ -589,6 +589,8 @@ Error message and password prompt
 
 <li>Run Ping Ccoord Bench on Single and Two Sites</li>
 
+<li>Running Erlang without epmd</li>
+
 <li>Send email to Erlang mailing list</li>
 
 <li>Setting CPU at 100% (stress-test)</li>
@@ -13155,6 +13157,28 @@ tcdump -i eth0 -w -'..... | tcpreplay -i eth1 - ....
 </div>
 <div created="20190226140728832" modified="20190301122444969" tags="task" task-client_coord_slowdown-step="2" task-done-on="2019-03-01" title="Run Ping Ccoord Bench on Single and Two Sites" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div created="20201221121305277" modified="20201221121758779" tags="erlang" title="Running Erlang without epmd" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>From https://blog.erlware.org/epmdlessless/
+
+Bypassing EPMD has been made possible through a couple new options added to erl:
+
+* `-erl_epmd_port P`: Configures the port this node will listen on and use when connecting to remote nodes.
+
+* `-dist_listen false`: Setting this keeps the node from binding to the port, preventing it from acting as a server, and instead uses the port only for connecting to remote nodes. The use case for this is when opening a remote shell `-remsh &lt;node&gt;` (`remote_console` in the release script) to a local node.
+
+* `-[s]name undefined`: Passing `undefined` for the short or long name of a node generates a unique node name and sets additional flags, `-dist_listen false-hidden -dist_auto_connect never`.
+
+An extra option has also been added to `erl_call` :
+
+* `-address P`: Sets the address and/or port to connect to the running Erlang node. This removes the need to look up the remote node or to even specify its name when running `erl_call`.
+* `-R`: Tells `erl_call` to use a dynamic random name for the hidden node it starts.
+
+As of OTP 23.1+ the `relx` generated release script uses `erl_call` instead of the custom `escript nodetool` when the commands `rpc` and `eval` are used to run code on a running node.
+
+...
+
+The only change you as a user must make to run your release without epmd is to set the OS environment variable `ERL_DIST_PORT`.</pre>
 </div>
 <div created="20190312121509609" modified="20190402111558216" tags="task" task-client_coord_slowdown-step="2" task-done-on="2019-04-02" title="Send email to Erlang mailing list" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
