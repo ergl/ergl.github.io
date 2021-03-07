@@ -371,6 +371,8 @@ Error message and password prompt
 
 <li>Bookmarks</li>
 
+<li>Books I have read</li>
+
 <li>Bump the number of virtual nodes (partitions) so we're always at 2 virtual partitions per node</li>
 
 <li>Change Links Format</li>
@@ -680,6 +682,8 @@ Error message and password prompt
 <li>Wallace's E Unibus Pluram, annotated</li>
 
 <li>When Elon Musk Tried to Destroy a Tesla Whistleblower</li>
+
+<li>When is an Erlang iolist an iovec?</li>
 
 <li>Who's listening on that port?</li>
 
@@ -10831,6 +10835,22 @@ While it's true that writing driver interfaces is easy, learning from examples a
 
 &lt;&lt;bookmark_link_list_of bookmark&gt;&gt;</pre>
 </div>
+<div created="20210307221810285" modified="20210307222204860" tags="meta" title="Books I have read" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>An incredibly incomplete list:
+
+&lt;$button&gt;
+    &lt;$action-sendmessage
+      $message=&quot;tm-new-tiddler&quot;
+      title=&quot;&quot;
+      bookmark_link=&quot;&quot;
+      tags=&quot;book-read&quot;
+      text=&quot;&quot; /&gt;
+    New Entry
+  &lt;/$button&gt;
+
+&lt;&lt;bookmark_link_list_of book-read&gt;&gt;
+</pre>
+</div>
 <div created="20190503133153175" modified="20190503135842966" tags="task" task-pvc-step="1" title="Bump the number of virtual nodes (partitions) so we're always at 2 virtual partitions per node" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
@@ -11760,7 +11780,7 @@ ok
 <div created="20190503082944425" modified="20190503083007024" tags="task" task-client_coord-step="0" title="Errors: swallow socket errors?" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Make errors stable</pre>
 </div>
-<div created="20190217174128942" modified="20201122185452992" tags="meta" title="Exploring the Wiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190217174128942" modified="20210307222228572" tags="meta" title="Exploring the Wiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! Meta
 
 * [[An introduction|Remaking the blog with TiddlyWiki]]
@@ -11780,7 +11800,8 @@ ok
 * [[My bookmarks|Bookmarks]]
 * [[My Linkblog|Links]]
 * [[Read it Later List|Read Later]]
-* [[Never-ending stack of books]]
+* [[Books I have read]]
+* [[Books that I have yet to read|Never-ending stack of books]]
 
 !! Work
 
@@ -11983,7 +12004,7 @@ Implementations:
 <div bookmark_link="https://tiddlywiki.com/static/How%2520to%2520add%2520a%2520new%2520tab%2520to%2520the%2520sidebar.html" tags="tiddlytip" title="How to add a new tab to the sidebar" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div bookmark_link="https://www.penguinrandomhouse.com/books/600671/how-to-do-nothing-by-jenny-odell/9781612197494/" created="20190522192708012" modified="20190522192818246" tags="book-list" title="How to do Nothing (2019)" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div bookmark_link="https://www.penguinrandomhouse.com/books/600671/how-to-do-nothing-by-jenny-odell/9781612197494/" created="20190522192708012" modified="20210307221937696" tags="book-read" title="How to do Nothing (2019)" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Far from the simple anti-technology screed, or the back-to-nature meditation we read so often, How to do Nothing is an action plan for thinking outside of capitalist narratives of efficiency and techno-determinism.</pre>
 </div>
 <div created="20190224225610412" modified="20190224230229254" tags="qnote imdea" title="How Using Async Correctly Increased Throughput by 4X" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -13014,11 +13035,10 @@ Solution: If we aggregate prepare messages per-node, instead of per-partition (s
 <div bookmark_link="http://www.pcg-random.org/index.html" created="20190217174651845" modified="20190217174702955" tags="bookmark" title="PCG, A Family of Better Random Number Generators" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20190224233251939" modified="20190402105417219" tags="meta" title="Personal Wiki examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20190224233251939" modified="20210307222519742" tags="meta" title="Personal Wiki examples" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Personal Wikis can be traced back to the idea of [[Commonplace books|https://en.m.wikipedia.org/wiki/Commonplace_book]]
 
 * Nikita's Everything I know @ https://wiki.nikitavoloboev.xyz
-** https://letke.men uses the same template
 * https://wiki.xxiivv.com/#home
 * https://idea.junglecoder.com (simple list of links)
 * http://shii.bibanon.org/shii.org/knows/Everything_Shii_Knows.html
@@ -13026,8 +13046,7 @@ Solution: If we aggregate prepare messages per-node, instead of per-partition (s
 * https://docs.j7k6.org (sysadmin cheatsheet)
 * https://nathanwailes.atlassian.net/wiki/spaces/MTOVT/overview
 * http://www.rodrigofranco.com
-* h0p3's wiki @ https://philosopher.life (disc: extremely heavy site)
-** To read: [[Socialism|https://philosopher.life/#Socialism:Socialism]]</pre>
+* h0p3's wiki @ https://philosopher.life (disc: extremely heavy site)</pre>
 </div>
 <div bookmark_link="https://github.com/pilosa/pilosa" created="20190304134014693" modified="20190304134036352" tags="read-later" title="Pilosa" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Pilosa is an open source, distributed bitmap index that dramatically accelerates queries across multiple, massive data sets. See also https://www.pilosa.com/docs/latest/data-model/
@@ -13856,6 +13875,9 @@ Entirely possible that my plangent cries about the impossibility of rebelling ag
 </div>
 <div bookmark_link="https://www.bloomberg.com/news/features/2019-03-13/when-elon-musk-tried-to-destroy-tesla-whistleblower-martin-tripp" created="20190322095503491" modified="20190322095521863" tags="read-later" title="When Elon Musk Tried to Destroy a Tesla Whistleblower" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div created="20210307221536728" modified="20210307221619609" tags="erlang" title="When is an Erlang iolist an iovec?" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>https://www.cipht.net/2017/01/15/when-is-an-iolist-an-iovec.html</pre>
 </div>
 <div created="20200716112801079" modified="20200716112841430" title="Who's listening on that port?" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>With `lsof -nP -iTCP:XXXX`, check who's listening on port `XXXX`</pre>
