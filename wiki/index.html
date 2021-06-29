@@ -469,6 +469,8 @@ Error message and password prompt
 
 <li>Hierarchical Timing Wheels</li>
 
+<li>How rebar3 computes package hashes</li>
+
 <li>How to add a new tab to the sidebar</li>
 
 <li>How to do Nothing (2019)</li>
@@ -12000,6 +12002,18 @@ Implementations:
 * Sample [[implementation|https://github.com/rmind/ttimer]] in C
 * [[The one used inside the BEAM|https://github.com/erlang/otp/blob/master/erts/emulator/beam/time.c]]
 * [[Tips on implementing one on top of Mnesia in Erlang|http://erlang.org/pipermail/erlang-questions/2018-December/096893.html]]</pre>
+</div>
+<div created="20210629080752860" modified="20210629081048284" tags="erlang" title="How rebar3 computes package hashes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>From the #rebar3 channel in the Erlang Slack:
+
+&gt; ''Borja'': how are hashes in `rebar.lock` computed? the docs mention the “expected hashes for packages”, but is this a commit hash, or something else? (also the same re `pkg_hash_ext`)
+
+&gt; ''Fred Hebert'': those are provided by the package index, and are a sha256 of the package, which we re-calculate after downloading (for the ext one: https://github.com/erlang/rebar3/blob/c102379385013896711bba3969f280f851c67cc7/src/vendored/r3_hex_tarball.erl#L151) and after unpacking (for the internal one: https://github.com/erlang/rebar3/blob/c102379385013896711bba3969f280f851c67cc7/src/vendored/r3_hex_tarball.erl#L233-L235)
+
+&gt; https://github.com/erlang/rebar3/blob/c102379385013896711bba3969f280f851c67cc7/src/rebar_packages.erl can then use the checksums to search the right package.
+
+&gt; the inner checksum is more or less deprecated/kept around for backwards compatibility, the outer one is safer, but both rebar3 and hex maintain the inner one to keep things working for everyone.
+</pre>
 </div>
 <div bookmark_link="https://tiddlywiki.com/static/How%2520to%2520add%2520a%2520new%2520tab%2520to%2520the%2520sidebar.html" tags="tiddlytip" title="How to add a new tab to the sidebar" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
